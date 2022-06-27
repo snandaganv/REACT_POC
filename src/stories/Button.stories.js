@@ -1,7 +1,7 @@
-import Button from '@mui/material/Button';
+import { Button } from '@mui/material';
 
 export default {
-    title: 'MUI/Button',
+    title: 'Input/Button',
     component: Button,
     argTypes: {
         variant: {
@@ -12,6 +12,7 @@ export default {
             options: ['primary', 'success', 'secondary', 'error', 'info', 'warning'],
             control: { type: 'radio' },
         },
+        onClick: { action: 'clicked' },
     },
 };
 
