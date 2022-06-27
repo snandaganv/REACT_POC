@@ -14,6 +14,14 @@ export default {
         },
         onClick: { action: 'clicked' },
     },
+    parameters: {
+        backgrounds: {
+            default: 'Light Theme',
+            values: [
+                { name: 'Dark Theme', value: '#121212' },
+            ],
+        },
+    },
 };
 
 const Template = (args) => <Button {...args}>Button</Button>;

@@ -1,4 +1,4 @@
-import { Alert, radioClasses } from "@mui/material";
+import { Alert } from "@mui/material";
 
 export default {
     title: 'Feedback/Alert',
@@ -14,6 +14,14 @@ export default {
             control: {type: 'radio'},
         },
         onClose: { action: 'closed' },
+    },
+    parameters: {
+        backgrounds: {
+            default: 'Light Theme',
+            values: [
+                { name: 'Dark Theme', value: '#121212' },
+            ],
+        },
     },
 };
 
