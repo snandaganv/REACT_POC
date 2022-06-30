@@ -1,3 +1,5 @@
+import { FormControlLabel } from "@mui/material";
+import { Checkbox } from "@mui/material";
 import CheckBoxes from "../components/Checkbox";
 
 export default {
@@ -14,21 +16,46 @@ const Template = (args) => <CheckBoxes {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = {
-  label: "Unchecked",
-  size: "md",
+  label: "Label",
+  asideContent: (
+    <FormControlLabel
+      control={<Checkbox defaultChecked onClick={onclick} />}
+      label="Checked label"
+      onClick={onclick}
+    />
+  ),
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: "Disabled",
+  disabled: true,
 };
 
 export const Group = Template.bind({});
 Group.args = {
-  label: "Unchecked",
-  size: "md",
+  label: "USA",
+  asideContent: <CheckBoxes label="Poland" />,
 };
 
-export const states = Template.bind({});
-states.args = {
-  label: "Unchecked",
-  size: "md",
-};
+// export const Save = () => (
+//   <RadioGroup
+//     row
+//     aria-labelledby="demo-row-radio-buttons-group-label"
+//     name="row-radio-buttons-group"
+//   >
+//     <Checkbox />
+//     <Checkbox disabled />
+//     <Checkbox defaultChecked color="error" />
+//     <Checkbox defaultChecked color="default" />
+//     <CheckBoxes label="testing" />
+//   </RadioGroup>
+// );
+
+// Save.args = {
+//   label: "Label",
+//   size: "md",
+// };
 
 // const Template = (args) => (
 //   <Checkbox {...args} label="Unchecked">

@@ -8,7 +8,7 @@ import {
   RadioGroup,
 } from "@mui/material";
 
-function RadioButton({ label, onclick }) {
+function RadioButton({ onclick, disabled }) {
   return (
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
@@ -30,13 +30,8 @@ function RadioButton({ label, onclick }) {
         <FormControlLabel
           value="other"
           control={<Radio onClick={onclick} />}
-          label="Other"
-        />
-        <FormControlLabel
-          disabled
-          value="other"
-          control={<Radio onClick={onclick} />}
           label="Disabled"
+          disabled={disabled}
         />
       </RadioGroup>
     </FormControl>

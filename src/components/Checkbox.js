@@ -2,26 +2,15 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 
-function CheckBoxes({ label, onclick }) {
+function CheckBoxes({ label, onclick, asideContent, color, disabled }) {
   return (
     <FormGroup>
       <FormControlLabel
-        control={<Checkbox onClick={onclick} />}
+        control={<Checkbox onClick={onclick} color={color} />}
         label={label}
+        disabled={disabled}
       />
-      <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
-    </FormGroup>
-  );
-}
-
-function CheckBoxesGroup({ label, onclick }) {
-  return (
-    <FormGroup>
-      <FormControlLabel
-        control={<Checkbox onClick={onclick} />}
-        label={label}
-      />
-      <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
+      {asideContent && asideContent}
     </FormGroup>
   );
 }
@@ -31,7 +20,9 @@ CheckBoxes.prototype = {
   onClick: PropTypes.func,
   selected: PropTypes.Boolean,
   disabled: PropTypes.Boolean,
+  defaultChecked: PropTypes.Boolean,
   size: PropTypes.oneOf(["sm", "md", "lg"]),
+  asideContent: PropTypes.elementType,
 };
 
 export default CheckBoxes;
