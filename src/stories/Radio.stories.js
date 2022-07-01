@@ -15,6 +15,6 @@ const Template = (args) => <RadioButton {...args} />;
 
 export const Defaults = Template.bind({});
 Defaults.args = {
-  label: "Unchecked",
+  label: "Radio Buttons",
   disabled: true,
 };
