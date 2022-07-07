@@ -21,7 +21,6 @@ CheckBoxes.prototype = {
   selected: PropTypes.Boolean,
   disabled: PropTypes.Boolean,
   defaultChecked: PropTypes.Boolean,
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
   asideContent: PropTypes.elementType,
 };
 

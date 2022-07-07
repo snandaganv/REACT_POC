@@ -8,28 +8,29 @@ import {
   RadioGroup,
 } from "@mui/material";
 
-function RadioButton({ onclick, disabled }) {
+function RadioButton({ onClick, disabled, row }) {
   return (
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
       <RadioGroup
+        row={row}
         aria-labelledby="demo-radio-buttons-group-label"
         defaultValue="female"
         name="radio-buttons-group"
       >
         <FormControlLabel
           value="female"
-          control={<Radio onClick={onclick} />}
+          control={<Radio onClick={onClick} />}
           label="Female"
         />
         <FormControlLabel
           value="male"
-          control={<Radio onClick={onclick} />}
+          control={<Radio onClick={onClick} />}
           label="Male"
         />
         <FormControlLabel
           value="other"
-          control={<Radio onClick={onclick} />}
+          control={<Radio onClick={onClick} />}
           label="Disabled"
           disabled={disabled}
         />
@@ -43,6 +44,7 @@ RadioButton.prototype = {
   onClick: PropTypes.func,
   selected: PropTypes.Boolean,
   disabled: PropTypes.Boolean,
+  row: PropTypes.Boolean,
 };
 
 export default RadioButton;
