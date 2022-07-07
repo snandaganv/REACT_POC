@@ -9,11 +9,20 @@ export default {
         },
         checkboxSelection:{
             control: { type: 'boolean'}
+        },
+        onSelectionModelChange:{
+            action:'onSelectionModelChange',
+        },
+        onColumnVisibilityChange:{
+            action:'onColumnVisibilityChange',
+        },
+        onSortModelChange:{
+            action:'onSortModelChange',
         }
     },
 };
 
-const Template = (args) => <DataTable {...args}></DataTable>
+const Template = (args) => <div style={{width:'500px'}}><DataTable {...args}></DataTable></div>
 
 export const Data_Table = Template.bind({});
 Data_Table.storyName = 'Data Table';

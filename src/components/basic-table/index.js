@@ -19,7 +19,9 @@ const BasicTable = (props) => {
           <TableRow>
             {
               columns && columns.map((title,index)=>{
-                return <TableCell key={'header_'+index} align="right">{title}</TableCell>
+                return <TableCell key={'header_'+index} style={{
+                  fontWeight:'bold',
+                }}>{title}</TableCell>
               })
             }
           </TableRow>
@@ -28,11 +30,10 @@ const BasicTable = (props) => {
           {data.map((row) => (
             <TableRow
               key={row.Name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               {
                 columns && columns.map((title,index)=>{
-                  return <TableCell key={'header_d_'+index} align="right">{row[title]}</TableCell>
+                  return <TableCell key={'header_d_'+index}>{row[title]}</TableCell>
                 })
               }
             </TableRow>
