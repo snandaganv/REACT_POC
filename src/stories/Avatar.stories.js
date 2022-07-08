@@ -11,6 +11,11 @@ export default {
     },
 };
 
-const Template = (args) => <Avatar alt="Light House" src="https://picsum.photos/id/870/200/300?grayscale&blur=2" {...args} />;
+const Template = (args) => <Avatar {...args} />;
 
 export const Default = Template.bind({});
+Default.args = {
+    variant:'rounded',
+    alt:'Light House',
+    src:"https://picsum.photos/id/870/200/300?grayscale&blur=2",
+}
