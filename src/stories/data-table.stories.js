@@ -22,12 +22,12 @@ export default {
     },
 };
 
-const Template = (args) => <div style={{width:'500px'}}><DataTable {...args}></DataTable></div>
+const Template = (args) => <DataTable {...args}></DataTable>;
 
 export const Data_Table = Template.bind({});
 Data_Table.storyName = 'Data Table';
 Data_Table.args = {      
-    pageSize:5,
+    pageSize:4,
     checkboxSelection: true,
     columns: [
         { field: 'id', headerName: 'ID', width: 70 },

@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import './index.css';
 
 const BasicTable = (props) => {
 
@@ -14,14 +15,12 @@ const BasicTable = (props) => {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table" size={size}>
+      <Table aria-label="simple table" size={size}>
         <TableHead>
           <TableRow>
             {
               columns && columns.map((title,index)=>{
-                return <TableCell key={'header_'+index} style={{
-                  fontWeight:'bold',
-                }}>{title}</TableCell>
+                return <TableCell key={'header_'+index} className='cellHeader'>{title}</TableCell>
               })
             }
           </TableRow>

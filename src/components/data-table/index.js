@@ -8,13 +8,11 @@ const DataTable = (props) => {
   const {height, ...rest} = props;
 
   return (
-    <div style={{ height: height, width: '100%', fontSize:'25' }}>
-      <DataGrid {...rest}
+      <DataGrid {...rest} className="data-table-container"
         columnHeaderTitle
         onSortModelChange={props.onSortModelChange} 
         onColumnVisibilityChange={props.onColumnVisibilityChange} 
         onSelectionModelChange={props.onSelectionModelChange} />
-    </div>
   );
 }
 

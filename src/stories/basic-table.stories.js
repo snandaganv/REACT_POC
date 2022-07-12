@@ -11,7 +11,7 @@ export default {
     },
 };
 
-const Template = (args) => <div className="css-1k9q6fl"><BasicTable {...args}></BasicTable></div>
+const Template = (args) => <BasicTable {...args}></BasicTable>;
 
 export const Basic_Table = Template.bind({});
 Basic_Table.storyName = 'Basic Table';
