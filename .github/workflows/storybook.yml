@@ -1,12 +1,13 @@
-name: Build and Deploy
+name: AG Design System
 on: [push]
   push:
-    paths: ["stories/**", "src/components/**"] # Trigger the action only when files change in the folders defined here
+    paths: [".storybook/**", "src/stories/**", "src/components/**"] # Trigger the action only when files change in the folders defined here
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: AG Design System 🛎️
+      - name: Checkout 🛎️
+        uses: actions/checkout@v1
         with:
           persist-credentials: false
       - name: Install and Build 🔧
@@ -14,6 +15,7 @@ jobs:
           npm install
           npm run build-storybook
       - name: Deploy 🚀
+        uses: ArisGlobal/agcp-ui@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: main # The branch the action should deploy to.
