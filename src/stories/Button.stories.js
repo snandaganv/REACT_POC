@@ -18,7 +18,7 @@ export default {
         backgrounds: {
             default: 'Light Theme',
             values: [
-                { name: 'Dark Theme', value: 'grey' },
+                { name: 'Dark Theme', value: '#656B73' },
             ],
         },
     },
