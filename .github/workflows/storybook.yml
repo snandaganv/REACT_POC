@@ -1,7 +1,7 @@
 name: AG Design System
-on: push
+on:
   push:
-    paths: [".storybook/**", "src/stories/**", "src/components/**"] # Trigger the action only when files change in the folders defined here
+    paths: ["src/stories/**", "src/components/**"] # Trigger the action only when files change in the folders defined here
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
