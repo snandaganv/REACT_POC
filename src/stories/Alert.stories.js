@@ -28,3 +28,4 @@ export default {
 const Template = (args) => <Alert {...args}>I'm an Alert!</Alert>;
 
 export const Default = Template.bind({});
+
