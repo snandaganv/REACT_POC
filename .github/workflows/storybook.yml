@@ -3,40 +3,30 @@ on:
   push:
     paths: ["src/stories/**", "src/components/**"] # Trigger the action only when files change in the folders defined here
 
-permissions:
-  contents: read
-
 jobs:
 
   build-and-deploy:
-    permissions:
-      contents: write  # for JamesIves/github-pages-deploy-action to push changes in repo
     runs-on: ubuntu-latest
 
     steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@74b568e8591fbb3115c70f3436a0c6b0909a8504
-        with:
-          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
-
       - name: Checkout 🛎️
-        uses: actions/checkout@d0651293c4a5a52e711f25b41b05b2212f385d28
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
 
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-
-      - name: Cache modules
-        uses: actions/cache@0865c47f36e68161719c5b124609996bb5c40129
-        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
-        with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+#      - name: Get npm cache directory
+#        id: npm-cache-dir
+#        run: |
+#          echo "::set-output name=dir::$(npm config get cache)"
+#
+#      - name: Cache modules
+#        uses: actions/cache@v3.0.5
+#        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+#        with:
+#          path: ${{ steps.npm-cache-dir.outputs.dir }}
+#          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+#          restore-keys: |
+#            ${{ runner.os }}-node-
 
       - name: Install and Build 🔧
         run: | # Install npm packages and build the Storybook files
@@ -44,7 +34,7 @@ jobs:
           npm run build-storybook
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@e6d003d0839927f5a4b998bfd92ed8e448fde37a
+        uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: main # The branch the action should deploy to.
