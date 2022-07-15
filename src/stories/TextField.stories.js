@@ -1,8 +1,8 @@
-import { TextField } from "@mui/material";
+import TextFieldComponent from "../components/textfield-component";
 
 export default {
     title: 'Input/TextField',
-    component: TextField,
+    component: TextFieldComponent,
     argTypes: {
         autoFocus: true,
         defaultValue: 'TextField',
@@ -34,7 +34,7 @@ export default {
     },
 };
 
-const Template = (args) => <TextField {...args} onChange={args.onChange} />;
+const Template = (args) => <TextFieldComponent {...args} onChange={args.onChange} />;
 
 export const Default = Template.bind({});
 Default.args = {
