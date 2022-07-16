@@ -1,0 +1,9 @@
+.MuiDataGrid-columnHeaderTitle{
+    font-weight: bold !important;
+}
+
+.data-table-container{
+    width: '100%';
+    font-size:'25px';
+    min-height: 300px !important;
+}
