@@ -1,7 +1,7 @@
 name: CI/CD Workflow for AG Design System
 on:
   push:
-    paths: ["src/stories/**", "src/components/**"] # Trigger the action only when files change in the folders defined here
+    branches: [ main ]
   
   pull_request:
     branches: [ main ]
@@ -62,4 +62,3 @@ jobs:
       contents: write
     uses: ArisGlobal/SharedActions/.github/workflows/dependabot-pr-auto-merge.yml@latest
     needs: build-and-deploy
-    
