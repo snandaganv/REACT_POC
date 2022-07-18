@@ -19,7 +19,7 @@ jobs:
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@d0651293c4a5a52e711f25b41b05b2212f385d28
         with:
           persist-credentials: false
@@ -40,10 +40,10 @@ jobs:
 
       - name: Install and Build 🔧
         run: | # Install npm packages and build the Storybook files
-          npm install
+          npm ci
           npm run build-storybook
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@e80c869f0057899fc2cd28819b5bbe9de890524a
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
