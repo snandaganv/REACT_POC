@@ -1,8 +1,9 @@
-import { Alert } from "@mui/material";
+//import { Alert } from "@mui/material";
+import AlertComponent from "../components/alert-component";
 
 export default {
     title: 'Feedback/Alert',
-    component: Alert,
+    component: AlertComponent,
     argTypes: {
         closeText: 'Close',
         variant: {
@@ -25,6 +26,11 @@ export default {
     },
 };
 
-const Template = (args) => <Alert {...args}>I'm an Alert!</Alert>;
+const Template = (args) => <AlertComponent {...args}>I'm an Alert!</AlertComponent>;
 
 export const Default = Template.bind({});
+
+Default.args = {
+    closeText:'',
+
+}
