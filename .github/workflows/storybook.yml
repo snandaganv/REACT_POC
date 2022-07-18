@@ -61,4 +61,5 @@ jobs:
       pull-requests: write
       contents: write
     uses: ArisGlobal/SharedActions/.github/workflows/dependabot-pr-auto-merge.yml@latest
-    needs: build-and-test
+    needs: build-and-deploy
+    
