@@ -55,6 +55,7 @@ ButtonGroup.args = {
   direction: "row",
   size: "medium",
 };
+
 export const ButtonIcons = Icons.bind({});
 ButtonIcons.args = {
   label: "Delete",
