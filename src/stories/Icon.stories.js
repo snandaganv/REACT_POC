@@ -1,9 +1,10 @@
-import { Icon } from "@mui/material";
-import Home from "@mui/icons-material/Home";
+// import { Icon } from "@mui/material";
+// import Home from "@mui/icons-material/Home";
+import IconComponent from "../components/icon-component";
 
 export default {
     title: 'Data Display/Icon',
-    component: Icon,
+    component: IconComponent,
     argTypes: {
         fontSize: {
             options: ['inherit', 'small', 'large'],
@@ -17,9 +18,9 @@ export default {
 };
 
 const Template = (args) => {
-    return <Icon {...args}>
-                <Home></Home>
-            </Icon>;
+    return <IconComponent {...args}>
+                
+            </IconComponent>
 }
 
 export const HomeIcon = Template.bind({});
