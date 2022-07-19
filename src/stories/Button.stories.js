@@ -55,10 +55,12 @@ ButtonGroup.args = {
   direction: "row",
   size: "medium",
 };
+
 export const ButtonIcons = Icons.bind({});
 ButtonIcons.args = {
   label: "Delete",
   direction: "row",
+  variant: "contained",
   endIcon: <Send />,
   startIcon: <Delete />,
 };
@@ -66,6 +68,7 @@ ButtonIcons.args = {
 export const LoadingButton = Loading.bind({});
 LoadingButton.args = {
   direction: "row",
+  variant: "contained",
   loading: true,
   loadingIndicator: "loading...",
   loadingPosition: "start",
