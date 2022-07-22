@@ -1,5 +1,4 @@
 import React from "react";
-//import CheckBoxes from "../components/Checkbox";
 import {
   Checkbox,
   FormControlLabel,
