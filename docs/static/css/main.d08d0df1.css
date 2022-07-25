@@ -512,9 +512,6 @@ video {
 .table {
   display: table;
 }
-.rounded {
-  border-radius: 0.25rem;
-}
 
 .cellHeader{
     font-weight: bold !important;
@@ -529,4 +526,4 @@ video {
     min-height: 300px !important;
 }
 
-/*# sourceMappingURL=main.848693b2.css.map*/
+/*# sourceMappingURL=main.d08d0df1.css.map*/
