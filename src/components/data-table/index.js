@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { PropTypes } from "prop-types";
-import './index.css';
+import './index.scss';
 
 const DataTable = (props) => {
   
