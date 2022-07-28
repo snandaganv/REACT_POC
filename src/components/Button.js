@@ -1,11 +1,12 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import Button from "@mui/material/Button";
-import { Stack } from "@mui/material";
+import { FormGroup, Stack } from "@mui/material";
 import Send from "@mui/icons-material/Send";
 import Delete from "@mui/icons-material/Delete";
 import Save from "@mui/icons-material/Save";
 import { LoadingButton } from "@mui/lab";
+import { CopyBlock, dracula } from "react-code-blocks";
 
 export const Defaults = ({
   label,
@@ -74,21 +75,54 @@ export const HandingClick = ({}) => {
 
 export const IconLabelButton = ({}) => {
   return (
-    <Stack direction="row" spacing={2}>
-      <Button variant="outlined" startIcon={<Delete />}>
+    <FormGroup>
+      <Stack direction="row" spacing={2} mb="12px">
+        <Button variant="outlined" startIcon={<Delete />}>
+          Delete
+        </Button>
+        <Button variant="contained" endIcon={<Send />}>
+          Send
+        </Button>
+      </Stack>
+      <CopyBlock
+        language="html"
+        text={`<Button variant="outlined" startIcon={<DeleteIcon />}>
         Delete
       </Button>
-      <Button variant="contained" endIcon={<Send />}>
+      <Button variant="contained" endIcon={<SendIcon />}>
         Send
-      </Button>
-    </Stack>
+      </Button>`}
+        codeBlock
+        theme={dracula}
+        showLineNumbers={true}
+        wrapLines={true}
+      />
+    </FormGroup>
   );
 };
 
 export const Loadings = ({}) => {
   return (
-    <Stack direction="row" spacing={2}>
-      <LoadingButton loading variant="outlined">
+    <FormGroup>
+      <Stack direction="row" spacing={2} mb="12px">
+        <LoadingButton loading variant="outlined">
+          Submit
+        </LoadingButton>
+        <LoadingButton loading loadingIndicator="Loading…" variant="outlined">
+          Fetch data
+        </LoadingButton>
+        <LoadingButton
+          loading
+          loadingPosition="start"
+          startIcon={<Save />}
+          variant="outlined"
+        >
+          Save
+        </LoadingButton>
+      </Stack>
+      <CopyBlock
+        language="html"
+        text={`<LoadingButton loading variant="outlined">
         Submit
       </LoadingButton>
       <LoadingButton loading loadingIndicator="Loading…" variant="outlined">
@@ -97,11 +131,16 @@ export const Loadings = ({}) => {
       <LoadingButton
         loading
         loadingPosition="start"
-        startIcon={<Save />}
+        startIcon={<SaveIcon />}
         variant="outlined"
       >
         Save
-      </LoadingButton>
-    </Stack>
+      </LoadingButton>`}
+        codeBlock
+        theme={dracula}
+        showLineNumbers={true}
+        wrapLines={true}
+      />
+    </FormGroup>
   );
 };
