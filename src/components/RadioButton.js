@@ -1,5 +1,4 @@
 import React from "react";
-import { PropTypes } from "prop-types";
 import {
   Radio,
   FormControlLabel,
@@ -8,43 +7,155 @@ import {
   RadioGroup,
 } from "@mui/material";
 
-function RadioButton({ onClick, disabled, row }) {
+import { blue } from "@mui/material/colors";
+
+export const RadiosGroups = (row) => {
   return (
     <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+      <FormLabel id="demo-row-radio-buttons-group-label">Gender</FormLabel>
       <RadioGroup
-        row={row}
-        aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="female"
+        row
+        aria-labelledby="demo-row-radio-buttons-group-label"
         name="radio-buttons-group"
       >
+        <FormControlLabel value="female" control={<Radio />} label="Female" />
+        <FormControlLabel value="male" control={<Radio />} label="Male" />
+        <FormControlLabel value="other" control={<Radio />} label="Other" />
         <FormControlLabel
-          value="female"
-          control={<Radio onClick={onClick} />}
-          label="Female"
-        />
-        <FormControlLabel
-          value="male"
-          control={<Radio onClick={onClick} />}
-          label="Male"
-        />
-        <FormControlLabel
-          value="other"
-          control={<Radio onClick={onClick} />}
-          label="Disabled"
-          disabled={disabled}
+          value="disabled"
+          disabled
+          control={<Radio />}
+          label="other"
         />
       </RadioGroup>
     </FormControl>
   );
-}
-
-RadioButton.prototype = {
-  label: PropTypes.string,
-  onClick: PropTypes.func,
-  selected: PropTypes.Boolean,
-  disabled: PropTypes.Boolean,
-  row: PropTypes.Boolean,
+};
+RadioGroup.args = {
+  row: true,
 };
 
-export default RadioButton;
+export const Direction = (row) => {
+  return (
+    <FormControl>
+      <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+      <RadioGroup
+        aria-labelledby="demo-radio-buttons-group-label"
+        defaultValue="female"
+        name="radio-buttons-group"
+      >
+        <FormControlLabel value="female" control={<Radio />} label="Female" />
+        <FormControlLabel value="male" control={<Radio />} label="Male" />
+        <FormControlLabel value="other" control={<Radio />} label="Other" />
+      </RadioGroup>
+    </FormControl>
+  );
+};
+
+export const Size = (row, ...props) => {
+  const [selectedValue, setSelectedValue] = React.useState("a");
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
+  const controlProps = (item) => ({
+    checked: selectedValue === item,
+    onChange: handleChange,
+    value: item,
+    name: "size-radio-button-demo",
+    inputProps: { "aria-label": item },
+  });
+
+  return (
+    <RadioGroup row={row}>
+      <Radio {...controlProps("a")} size="small" />
+      <Radio {...controlProps("b")} />
+      <Radio
+        {...controlProps("c")}
+        sx={{
+          "& .MuiSvgIcon-root": {
+            fontSize: 28,
+          },
+        }}
+      />
+    </RadioGroup>
+  );
+};
+
+export const Color = ({ row, onClick, ...props }) => {
+  const [selectedValue, setSelectedValue] = React.useState("a");
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
+  const controlProps = (item) => ({
+    checked: selectedValue === item,
+    onChange: handleChange,
+    value: item,
+    name: "color-radio-button-demo",
+    inputProps: { "aria-label": item },
+  });
+  return (
+    <div>
+      <Radio {...controlProps("a")} />
+      <Radio {...controlProps("b")} color="secondary" />
+      <Radio {...controlProps("c")} color="success" />
+      <Radio {...controlProps("d")} color="default" />
+      <Radio
+        {...controlProps("e")}
+        sx={{
+          color: blue[800],
+          "&.Mui-checked": {
+            color: blue[600],
+          },
+        }}
+      />
+    </div>
+  );
+};
+
+Color.args = {
+  row: true,
+};
+
+export const LabelPlacements = ({ onClick, disabled, ...props }) => {
+  return (
+    <FormControl>
+      <RadioGroup
+        row
+        aria-labelledby="demo-form-control-label-placement"
+        name="position"
+        defaultValue="top"
+      >
+        <FormControlLabel
+          value="top"
+          control={<Radio onClick={onClick} disabled={disabled} {...props} />}
+          label="Top"
+          labelPlacement="top"
+        />
+        <FormControlLabel
+          value="start"
+          control={<Radio disabled={disabled} {...props} />}
+          label="Start"
+          labelPlacement="start"
+        />
+        <FormControlLabel
+          value="bottom"
+          control={<Radio disabled={disabled} {...props} />}
+          label="Bottom"
+          labelPlacement="bottom"
+        />
+        <FormControlLabel
+          value="end"
+          control={<Radio disabled={disabled} {...props} />}
+          label="End"
+        />
+      </RadioGroup>
+    </FormControl>
+  );
+};
+
+LabelPlacements.args = {
+  disabled: false,
+};
