@@ -1,20 +1,22 @@
-import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import * as React from "react";
+import { DataGrid } from "@mui/x-data-grid";
 import { PropTypes } from "prop-types";
-import './index.css';
+import "./index.scss";
 
 const DataTable = (props) => {
-  
-  const {height, ...rest} = props;
+  const { height, ...rest } = props;
 
   return (
-      <DataGrid {...rest} className="data-table-container"
-        columnHeaderTitle
-        onSortModelChange={props.onSortModelChange} 
-        onColumnVisibilityChange={props.onColumnVisibilityChange} 
-        onSelectionModelChange={props.onSelectionModelChange} />
+    <DataGrid
+      {...rest}
+      className="data-table-container"
+      columnHeaderTitle
+      onSortModelChange={props.onSortModelChange}
+      onColumnVisibilityChange={props.onColumnVisibilityChange}
+      onSelectionModelChange={props.onSelectionModelChange}
+    />
   );
-}
+};
 
 DataTable.prototype = {
   columns: PropTypes.array,
@@ -25,15 +27,14 @@ DataTable.prototype = {
 };
 
 DataTable.defaultProps = {
-  columns : [],
-  checkboxSelection : true,
-  height : 300,
-  onColumnVisibilityChange:()=>{},
-  onSelectionModelChange:()=>{},
-  onSortModelChange:()=>{},
-  pageSize : 5,
-  rows : [],
+  columns: [],
+  checkboxSelection: true,
+  height: 300,
+  onColumnVisibilityChange: () => {},
+  onSelectionModelChange: () => {},
+  onSortModelChange: () => {},
+  pageSize: 5,
+  rows: [],
 };
-
 
 export default DataTable;
