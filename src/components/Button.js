@@ -1,9 +1,12 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import Button from "@mui/material/Button";
-import { Stack } from "@mui/material";
+import { FormGroup, Stack } from "@mui/material";
+import Send from "@mui/icons-material/Send";
+import Delete from "@mui/icons-material/Delete";
 import Save from "@mui/icons-material/Save";
 import { LoadingButton } from "@mui/lab";
+import { CopyBlock, dracula } from "react-code-blocks";
 
 export const Defaults = ({
   label,
@@ -42,150 +45,102 @@ Defaults.propTypes = {
   ]),
 };
 
-export const ButtonGroups = ({ color, direction, onClick, size }) => {
+export const Basics = ({}) => {
   return (
-    <Stack direction={direction} spacing={2}>
-      <Button variant="text" onClick={onClick} size={size} color={color}>
-        Text
-      </Button>
-      <Button variant="contained" onClick={onClick} size={size} color={color}>
-        Contained
-      </Button>
-      <Button variant="outlined" onClick={onClick} size={size} color={color}>
-        Outlined
-      </Button>
-      <Button disabled variant="contained" size={size}>
+    <Stack spacing={2} direction="row">
+      <Button variant="text">Text</Button>
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
+      <Button variant="contained" disabled>
         Disabled
       </Button>
+      <Button variant="contained" href="#contained-buttons">
+        Link
+      </Button>
     </Stack>
   );
 };
 
-ButtonGroups.propTypes = {
-  direction: PropTypes.oneOf([
-    "row",
-    "row-reverse",
-    "column",
-    "column-reverse",
-  ]),
-  size: PropTypes.oneOf(["small", "medium", "large"]),
-  color: PropTypes.oneOf([
-    "primary",
-    "success",
-    "secondary",
-    "error",
-    "info",
-    "warning",
-  ]),
-  onClick: PropTypes.func,
+export const HandingClick = ({}) => {
+  return (
+    <Button
+      onClick={() => {
+        alert("clicked");
+      }}
+    >
+      Click me
+    </Button>
+  );
 };
 
-export const ButtonIcon = ({
-  onClick,
-  label,
-  direction,
-  variant,
-  startIcon,
-  endIcon,
-  size,
-  color,
-}) => {
+export const IconLabelButton = ({}) => {
   return (
-    <Stack direction={direction} spacing={2}>
-      <Button
-        variant={variant}
-        onClick={onClick}
-        startIcon={startIcon}
-        size={size}
-        color={color}
-      >
-        {label}
+    <FormGroup>
+      <Stack direction="row" spacing={2} mb="12px">
+        <Button variant="outlined" startIcon={<Delete />}>
+          Delete
+        </Button>
+        <Button variant="contained" endIcon={<Send />}>
+          Send
+        </Button>
+      </Stack>
+      <CopyBlock
+        language="html"
+        text={`<Button variant="outlined" startIcon={<DeleteIcon />}>
+        Delete
       </Button>
-      <Button
-        variant={variant}
-        onClick={onClick}
-        size={size}
-        color={color}
-        endIcon={endIcon}
-      >
+      <Button variant="contained" endIcon={<SendIcon />}>
         Send
-      </Button>
-    </Stack>
+      </Button>`}
+        codeBlock
+        theme={dracula}
+        showLineNumbers={true}
+        wrapLines={true}
+      />
+    </FormGroup>
   );
 };
 
-ButtonIcon.propTypes = {
-  direction: PropTypes.oneOf([
-    "row",
-    "row-reverse",
-    "column",
-    "column-reverse",
-  ]),
-  size: PropTypes.oneOf(["small", "medium", "large"]),
-  color: PropTypes.oneOf([
-    "primary",
-    "success",
-    "secondary",
-    "error",
-    "info",
-    "warning",
-  ]),
-  backgroundColor: PropTypes.string,
-  label: PropTypes.string,
-  onClick: PropTypes.func,
-  endIcon: PropTypes.func,
-  startIcon: PropTypes.func,
-};
-
-export const LoadingButtons = ({
-  loading,
-  direction,
-  loadingIndicator,
-  loadingPosition,
-  size,
-  variant,
-  onClick,
-}) => {
+export const Loadings = ({}) => {
   return (
-    <Stack direction={direction} spacing={2}>
-      <LoadingButton variant={variant} size={size} onClick={onClick}>
+    <FormGroup>
+      <Stack direction="row" spacing={2} mb="12px">
+        <LoadingButton loading variant="outlined">
+          Submit
+        </LoadingButton>
+        <LoadingButton loading loadingIndicator="Loading…" variant="outlined">
+          Fetch data
+        </LoadingButton>
+        <LoadingButton
+          loading
+          loadingPosition="start"
+          startIcon={<Save />}
+          variant="outlined"
+        >
+          Save
+        </LoadingButton>
+      </Stack>
+      <CopyBlock
+        language="html"
+        text={`<LoadingButton loading variant="outlined">
         Submit
       </LoadingButton>
-      <LoadingButton loading={loading} size={size} variant={variant}>
-        CLick to Sumbit
-      </LoadingButton>
-      <LoadingButton
-        loading
-        loadingIndicator={loadingIndicator}
-        variant={variant}
-        size={size}
-      >
+      <LoadingButton loading loadingIndicator="Loading…" variant="outlined">
         Fetch data
       </LoadingButton>
       <LoadingButton
         loading
-        loadingPosition={loadingPosition}
-        size={size}
-        startIcon={<Save />}
-        variant={variant}
+        loadingPosition="start"
+        startIcon={<SaveIcon />}
+        variant="outlined"
       >
         Save
-      </LoadingButton>
-    </Stack>
+      </LoadingButton>`}
+        codeBlock
+        theme={dracula}
+        showLineNumbers={true}
+        wrapLines={true}
+      />
+    </FormGroup>
   );
-};
-
-LoadingButtons.propTypes = {
-  direction: PropTypes.oneOf([
-    "row",
-    "row-reverse",
-    "column",
-    "column-reverse",
-  ]),
-  loading: PropTypes.bool,
-  size: PropTypes.oneOf(["small", "medium", "large"]),
-  label: PropTypes.string,
-  loadingIndicator: PropTypes.string,
-  loadingPosition: PropTypes.string,
-  onClick: PropTypes.func,
 };

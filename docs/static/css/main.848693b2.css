@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.4 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.6 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -512,6 +512,9 @@ video {
 .table {
   display: table;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
 
 .cellHeader{
     font-weight: bold !important;
@@ -526,4 +529,4 @@ video {
     min-height: 300px !important;
 }
 
-/*# sourceMappingURL=main.7f415c5f.css.map*/
+/*# sourceMappingURL=main.848693b2.css.map*/
