@@ -7,24 +7,25 @@ import {
   FormControl,
   FormLabel,
 } from "@mui/material";
-import { Box } from "@mui/material";
+import { Box, FormHelperText } from "@mui/material";
 import { blue } from "@mui/material/colors";
 
 export const CheckBoxes = ({
   label,
   onclick,
-  asideContent,
+  size,
   color,
   disabled,
+  labelPlacement,
 }) => {
   return (
     <FormGroup>
       <FormControlLabel
-        control={<Checkbox onClick={onclick} color={color} />}
+        control={<Checkbox onClick={onclick} color={color} size={size} />}
         label={label}
         disabled={disabled}
+        labelPlacement={labelPlacement}
       />
-      {asideContent && asideContent}
     </FormGroup>
   );
 };
@@ -34,11 +35,11 @@ CheckBoxes.prototype = {
   selected: PropTypes.Boolean,
   disabled: PropTypes.Boolean,
   defaultChecked: PropTypes.Boolean,
-  asideContent: PropTypes.elementType,
+  labelPlacement: PropTypes.oneOf(["top", "start", "bottom", "end"]),
 };
 
 export const BasicCheckbox = ({}) => {
-  const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  const label = { inputProps: { "aria-label": "Checkbox examples" } };
   return (
     <div>
       <Checkbox {...label} defaultChecked />
@@ -65,8 +66,8 @@ Label.args = {
   label: "Label",
 };
 
-export const Sizes = ({ ...props }) => {
-  const label = { inputProps: { "aria-label": "Checkbox demo" } };
+export const Sizes = ({ size }) => {
+  const label = { inputProps: { "aria-label": "Checkbox size demo" } };
   return (
     <div>
       <Checkbox {...label} defaultChecked size="small" />
@@ -83,8 +84,8 @@ Sizes.args = {
   label: "label",
 };
 
-export const Colors = ({ ...props }) => {
-  const label = { inputProps: { "aria-label": "Checkbox demo" } };
+export const Colors = ({ color }) => {
+  const label = { inputProps: { "aria-label": "Checkbox colors demo" } };
   return (
     <div>
       <Checkbox {...label} defaultChecked />
@@ -119,6 +120,91 @@ export const Group = ({ row, onclick, ...props }) => {
         </div>
       ))}
     </FormGroup>
+  );
+};
+
+export const FormGroups = ({}) => {
+  const [state, setState] = React.useState({
+    gilad: true,
+    jason: false,
+    antoine: false,
+  });
+
+  const handleChange = (event) => {
+    setState({
+      ...state,
+      [event.target.name]: event.target.checked,
+    });
+  };
+
+  const { gilad, jason, antoine } = state;
+  const error = [gilad, jason, antoine].filter((v) => v).length !== 2;
+
+  return (
+    <Box sx={{ display: "flex" }}>
+      <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+        <FormLabel component="legend">Assign responsibility</FormLabel>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox checked={gilad} onChange={handleChange} name="gilad" />
+            }
+            label="Gilad Gray"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox checked={jason} onChange={handleChange} name="jason" />
+            }
+            label="Jason Killian"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={antoine}
+                onChange={handleChange}
+                name="antoine"
+              />
+            }
+            label="Antoine Llorca"
+          />
+        </FormGroup>
+        <FormHelperText>Be careful</FormHelperText>
+      </FormControl>
+      <FormControl
+        required
+        error={error}
+        component="fieldset"
+        sx={{ m: 3 }}
+        variant="standard"
+      >
+        <FormLabel component="legend">Pick two</FormLabel>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox checked={gilad} onChange={handleChange} name="gilad" />
+            }
+            label="Gilad Gray"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox checked={jason} onChange={handleChange} name="jason" />
+            }
+            label="Jason Killian"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={antoine}
+                onChange={handleChange}
+                name="antoine"
+              />
+            }
+            label="Antoine Llorca"
+          />
+        </FormGroup>
+        <FormHelperText>You can display an error</FormHelperText>
+      </FormControl>
+    </Box>
   );
 };
 
@@ -188,7 +274,7 @@ Inderterminate.args = {
   label: "Parent",
 };
 
-export const LabelsPlacement = ({ ...props }) => {
+export const LabelsPlacement = ({ labelPlacement }) => {
   return (
     <FormControl component="fieldset">
       <FormLabel component="legend">Label placement</FormLabel>
