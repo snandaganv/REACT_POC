@@ -1,8 +1,14 @@
 import { Switch } from "@mui/material";
 import {
   Switches,
-  SwitchSizeColor,
-  LabelPlacements,
+  BasicsSwitches,
+  Labels,
+  Sizes,
+  Colors,
+  Controlles,
+  SwitchFormGroups,
+  LabelsPlacement,
+  Customizations,
 } from "../components/Switches";
 
 export default {
@@ -27,30 +33,15 @@ export default {
   },
 };
 
-const Template = (args) => <Switches {...args} />;
-const SwitchSizesColor = (args) => <SwitchSizeColor {...args} />;
-const LabelPlacement = (args) => <LabelPlacements {...args} />;
-
-export const Basic = Template.bind({});
+export const Basic = Switches.bind({});
 Basic.args = {
   label: "Label",
 };
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  label: "Disabled",
-  disabled: true,
-};
-
-export const SwitchSizesColors = SwitchSizesColor.bind({});
-SwitchSizesColors.args = {
-  label: "Groups",
-  size: "small",
-  color: "default",
-};
-
-export const LabelsPlacements = LabelPlacement.bind({});
-LabelsPlacements.args = {
-  labelPlacement: "top",
-  size: "medium",
-};
+export const BasicSwitches = BasicsSwitches.bind({});
+export const Label = Labels.bind({});
+export const Size = Sizes.bind({});
+export const Color = Colors.bind({});
+export const Controlled = Controlles.bind({});
+export const SwitchFormGroup = SwitchFormGroups.bind({});
+export const LabelPlacement = LabelsPlacement.bind({});
+export const Customization = Customizations.bind({});
