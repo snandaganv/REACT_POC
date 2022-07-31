@@ -1,4 +1,7 @@
 import React from "react";
+import { PropTypes } from "prop-types";
+import { Button } from "@mui/material";
+import { FormHelperText } from "@mui/material";
 import {
   Radio,
   FormControlLabel,
@@ -8,6 +11,56 @@ import {
 } from "@mui/material";
 
 import { blue } from "@mui/material/colors";
+
+export const Basics = ({
+  label,
+  row,
+  onClick,
+  disabled,
+  size,
+  color,
+  labelPlacement,
+}) => {
+  return (
+    <FormControl>
+      <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+      <RadioGroup
+        row={row}
+        aria-labelledby="demo-radio-buttons-group-label"
+        defaultValue="female"
+        name="radio-buttons-group"
+      >
+        <FormControlLabel
+          value="female"
+          control={<Radio onClick={onClick} size={size} color={color} />}
+          label={label}
+          disabled={disabled}
+          labelPlacement={labelPlacement}
+        />
+        <FormControlLabel
+          value="male"
+          control={<Radio onClick={onClick} size={size} color={color} />}
+          label={label}
+          disabled={disabled}
+          labelPlacement={labelPlacement}
+        />
+        <FormControlLabel
+          value="other"
+          control={<Radio onClick={onClick} size={size} color={color} />}
+          label={label}
+          disabled={disabled}
+          labelPlacement={labelPlacement}
+        />
+      </RadioGroup>
+    </FormControl>
+  );
+};
+Basics.prototype = {
+  label: PropTypes.string,
+  onClick: PropTypes.func,
+  disabled: PropTypes.Boolean,
+  row: PropTypes.Boolean,
+};
 
 export const RadiosGroups = (row) => {
   return (
@@ -47,6 +100,29 @@ export const Direction = (row) => {
         <FormControlLabel value="female" control={<Radio />} label="Female" />
         <FormControlLabel value="male" control={<Radio />} label="Male" />
         <FormControlLabel value="other" control={<Radio />} label="Other" />
+      </RadioGroup>
+    </FormControl>
+  );
+};
+
+export const Controlleds = ({ onChange }) => {
+  const [value, setValue] = React.useState("female");
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  return (
+    <FormControl>
+      <FormLabel id="demo-controlled-radio-buttons-group">Gender</FormLabel>
+      <RadioGroup
+        aria-labelledby="demo-controlled-radio-buttons-group"
+        name="controlled-radio-buttons-group"
+        value={value}
+        onChange={handleChange}
+      >
+        <FormControlLabel value="female" control={<Radio />} label="Female" />
+        <FormControlLabel value="male" control={<Radio />} label="Male" />
       </RadioGroup>
     </FormControl>
   );
@@ -158,4 +234,60 @@ export const LabelPlacements = ({ onClick, disabled, ...props }) => {
 
 LabelPlacements.args = {
   disabled: false,
+};
+
+export const ShowErrors = ({ onChange }) => {
+  const [value, setValue] = React.useState("");
+  const [error, setError] = React.useState(false);
+  const [helperText, setHelperText] = React.useState("Choose wisely");
+
+  const handleRadioChange = (event) => {
+    setValue(event.target.value);
+    setHelperText(" ");
+    setError(false);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (value === "best") {
+      setHelperText("You got it!");
+      setError(false);
+    } else if (value === "worst") {
+      setHelperText("Sorry, wrong answer!");
+      setError(true);
+    } else {
+      setHelperText("Please select an option.");
+      setError(true);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <FormControl sx={{ m: 3 }} error={error} variant="standard">
+        <FormLabel id="demo-error-radios">Pop quiz: MUI is...</FormLabel>
+        <RadioGroup
+          aria-labelledby="demo-error-radios"
+          name="quiz"
+          value={value}
+          onChange={handleRadioChange}
+        >
+          <FormControlLabel
+            value="best"
+            control={<Radio />}
+            label="The best!"
+          />
+          <FormControlLabel
+            value="worst"
+            control={<Radio />}
+            label="The worst."
+          />
+        </RadioGroup>
+        <FormHelperText>{helperText}</FormHelperText>
+        <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">
+          Check Answer
+        </Button>
+      </FormControl>
+    </form>
+  );
 };
