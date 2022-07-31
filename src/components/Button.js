@@ -1,7 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import Button from "@mui/material/Button";
-import { FormGroup, Stack } from "@mui/material";
+import { FormGroup, Stack, Box } from "@mui/material";
 import Send from "@mui/icons-material/Send";
 import Delete from "@mui/icons-material/Delete";
 import Save from "@mui/icons-material/Save";
@@ -58,6 +58,54 @@ export const Basics = ({}) => {
         Link
       </Button>
     </Stack>
+  );
+};
+
+export const Colors = ({}) => {
+  return (
+    <Stack direction="row" spacing={2}>
+      <Button color="secondary">Secondary</Button>
+      <Button variant="contained" color="success">
+        Success
+      </Button>
+      <Button variant="outlined" color="error">
+        Error
+      </Button>
+    </Stack>
+  );
+};
+
+export const Sizes = ({}) => {
+  return (
+    <Box sx={{ "& button": { m: 1 } }}>
+      <div>
+        <Button size="small">Small</Button>
+        <Button size="medium">Medium</Button>
+        <Button size="large">Large</Button>
+      </div>
+      <div>
+        <Button variant="outlined" size="small">
+          Small
+        </Button>
+        <Button variant="outlined" size="medium">
+          Medium
+        </Button>
+        <Button variant="outlined" size="large">
+          Large
+        </Button>
+      </div>
+      <div>
+        <Button variant="contained" size="small">
+          Small
+        </Button>
+        <Button variant="contained" size="medium">
+          Medium
+        </Button>
+        <Button variant="contained" size="large">
+          Large
+        </Button>
+      </div>
+    </Box>
   );
 };
 

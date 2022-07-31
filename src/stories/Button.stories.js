@@ -1,7 +1,10 @@
 import { Button } from "@mui/material";
 import {
+  Defaults,
   Basics,
   HandingClick,
+  Colors,
+  Sizes,
   IconLabelButton,
   Loadings,
 } from "../components/Button";
@@ -22,22 +25,29 @@ export default {
       options: ["primary", "success", "secondary", "error", "info", "warning"],
       control: { type: "radio" },
     },
+    direction: {
+      options: ["row", "row-reverse", "column", "column-reverse"],
+      control: { type: "radio" },
+    },
   },
 };
 
-const Template = (args) => <Button {...args}>Button</Button>;
-
-export const Default = Template.bind({});
+export const Default = Defaults.bind({});
 Default.args = {
   label: "Button",
   variant: "contained",
   color: "primary",
   size: "medium",
+  direction: "row",
 };
 
 export const BasicButton = Basics.bind({});
 
 export const HandingClicks = HandingClick.bind({});
+
+export const Color = Colors.bind({});
+
+export const Size = Sizes.bind({});
 
 export const IconLabelButtons = IconLabelButton.bind({});
 
