@@ -1,5 +1,6 @@
 //import { Alert } from "@mui/material";
 import AlertComponent from "../components/alert-component";
+import lifesphereLogo from "../assets/images/lifesphere-logo";
 
 export default {
     title: 'Feedback/Alert',
@@ -26,7 +27,7 @@ export default {
     },
 };
 
-const Template = (args) => <AlertComponent {...args}>I'm an Alert!</AlertComponent>;
+const Template = (args) => <AlertComponent {...args}> <lifesphereLogo /> I'm an Alert!</AlertComponent>;
 
 export const Default = Template.bind({});
 
