@@ -22,9 +22,9 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: |
-          echo @arisglobal:https://npm.pkg.github.com/ > build/.npmrc
-          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
+          echo @arisglobal:https://npm.pkg.github.com/ > .npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
       - run: npm publish
-        working-directory: ./build
+        working-directory: .
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
