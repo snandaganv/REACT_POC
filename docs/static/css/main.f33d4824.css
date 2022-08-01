@@ -1,8 +1,10 @@
+/* red */
 $redColor: #D32F2F;
-$mainErrorColor: #D32F2F;
+$primaryErrorColor: $redColor;
 
+/* gray */
 * {
-    font-family: Montserrat, 'sans-serif' !important;
+    font-family: Inter, 'sans-serif' !important;
 }
 /*
 ! tailwindcss v3.1.6 | MIT License | https://tailwindcss.com
@@ -530,4 +532,4 @@ video {
 .MuiDataGrid-columnHeaderTitle{font-weight:bold !important}.data-table-container{width:'100%';font-size:'25px';min-height:300px !important}
 
 
-/*# sourceMappingURL=main.e1689844.css.map*/
+/*# sourceMappingURL=main.f33d4824.css.map*/
