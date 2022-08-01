@@ -1,4 +1,4 @@
-name: Publish AG Components
+name: Publish AG Components to GitHub Packages
 on:
   workflow_dispatch:
     inputs:
@@ -8,23 +8,10 @@ on:
         required: true
   release:
     types: [created]
+
 jobs:
   publish:
-    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm run build
-      - run: |
-          echo @arisglobal:https://npm.pkg.github.com/ > .npmrc
-          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
-      - run: npm publish
-        working-directory: .
-        env:
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: ArisGlobal/SharedActions/.github/workflows/nodejs-publish.yml@latest
