@@ -8,17 +8,19 @@ const AlertComponent = (props) => {
   
   return (
     <>
-      <Alert {...props}></Alert>
+      <Alert {...props}>{props.children}</Alert>
     </>
   );
 }
 
 AlertComponent.prototype = {
     closeText:PropTypes.string,
+    children: PropTypes.node,
 };
 
 AlertComponent.defaultProps = {
     closeText:'',
+    children: [],
 };
 
 
