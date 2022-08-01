@@ -1,5 +1,11 @@
 name: Publish AG Components
 on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run the workflow against'
+        type: environment
+        required: true
   release:
     types: [created]
 jobs:
