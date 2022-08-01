@@ -521,9 +521,13 @@ video {
 .rounded {
   border-radius: 0.25rem;
 }
+.filter {
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .cellHeader{font-weight:bold !important}
 
 .MuiDataGrid-columnHeaderTitle{font-weight:bold !important}.data-table-container{width:'100%';font-size:'25px';min-height:300px !important}
 
 
-/*# sourceMappingURL=main.9548c596.css.map*/
+/*# sourceMappingURL=main.e1689844.css.map*/
