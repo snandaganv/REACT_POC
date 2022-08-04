@@ -3,13 +3,9 @@ import { PropTypes } from "prop-types";
 import { Alert } from "@mui/material";
 
 const AlertComponent = (props) => {
-
-  //const { closeText} = props;
   
   return (
-    <>
-      <Alert {...props}>{props.children}</Alert>
-    </>
+    <Alert {...props}>{props.children}</Alert>
   );
 }
 
