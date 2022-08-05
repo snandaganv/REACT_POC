@@ -3,22 +3,20 @@ import { PropTypes } from "prop-types";
 import { Alert } from "@mui/material";
 
 const AlertComponent = (props) => {
-
-  //const { closeText} = props;
   
   return (
-    <>
-      <Alert {...props}></Alert>
-    </>
+    <Alert {...props}>{props.children}</Alert>
   );
 }
 
 AlertComponent.prototype = {
     closeText:PropTypes.string,
+    children: PropTypes.node,
 };
 
 AlertComponent.defaultProps = {
     closeText:'',
+    children: [],
 };
 
 
