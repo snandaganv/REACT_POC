@@ -523,6 +523,10 @@ video {
 .rounded {
   border-radius: 0.25rem;
 }
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
 .filter {
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -532,4 +536,4 @@ video {
 .MuiDataGrid-columnHeaderTitle{font-weight:bold !important}.data-table-container{width:'100%';font-size:'25px';min-height:300px !important}
 
 
-/*# sourceMappingURL=main.f33d4824.css.map*/
+/*# sourceMappingURL=main.34a23342.css.map*/
