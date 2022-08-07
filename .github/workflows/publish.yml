@@ -1,0 +1,17 @@
+name: Publish AG Components to GitHub Packages
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run the workflow against'
+        type: environment
+        required: true
+  release:
+    types: [created]
+
+jobs:
+  publish:
+    permissions:
+      contents: read
+      packages: write
+    uses: ArisGlobal/SharedActions/.github/workflows/nodejs-publish.yml@latest
