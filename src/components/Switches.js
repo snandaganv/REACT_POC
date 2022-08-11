@@ -39,7 +39,7 @@ Switches.propTypes = {
   labelPlacement: PropTypes.oneOf(["top", "start", "bottom", "end"]),
 };
 
-export const BasicsSwitches = ({}) => {
+export const BasicsSwitches = ({ props }) => {
   const label = { inputProps: { "aria-label": "Switch demo" } };
   return (
     <FormGroup row="row">
@@ -51,7 +51,7 @@ export const BasicsSwitches = ({}) => {
   );
 };
 
-export const Labels = ({}) => {
+export const Labels = ({ label }) => {
   return (
     <FormGroup>
       <FormControlLabel control={<Switch defaultChecked />} label="Label" />
@@ -60,7 +60,7 @@ export const Labels = ({}) => {
   );
 };
 
-export const Sizes = ({}) => {
+export const Sizes = ({ size }) => {
   const label = { inputProps: { "aria-label": "Switch Size demo" } };
   return (
     <div>
@@ -70,7 +70,7 @@ export const Sizes = ({}) => {
   );
 };
 
-export const Colors = ({}) => {
+export const Colors = ({ color }) => {
   const label = { inputProps: { "aria-label": "Switch Color demo" } };
   return (
     <FormGroup row="row">
@@ -82,7 +82,7 @@ export const Colors = ({}) => {
   );
 };
 
-export const Controlles = ({}) => {
+export const Controlles = ({ onChange }) => {
   const [checked, setChecked] = React.useState(true);
 
   const handleChange = (event) => {
@@ -97,7 +97,7 @@ export const Controlles = ({}) => {
   );
 };
 
-export const SwitchFormGroups = ({}) => {
+export const SwitchFormGroups = ({ props }) => {
   const [state, setState] = React.useState({
     gilad: true,
     jason: false,
@@ -150,7 +150,7 @@ export const SwitchFormGroups = ({}) => {
   );
 };
 
-export const Customizations = ({}) => {
+export const Customizations = ({ props }) => {
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
@@ -355,7 +355,7 @@ export const Customizations = ({}) => {
   );
 };
 
-export const LabelsPlacement = ({}) => {
+export const LabelsPlacement = ({ labelPlacement }) => {
   return (
     <FormControl component="fieldset">
       <FormLabel component="legend">Label placement</FormLabel>

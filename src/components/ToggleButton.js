@@ -2,11 +2,6 @@ import * as React from "react";
 import { PropTypes } from "prop-types";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-//import { FormatBold } from "@mui/icons-material";
-//import { FormatItalic } from "@mui/icons-material";
-//import { FormatUnderlined } from "@mui/icons-material";
-//import { FormatColorFill } from "@mui/icons-material";
-//import { ArrowDropDown } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import { CopyBlock, dracula } from "react-code-blocks";
 import {
@@ -20,7 +15,6 @@ import {
   FormatAlignRight,
   FormatAlignJustify,
 } from "@mui/icons-material";
-//import styled from "@emotion/styled";
 
 export const ToggleButtons = ({
   label,
@@ -58,35 +52,6 @@ ToggleButtons.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
 };
-
-// export const ToggleButtonsDisabled = ({ label, disabled, onClick }) => {
-//   const [alignment, setAlignment] = React.useState("option1");
-//   const handleChange = (event, newAlignment) => {
-//     setAlignment(newAlignment);
-//   };
-//   return (
-//     <ToggleButtonGroup
-//       color="primary"
-//       value={alignment}
-//       exclusive
-//       onChange={handleChange}
-//       disabled={disabled}
-//     >
-//       <ToggleButton value="option1" onClick={onClick}>
-//         {label}
-//       </ToggleButton>
-//       <ToggleButton value="option2" onClick={onClick}>
-//         {label}
-//       </ToggleButton>
-//     </ToggleButtonGroup>
-//   );
-// };
-
-// ToggleButtons.propTypes = {
-//   label: PropTypes.string,
-//   onClick: PropTypes.func,
-//   disabled: PropTypes.bool,
-// };
 
 export const Size = ({ size, color, onClick }) => {
   const [alignment, setAlignment] = React.useState("option1");
@@ -158,18 +123,6 @@ Size.propTypes = {
 };
 
 export const Color = ({ color }) => {
-  // const ArisColorToggleButton = styled.button`
-  //   align-items: center;
-  //   padding: 10px 16px;
-  //   background: #0659d4;
-  //   font-family: Inter-Medium;
-  //   font-weight: 500;
-  //   font-size: 14px;
-  //   line-height: 16px;
-  //   letter-spacing: 1px;
-  //   color: #f9f9f9;
-  // `;
-
   const [alignment, setAlignment] = React.useState("web");
 
   const handleChange = (event, newAlignment) => {
@@ -186,7 +139,6 @@ export const Color = ({ color }) => {
       <ToggleButton value="web">Web</ToggleButton>
       <ToggleButton value="android">Android</ToggleButton>
       <ToggleButton value="ios">iOS</ToggleButton>
-      {/* <ArisColorToggleButton>Testing</ArisColorToggleButton> */}
     </ToggleButtonGroup>
   );
 };
@@ -252,7 +204,7 @@ export const ExclusiveSelections = ({}) => {
   );
 };
 
-export const MultipleSelections = ({}) => {
+export const MultipleSelections = ({ props }) => {
   const [formats, setFormats] = React.useState(() => ["bold", "italic"]);
 
   const handleFormat = (event, newFormats) => {
