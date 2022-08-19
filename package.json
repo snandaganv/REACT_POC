@@ -84,7 +84,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "postcss": "^8.4.16",
     "prop-types": "^15.8.1",
-    "rollup": "^2.78.0",
+    "rollup": "^2.78.1",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-postcss": "^4.0.2",
     "semantic-release": "^19.0.3",
