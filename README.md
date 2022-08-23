@@ -29,3 +29,14 @@ https://storybook.js.org/docs/react/essentials/controls
 
 https://mui.com/material-ui/api/avatar/
 
+
+## NPM Publish to GitHub Packages
+
+To publish your npm package to GitHub Packages, all you need to do is to run the publish GitHub actions workflow by clicking on 
+"Actions" tab in agcp-ui repo, then select "Publish AG Components to GitHub Packages" workflow in the left nav, 
+manually trigger the workflow to execute.  If successful, your package should be published to GitHub Packages.
+
+Please note you cannot publish the same version for the same package to GitHub Packages multiple times.  You will need to 
+bump up your package version and publish to GitHub Packages.
+
+For more information, refer to https://confluence-arisglobal.atlassian.net/wiki/spaces/ARCH/pages/114917442/Maven+Release+Automation+with+GitHub+Actions+and+GitHub+Packages+for+AG+Microservices#NPM-Publish-to-GitHub-Packages.
