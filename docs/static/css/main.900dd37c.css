@@ -7,7 +7,7 @@ $primaryErrorColor: $redColor;
     font-family: Inter, 'sans-serif' !important;
 }
 /*
-! tailwindcss v3.1.6 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -532,4 +532,4 @@ video {
 .MuiDataGrid-columnHeaderTitle{font-weight:bold !important}.data-table-container{width:'100%';font-size:'25px';min-height:300px !important}
 
 
-/*# sourceMappingURL=main.f33d4824.css.map*/
+/*# sourceMappingURL=main.900dd37c.css.map*/
