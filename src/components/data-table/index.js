@@ -7,6 +7,7 @@ const DataTable = (props) => {
   const { height, ...rest } = props;
 
   return (
+    <div style={{ height:height }}>
     <DataGrid
       {...rest}
       className="data-table-container"
@@ -15,6 +16,7 @@ const DataTable = (props) => {
       onColumnVisibilityChange={props.onColumnVisibilityChange}
       onSelectionModelChange={props.onSelectionModelChange}
     />
+    </div>
   );
 };
 
