@@ -1,7 +1,6 @@
-// import { Icon } from "@mui/material";
-// import Home from "@mui/icons-material/Home";
+
 import MenuIconsComponent from "../components/menu-icons-component";
-//import MenuIcon from '@mui/icons-material/Menu';
+import {Menu,Search} from '@mui/icons-material/';
 
 export default {
     title: 'Data Display/Icons',
@@ -19,15 +18,15 @@ export default {
 };
 
 const Template = (args) => {
-    return <MenuIconsComponent {...args}>
+    return <MenuIconsComponent childComponent={(data) => <Menu {...data} />} {...args}>
                 
             </MenuIconsComponent>
 }
 
 
-export const Default = Template.bind({});
-
-Default.args = {
+export const MenuIcons = Template.bind({});
+MenuIcons.storyName= 'Menu Icon';
+MenuIcons.args = {
     theme:'rounded',
     fontSize: 'large',
 }
