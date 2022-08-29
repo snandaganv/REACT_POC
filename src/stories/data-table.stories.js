@@ -51,5 +51,6 @@ Data_Table.args = {
         { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
         { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
       ], 
-      height: 400 
+      height: 400,
+      width: 400, 
 };

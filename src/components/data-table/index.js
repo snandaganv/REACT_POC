@@ -4,10 +4,10 @@ import { PropTypes } from "prop-types";
 import "./index.scss";
 
 const DataTable = (props) => {
-  const { height, ...rest } = props;
+  const { height,width, ...rest } = props;
 
   return (
-    <div style={{ height:height }}>
+    <div style={{ height:height,width: width }}>
     <DataGrid
       {...rest}
       className="data-table-container"
@@ -24,6 +24,7 @@ DataTable.prototype = {
   columns: PropTypes.array,
   checkboxSelection: PropTypes.bool,
   height: PropTypes.number,
+  width:PropTypes.number,
   pageSize: PropTypes.number,
   rows: PropTypes.array,
 };
@@ -32,6 +33,7 @@ DataTable.defaultProps = {
   columns: [],
   checkboxSelection: true,
   height: 300,
+  width: 300,
   onColumnVisibilityChange: () => {},
   onSelectionModelChange: () => {},
   onSortModelChange: () => {},
