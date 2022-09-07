@@ -33,4 +33,5 @@ export const Default = Template.bind({});
 Default.args = {
     closeText:'Close',
     children: 'I am an alert',
+    titleText: '',
 }
