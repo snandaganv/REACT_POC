@@ -4,7 +4,7 @@ import { Avatar } from "@mui/material";
 
 const AvatarComponent = (props) => {
 
-  const { type, src, avatarText } = props;
+  const { type, src, avatarText,width,height,variant } = props;
 
   function stringToColor(string) {
     let hash = 0;
@@ -40,7 +40,7 @@ const AvatarComponent = (props) => {
     {type === 'text' ?
       <Avatar {...stringAvatar(avatarText)}></Avatar>
       :
-      <Avatar src={src}></Avatar>
+      <Avatar src={src} sx={{ width: width, height: height }} variant={variant}></Avatar>
     }
     </>
   );
@@ -50,12 +50,16 @@ AvatarComponent.prototype = {
   avatarText: PropTypes.string,
   type: PropTypes.string,
   src: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
 };
 
 AvatarComponent.defaultProps = {
   avatarText : '',
   type : 'text',
   src : '',
+  width:24,
+  height:24
 };
 
 
