@@ -1,22 +1,24 @@
 import * as React from 'react';
 import { PropTypes } from "prop-types";
-import { Alert } from "@mui/material";
+import { Alert ,AlertTitle} from "@mui/material";
 
 const AlertComponent = (props) => {
-  
+  const {titleText} = props;
   return (
-    <Alert {...props}>{props.children}</Alert>
+    <Alert {...props}><AlertTitle>{titleText}</AlertTitle>{props.children}</Alert>
   );
 }
 
 AlertComponent.prototype = {
     closeText:PropTypes.string,
     children: PropTypes.node,
+    titleText: PropTypes.string,
 };
 
 AlertComponent.defaultProps = {
     closeText:'',
     children: [],
+    titleText:'',
 };
 
 
