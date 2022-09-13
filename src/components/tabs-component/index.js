@@ -5,7 +5,7 @@ import Tab from '@mui/material/Tab';
 import TabPanel from './TablePanel';
 
 const TabsComponent = (props) => {
-  const {indicatorColor,ariaLabel,tabsArray,orientation,textColor} = props;
+  const {indicatorColor,ariaLabel,tabsArray,orientation,textColor,allowScrollButtonsMobile,variant,scrollButtons} = props;
   const [value, setValue] = React.useState(tabsArray[0].index);
   
 
@@ -16,7 +16,7 @@ const TabsComponent = (props) => {
   
   return (
     <>
-      <Tabs value={value} onChange={handleChange} indicatorColor={indicatorColor} aria-label={ariaLabel} orientation={orientation} textColor={textColor}>
+      <Tabs allowScrollButtonsMobile={allowScrollButtonsMobile} variant={variant} scrollButtons={scrollButtons} value={value} onChange={handleChange} indicatorColor={indicatorColor} aria-label={ariaLabel} orientation={orientation} textColor={textColor}>
           {tabsArray.map((item) => <Tab label={item.label} {...a11yProps(item.index)}/>)}
       </Tabs>
       {tabsArray.map((item) => <TabPanel value={value} index={item.index}>{item.label}</TabPanel>)}
@@ -41,16 +41,20 @@ TabsComponent.prototype = {
     orientation:PropTypes.string,
     textColor:PropTypes.string,
     tabsArray:PropTypes.array,
+    scrollButtons: PropTypes.string,
+    variant:PropTypes.string,
 };
 
 TabsComponent.defaultProps = {
   indicatorColor:'primary',
-    allowScrollButtonsMobile: false,
+    allowScrollButtonsMobile: true,
     ariaLabel: '',
     centered:false,
     orientation:'',
     textColor: '',
     tabsArray:[],
+    scrollButtons:'auto',
+    variant:'scrollable'
 };
 
 
