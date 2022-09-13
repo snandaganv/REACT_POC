@@ -11,11 +11,11 @@ const lightTheme = create({
 
 const darkTheme = create({
   base: "dark",
-  appBg: "#656B73",
+  appBg: "#212121",
   colorPrimary: "#49CEF9",
   colorSecondary: "#49CEF9",
-  appContentBg: "#707780",
-  barBg: "#656B73",
+  appContentBg: "#212121",
+  barBg: "#212121",
   brandImage:
     "https://design.arisglobal.com/assets/images/AgLogo_new.svg",
 });
@@ -27,6 +27,9 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  docs: {
+    theme: darkTheme,
   },
   darkMode: {
     dark: darkTheme,
