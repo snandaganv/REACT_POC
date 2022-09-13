@@ -1,13 +1,12 @@
 import { Checkbox } from "@mui/material";
 import {
-  CheckBoxes,
-  BasicCheckbox,
-  Sizes,
-  Colors,
-  Group,
-  FormGroups,
-  Inderterminate,
-  LabelsPlacement,
+  CheckBoxBasics,
+  CheckboxColors,
+  CheckboxSizes,
+  CheckboxGroup,
+  CheckboxFormGroups,
+  CheckboxInderterminate,
+  CheckboxLabelsPlacement,
 } from "../components/Checkbox";
 
 export default {
@@ -28,21 +27,20 @@ export default {
     },
   },
 };
-export const Sample = CheckBoxes.bind({});
-Sample.args = {
+export const CheckBoxBasic = CheckBoxBasics.bind({});
+CheckBoxBasic.args = {
   label: "Label",
   color: "primary",
   size: "medium",
   disabled: false,
   labelPlacement: "end",
 };
-export const BasicCheckboxes = BasicCheckbox.bind({});
-export const Size = Sizes.bind({});
-export const Color = Colors.bind({});
-export const Groups = Group.bind({});
-Groups.args = {
+export const CheckboxSize = CheckboxSizes.bind({});
+export const CheckboxColor = CheckboxColors.bind({});
+export const CheckboxGroups = CheckboxGroup.bind({});
+CheckboxGroups.args = {
   row: true,
 };
-export const FormGroup = FormGroups.bind({});
-export const Inderterminates = Inderterminate.bind({});
-export const LabelPlacement = LabelsPlacement.bind({});
+export const CheckboxFormGroup = CheckboxFormGroups.bind({});
+export const CheckboxInderterminates = CheckboxInderterminate.bind({});
+export const CheckboxLabelsPlacements = CheckboxLabelsPlacement.bind({});

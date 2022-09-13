@@ -1,11 +1,10 @@
 import {
   ToggleButtons,
-  ToggleButtonsDisabled,
-  Size,
-  Color,
-  Orientation,
-  ExclusiveSelections,
-  MultipleSelections,
+  ToggleButtonSize,
+  ToggleButtonColor,
+  ToggleButtonOrientation,
+  ToggleButtonExclusiveSelections,
+  ToggleButtonMultipleSelections,
 } from "../components/ToggleButton";
 
 export default {
@@ -28,40 +27,15 @@ export default {
 };
 
 const Template = (args) => <ToggleButtons {...args} />;
-//const Disable = (args) => <ToggleButtonsDisabled {...args} />;
-//const Sizess = (args) => <Size {...args} />;
-//const Colores = (args) => <Color {...args} />;
-//const Orientatio = (args) => <Orientation {...args} />;
 
-export const Basic = Template.bind({});
-Basic.args = {
+export const ToggleButtonBasic = Template.bind({});
+ToggleButtonBasic.args = {
   label: "Label",
 };
-
-// export const Disabled = Disable.bind({});
-// Disabled.args = {
-//   label: "Disabled",
-//   disabled: true,
-// };
-
-// export const Sizes = Sizess.bind({});
-// Sizes.args = {
-//   size: "small",
-// };
-
-// export const Colors = Colores.bind({});
-// Colors.args = {
-//   color: "secondary",
-// };
-
-// export const Orientations = Orientatio.bind({});
-// Orientation.args = {
-//   label: "Vision",
-//   orientation: "vertical",
-// };
-
-export const ExclusiveSelection = ExclusiveSelections.bind({});
-export const MultipleSelection = MultipleSelections.bind({});
-export const Sizes = Size.bind({});
-export const Colors = Color.bind({});
-export const Orientations = Orientation.bind({});
+export const ToggleButtonSizes = ToggleButtonSize.bind({});
+export const ToggleButtonColors = ToggleButtonColor.bind({});
+export const ToggleButtonOrientations = ToggleButtonOrientation.bind({});
+export const ToggleButtonExclusiveSelection =
+  ToggleButtonExclusiveSelections.bind({});
+export const ToggleButtonMultipleSelection =
+  ToggleButtonMultipleSelections.bind({});

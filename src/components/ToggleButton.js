@@ -53,7 +53,7 @@ ToggleButtons.propTypes = {
   onClick: PropTypes.func,
 };
 
-export const Size = ({ size, color, onClick }) => {
+export const ToggleButtonSize = ({ size, color, onClick }) => {
   const [alignment, setAlignment] = React.useState("option1");
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
@@ -117,12 +117,12 @@ export const Size = ({ size, color, onClick }) => {
     </>
   );
 };
-Size.propTypes = {
+ToggleButtonSize.propTypes = {
   size: PropTypes.oneOf(["small", "medium", "large"]),
   onClick: PropTypes.func,
 };
 
-export const Color = ({ color }) => {
+export const ToggleButtonColor = ({ color }) => {
   const [alignment, setAlignment] = React.useState("web");
 
   const handleChange = (event, newAlignment) => {
@@ -143,7 +143,7 @@ export const Color = ({ color }) => {
   );
 };
 
-export const Orientation = ({ onClick, orientation }) => {
+export const ToggleButtonOrientation = ({ onClick, orientation }) => {
   const [alignment, setAlignment] = React.useState("option1");
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
@@ -170,12 +170,12 @@ export const Orientation = ({ onClick, orientation }) => {
   );
 };
 
-Orientation.propTypes = {
+ToggleButtonOrientation.propTypes = {
   label: PropTypes.string,
   orientation: PropTypes.bool,
 };
 
-export const ExclusiveSelections = ({}) => {
+export const ToggleButtonExclusiveSelections = ({}) => {
   const [alignment, setAlignment] = React.useState("left");
 
   const handleAlignment = (event, newAlignment) => {
@@ -204,7 +204,7 @@ export const ExclusiveSelections = ({}) => {
   );
 };
 
-export const MultipleSelections = ({ props }) => {
+export const ToggleButtonMultipleSelections = ({ props }) => {
   const [formats, setFormats] = React.useState(() => ["bold", "italic"]);
 
   const handleFormat = (event, newFormats) => {

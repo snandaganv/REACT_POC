@@ -1,12 +1,12 @@
 import { Button } from "@mui/material";
 import {
-  Defaults,
-  Basics,
-  HandingClick,
-  Colors,
-  Sizes,
-  IconLabelButton,
-  Loadings,
+  ButtonDefaults,
+  ButtonBasics,
+  ButtonHandingClick,
+  ButtonColors,
+  ButtonSizes,
+  ButtonIconLabelButton,
+  ButtonLoadings,
 } from "../components/Button";
 
 export default {
@@ -32,8 +32,8 @@ export default {
   },
 };
 
-export const Default = Defaults.bind({});
-Default.args = {
+export const ButtonDefault = ButtonDefaults.bind({});
+ButtonDefault.args = {
   label: "Button",
   variant: "contained",
   color: "primary",
@@ -41,14 +41,14 @@ Default.args = {
   direction: "row",
 };
 
-export const BasicButton = Basics.bind({});
+export const ButtonBasic = ButtonBasics.bind({});
 
-export const HandingClicks = HandingClick.bind({});
+export const ButtonHandingClicks = ButtonHandingClick.bind({});
 
-export const Color = Colors.bind({});
+export const ButtonColor = ButtonColors.bind({});
 
-export const Size = Sizes.bind({});
+export const ButtonSize = ButtonSizes.bind({});
 
-export const IconLabelButtons = IconLabelButton.bind({});
+export const ButtonIconLabelButtons = ButtonIconLabelButton.bind({});
 
-export const LoadingButtons = Loadings.bind({});
+export const ButtonLoading = ButtonLoadings.bind({});

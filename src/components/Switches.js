@@ -39,7 +39,7 @@ Switches.propTypes = {
   labelPlacement: PropTypes.oneOf(["top", "start", "bottom", "end"]),
 };
 
-export const BasicsSwitches = ({ props }) => {
+export const SwitchesBasics = ({ props }) => {
   const label = { inputProps: { "aria-label": "Switch demo" } };
   return (
     <FormGroup row="row">
@@ -51,7 +51,7 @@ export const BasicsSwitches = ({ props }) => {
   );
 };
 
-export const Labels = ({ label }) => {
+export const SwitchLabels = ({ label }) => {
   return (
     <FormGroup>
       <FormControlLabel control={<Switch defaultChecked />} label="Label" />
@@ -60,7 +60,7 @@ export const Labels = ({ label }) => {
   );
 };
 
-export const Sizes = ({ size }) => {
+export const SwitchSizes = ({ size }) => {
   const label = { inputProps: { "aria-label": "Switch Size demo" } };
   return (
     <div>
@@ -70,7 +70,7 @@ export const Sizes = ({ size }) => {
   );
 };
 
-export const Colors = ({ color }) => {
+export const SwitchColors = ({ color }) => {
   const label = { inputProps: { "aria-label": "Switch Color demo" } };
   return (
     <FormGroup row="row">
@@ -82,7 +82,7 @@ export const Colors = ({ color }) => {
   );
 };
 
-export const Controlles = ({ onChange }) => {
+export const SwitchControlles = ({ onChange }) => {
   const [checked, setChecked] = React.useState(true);
 
   const handleChange = (event) => {
@@ -150,7 +150,7 @@ export const SwitchFormGroups = ({ props }) => {
   );
 };
 
-export const Customizations = ({ props }) => {
+export const SwitchCustomizations = ({ props }) => {
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
@@ -355,7 +355,7 @@ export const Customizations = ({ props }) => {
   );
 };
 
-export const LabelsPlacement = ({ labelPlacement }) => {
+export const SwitchLabelsPlacement = ({ labelPlacement }) => {
   return (
     <FormControl component="fieldset">
       <FormLabel component="legend">Label placement</FormLabel>
@@ -387,79 +387,4 @@ export const LabelsPlacement = ({ labelPlacement }) => {
       </FormGroup>
     </FormControl>
   );
-};
-
-export const SwitchSizeColor = ({ label, onclick, disabled, size, color }) => {
-  return (
-    <FormGroup>
-      <FormControlLabel
-        control={
-          <Switch defaultChecked onClick={onclick} size={size} color={color} />
-        }
-        label={label}
-        disabled={disabled}
-      />
-      <FormControlLabel
-        control={
-          <Switch defaultChecked onClick={onclick} size={size} color={color} />
-        }
-        label={label}
-        disabled={disabled}
-      />
-      <FormControlLabel
-        control={
-          <Switch defaultChecked onClick={onclick} size={size} color={color} />
-        }
-        label={label}
-        disabled={disabled}
-      />
-      <FormControlLabel
-        control={
-          <Switch defaultChecked onClick={onclick} size={size} color={color} />
-        }
-        label={label}
-        disabled={disabled}
-      />
-    </FormGroup>
-  );
-};
-
-SwitchSizeColor.propTypes = {
-  label: PropTypes.string,
-  onClick: PropTypes.func,
-  size: PropTypes.oneOf(["small", "medium"]),
-  color: PropTypes.oneOf(["default", "warning", "primary", "secondary"]),
-};
-
-export const LabelPlacements = ({ labelPlacement, size }) => {
-  return (
-    <FormControl component="fieldset">
-      <FormLabel component="legend">Label placements</FormLabel>
-      <FormGroup aria-label="position" row>
-        <FormControlLabel
-          value="label1"
-          control={<Switch size={size} />}
-          label="Label 1"
-          labelPlacement={labelPlacement}
-        />
-        <FormControlLabel
-          value="label2"
-          control={<Switch size={size} />}
-          label="Label 2"
-          labelPlacement={labelPlacement}
-        />
-        <FormControlLabel
-          value="label3"
-          control={<Switch size={size} />}
-          label="Label 3"
-          labelPlacement={labelPlacement}
-        />
-      </FormGroup>
-    </FormControl>
-  );
-};
-LabelPlacements.propTypes = {
-  labelPlacement: PropTypes.oneOf(["top", "start", "bottom", "end"]),
-  onClick: PropTypes.func,
-  size: PropTypes.oneOf(["small", "medium"]),
 };
