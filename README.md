@@ -6,8 +6,6 @@ This Design System was bootstrapped with React, TailwindCSS, Storybook, and Mate
 
 Git clone the repo: https://github.com/arisglobal/agcp-ui
 
-Please create a new branch out of master. Commit your changes to that local branch and create a pull request to be reviewed and approved by your peers. Once the changes are approved, it'll be merged into master branch and deployed.
-
 In the project directory, you can run:
 
 ### `npm install`
@@ -16,6 +14,12 @@ In the project directory, you can run:
 
 Runs the storybook in the development mode.\
 Open [http://localhost:6006](http://localhost:6006) to view it in your browser.
+
+Please create a new branch out of master. 
+
+### git checkout -b `<branch name example: PLAT-123-feature>`
+
+Commit your changes to that local branch and create a pull request to be reviewed and approved by your peers. Once the changes are approved, it'll be merged into master branch and deployed.
 
 #### How to add Actions to stories
 

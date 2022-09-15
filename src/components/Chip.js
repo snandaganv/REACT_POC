@@ -6,7 +6,7 @@ import { Face } from "@mui/icons-material";
 import Done from "@mui/icons-material/Done";
 import Delete from "@mui/icons-material/Delete";
 
-export const BasicChips = ({
+export const ChipsBasics = ({
   label,
   onClick,
   variant,
@@ -35,7 +35,7 @@ export const BasicChips = ({
   );
 };
 
-BasicChips.propTypes = {
+ChipsBasics.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
   size: PropTypes.oneOf(["small", "medium", "large"]),
@@ -48,7 +48,7 @@ BasicChips.propTypes = {
   ]),
 };
 
-export const ClickableChips = ({ onClick }) => {
+export const ChipClickables = ({ onClick }) => {
   const handleClick = () => {
     console.info("You clicked the Chip.");
   };
@@ -62,7 +62,7 @@ export const ClickableChips = ({ onClick }) => {
   );
 };
 
-export const Colors = ({ color }) => {
+export const ChipsColors = ({ color }) => {
   return (
     <Stack direction="row" spacing={1}>
       <Chip label="primary" color="primary" />
@@ -71,7 +71,7 @@ export const Colors = ({ color }) => {
   );
 };
 
-export const Sizes = ({ size }) => {
+export const ChipSizes = ({ size }) => {
   return (
     <Stack direction="row" spacing={1}>
       <Chip label="Small" size="small" />
@@ -80,7 +80,7 @@ export const Sizes = ({ size }) => {
   );
 };
 
-export const AvatarChip = ({ avatar }) => {
+export const ChipAvatars = ({ avatar }) => {
   return (
     <Stack direction="row" spacing={1}>
       <Chip avatar={<Avatar>M</Avatar>} label="Avatar" />
@@ -93,7 +93,7 @@ export const AvatarChip = ({ avatar }) => {
   );
 };
 
-export const IconChips = ({ icon }) => {
+export const ChipIcons = ({ icon }) => {
   return (
     <Stack direction="row" spacing={1}>
       <Chip icon={<Face />} label="With Icon" />
@@ -102,7 +102,7 @@ export const IconChips = ({ icon }) => {
   );
 };
 
-export const DoneDeleteIconChips = ({ deleteIcon }) => {
+export const ChipDoneDeleteIcons = ({ deleteIcon }) => {
   const handleClick = () => {
     console.info("You clicked the Chip.");
   };
@@ -129,7 +129,7 @@ export const DoneDeleteIconChips = ({ deleteIcon }) => {
   );
 };
 
-export const ClickableAndDeletableChips = ({ onDelete, onClick }) => {
+export const ChipClickableAndDeletables = ({ onDelete, onClick }) => {
   const handleClick = () => {
     console.info("You clicked the Chip.");
   };
@@ -155,7 +155,7 @@ export const ClickableAndDeletableChips = ({ onDelete, onClick }) => {
   );
 };
 
-export const ClickableLinkChips = ({ clickable }) => {
+export const ChipClickableLinks = ({ clickable }) => {
   return (
     <Stack direction="row" spacing={1}>
       <Chip

@@ -14,22 +14,16 @@ export default {
     },
 };
 
-const Template = (args) => <BreadcrumbsComponent {...args} onClick={args.onClick}>
-    <Link  underline="hover" color="inherit" href="/">MUI</Link>
-    <Link
-    underline="hover"
-    color="inherit"
-    href="/material-ui/getting-started/installation/"
-  >
-    Core
-  </Link>
-  
-    </BreadcrumbsComponent>;
+const Template = (args) => <BreadcrumbsComponent {...args} onClick={args.onClick}></BreadcrumbsComponent>;
 
 export const Default = Template.bind({});
 Default.args = {
     expandText:'Show Link',
     itemsAfterCollapse: 2,
     itemsBeforeCollapse: 2,
-    maxItems: 6,
+    maxItems: 3,
+    separator:'›',
+    linkArray:[{href: '/',label:'Core'},{href: '/google.com',label:'MUI'},{href: '/material-ui/getting-started/installation/',label:'MUI'},{href: '/material-ui/getting-started/installation/',label:'Core2'}],
+    color:'inherit',
+    underline:'hover',
 }

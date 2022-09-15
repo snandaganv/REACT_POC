@@ -8,7 +8,7 @@ import Save from "@mui/icons-material/Save";
 import { LoadingButton } from "@mui/lab";
 import { CopyBlock, dracula } from "react-code-blocks";
 
-export const Defaults = ({
+export const ButtonDefaults = ({
   label,
   onClick,
   variant,
@@ -25,7 +25,7 @@ export const Defaults = ({
   );
 };
 
-Defaults.propTypes = {
+ButtonDefaults.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
   size: PropTypes.oneOf(["small", "medium", "large"]),
@@ -45,7 +45,7 @@ Defaults.propTypes = {
   ]),
 };
 
-export const Basics = ({}) => {
+export const ButtonBasics = ({}) => {
   return (
     <Stack spacing={2} direction="row">
       <Button variant="text">Text</Button>
@@ -61,7 +61,7 @@ export const Basics = ({}) => {
   );
 };
 
-export const Colors = ({}) => {
+export const ButtonColors = ({}) => {
   return (
     <Stack direction="row" spacing={2}>
       <Button color="secondary">Secondary</Button>
@@ -75,7 +75,7 @@ export const Colors = ({}) => {
   );
 };
 
-export const Sizes = ({}) => {
+export const ButtonSizes = ({}) => {
   return (
     <Box sx={{ "& button": { m: 1 } }}>
       <div>
@@ -109,7 +109,7 @@ export const Sizes = ({}) => {
   );
 };
 
-export const HandingClick = ({}) => {
+export const ButtonHandingClick = ({}) => {
   return (
     <Button
       onClick={() => {
@@ -121,7 +121,7 @@ export const HandingClick = ({}) => {
   );
 };
 
-export const IconLabelButton = ({}) => {
+export const ButtonIconLabelButton = ({}) => {
   return (
     <FormGroup>
       <Stack direction="row" spacing={2} mb="12px">
@@ -149,7 +149,7 @@ export const IconLabelButton = ({}) => {
   );
 };
 
-export const Loadings = ({}) => {
+export const ButtonLoadings = ({}) => {
   return (
     <FormGroup>
       <Stack direction="row" spacing={2} mb="12px">

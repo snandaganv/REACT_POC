@@ -8,6 +8,10 @@ export default {
             options: ['text', 'image'],
             control: { type: 'radio' },
         },
+        variant: {
+            options: ['circular', 'rounded', 'square'],
+            control: { type: 'radio' },
+        },
     },
 };
 
@@ -18,4 +22,6 @@ Default.args = {
     type:'text',
     avatarText:'Software Tester',
     src:'',
+    width:24,
+    height:24
 }
