@@ -10,7 +10,7 @@ import {
 import { Box, FormHelperText } from "@mui/material";
 import { blue } from "@mui/material/colors";
 
-export const CheckBoxes = ({
+export const CheckBoxBasics = ({
   label,
   onclick,
   size,
@@ -29,7 +29,7 @@ export const CheckBoxes = ({
     </FormGroup>
   );
 };
-CheckBoxes.prototype = {
+CheckBoxBasics.prototype = {
   label: PropTypes.string,
   onClick: PropTypes.func,
   selected: PropTypes.Boolean,
@@ -38,23 +38,7 @@ CheckBoxes.prototype = {
   labelPlacement: PropTypes.oneOf(["top", "start", "bottom", "end"]),
 };
 
-export const BasicCheckbox = ({}) => {
-  const label = { inputProps: { "aria-label": "Checkbox examples" } };
-  return (
-    <div>
-      <Checkbox {...label} defaultChecked />
-      <Checkbox {...label} />
-      <Checkbox {...label} disabled />
-      <Checkbox {...label} disabled checked />
-    </div>
-  );
-};
-
-BasicCheckbox.args = {
-  label: "Label",
-};
-
-export const Label = ({ label }) => {
+export const CheckboxLabel = ({ label }) => {
   return (
     <FormGroup>
       <FormControlLabel control={<Checkbox defaultChecked />} label={label} />
@@ -62,11 +46,11 @@ export const Label = ({ label }) => {
     </FormGroup>
   );
 };
-Label.args = {
+CheckboxLabel.args = {
   label: "Label",
 };
 
-export const Sizes = ({ size }) => {
+export const CheckboxSizes = ({ size }) => {
   const label = { inputProps: { "aria-label": "Checkbox size demo" } };
   return (
     <div>
@@ -80,11 +64,11 @@ export const Sizes = ({ size }) => {
     </div>
   );
 };
-Sizes.args = {
+CheckboxSizes.args = {
   label: "label",
 };
 
-export const Colors = ({ color }) => {
+export const CheckboxColors = ({ color }) => {
   const label = { inputProps: { "aria-label": "Checkbox colors demo" } };
   return (
     <div>
@@ -105,11 +89,11 @@ export const Colors = ({ color }) => {
     </div>
   );
 };
-Colors.args = {
+CheckboxColors.args = {
   label: "label",
 };
 
-export const Group = ({ row, onclick, ...props }) => {
+export const CheckboxGroup = ({ row, onclick, ...props }) => {
   const checkList = ["Apple", "Banana", "Orange", "Grape"];
   return (
     <FormGroup row={row}>
@@ -123,7 +107,7 @@ export const Group = ({ row, onclick, ...props }) => {
   );
 };
 
-export const FormGroups = ({}) => {
+export const CheckboxFormGroups = ({}) => {
   const [state, setState] = React.useState({
     gilad: true,
     jason: false,
@@ -208,11 +192,11 @@ export const FormGroups = ({}) => {
   );
 };
 
-Group.args = {
+CheckboxGroup.args = {
   row: true,
 };
 
-export const Inderterminate = ({ label, row, onClick, ...props }) => {
+export const CheckboxInderterminate = ({ label, row, onClick, ...props }) => {
   const [checked, setChecked] = React.useState([true, false]);
 
   const handleChange1 = (e) => {
@@ -270,11 +254,11 @@ export const Inderterminate = ({ label, row, onClick, ...props }) => {
   );
 };
 
-Inderterminate.args = {
+CheckboxInderterminate.args = {
   label: "Parent",
 };
 
-export const LabelsPlacement = ({ labelPlacement }) => {
+export const CheckboxLabelsPlacement = ({ labelPlacement }) => {
   return (
     <FormControl component="fieldset">
       <FormLabel component="legend">Label placement</FormLabel>
@@ -307,6 +291,6 @@ export const LabelsPlacement = ({ labelPlacement }) => {
     </FormControl>
   );
 };
-LabelsPlacement.args = {
+CheckboxLabelsPlacement.args = {
   label: "label",
 };

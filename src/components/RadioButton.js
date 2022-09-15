@@ -12,7 +12,7 @@ import {
 
 import { blue } from "@mui/material/colors";
 
-export const Basics = ({
+export const RadioButtonBasics = ({
   label,
   row,
   onClick,
@@ -55,14 +55,14 @@ export const Basics = ({
     </FormControl>
   );
 };
-Basics.prototype = {
+RadioButtonBasics.prototype = {
   label: PropTypes.string,
   onClick: PropTypes.func,
   disabled: PropTypes.Boolean,
   row: PropTypes.Boolean,
 };
 
-export const RadiosGroups = (row) => {
+export const RadiosButtonGroup = (row) => {
   return (
     <FormControl>
       <FormLabel id="demo-row-radio-buttons-group-label">Gender</FormLabel>
@@ -84,11 +84,11 @@ export const RadiosGroups = (row) => {
     </FormControl>
   );
 };
-RadioGroup.args = {
+RadiosButtonGroup.args = {
   row: true,
 };
 
-export const Direction = (row) => {
+export const RadioButtonDirection = (row) => {
   return (
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
@@ -105,7 +105,7 @@ export const Direction = (row) => {
   );
 };
 
-export const Controlleds = ({ onChange }) => {
+export const RadioButtonControlleds = ({ onChange }) => {
   const [value, setValue] = React.useState("female");
 
   const handleChange = (event) => {
@@ -128,7 +128,7 @@ export const Controlleds = ({ onChange }) => {
   );
 };
 
-export const Size = (row, ...props) => {
+export const RadioButtonSize = (row, ...props) => {
   const [selectedValue, setSelectedValue] = React.useState("a");
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -158,7 +158,7 @@ export const Size = (row, ...props) => {
   );
 };
 
-export const Color = ({ row, onClick, ...props }) => {
+export const RadioButtonColor = ({ row, onClick, ...props }) => {
   const [selectedValue, setSelectedValue] = React.useState("a");
 
   const handleChange = (event) => {
@@ -191,11 +191,11 @@ export const Color = ({ row, onClick, ...props }) => {
   );
 };
 
-Color.args = {
+RadioButtonColor.args = {
   row: true,
 };
 
-export const LabelPlacements = ({ onClick, disabled, ...props }) => {
+export const RadioButtonLabelPlacements = ({ onClick, disabled, ...props }) => {
   return (
     <FormControl>
       <RadioGroup
@@ -232,11 +232,11 @@ export const LabelPlacements = ({ onClick, disabled, ...props }) => {
   );
 };
 
-LabelPlacements.args = {
+RadioButtonLabelPlacements.args = {
   disabled: false,
 };
 
-export const ShowErrors = ({ onChange }) => {
+export const RadioButtonShowErrors = ({ onChange }) => {
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("Choose wisely");

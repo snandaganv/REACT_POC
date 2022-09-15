@@ -1,17 +1,17 @@
 import { Radio } from "@mui/material";
 import {
-  Basics,
-  RadiosGroups,
-  Controlleds,
-  Direction,
-  Size,
-  Color,
-  LabelPlacements,
-  ShowErrors,
+  RadioButtonBasics,
+  RadioButtonColor,
+  RadioButtonSize,
+  RadiosButtonGroup,
+  RadioButtonControlleds,
+  RadioButtonDirection,
+  RadioButtonLabelPlacements,
+  RadioButtonShowErrors,
 } from "../components/RadioButton";
 
 export default {
-  title: "Input/Radio",
+  title: "Input/Radio Buttons",
   Component: Radio,
   argTypes: {
     size: {
@@ -33,17 +33,17 @@ export default {
   },
 };
 
-export const Basic = Basics.bind({});
-Basic.args = {
+export const RadioButtonBasic = RadioButtonBasics.bind({});
+RadioButtonBasic.args = {
   label: "Label",
   row: true,
   size: "medium",
   labelPlacement: "end",
 };
-export const RadioGroups = RadiosGroups.bind({});
-export const Directions = Direction.bind({});
-export const Controlled = Controlleds.bind({});
-export const Sizes = Size.bind({});
-export const Colors = Color.bind({});
-export const LabelPlacement = LabelPlacements.bind({});
-export const ShowError = ShowErrors.bind({});
+export const RadiosButtonGroups = RadiosButtonGroup.bind({});
+export const RadioButtonDirections = RadioButtonDirection.bind({});
+export const RadioButtonControlled = RadioButtonControlleds.bind({});
+export const RadioButtonSizes = RadioButtonSize.bind({});
+export const RadioButtonColors = RadioButtonColor.bind({});
+export const RadioButtonLabelPlacement = RadioButtonLabelPlacements.bind({});
+export const RadioButtonShowError = RadioButtonShowErrors.bind({});

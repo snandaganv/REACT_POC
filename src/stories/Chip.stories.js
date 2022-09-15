@@ -1,14 +1,14 @@
 import { Button } from "@mui/material";
 import {
-  BasicChips,
-  ClickableChips,
-  Colors,
-  Sizes,
-  AvatarChip,
-  IconChips,
-  DoneDeleteIconChips,
-  ClickableAndDeletableChips,
-  ClickableLinkChips,
+  ChipsBasics,
+  ChipClickables,
+  ChipsColors,
+  ChipSizes,
+  ChipIcons,
+  ChipAvatars,
+  ChipClickableAndDeletables,
+  ChipDoneDeleteIcons,
+  ChipClickableLinks,
 } from "../components/Chip";
 
 export default {
@@ -42,8 +42,8 @@ export default {
   },
 };
 
-export const BasicChip = BasicChips.bind({});
-BasicChip.args = {
+export const ChipsBasic = ChipsBasics.bind({});
+ChipsBasic.args = {
   label: "Chip",
   variant: "contained",
   color: "primary",
@@ -51,11 +51,11 @@ BasicChip.args = {
   direction: "row",
 };
 
-export const ClickableChip = ClickableChips.bind({});
-export const Color = Colors.bind({});
-export const Size = Sizes.bind({});
-export const AvatarChips = AvatarChip.bind({});
-export const IconChip = IconChips.bind({});
-export const DoneDeleteIconChip = DoneDeleteIconChips.bind({});
-export const ClickableAndDeletableChip = ClickableAndDeletableChips.bind({});
-export const ClickableLinkChip = ClickableLinkChips.bind({});
+export const ChipClickable = ChipClickables.bind({});
+export const ChipsColor = ChipsColors.bind({});
+export const ChipSize = ChipSizes.bind({});
+export const ChipAvatar = ChipAvatars.bind({});
+export const ChipIcon = ChipIcons.bind({});
+export const ChipDoneDeleteIcon = ChipDoneDeleteIcons.bind({});
+export const ChipClickableAndDeletable = ChipClickableAndDeletables.bind({});
+export const ChipClickableLink = ChipClickableLinks.bind({});
