@@ -1,13 +1,15 @@
 import { createTheme } from '@mui/material/styles';
-import "../src/assets/styles/variables.scss";
+
+import variables from '../src/assets/styles/variables.scss';
+
 
 const muiTheme = createTheme({
   palette: {
     primary: {
-        main: $primaryMain,
+        main: variables.primary,
     },
     error: {
-        main: $errorMain,
+        main: variables.errorMain,
     },
   },
 });
