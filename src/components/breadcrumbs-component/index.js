@@ -3,6 +3,9 @@ import { PropTypes } from "prop-types";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
+
 const BreadcrumbsComponent = (props) => {
   const {linkArray,underline,color} = props;
   const onClicked =(event)=> {
@@ -11,9 +14,11 @@ const BreadcrumbsComponent = (props) => {
   
   return (
     <>
+    <ThemeProvider theme={muiTheme}>
       <Breadcrumbs {...props} onClick={onClicked}>
       {linkArray.map((item) => <Link href={item.href} underline={underline} color={underline}>{item.label}</Link>)}
       </Breadcrumbs>
+      </ThemeProvider>
     </>
   );
 }

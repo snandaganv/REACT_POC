@@ -9,10 +9,14 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "./index.scss";
 
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
+
 const BasicTable = (props) => {
   const { columns, data, size } = props;
 
   return (
+    <ThemeProvider theme={muiTheme}>
     <TableContainer component={Paper}>
       <Table aria-label="simple table" size={size}>
         <TableHead>
@@ -43,6 +47,7 @@ const BasicTable = (props) => {
         </TableBody>
       </Table>
     </TableContainer>
+    </ThemeProvider>
   );
 };
 

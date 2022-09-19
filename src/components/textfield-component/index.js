@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { PropTypes } from "prop-types";
 import { TextField } from "@mui/material";
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
 
 const TextFieldComponent = (props) => {
 
@@ -17,7 +19,9 @@ const TextFieldComponent = (props) => {
   
   return (
     <>
+    <ThemeProvider theme={muiTheme}>
       <TextField label={label} fullWidth={fullWidth} type={type} autoFocus={autoFocus} size={size} defaultValue={defaultValue}  helperText={helperText} row={row} color={color} variant ={variant} error={error} disabled={disabled} onChange={onChanged}></TextField>
+      </ThemeProvider>
     </>
   );
 }

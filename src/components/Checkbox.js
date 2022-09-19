@@ -9,6 +9,9 @@ import {
 } from "@mui/material";
 import { Box, FormHelperText } from "@mui/material";
 import { blue } from "@mui/material/colors";
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
+
 
 export const CheckBoxBasics = ({
   label,
@@ -19,6 +22,7 @@ export const CheckBoxBasics = ({
   labelPlacement,
 }) => {
   return (
+    <ThemeProvider theme={muiTheme}>
     <FormGroup>
       <FormControlLabel
         control={<Checkbox onClick={onclick} color={color} size={size} />}
@@ -27,6 +31,7 @@ export const CheckBoxBasics = ({
         labelPlacement={labelPlacement}
       />
     </FormGroup>
+    </ThemeProvider>
   );
 };
 CheckBoxBasics.prototype = {

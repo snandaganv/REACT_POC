@@ -8,11 +8,15 @@ import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
+
 
 
 const CardComponent = (props) => {
   const {topoGraphyArray,buttonArray,headersArray,cardMediaArray,raised} = props;
   return (
+    <ThemeProvider theme={muiTheme}>
     <Card raised={raised}>
       
       {headersArray && headersArray.map((item) => <CardHeader avatar={item.avatar?<Avatar sx={{ bgcolor: item.bgColor }}>{item.label}</Avatar>: false }>{item.text}
@@ -29,6 +33,7 @@ const CardComponent = (props) => {
       {buttonArray && buttonArray.map((item) => <Button size={item.size}>{item.label}</Button>)}
       </CardActions>
     </Card>
+    </ThemeProvider>
   );
 }
 

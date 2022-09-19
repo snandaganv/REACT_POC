@@ -15,6 +15,8 @@ import {
   FormatAlignRight,
   FormatAlignJustify,
 } from "@mui/icons-material";
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
 
 export const ToggleButtons = ({
   label,
@@ -29,6 +31,7 @@ export const ToggleButtons = ({
     setAlignment(newAlignment);
   };
   return (
+    <ThemeProvider theme={muiTheme}>
     <ToggleButtonGroup
       color={color}
       value={alignment}
@@ -45,6 +48,7 @@ export const ToggleButtons = ({
         {label}
       </ToggleButton>
     </ToggleButtonGroup>
+    </ThemeProvider>
   );
 };
 

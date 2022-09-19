@@ -2,11 +2,14 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { PropTypes } from "prop-types";
 import "./index.scss";
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
 
 const DataTable = (props) => {
   const { height,width, ...rest } = props;
 
   return (
+    <ThemeProvider theme={muiTheme}>
     <div style={{ height:height,width: width }}>
     <DataGrid
       {...rest}
@@ -17,6 +20,7 @@ const DataTable = (props) => {
       onSelectionModelChange={props.onSelectionModelChange}
     />
     </div>
+    </ThemeProvider>
   );
 };
 
