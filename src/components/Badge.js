@@ -11,12 +11,13 @@ import { IconButton } from "@mui/material";
 import { ShoppingCart, Remove, Add, Mail } from "@mui/icons-material";
 import Button from "@mui/material/Button";
 
-export const MailBadge = ({
+export const Badges = ({
   color,
   badgeContent,
   anchorOrigin,
   max,
   variant,
+  icon,
 }) => {
   return (
     <Badge
@@ -26,7 +27,7 @@ export const MailBadge = ({
       max={max}
       variant={variant}
     >
-      <Mail color="action" />
+      {icon}
     </Badge>
   );
 };

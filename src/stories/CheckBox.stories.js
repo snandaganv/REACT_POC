@@ -25,6 +25,7 @@ export default {
       options: ["top", "start", "bottom", "end"],
       control: { type: "radio" },
     },
+    onClick: { action: "check" },
   },
 };
 export const CheckBoxBasic = CheckBoxBasics.bind({});

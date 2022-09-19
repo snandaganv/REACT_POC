@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import Delete from "@mui/icons-material/Delete";
 import {
   ButtonDefaults,
   ButtonBasics,
@@ -29,6 +30,7 @@ export default {
       options: ["row", "row-reverse", "column", "column-reverse"],
       control: { type: "radio" },
     },
+    onClick: { action: "Clicked" },
   },
 };
 
@@ -39,6 +41,8 @@ ButtonDefault.args = {
   color: "primary",
   size: "medium",
   direction: "row",
+  disabled: false,
+  startIcon: <Delete />,
 };
 
 export const ButtonBasic = ButtonBasics.bind({});

@@ -12,9 +12,6 @@ export { default as MenuIcon } from "./menu-icons-component";
 export { default as SearchIconsComponent } from "./search-icons-component";
 export { default as TextFieldComponent } from "./textfield-component";
 
-/* Please rename duplicate names in the source files
-i.e. Basics, Colors, Sizes are used in Button, Switches, Checkbox
-*/
 export {
   ButtonDefaults as ButtonDefault,
   ButtonBasics as ButtonBasic,
@@ -78,3 +75,12 @@ export {
   ToggleButtonExclusiveSelections as ToggleButtonExclusiveSelection,
   ToggleButtonMultipleSelections as ToggleButtonMultipleSelection,
 } from "./ToggleButton";
+
+export {
+  Badges as Badge,
+  ShoppingCartBadge as ShoppingCartBadges,
+  Customizations as Customization,
+  DotBadge as DotBadges,
+  BadgeAlignments as BadgeAlignment,
+  BadgeVisibility as BadgeVisibilitys,
+} from "./Badge";

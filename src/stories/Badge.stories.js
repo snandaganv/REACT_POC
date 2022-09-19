@@ -1,11 +1,12 @@
 import {
-  MailBadge,
+  Badges,
   ShoppingCartBadge,
   Customizations,
   DotBadge,
   BadgeAlignments,
   BadgeVisibility,
 } from "../components/Badge";
+import { Mail } from "@mui/icons-material";
 
 export default {
   title: "Data Display/Badge",
@@ -25,11 +26,12 @@ export default {
   },
 };
 
-export const MailBadges = MailBadge.bind({});
-MailBadges.args = {
+export const Badge = Badges.bind({});
+Badge.args = {
   color: "primary",
   badgeContent: 4,
   anchorOrigin: { vertical: "top", horizontal: "right" },
+  icon: <Mail color="action" />,
 };
 
 export const ShoppingCartBadges = ShoppingCartBadge.bind({});

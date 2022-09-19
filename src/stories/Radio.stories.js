@@ -39,6 +39,7 @@ RadioButtonBasic.args = {
   row: true,
   size: "medium",
   labelPlacement: "end",
+  disabled: false,
 };
 export const RadiosButtonGroups = RadiosButtonGroup.bind({});
 export const RadioButtonDirections = RadioButtonDirection.bind({});
