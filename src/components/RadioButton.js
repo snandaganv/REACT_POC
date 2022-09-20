@@ -12,7 +12,7 @@ import {
 
 import { blue } from "@mui/material/colors";
 import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../../.storybook/muiTheme';
+import muiTheme from '../../.storybook/muiTheme';
 
 export const RadioButtonBasics = ({
   label,

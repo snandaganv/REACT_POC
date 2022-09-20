@@ -6,7 +6,7 @@ import { Face } from "@mui/icons-material";
 import Done from "@mui/icons-material/Done";
 import Delete from "@mui/icons-material/Delete";
 import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../../.storybook/muiTheme';
+import muiTheme from '../../.storybook/muiTheme';
 export const ChipsBasics = ({
   label,
   onClick,
