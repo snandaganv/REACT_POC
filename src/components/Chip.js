@@ -5,7 +5,8 @@ import { Avatar } from "@mui/material";
 import { Face } from "@mui/icons-material";
 import Done from "@mui/icons-material/Done";
 import Delete from "@mui/icons-material/Delete";
-
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
 export const ChipsBasics = ({
   label,
   onClick,
@@ -19,6 +20,7 @@ export const ChipsBasics = ({
   avatar,
 }) => {
   return (
+    <ThemeProvider theme={muiTheme}>
     <Stack direction={direction} spacing={2}>
       <Chip
         label={label}
@@ -32,6 +34,7 @@ export const ChipsBasics = ({
         avatar={avatar}
       />
     </Stack>
+    </ThemeProvider>
   );
 };
 

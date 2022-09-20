@@ -13,7 +13,6 @@ const AlertComponent = (props) => {
     <>
      <ThemeProvider theme={muiTheme}>
       <Alert {...props}><AlertTitle>{titleText}</AlertTitle>{props.children}</Alert>
-      <Button>Primary</Button>
     </ThemeProvider>
 
     </>

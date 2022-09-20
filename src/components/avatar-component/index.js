@@ -2,6 +2,9 @@ import * as React from 'react';
 import { PropTypes } from "prop-types";
 import { Avatar } from "@mui/material";
 
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
+
 const AvatarComponent = (props) => {
 
   const { type, src, avatarText,width,height,variant } = props;
@@ -38,9 +41,13 @@ const AvatarComponent = (props) => {
   return (
     <>
     {type === 'text' ?
+    <ThemeProvider theme={muiTheme}>
       <Avatar {...stringAvatar(avatarText)}></Avatar>
+      </ThemeProvider>
       :
+      <ThemeProvider theme={muiTheme}>
       <Avatar src={src} sx={{ width: width, height: height }} variant={variant}></Avatar>
+      </ThemeProvider>
     }
     </>
   );

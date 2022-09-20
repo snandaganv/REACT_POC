@@ -3,6 +3,8 @@ import { PropTypes } from "prop-types";
 import { Tabs } from "@mui/material";
 import Tab from '@mui/material/Tab';
 import TabPanel from './TablePanel';
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
 
 const TabsComponent = (props) => {
   const {indicatorColor,ariaLabel,tabsArray,orientation,textColor,allowScrollButtonsMobile,variant,scrollButtons} = props;
@@ -16,10 +18,12 @@ const TabsComponent = (props) => {
   
   return (
     <>
+    <ThemeProvider theme={muiTheme}>
       <Tabs allowScrollButtonsMobile={allowScrollButtonsMobile} variant={variant} scrollButtons={scrollButtons} value={value} onChange={handleChange} indicatorColor={indicatorColor} aria-label={ariaLabel} orientation={orientation} textColor={textColor}>
           {tabsArray.map((item) => <Tab label={item.label} {...a11yProps(item.index)}/>)}
       </Tabs>
       {tabsArray.map((item) => <TabPanel value={value} index={item.index}>{item.label}</TabPanel>)}
+      </ThemeProvider>
       
     </>
   );

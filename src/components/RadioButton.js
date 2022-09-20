@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 
 import { blue } from "@mui/material/colors";
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
 
 export const RadioButtonBasics = ({
   label,
@@ -22,6 +24,7 @@ export const RadioButtonBasics = ({
   labelPlacement,
 }) => {
   return (
+    <ThemeProvider theme={muiTheme}>
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
       <RadioGroup
@@ -53,6 +56,7 @@ export const RadioButtonBasics = ({
         />
       </RadioGroup>
     </FormControl>
+    </ThemeProvider>
   );
 };
 RadioButtonBasics.prototype = {
