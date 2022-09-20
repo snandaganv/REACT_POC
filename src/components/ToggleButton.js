@@ -16,7 +16,7 @@ import {
   FormatAlignJustify,
 } from "@mui/icons-material";
 import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../../.storybook/muiTheme';
+import muiTheme from '../../.storybook/muiTheme';
 
 export const ToggleButtons = ({
   label,

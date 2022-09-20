@@ -5,10 +5,20 @@ $errorMain: $redColor;
 /* blue */
 $blueColor: #1a3bdd;
 $primaryMain: $blueColor;
+$light: $blueColor;
+$dark: $blueColor;
+$secondPrimary: $blueColor;
+$secondLight: $blueColor;
+$secondDark: $blueColor;
 
 :export {
     myRed: $redColor;
     blue:$blueColor;
     primary:$primaryMain;
     errorMain:$errorMain;
+    light:$light;
+    dark:$dark;
+    secondaryLight:$secondPrimary;
+    secondaryDark:$secondPrimary;
+    secondPrimary: $secondPrimary;
   }
