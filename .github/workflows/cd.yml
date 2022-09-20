@@ -1,0 +1,25 @@
+name: CD Workflow for AG Design System
+
+on:
+  pull_request:
+    types: [closed]  # when PR is merged, CD will be triggered
+
+permissions:
+  contents: read
+
+jobs:
+
+  build-and-deploy:
+    permissions:
+      id-token: write # need this for OIDC
+      contents: write # for JamesIves/github-pages-deploy-action to push changes in repo
+    uses: ArisGlobal/SharedActions/.github/workflows/storybook-cd-github-pages.yml@latest
+
+# comment out dependabot PR auto merge for now due to some packages should not be upgraded due to a known issue
+#   dependabot-pr-auto-merge:
+#     # specify "write" permission for GITHUB_TOKEN, so it can merge the PRs raised by Dependabot, see step below.
+#     permissions:
+#       pull-requests: write
+#       contents: write
+#     uses: ArisGlobal/SharedActions/.github/workflows/dependabot-pr-auto-merge.yml@latest
+#     needs: build-and-deploy
