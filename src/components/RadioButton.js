@@ -26,7 +26,6 @@ export const RadioButtonBasics = ({
   return (
     <ThemeProvider theme={muiTheme}>
     <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
       <RadioGroup
         row={row}
         aria-labelledby="demo-radio-buttons-group-label"
@@ -35,20 +34,6 @@ export const RadioButtonBasics = ({
       >
         <FormControlLabel
           value="female"
-          control={<Radio onClick={onClick} size={size} color={color} />}
-          label={label}
-          disabled={disabled}
-          labelPlacement={labelPlacement}
-        />
-        <FormControlLabel
-          value="male"
-          control={<Radio onClick={onClick} size={size} color={color} />}
-          label={label}
-          disabled={disabled}
-          labelPlacement={labelPlacement}
-        />
-        <FormControlLabel
-          value="other"
           control={<Radio onClick={onClick} size={size} color={color} />}
           label={label}
           disabled={disabled}

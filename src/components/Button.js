@@ -19,12 +19,21 @@ export const ButtonDefaults = ({
   color,
   size,
   direction,
+  disabled,
+  startIcon,
 }) => {
 
   return (
     <ThemeProvider theme={muiTheme}>
     <Stack direction={direction} spacing={2}>
-      <Button onClick={onClick} variant={variant} color={color} size={size}>
+      <Button
+        onClick={onClick}
+        variant={variant}
+        color={color}
+        size={size}
+        disabled={disabled}
+        startIcon={startIcon}
+      >
         {label}
       </Button>
     </Stack>

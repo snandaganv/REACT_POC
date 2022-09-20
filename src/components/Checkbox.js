@@ -15,7 +15,7 @@ import muiTheme from '../../../.storybook/muiTheme';
 
 export const CheckBoxBasics = ({
   label,
-  onclick,
+  onClick,
   size,
   color,
   disabled,
@@ -25,7 +25,7 @@ export const CheckBoxBasics = ({
     <ThemeProvider theme={muiTheme}>
     <FormGroup>
       <FormControlLabel
-        control={<Checkbox onClick={onclick} color={color} size={size} />}
+        control={<Checkbox onClick={onClick} color={color} size={size} />}
         label={label}
         disabled={disabled}
         labelPlacement={labelPlacement}
