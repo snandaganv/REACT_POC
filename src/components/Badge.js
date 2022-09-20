@@ -10,6 +10,8 @@ import { styled } from "@mui/material/styles";
 import { IconButton } from "@mui/material";
 import { ShoppingCart, Remove, Add, Mail } from "@mui/icons-material";
 import Button from "@mui/material/Button";
+import { ThemeProvider } from "@mui/material/styles";
+import muiTheme from "../../.storybook/muiTheme";
 
 export const Badges = ({
   color,
@@ -20,15 +22,17 @@ export const Badges = ({
   icon,
 }) => {
   return (
-    <Badge
-      badgeContent={badgeContent}
-      color={color}
-      anchorOrigin={anchorOrigin}
-      max={max}
-      variant={variant}
-    >
-      {icon}
-    </Badge>
+    <ThemeProvider theme={muiTheme}>
+      <Badge
+        badgeContent={badgeContent}
+        color={color}
+        anchorOrigin={anchorOrigin}
+        max={max}
+        variant={variant}
+      >
+        {icon}
+      </Badge>
+    </ThemeProvider>
   );
 };
 
