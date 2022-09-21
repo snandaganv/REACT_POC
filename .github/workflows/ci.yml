@@ -11,7 +11,7 @@ permissions:
 
 jobs:
 
-  build-and-deploy:
+  build:
     permissions:
       id-token: write # need this for OIDC
       contents: write # for JamesIves/github-pages-deploy-action to push changes in repo
