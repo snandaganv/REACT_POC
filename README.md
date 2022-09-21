@@ -3,7 +3,7 @@
 This Design System was bootstrapped with React, TailwindCSS, Storybook, and Material-UI.
 
 ## GitHub repo
-   
+
 Git clone the repo: https://github.com/arisglobal/agcp-ui
 
 In the project directory, you can run:
