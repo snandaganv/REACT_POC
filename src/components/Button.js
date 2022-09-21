@@ -7,10 +7,8 @@ import Delete from "@mui/icons-material/Delete";
 import Save from "@mui/icons-material/Save";
 import { LoadingButton } from "@mui/lab";
 import { CopyBlock, dracula } from "react-code-blocks";
-import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../.storybook/muiTheme';
-
-
+import { ThemeProvider } from "@mui/material/styles";
+import muiTheme from "../../.storybook/muiTheme";
 
 export const ButtonDefaults = ({
   label,
@@ -22,21 +20,21 @@ export const ButtonDefaults = ({
   disabled,
   startIcon,
 }) => {
-
   return (
     <ThemeProvider theme={muiTheme}>
-    <Stack direction={direction} spacing={2}>
-      <Button
-        onClick={onClick}
-        variant={variant}
-        color={color}
-        size={size}
-        disabled={disabled}
-        startIcon={startIcon}
-      >
-        {label}
-      </Button>
-    </Stack>
+      <Stack direction={direction} spacing={2}>
+        <Button
+          onClick={onClick}
+          variant={variant}
+          color={color}
+          size={size}
+          disabled={disabled}
+          startIcon={startIcon}
+          style={{ textTransform: "capitalize" }}
+        >
+          {label}
+        </Button>
+      </Stack>
     </ThemeProvider>
   );
 };

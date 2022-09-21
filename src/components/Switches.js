@@ -11,8 +11,8 @@ import {
   Typography,
   Stack,
 } from "@mui/material";
-import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../.storybook/muiTheme';
+import { ThemeProvider } from "@mui/material/styles";
+import muiTheme from "../../.storybook/muiTheme";
 
 export const Switches = ({
   label,
@@ -24,16 +24,23 @@ export const Switches = ({
 }) => {
   return (
     <ThemeProvider theme={muiTheme}>
-    <FormGroup>
-      <FormControlLabel
-        control={
-          <Switch defaultChecked onClick={onclick} size={size} color={color} />
-        }
-        label={label}
-        disabled={disabled}
-        labelPlacement={labelPlacement}
-      />
-    </FormGroup>
+      <FormGroup>
+        <FormControlLabel
+          control={
+            <Switch
+              defaultChecked
+              onClick={onclick}
+              size={size}
+              color={color}
+              style={{ textTransform: "capitalize" }}
+            />
+          }
+          label={label}
+          disabled={disabled}
+          labelPlacement={labelPlacement}
+          style={{ textTransform: "capitalize" }}
+        />
+      </FormGroup>
     </ThemeProvider>
   );
 };
