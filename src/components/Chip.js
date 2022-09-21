@@ -5,8 +5,8 @@ import { Avatar } from "@mui/material";
 import { Face } from "@mui/icons-material";
 import Done from "@mui/icons-material/Done";
 import Delete from "@mui/icons-material/Delete";
-import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../.storybook/muiTheme';
+import { ThemeProvider } from "@mui/material/styles";
+import muiTheme from "../../.storybook/muiTheme";
 export const ChipsBasics = ({
   label,
   onClick,
@@ -21,19 +21,20 @@ export const ChipsBasics = ({
 }) => {
   return (
     <ThemeProvider theme={muiTheme}>
-    <Stack direction={direction} spacing={2}>
-      <Chip
-        label={label}
-        variant={variant}
-        color={color}
-        size={size}
-        onClick={onClick}
-        icon={icon}
-        deleteIcon={deleteIcon}
-        onDelete={onDelete}
-        avatar={avatar}
-      />
-    </Stack>
+      <Stack direction={direction} spacing={2}>
+        <Chip
+          label={label}
+          variant={variant}
+          color={color}
+          size={size}
+          onClick={onClick}
+          icon={icon}
+          deleteIcon={deleteIcon}
+          onDelete={onDelete}
+          avatar={avatar}
+          style={{ textTransform: "capitalize" }}
+        />
+      </Stack>
     </ThemeProvider>
   );
 };

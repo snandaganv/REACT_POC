@@ -11,8 +11,8 @@ import {
 } from "@mui/material";
 
 import { blue } from "@mui/material/colors";
-import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../.storybook/muiTheme';
+import { ThemeProvider } from "@mui/material/styles";
+import muiTheme from "../../.storybook/muiTheme";
 
 export const RadioButtonBasics = ({
   label,
@@ -25,22 +25,23 @@ export const RadioButtonBasics = ({
 }) => {
   return (
     <ThemeProvider theme={muiTheme}>
-    <FormControl>
-      <RadioGroup
-        row={row}
-        aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="female"
-        name="radio-buttons-group"
-      >
-        <FormControlLabel
-          value="female"
-          control={<Radio onClick={onClick} size={size} color={color} />}
-          label={label}
-          disabled={disabled}
-          labelPlacement={labelPlacement}
-        />
-      </RadioGroup>
-    </FormControl>
+      <FormControl>
+        <RadioGroup
+          row={row}
+          aria-labelledby="demo-radio-buttons-group-label"
+          defaultValue="female"
+          name="radio-buttons-group"
+        >
+          <FormControlLabel
+            value="female"
+            control={<Radio onClick={onClick} size={size} color={color} />}
+            label={label}
+            disabled={disabled}
+            labelPlacement={labelPlacement}
+            style={{ textTransform: "capitalize" }}
+          />
+        </RadioGroup>
+      </FormControl>
     </ThemeProvider>
   );
 };
