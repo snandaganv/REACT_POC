@@ -60,8 +60,15 @@ const muiTheme = createTheme({
       fontWeight: 'regular',
       letterSpacing: '0.15px',
     },
+    button: {
+      fontSize: 14,
+      fontWeight: 'medium',
+      letterSpacing: '0.4px',
+    },
     body1: {
-      fontWeight: 500,
+      fontWeight: 'regular',
+      fontSize: 16,
+      letterSpacing: '0.15px',
     },
     button: {
       fontStyle: 'italic',
