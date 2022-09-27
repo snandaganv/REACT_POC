@@ -1,0 +1,66 @@
+import * as React from 'react';
+import { PropTypes } from "prop-types";
+import { Slider } from "@mui/material";
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from '../../../.storybook/muiTheme';
+
+
+
+const SliderComponent = (props) => {
+  const {disabled,defaultValue,size,step,min,max,valueLabelDisplay,marks,range,rangeValue,track} = props;
+  const [value, setValue] = range? React.useState(rangeValue) : React.useState(defaultValue);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <Slider disabled={disabled} value={value} defaultValue={defaultValue} onChange={handleChange} size={size}
+        valueLabelDisplay={valueLabelDisplay} step={step} marks={marks} min={min} max={max} track={track}
+      >
+
+      </Slider>
+    
+    </ThemeProvider>
+  );
+}
+
+SliderComponent.prototype = {
+    
+  defaultValue: PropTypes.number,
+  disabled: PropTypes.bool,
+  disableSwap:PropTypes.bool,
+  max:PropTypes.number,
+  min:PropTypes.number,
+  name:PropTypes.string,
+  orientation: PropTypes.string,
+  size:PropTypes.string,
+  step: PropTypes.number,
+  valueLabelDisplay: PropTypes.string,
+  marks:PropTypes.bool,
+  range: PropTypes.bool,
+  rangeValue: PropTypes.array,
+  track:PropTypes.string,
+
+};
+
+SliderComponent.defaultProps = {
+    
+  defaultValue: 15,
+  disabled: false,
+  disableSwap:false,
+  max:100,
+  min:10,
+  name:'test',
+  orientation: 'horizontal',
+  size:'medium',
+  step: 5,
+  valueLabelDisplay: 'auto',
+  marks: true,
+  range: false,
+  rangeValue: [10,20],
+  track:'normal'
+};
+
+
+export default SliderComponent;
