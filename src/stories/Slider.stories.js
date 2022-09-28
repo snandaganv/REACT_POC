@@ -1,4 +1,3 @@
-import { number } from "prop-types";
 import SliderComponent from "../components/slider-component";
 
 export default {

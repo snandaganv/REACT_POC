@@ -8,7 +8,7 @@ import muiTheme from '../../../.storybook/muiTheme';
 
 const SliderComponent = (props) => {
   const {disabled,defaultValue,size,step,min,max,valueLabelDisplay,marks,range,rangeValue,track} = props;
-  const [value, setValue] = range? React.useState(rangeValue) : React.useState(defaultValue);
+  const [value, setValue] = React.useState(range ? rangeValue:defaultValue);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
