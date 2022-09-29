@@ -84,3 +84,13 @@ export {
   BadgeAlignments as BadgeAlignment,
   BadgeVisibility as BadgeVisibilitys,
 } from "./Badge";
+
+export {
+  TooltipsBasic as TooltipBasic,
+  TooltipsPositioned as TooltipPositioned,
+  TooltipsArrow as TooltipArrow,
+  TooltipsTrigger as TooltipTrigger,
+  TooltipsControlled as TooltipControlled,
+  TooltipsTransition as TooltipTransition,
+  TooltipsFollowCursor as TooltipFollowCursor,
+} from "./Tooltip";
