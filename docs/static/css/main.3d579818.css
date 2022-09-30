@@ -1,11 +1,44 @@
+@import url(https://rsms.me/inter/inter.css);
 /* red */
 $redColor: #D32F2F;
-$primaryErrorColor: $redColor;
+$errorMain: $redColor;
+$errorDark: #9A0007;
+$errorLight:#FF6659;
+/* blue */
+$blueColor: #1A3BDD;
+$primaryMain: $blueColor;
+$light: #6A65FF;
+$dark: #0012AA;
+$secondaryPrimary: #34E4C0;
+$secondaryLight: #78FFF4;
+$secondaryDark: #00B191;
+$pastelPrimary: #C3DBFA;
+$pastelLight: #F6FFFF;
+$pastelDark: #92A9C7;
 
-/* gray */
-* {
-    font-family: Inter, 'sans-serif' !important;
+$yellowPrimary: #FFE353;
+$yellowLight: #FFFF85;
+$yellowDark: #C9B019;
+
+$greyPrimary: #252828;
+$greyLight: #4D5050;
+$greyDark: #000000;
+$warningMain:#ED6C02;
+$warningLight:#FF9C3F;
+$warningDark:#B33D00;
+$infoLight:#5EB9FF;
+$infoMain:#0288D1;
+$infoDark:#005C9F;
+$successLight:#60AD5E;
+$successMain:#2E7D32;
+$successDark:#005005
+*, html { font-family: 'Inter', sans-serif !important; }
+@supports (font-variation-settings: normal) {
+    *, html { 
+        font-family: 'Inter var', sans-serif !important;
+    }
 }
+
 /*
 ! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
 *//*
@@ -514,6 +547,12 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.invisible {
+  visibility: hidden;
+}
+.\!invisible {
+  visibility: hidden !important;
+}
 .absolute {
   position: absolute;
 }
@@ -536,6 +575,9 @@ video {
 .border {
   border-width: 1px;
 }
+.capitalize {
+  text-transform: capitalize;
+}
 .italic {
   font-style: italic;
 }
@@ -556,9 +598,11 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+
+
 .cellHeader{font-weight:bold !important}
 
 .MuiDataGrid-columnHeaderTitle{font-weight:bold !important}.data-table-container{width:'100%';font-size:'25px';min-height:300px !important}
 
 
-/*# sourceMappingURL=main.dc62a296.css.map*/
+/*# sourceMappingURL=main.3d579818.css.map*/
