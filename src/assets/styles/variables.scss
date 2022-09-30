@@ -1,0 +1,66 @@
+/* red */
+$redColor: #D32F2F;
+$errorMain: $redColor;
+$errorDark: #9A0007;
+$errorLight:#FF6659;
+/* blue */
+$blueColor: #1A3BDD;
+$primaryMain: $blueColor;
+$light: #6A65FF;
+$dark: #0012AA;
+$secondaryPrimary: #34E4C0;
+$secondaryLight: #78FFF4;
+$secondaryDark: #00B191;
+$pastelPrimary: #C3DBFA;
+$pastelLight: #F6FFFF;
+$pastelDark: #92A9C7;
+
+$yellowPrimary: #FFE353;
+$yellowLight: #FFFF85;
+$yellowDark: #C9B019;
+
+$greyPrimary: #252828;
+$greyLight: #4D5050;
+$greyDark: #000000;
+$warningMain:#ED6C02;
+$warningLight:#FF9C3F;
+$warningDark:#B33D00;
+$infoLight:#5EB9FF;
+$infoMain:#0288D1;
+$infoDark:#005C9F;
+$successLight:#60AD5E;
+$successMain:#2E7D32;
+$successDark:#005005;
+
+
+:export {
+    myRed: $redColor;
+    blue:$blueColor;
+    primary:$primaryMain;
+    errorMain:$errorMain;
+    errorLight: $errorLight;
+    errorDark:$errorDark;
+    light:$light;
+    dark:$dark;
+    secondaryLight:$secondaryLight;
+    secondaryDark:$secondaryDark;
+    secondaryPrimary: $secondaryPrimary;
+    pastelLight:$pastelLight;
+    pastelDark:$pastelDark;
+    pastelPrimary: $pastelPrimary;
+    yellowPrimary:$yellowPrimary;
+    yellowLight:$yellowLight;
+    yellowDark: $yellowDark;
+    greyPrimary:$greyPrimary;
+    greyLight:$greyLight;
+    greyDark: $greyDark;
+    warningMain: $warningMain;
+    warningLight: $warningLight;
+    warningDark:$warningDark;
+    infoMain:$infoMain;
+    infoLight:$infoLight;
+    infoDark:$infoDark; 
+    successMain: $successMain;
+    successLight:$successLight;
+    successDark: $successDark;
+  }
