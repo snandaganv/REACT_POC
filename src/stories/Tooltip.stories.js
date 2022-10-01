@@ -1,11 +1,11 @@
 import {
-  BasicTooltips,
-  PositionedTooltips,
-  ArrowTooltips,
-  TriggerTooltips,
-  ControlledTooltips,
-  TransitionTooltips,
-  FollowCursorTooltips,
+  TooltipsBasic,
+  TooltipsPositioned,
+  TooltipsArrow,
+  TooltipsTrigger,
+  TooltipsControlled,
+  TooltipsTransition,
+  TooltipsFollowCursor,
 } from "../components/Tooltip";
 
 export default {
@@ -29,13 +29,13 @@ export default {
   },
 };
 
-export const BasicTooltip = BasicTooltips.bind({});
-BasicTooltip.args = {
+export const TooltipBasic = TooltipsBasic.bind({});
+TooltipBasic.args = {
   title: "Delete",
 };
-export const PositionedTooltip = PositionedTooltips.bind({});
-export const ArrowTooltip = ArrowTooltips.bind({});
-export const TriggerTooltip = TriggerTooltips.bind({});
-export const ControlledTooltip = ControlledTooltips.bind({});
-export const TransitionTooltip = TransitionTooltips.bind({});
-export const FollowCursorTooltip = FollowCursorTooltips.bind({});
+export const TooltipPositioned = TooltipsPositioned.bind({});
+export const TooltipArrow = TooltipsArrow.bind({});
+export const TooltipTrigger = TooltipsTrigger.bind({});
+export const TooltipControlled = TooltipsControlled.bind({});
+export const TooltipTransition = TooltipsTransition.bind({});
+export const TooltipFollowCursor = TooltipsFollowCursor.bind({});
