@@ -8,7 +8,7 @@ import { ClickAwayListener } from "@mui/material";
 import { Fade } from "@mui/material";
 import { Zoom } from "@mui/material";
 
-export const BasicTooltips = ({ title, placement, arrow }) => {
+export const TooltipsBasic = ({ title, placement, arrow }) => {
   return (
     <Tooltip title={title} placement={placement} arrow={arrow}>
       <IconButton>
@@ -18,7 +18,7 @@ export const BasicTooltips = ({ title, placement, arrow }) => {
   );
 };
 
-export const PositionedTooltips = ({ placement }) => {
+export const TooltipsPositioned = ({ placement }) => {
   return (
     <Box>
       <Grid container justifyContent="center">
@@ -83,7 +83,7 @@ export const PositionedTooltips = ({ placement }) => {
   );
 };
 
-export const ArrowTooltips = ({ arrow }) => {
+export const TooltipsArrow = ({ arrow }) => {
   return (
     <Tooltip title="Add" arrow>
       <Button>Arrow</Button>
@@ -91,7 +91,7 @@ export const ArrowTooltips = ({ arrow }) => {
   );
 };
 
-export const TriggerTooltips = ({
+export const TooltipsTrigger = ({
   disableFocusListener,
   disableTouchListener,
 }) => {
@@ -147,7 +147,7 @@ export const TriggerTooltips = ({
   );
 };
 
-export const ControlledTooltips = ({ onClose, onOpen }) => {
+export const TooltipsControlled = ({ onClose, onOpen }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClose = () => {
@@ -165,7 +165,7 @@ export const ControlledTooltips = ({ onClose, onOpen }) => {
   );
 };
 
-export const TransitionTooltips = ({
+export const TooltipsTransition = ({
   TransitionComponent,
   TransitionProps,
 }) => {
@@ -188,7 +188,7 @@ export const TransitionTooltips = ({
   );
 };
 
-export const FollowCursorTooltips = ({ followCursor }) => {
+export const TooltipsFollowCursor = ({ followCursor }) => {
   return (
     <Tooltip title="You don't have permission to do this" followCursor>
       <Box sx={{ bgcolor: "text.disabled", color: "background.paper", p: 2 }}>
