@@ -5,10 +5,11 @@ import Button from "@mui/material/Button";
 import { PropTypes } from "prop-types";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
+import { createTheme } from "@mui/system";
 
 export const BackdropDefaults = (props) => {
   const [open, setOpen] = React.useState(false);
-  const { label, buttoncolor, color, variant, size, invisible } = props;
+  const { label, color, invisible } = props;
 
   const handleClose = () => {
     setOpen(false);
@@ -17,14 +18,25 @@ export const BackdropDefaults = (props) => {
     setOpen(!open);
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#1A3BDD",
+      },
+      secondary: {
+        main: "#fff",
+      },
+    },
+  });
+
   return (
     <div>
       <ThemeProvider theme={muiTheme}>
         <Button
           onClick={handleToggle}
-          variant={variant}
-          size={size}
-          color={buttoncolor}
+          // variant={variant}
+          // size={size}
+          // color={buttoncolor}
           style={{ textTransform: "capitalize" }}
         >
           {label}
@@ -33,14 +45,16 @@ export const BackdropDefaults = (props) => {
 
       <Backdrop
         sx={{
-          color: { color },
+          // color: { color },
           zIndex: (theme) => theme.zIndex.drawer + 1,
         }}
         open={open}
         onClick={handleClose}
         invisible={invisible}
       >
-        <CircularProgress color="inherit" />
+        <ThemeProvider theme={theme}>
+          <CircularProgress color={color} />
+        </ThemeProvider>
       </Backdrop>
     </div>
   );
@@ -49,5 +63,5 @@ export const BackdropDefaults = (props) => {
 BackdropDefaults.propTypes = {
   label: PropTypes.string,
   invisible: PropTypes.bool,
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  // size: PropTypes.oneOf(["small", "medium", "large"]),
 };

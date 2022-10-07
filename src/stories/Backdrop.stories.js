@@ -7,16 +7,16 @@ export default {
   title: "Feedback/Backdrop",
   component: BackdropDefaults,
   argTypes: {
-    variant: {
-      options: ["contained", "outlined", "text"],
-      control: { type: "radio" },
-    },
-    size: {
-      options: ["small", "medium", "large"],
-      control: { type: "radio" },
-    },
-    buttoncolor: {
-      options: ["primary", "secondary", "success", "error", "info", "warning"],
+    // variant: {
+    //   options: ["contained", "outlined", "text"],
+    //   control: { type: "radio" },
+    // },
+    // size: {
+    //   options: ["small", "medium", "large"],
+    //   control: { type: "radio" },
+    // },
+    color: {
+      options: ["primary", "secondary"],
       control: { type: "radio" },
     },
   },
@@ -25,9 +25,9 @@ export default {
 export const BackdropDefault = BackdropDefaults.bind({});
 BackdropDefault.args = {
   label: "Show Backdrop",
-  variant: "text",
-  size: "large",
-  buttoncolor: "primary",
-  color: "#fff",
+  // variant: "text",
+  // size: "large",
+  // buttoncolor: "primary",
+  color: "secondary",
   invisible: false,
 };
