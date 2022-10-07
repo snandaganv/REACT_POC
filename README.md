@@ -21,6 +21,17 @@ Please create a new branch out of master.
 
 Commit your changes to that local branch and create a pull request to be reviewed and approved by your peers. Once the changes are approved, it'll be merged into master branch and deployed.
 
+stage your code for commiting by using command mentioned below:
+### git add .
+
+commit your changes by using command mentioned below:
+### git commit -m `<PLAT-123 and your message goes in here>`
+
+command push your changes to your local branches:
+#33 git push origin `<branch name example: PLAT-123-feature>`
+
+Once the changes are successfully pushed to you local branch, it should give you a URL to create a pull request. Click on the link or copy/paste it in the browser and follow the instructions on GitHub to rasie a Pull Request.
+
 #### How to add Actions to stories
 
 https://storybook.js.org/docs/react/essentials/actions
