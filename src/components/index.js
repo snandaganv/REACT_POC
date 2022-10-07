@@ -94,3 +94,9 @@ export {
   TooltipsTransition as TooltipTransition,
   TooltipsFollowCursor as TooltipFollowCursor,
 } from "./Tooltip";
+
+export {
+  AccordionBasic as AccordionBasics,
+  AccordionControlled as AccordionsControlled,
+  AccordionCustomization as AccordionCustomizations,
+} from "./Accordion";
