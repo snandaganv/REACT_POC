@@ -28,7 +28,7 @@ commit your changes by using command mentioned below:
 ### git commit -m `<PLAT-123 and your message goes in here>`
 
 command push your changes to your local branches:
-#33 git push origin `<branch name example: PLAT-123-feature>`
+### git push origin `<branch name example: PLAT-123-feature>`
 
 Once the changes are successfully pushed to you local branch, it should give you a URL to create a pull request. Click on the link or copy/paste it in the browser and follow the instructions on GitHub to rasie a Pull Request.
 
