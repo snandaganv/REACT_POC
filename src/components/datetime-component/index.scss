@@ -1,0 +1,13 @@
+.MuiPaper-elevation8.MuiPickersPopper-paper {
+    > div {
+        &:first-child {
+            > div {
+                &:first-child {
+                    display: none; 
+                }
+                
+            }
+        }
+        
+    }
+}

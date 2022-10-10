@@ -10,6 +10,7 @@ import dayjs from 'dayjs';
 import { ThemeProvider } from '@mui/material/styles';
 import muiTheme from '../../../.storybook/muiTheme';
 import Box from "@mui/material/Box";
+import "./index.scss";
 
 
 const DateTimeComponent = (props) => {
