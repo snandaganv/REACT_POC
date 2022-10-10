@@ -27,10 +27,6 @@ export default {
             options: ["outlined", "standard", "filled"],
             control: { type: "radio" },
         },
-        // size: {
-        //     options: ["small", "medium"],
-        //     control: { type: "radio" },
-        // },
     },
 };
 export const SelectDefault = DefaultSelects.bind({});

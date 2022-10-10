@@ -33,7 +33,7 @@ export const DefaultSelects = ({
     required,
     selectlabel,
     selectoptions,
-    //options,
+
 }) => {
 
     const theme = useTheme();
@@ -70,11 +70,6 @@ export const DefaultSelects = ({
 DefaultSelects.propTypes = {
     selectlabel: PropTypes.array,
     variant: PropTypes.oneOf(["standard", "filled"]),
-    //size: PropTypes.oneOf(["small"]),
-    // label: PropTypes.string,
-
-
-
 };
 
 export const SelectBasics = ({ size, props, selectlabel, selectoptions }) => {
