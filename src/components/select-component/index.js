@@ -17,16 +17,12 @@ import muiTheme from '../../../.storybook/muiTheme';
 
 
 
-const age = [
-    'Option 1',
-    'Option 2',
-    'Option 3',
-];
-const autowidth = [
-    'Option',
-    'Option two',
-    'Option one and a two',
-]
+// const age = [
+//     'Option 1',
+//     'Option 2',
+//     'Option 3',
+// ];
+
 
 export const DefaultSelects = ({
     props,
@@ -35,42 +31,44 @@ export const DefaultSelects = ({
     error,
     size,
     required,
-    selectname,
+    selectlabel,
     selectoptions,
+    //options,
 }) => {
 
     const theme = useTheme();
     const [age, setAge] = React.useState('');
 
-    const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value as string);
+    const handleChange = (event) => {
+        setAge(event.target.value);
     };
+
 
     return (
         <div>
             <ThemeProvider theme={muiTheme}>
                 <FormControl fullWidth disabled={disabled} size={size} error={error} required={required}>
-                    <InputLabel id="demo-simple-select-label">{selectname.map((item) => { return item.label })}</InputLabel>
+                    <InputLabel id="demo-simple-select-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={age}
                         variant={variant}
-                        label="Age"
+                        label="Select"
                         onChange={handleChange}
-
                     >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value={null}>
+                            <em>None</em>
+                        </MenuItem>
+                        {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
                     </Select>
                 </FormControl>
             </ThemeProvider>
-        </div>
+        </div >
     );
 }
+
 DefaultSelects.propTypes = {
-    selectname: PropTypes.array,
+    selectlabel: PropTypes.array,
     variant: PropTypes.oneOf(["standard", "filled"]),
     //size: PropTypes.oneOf(["small"]),
     // label: PropTypes.string,
@@ -79,41 +77,29 @@ DefaultSelects.propTypes = {
 
 };
 
-export const SelectBasics = ({ size, props, selectname }) => {
+export const SelectBasics = ({ size, props, selectlabel, selectoptions }) => {
     const theme = useTheme();
-    const [personName, setPersonName] = React.useState([]);
+    const [age, setAge] = React.useState('');
 
-    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
-        const {
-            target: { value },
-        } = event;
-        setPersonName(
-            typeof value === 'string' ? value.split(',') : value,
-        );
+    const handleChange = (event) => {
+        setAge(event.target.value);
     };
 
     return (
         <div>
             <ThemeProvider theme={muiTheme}>
                 <FormControl sx={{ m: 1, width: 300 }} size={size}>
-                    <InputLabel id="demo-simple-select-label">{selectname.map((item) => { return item.label })}</InputLabel>
+                    <InputLabel id="demo-simple-select-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={personName}
                         onChange={handleChange}
                         input={<OutlinedInput label="Name" />}
-
                     >
-                        {age.map((age) => (
-                            <MenuItem
-                                key={age}
-                                value={age}
-                                style={getStyles(age, personName, theme)}
-                            >
-                                {age}
-                            </MenuItem>
-                        ))}
+                        <MenuItem value={null}>
+                            <em>None</em>
+                        </MenuItem>
+                        {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
                     </Select>
                 </FormControl>
             </ThemeProvider>
@@ -121,17 +107,12 @@ export const SelectBasics = ({ size, props, selectname }) => {
     );
 }
 
-export const SelectVariants = ({ props, selectname }) => {
+export const SelectVariants = ({ props, selectlabel, selectoptions }) => {
     const theme = useTheme();
-    const [personName, setPersonName] = React.useState([]);
+    const [age, setAge] = React.useState('');
 
-    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
-        const {
-            target: { value },
-        } = event;
-        setPersonName(
-            typeof value === 'string' ? value.split(',') : value,
-        );
+    const handleChange = (event) => {
+        setAge(event.target.value);
     };
 
     return (
@@ -139,24 +120,17 @@ export const SelectVariants = ({ props, selectname }) => {
             <ThemeProvider theme={muiTheme}>
 
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                    <InputLabel id="demo-simple-select-standard-label">{selectname.map((item) => { return item.label })}</InputLabel>
+                    <InputLabel id="demo-simple-select-standard-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
                     <Select
                         labelId="demo-simple-select-standard-label"
                         id="demo-simple-select-standard"
-                        value={personName}
                         onChange={handleChange}
-                        label="Age"
-
+                        label="Select"
                     >
-                        {age.map((age) => (
-                            <MenuItem
-                                key={age}
-                                value={age}
-                                style={getStyles(age, personName, theme)}
-                            >
-                                {age}
-                            </MenuItem>
-                        ))}
+                        <MenuItem value={null}>
+                            <em>None</em>
+                        </MenuItem>
+                        {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
                     </Select>
                 </FormControl>
 
@@ -164,24 +138,34 @@ export const SelectVariants = ({ props, selectname }) => {
             <ThemeProvider theme={muiTheme}>
 
                 <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-                    <InputLabel id="demo-simple-select-filled-label">{selectname.map((item) => { return item.label })}</InputLabel>
+                    <InputLabel id="demo-simple-select-filled-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
                     <Select
                         labelId="demo-simple-select-filled-label"
                         id="demo-simple-select-filled"
-                        value={personName}
-                        label="Age"
+                        label="Select"
                         onChange={handleChange}
-
                     >
-                        {age.map((age) => (
-                            <MenuItem
-                                key={age}
-                                value={age}
-                                style={getStyles(age, personName, theme)}
-                            >
-                                {age}
-                            </MenuItem>
-                        ))}
+                        <MenuItem value={null}>
+                            <em>None</em>
+                        </MenuItem>
+                        {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
+                    </Select>
+                </FormControl>
+            </ThemeProvider>
+            <ThemeProvider theme={muiTheme}>
+
+                <FormControl variant="outlined" sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="demo-simple-select-outlined-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-outlined-label"
+                        id="demo-simple-select-outlined"
+                        label="Select"
+                        onChange={handleChange}
+                    >
+                        <MenuItem value={null}>
+                            <em>None</em>
+                        </MenuItem>
+                        {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
                     </Select>
                 </FormControl>
 
@@ -189,125 +173,57 @@ export const SelectVariants = ({ props, selectname }) => {
         </div>
     );
 }
-export const SelectLabels = ({ }) => {
-    const [age, setAge] = React.useState('');
-    const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value)
-    };
-    return (
-        <div>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
-                <Select
-                    labelId="demo-simple-select-helper-label"
-                    id="demo-simple-select-helper"
-                    value={age}
-                    label="Age"
-                    onChange={handleChange}
-                >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-                <FormHelperText>With label + helper text</FormHelperText>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <Select
-                    value={age}
-                    onChange={handleChange}
-                    displayEmpty
-                    inputProps={{ 'aria-label': 'Without label' }}
-                >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-                <FormHelperText>Without label</FormHelperText>
-            </FormControl>
-        </div>
-    );
-}
 
-export const SelectAutoWidt = ({ props, selectname }) => {
+export const SelectAutoWidt = ({ props, selectlabel, autowidth }) => {
     const theme = useTheme();
-    const [personName, setPersonName] = React.useState([]);
+    const [age, setAge] = React.useState('');
 
-    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
-        const {
-            target: { value },
-        } = event;
-        setPersonName(
-            typeof value === 'string' ? value.split(',') : value,
-        );
+    const handleChange = (event) => {
+        setAge(event.target.value);
     };
 
     return (
         <div>
             <FormControl sx={{ m: 1, minWidth: 80 }}>
-                <InputLabel id="demo-simple-select-autowidth-label">{selectname.map((item) => { return item.label })}</InputLabel>
+                <InputLabel id="demo-simple-select-autowidth-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
                 <Select
                     labelId="demo-simple-select-autowidth-label"
                     id="demo-simple-select-autowidth"
-                    value={personName}
                     onChange={handleChange}
                     autoWidth
-                    label="Age"
-
+                    label="Sort"
                 >
-                    {autowidth.map((autowidth) => (
-                        <MenuItem
-                            key={autowidth}
-                            value={autowidth}
-                            style={getStyles(autowidth, personName, theme)}
-                        >
-                            {autowidth}
-                        </MenuItem>
-                    ))}
+                    <MenuItem>
+                        <em>None</em>
+                    </MenuItem>
+                    {autowidth.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
                 </Select>
             </FormControl>
         </div>
     );
 }
 
-export const SelectSizes = ({ }) => {
-    const theme = useTheme();
-    const [personName, setPersonName] = React.useState([]);
+export const SelectSizes = ({ selectlabel, selectoptions }) => {
+    const [age, setAge] = React.useState('');
 
-    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
-        const {
-            target: { value },
-        } = event;
-        setPersonName(
-            typeof value === 'string' ? value.split(',') : value,
-        );
+    const handleChange = (event: SelectChangeEvent) => {
+        setAge(event.target.value);
     };
     return (
         <ThemeProvider theme={muiTheme}>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                <InputLabel id="demo-select-small">Age</InputLabel>
+                <InputLabel id="demo-select-small">{selectlabel.map((item) => { return item.label })}</InputLabel>
                 <Select
                     labelId="demo-select-small"
                     id="demo-select-small"
-                    value={personName}
-                    label="Age"
+                    label="Select"
                     onChange={handleChange}
 
                 >
-                    {age.map((age) => (
-                        <MenuItem
-                            key={age}
-                            value={age}
-                            style={getStyles(age, personName, theme)}
-                        >
-                            {age}
-                        </MenuItem>
-                    ))}
+                    <MenuItem value={null}>
+                        <em>None</em>
+                    </MenuItem>
+                    {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
                 </Select>
             </FormControl>
         </ThemeProvider>
@@ -315,7 +231,50 @@ export const SelectSizes = ({ }) => {
     );
 }
 
-export const SelectOtherProps = ({ }) => {
+export const SelectLabels = ({ props, selectlabel, selectoptions }) => {
+    const theme = useTheme();
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event: SelectChangeEvent) => {
+        setAge(event.target.value);
+    };
+    return (
+        <div>
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <InputLabel id="demo-simple-select-helper-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
+                <Select
+                    labelId="demo-simple-select-helper-label"
+                    id="demo-simple-select-helper"
+                    value={age}
+                    label="Select"
+                    onChange={handleChange}
+                >
+                    <MenuItem value={null}>
+                        <em>None</em>
+                    </MenuItem>
+                    {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
+                </Select>
+                <FormHelperText>With label + helper text</FormHelperText>
+            </FormControl>
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <Select
+                    onChange={handleChange}
+                    value={age}
+                    displayEmpty
+                    inputProps={{ 'aria-label': 'Without label' }}
+                >
+                    <MenuItem value="">
+                        <em>None</em>
+                    </MenuItem>
+                    {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
+                </Select>
+                <FormHelperText>Without label</FormHelperText>
+            </FormControl>
+        </div>
+    );
+}
+
+export const SelectOtherProps = ({ selectlabel, selectoptions }) => {
     const [age, setAge] = React.useState('');
     const handleChange = (event: SelectChangeEvent) => {
         setAge(event.target.value)
@@ -323,76 +282,68 @@ export const SelectOtherProps = ({ }) => {
     return (
         <div>
             <FormControl sx={{ m: 1, minWidth: 120 }} disabled>
-                <InputLabel id="demo-simple-select-disabled-label">Age</InputLabel>
+                <InputLabel id="demo-simple-select-disabled-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
                 <Select
                     labelId="demo-simple-select-disabled-label"
                     id="demo-simple-select-disabled"
                     value={age}
-                    label="Age"
+                    label="Select"
                     onChange={handleChange}
                 >
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
                 </Select>
                 <FormHelperText>Disabled</FormHelperText>
             </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }} error>
-                <InputLabel id="demo-simple-select-error-label">Age</InputLabel>
+                <InputLabel id="demo-simple-select-error-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
                 <Select
                     labelId="demo-simple-select-error-label"
                     id="demo-simple-select-error"
                     value={age}
-                    label="Age"
+                    label="Select"
                     onChange={handleChange}
                     renderValue={(value) => `⚠️  - ${value}`}
                 >
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
                 </Select>
                 <FormHelperText>Error</FormHelperText>
             </FormControl>
             <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="demo-simple-select-readonly-label">Age</InputLabel>
+                <InputLabel id="demo-simple-select-readonly-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
                 <Select
                     labelId="demo-simple-select-readonly-label"
                     id="demo-simple-select-readonly"
                     value={age}
-                    label="Age"
+                    label="Select"
                     onChange={handleChange}
                     inputProps={{ readOnly: true }}
                 >
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
                 </Select>
                 <FormHelperText>Read only</FormHelperText>
             </FormControl>
             <FormControl required sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="demo-simple-select-required-label">Age</InputLabel>
+                <InputLabel id="demo-simple-select-required-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
                 <Select
                     labelId="demo-simple-select-required-label"
                     id="demo-simple-select-required"
                     value={age}
-                    label="Age *"
+                    label="Select *"
                     onChange={handleChange}
                 >
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
                 </Select>
                 <FormHelperText>Required</FormHelperText>
             </FormControl>
@@ -422,6 +373,47 @@ const names = [
     'Option 8',
     'Option 9',
 ];
+
+export const MultipleSelects = ({ selectlabel }) => {
+    const theme = useTheme();
+    const [personName, setPersonName] = React.useState([]);
+
+    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+        const {
+            target: { value },
+        } = event;
+        setPersonName(
+            typeof value === 'string' ? value.split(',') : value,
+        );
+    };
+
+    return (
+        <div>
+            <FormControl sx={{ m: 1, width: 300 }}>
+                <InputLabel id="demo-multiple-name-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
+                <Select
+                    labelId="demo-multiple-name-label"
+                    id="demo-multiple-name"
+                    multiple
+                    value={personName}
+                    onChange={handleChange}
+                    input={<OutlinedInput label="Select" />}
+                    MenuProps={MenuProps}
+                >
+                    {names.map((name) => (
+                        <MenuItem
+                            key={name}
+                            value={name}
+                            style={getStyles(name, personName, theme)}
+                        >
+                            {name}
+                        </MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
+        </div>
+    );
+}
 
 export const MultipleSelectCheckmarks = ({ }) => {
     const [personName, setPersonName] = React.useState([]);
@@ -468,48 +460,6 @@ function getStyles(name: string, personName: string[], theme: Theme) {
                 ? theme.typography.fontWeightRegular
                 : theme.typography.fontWeightMedium,
     };
-}
-
-export const MultipleSelects = ({ }) => {
-    const theme = useTheme();
-    const [personName, setPersonName] = React.useState([]);
-
-    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
-        const {
-            target: { value },
-        } = event;
-        setPersonName(
-            // On autofill we get a stringified value.
-            typeof value === 'string' ? value.split(',') : value,
-        );
-    };
-
-    return (
-        <div>
-            <FormControl sx={{ m: 1, width: 300 }}>
-                <InputLabel id="demo-multiple-name-label">Name</InputLabel>
-                <Select
-                    labelId="demo-multiple-name-label"
-                    id="demo-multiple-name"
-                    multiple
-                    value={personName}
-                    onChange={handleChange}
-                    input={<OutlinedInput label="Name" />}
-                    MenuProps={MenuProps}
-                >
-                    {names.map((name) => (
-                        <MenuItem
-                            key={name}
-                            value={name}
-                            style={getStyles(name, personName, theme)}
-                        >
-                            {name}
-                        </MenuItem>
-                    ))}
-                </Select>
-            </FormControl>
-        </div>
-    );
 }
 
 export const MultipleSelectChips = ({ }) => {
@@ -611,6 +561,7 @@ export const MultipleSelectPlaceholders = ({ }) => {
         </div>
     );
 }
+
 export const GroupSelect = ({ }) => {
     const theme = useTheme();
     const [personName, setPersonName] = React.useState([]);
