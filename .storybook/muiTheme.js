@@ -54,6 +54,106 @@ const muiTheme = createTheme({
       dark: variables.successDark
     }
   },
+  typography: {
+    subtitle1: {
+      fontSize: 16,
+      fontWeight: 'regular',
+      letterSpacing: '0.15px',
+    },
+    button: {
+      fontSize: 14,
+      fontWeight: 'medium',
+      letterSpacing: '0.4px',
+    },
+    body1: {
+      fontWeight: 'regular',
+      fontSize: 16,
+      letterSpacing: '0.15px',
+    },
+    button: {
+      fontStyle: 'italic',
+    },
+    h1: {
+      fontSize: 96,
+      fontWeight: 'light',
+      letterSpacing: '-1.5px',
+    },
+    h2: {
+      fontSize: 60,
+      fontWeight: 'light',
+      letterSpacing: '0.5px',
+    },
+    h3: {
+      fontSize: 48,
+      fontWeight: 'regular',
+      letterSpacing: '0px',
+    },
+    h4: {
+      fontSize: 34,
+      fontWeight: 'regular',
+      letterSpacing: '0.25px',
+    },
+    h5: {
+      fontSize: 24,
+      fontWeight: 'regular',
+      letterSpacing: '0px',
+    },
+    h6: {
+      fontSize: 20,
+      fontWeight: 'medium',
+      letterSpacing: '0.15px',
+    },
+    subtitle2: {
+      fontSize: 14,
+      fontWeight: 'medium',
+      letterSpacing: '0.1px',
+    },
+    body1: {
+      fontSize: 16,
+      fontWeight: 'regular',
+      letterSpacing: '0.15px',
+    },
+    body2: {
+      fontSize: 14,
+      fontWeight: 'regular',
+      letterSpacing: '0.15px',
+    },
+    caption: {
+      fontSize: 12,
+      fontWeight: 'regular',
+      letterSpacing: '0.4px',
+    },
+    overline: {
+      fontSize: 12,
+      fontWeight: 'regular',
+      letterSpacing: '1px',
+    },
+    avatarLetter: {
+      fontSize: 20,
+      fontWeight: 'regular',
+      letterSpacing: '0.14px',
+    },
+    inputLabel: {
+      fontSize: 12,
+      fontWeight: 'regular',
+      letterSpacing: '0.15px',
+    },
+    helperText: {
+      fontSize: 12,
+      fontWeight: 'regular',
+      letterSpacing: '0.4px',
+    },
+    inputText: {
+      fontSize: 16,
+      fontWeight: 'regular',
+      letterSpacing: '0.15px',
+    },
+    tooltip: {
+      fontSize: 10,
+      fontWeight: 'medium',
+      letterSpacing: '0px',
+    }
+  },
 });
 
 export default muiTheme;
