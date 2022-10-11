@@ -100,3 +100,19 @@ export {
   AccordionControlled as AccordionsControlled,
   AccordionCustomization as AccordionCustomizations,
 } from "./Accordion";
+
+
+export {
+  SelectDefault as DefaultSelects,
+  BasicSelect as SelectBasics,
+  SelectVariant as SelectVariants,
+  SelectAutoWidth as SelectAutoWidt,
+  SelectSize as SelectSizes,
+  SelectLabel as SelectLabels,
+  SelectOtherProp as SelectOtherProps,
+  MultipleSelect as MultipleSelects,
+  MultipleSelectCheckmark as MultipleSelectCheckmarks,
+  MultipleSelectChip as MultipleSelectChips,
+  MultipleSelectPlaceholder as MultipleSelectPlaceholders,
+  GroupedSelect as GroupSelect,
+} from "./select-component"
