@@ -70,6 +70,7 @@ const DateTimeComponent = (props) => {
       variant === 'calendar' && (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
      <DateRangePicker
+     className='daterangepickerCalen'
      calendars={calendarr}
           value={valueRange}
           onChange={(newValue) => {
