@@ -1,6 +1,7 @@
 import { createTheme } from '@mui/material/styles';
 
 import variables from '../src/assets/styles/variables.scss';
+import '../src/assets/styles/fonts.scss';
 
 
 const muiTheme = createTheme({
@@ -55,6 +56,7 @@ const muiTheme = createTheme({
     }
   },
   typography: {
+    fontFamily: 'Inter var, sans-serif', 
     subtitle1: {
       fontSize: 16,
       fontWeight: 'regular',
@@ -152,7 +154,7 @@ const muiTheme = createTheme({
       fontSize: 10,
       fontWeight: 'medium',
       letterSpacing: '0px',
-    }
+    },
   },
 });
 
