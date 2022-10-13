@@ -10,7 +10,6 @@ import {
   RadioGroup,
 } from "@mui/material";
 
-import { blue } from "@mui/material/colors";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../.storybook/muiTheme";
 
@@ -21,19 +20,33 @@ export const RadioButtonBasics = ({
   disabled,
   size,
   labelPlacement,
+  checked,
+  onChange,
+  required,
+  value,
+  name,
 }) => {
   return (
     <ThemeProvider theme={muiTheme}>
       <FormControl>
         <RadioGroup
           row={row}
-          aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue="female"
-          name="radio-buttons-group"
+          aria-labelledby=""
+          defaultValue=""
+          name={name}
+          onChange={onChange}
         >
           <FormControlLabel
-            value="female"
-            control={<Radio onClick={onClick} size={size} />}
+            value={value}
+            control={
+              <Radio
+                onClick={onClick}
+                size={size}
+                checked={checked}
+                onChange={onChange}
+                required={required}
+              />
+            }
             label={label}
             disabled={disabled}
             labelPlacement={labelPlacement}
@@ -47,8 +60,12 @@ export const RadioButtonBasics = ({
 RadioButtonBasics.prototype = {
   label: PropTypes.string,
   onClick: PropTypes.func,
-  disabled: PropTypes.Boolean,
+  onChange: PropTypes.func,
+  required: PropTypes.bool,
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
   row: PropTypes.Boolean,
+  name: PropTypes.string,
 };
 
 export const RadiosButtonGroup = (row) => {
@@ -154,45 +171,6 @@ export const RadioButtonSize = (row, ...props) => {
     </ThemeProvider>
   );
 };
-
-// export const RadioButtonColor = ({ row, onClick, ...props }) => {
-//   const [selectedValue, setSelectedValue] = React.useState("a");
-
-//   const handleChange = (event) => {
-//     setSelectedValue(event.target.value);
-//   };
-
-//   const controlProps = (item) => ({
-//     checked: selectedValue === item,
-//     onChange: handleChange,
-//     value: item,
-//     name: "color-radio-button-demo",
-//     inputProps: { "aria-label": item },
-//   });
-//   return (
-//     <ThemeProvider theme={muiTheme}>
-//       <div>
-//         <Radio {...controlProps("a")} />
-//         <Radio {...controlProps("b")} color="secondary" />
-//         <Radio {...controlProps("c")} color="success" />
-//         <Radio {...controlProps("d")} color="default" />
-//         <Radio
-//           {...controlProps("e")}
-//           sx={{
-//             color: blue[800],
-//             "&.Mui-checked": {
-//               color: blue[600],
-//             },
-//           }}
-//         />
-//       </div>
-//     </ThemeProvider>
-//   );
-// };
-
-// RadioButtonColor.args = {
-//   row: true,
-// };
 
 export const RadioButtonLabelPlacements = ({ onClick, disabled, ...props }) => {
   return (

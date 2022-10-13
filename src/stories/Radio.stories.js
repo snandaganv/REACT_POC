@@ -30,11 +30,12 @@ export default {
 
 export const RadioButtonBasic = RadioButtonBasics.bind({});
 RadioButtonBasic.args = {
-  label: "Label",
+  label: "Radiobutton Label",
   row: true,
   size: "medium",
   labelPlacement: "end",
   disabled: false,
+  checked: true,
 };
 export const RadiosButtonGroups = RadiosButtonGroup.bind({});
 export const RadioButtonDirections = RadioButtonDirection.bind({});
