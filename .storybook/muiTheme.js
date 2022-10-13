@@ -3,8 +3,6 @@ import { createTheme } from "@mui/material/styles";
 import variables from "../src/assets/styles/variables.scss";
 import "../src/assets/styles/fonts.scss";
 
-import variables from "../src/assets/styles/variables.scss";
-
 const muiTheme = createTheme({
   components: {
     // Name of the component
