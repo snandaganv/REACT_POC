@@ -1,0 +1,13 @@
+.MuiPaper-elevation8.MuiPickersPopper-paper {
+    > div.daterangepickerCalen {
+        &:first-child {
+            > div {
+                &:first-child {
+                    display: none; 
+                }
+                
+            }
+        }
+        
+    }
+}
