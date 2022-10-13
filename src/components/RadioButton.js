@@ -50,7 +50,6 @@ export const RadioButtonBasics = ({
             label={label}
             disabled={disabled}
             labelPlacement={labelPlacement}
-            style={{ textTransform: "capitalize" }}
           />
         </RadioGroup>
       </FormControl>
@@ -64,7 +63,7 @@ RadioButtonBasics.prototype = {
   required: PropTypes.bool,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
-  row: PropTypes.Boolean,
+  row: PropTypes.bool,
   name: PropTypes.string,
 };
 
@@ -91,9 +90,6 @@ export const RadiosButtonGroup = (row) => {
       </FormControl>
     </ThemeProvider>
   );
-};
-RadiosButtonGroup.args = {
-  row: true,
 };
 
 export const RadioButtonDirection = (row) => {
@@ -156,7 +152,7 @@ export const RadioButtonSize = (row, ...props) => {
 
   return (
     <ThemeProvider theme={muiTheme}>
-      <RadioGroup row={row}>
+      <RadioGroup row="row">
         <Radio {...controlProps("a")} size="small" />
         <Radio {...controlProps("b")} />
         <Radio

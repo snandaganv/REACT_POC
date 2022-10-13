@@ -30,7 +30,7 @@ export default {
 
 export const RadioButtonBasic = RadioButtonBasics.bind({});
 RadioButtonBasic.args = {
-  label: "Radiobutton Label",
+  label: "Radio button Label",
   row: true,
   size: "medium",
   labelPlacement: "end",
