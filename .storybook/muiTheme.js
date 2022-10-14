@@ -12,6 +12,7 @@ const muiTheme = createTheme({
         root: {
           // Some CSS
           textTransform: "capitalize",
+          fontStyle: "normal",
         },
       },
     },
