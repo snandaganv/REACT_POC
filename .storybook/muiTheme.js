@@ -12,6 +12,15 @@ const muiTheme = createTheme({
         root: {
           // Some CSS
           textTransform: "capitalize",
+          fontStyle: "normal",
+        },
+      },
+    },
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "capitalize",
+          fontStyle: "normal",
         },
       },
     },
@@ -67,6 +76,7 @@ const muiTheme = createTheme({
   },
   typography: {
     fontFamily: "Inter var, sans-serif",
+    fontStyle: "normal",
     subtitle1: {
       fontSize: 16,
       fontWeight: "regular",

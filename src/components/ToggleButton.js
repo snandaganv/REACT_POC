@@ -15,46 +15,59 @@ import {
   FormatAlignRight,
   FormatAlignJustify,
 } from "@mui/icons-material";
-import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../.storybook/muiTheme';
+import { ThemeProvider } from "@mui/material/styles";
+import muiTheme from "../../.storybook/muiTheme";
 
 export const ToggleButtons = ({
-  label,
-  disabled,
-  onClick,
+  data,
   size,
-  orientation,
   color,
+  orientation,
+  onClick,
+  disabled,
 }) => {
-  const [alignment, setAlignment] = React.useState("option1");
+  const [alignment, setAligment] = React.useState();
+
   const handleChange = (event, newAlignment) => {
-    setAlignment(newAlignment);
+    setAligment(newAlignment);
   };
   return (
     <ThemeProvider theme={muiTheme}>
-    <ToggleButtonGroup
-      color={color}
-      value={alignment}
-      exclusive
-      onChange={handleChange}
-      disabled="disabled"
-      size={size}
-      orientation={orientation}
-    >
-      <ToggleButton value="option1" onClick={onClick} disabled={disabled}>
-        {label}
-      </ToggleButton>
-      <ToggleButton value="option2" onClick={onClick} disabled={disabled}>
-        {label}
-      </ToggleButton>
-    </ToggleButtonGroup>
+      <ToggleButtonGroup
+        color={color}
+        value={alignment}
+        exclusive
+        onChange={handleChange}
+        size={size}
+        orientation={orientation}
+      >
+        {data.map((item, index) => {
+          return (
+            <ToggleButton
+              value={item.toggleButtonValue}
+              key={index}
+              onClick={onClick}
+              disabled={disabled}
+            >
+              {item.toggleButtonLabel}
+            </ToggleButton>
+          );
+        })}
+      </ToggleButtonGroup>
     </ThemeProvider>
   );
 };
 
 ToggleButtons.propTypes = {
-  label: PropTypes.string,
+  color: PropTypes.oneOf(["primary", "secondary"]),
+  disabled: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  exclusive: PropTypes.bool,
   onClick: PropTypes.func,
+  onChange: PropTypes.func,
+  orientation: PropTypes.oneOf(["horizontal", "vertical"]),
+  size: PropTypes.oneOf(["small", "medium", "large"]),
+  value: PropTypes.any,
 };
 
 export const ToggleButtonSize = ({ size, color, onClick }) => {
@@ -85,25 +98,27 @@ export const ToggleButtonSize = ({ size, color, onClick }) => {
 
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          "& > :not(style) + :not(style)": { mt: 2 },
-        }}
-        mb="22px"
-      >
-        <ToggleButtonGroup size={size} {...control} onClick={onClick}>
-          {children}
-        </ToggleButtonGroup>
-        <ToggleButtonGroup {...control} size={size} onClick={onClick}>
-          {children}
-        </ToggleButtonGroup>
-        <ToggleButtonGroup size={size} {...control} onClick={onClick}>
-          {children}
-        </ToggleButtonGroup>
-      </Box>
+      <ThemeProvider theme={muiTheme}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            "& > :not(style) + :not(style)": { mt: 2 },
+          }}
+          mb="22px"
+        >
+          <ToggleButtonGroup size="small" {...control} onClick={onClick}>
+            {children}
+          </ToggleButtonGroup>
+          <ToggleButtonGroup {...control} size="medium" onClick={onClick}>
+            {children}
+          </ToggleButtonGroup>
+          <ToggleButtonGroup size="large" {...control} onClick={onClick}>
+            {children}
+          </ToggleButtonGroup>
+        </Box>
+      </ThemeProvider>
       <CopyBlock
         language="html"
         text={`<ToggleButtonGroup size="small" {...control}>
@@ -134,16 +149,18 @@ export const ToggleButtonColor = ({ color }) => {
   };
 
   return (
-    <ToggleButtonGroup
-      color="primary"
-      value={alignment}
-      exclusive
-      onChange={handleChange}
-    >
-      <ToggleButton value="web">Web</ToggleButton>
-      <ToggleButton value="android">Android</ToggleButton>
-      <ToggleButton value="ios">iOS</ToggleButton>
-    </ToggleButtonGroup>
+    <ThemeProvider theme={muiTheme}>
+      <ToggleButtonGroup
+        color="primary"
+        value={alignment}
+        exclusive
+        onChange={handleChange}
+      >
+        <ToggleButton value="web">Web</ToggleButton>
+        <ToggleButton value="android">Android</ToggleButton>
+        <ToggleButton value="ios">iOS</ToggleButton>
+      </ToggleButtonGroup>
+    </ThemeProvider>
   );
 };
 
@@ -153,24 +170,25 @@ export const ToggleButtonOrientation = ({ onClick, orientation }) => {
     setAlignment(newAlignment);
   };
   return (
-    <ToggleButtonGroup
-      orientation={orientation}
-      color="primary"
-      value={alignment}
-      exclusive
-      onChange={handleChange}
-      disabled="disabled"
-    >
-      <ToggleButton value="option1" onClick={onClick}>
-        Vision
-      </ToggleButton>
-      <ToggleButton value="option2" onClick={onClick}>
-        Mission
-      </ToggleButton>
-      <ToggleButton value="option2" onClick={onClick}>
-        Goals
-      </ToggleButton>
-    </ToggleButtonGroup>
+    <ThemeProvider theme={muiTheme}>
+      <ToggleButtonGroup
+        orientation={orientation}
+        color="primary"
+        value={alignment}
+        exclusive
+        onChange={handleChange}
+      >
+        <ToggleButton value="option1" onClick={onClick}>
+          Vision
+        </ToggleButton>
+        <ToggleButton value="option2" onClick={onClick}>
+          Mission
+        </ToggleButton>
+        <ToggleButton value="option2" onClick={onClick}>
+          Goals
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </ThemeProvider>
   );
 };
 
@@ -179,32 +197,34 @@ ToggleButtonOrientation.propTypes = {
   orientation: PropTypes.bool,
 };
 
-export const ToggleButtonExclusiveSelections = ({}) => {
+export const ToggleButtonExclusiveSelections = ({ onChange }) => {
   const [alignment, setAlignment] = React.useState("left");
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
   return (
-    <ToggleButtonGroup
-      value={alignment}
-      exclusive
-      onChange={handleAlignment}
-      aria-label="text alignment"
-    >
-      <ToggleButton value="left" aria-label="left aligned">
-        <FormatAlignLeft />
-      </ToggleButton>
-      <ToggleButton value="center" aria-label="centered">
-        <FormatAlignCenter />
-      </ToggleButton>
-      <ToggleButton value="right" aria-label="right aligned">
-        <FormatAlignRight />
-      </ToggleButton>
-      <ToggleButton value="justify" aria-label="justified" disabled>
-        <FormatAlignJustify />
-      </ToggleButton>
-    </ToggleButtonGroup>
+    <ThemeProvider theme={muiTheme}>
+      <ToggleButtonGroup
+        value={alignment}
+        exclusive
+        onChange={handleAlignment}
+        aria-label="text alignment"
+      >
+        <ToggleButton value="left" aria-label="left aligned">
+          <FormatAlignLeft />
+        </ToggleButton>
+        <ToggleButton value="center" aria-label="centered">
+          <FormatAlignCenter />
+        </ToggleButton>
+        <ToggleButton value="right" aria-label="right aligned">
+          <FormatAlignRight />
+        </ToggleButton>
+        <ToggleButton value="justify" aria-label="justified" disabled>
+          <FormatAlignJustify />
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </ThemeProvider>
   );
 };
 
@@ -215,24 +235,26 @@ export const ToggleButtonMultipleSelections = ({ props }) => {
     setFormats(newFormats);
   };
   return (
-    <ToggleButtonGroup
-      value={formats}
-      onChange={handleFormat}
-      aria-label="text formatting"
-    >
-      <ToggleButton value="bold" aria-label="bold">
-        <FormatBold />
-      </ToggleButton>
-      <ToggleButton value="italic" aria-label="italic">
-        <FormatItalic />
-      </ToggleButton>
-      <ToggleButton value="underlined" aria-label="underlined">
-        <FormatUnderlined />
-      </ToggleButton>
-      <ToggleButton value="color" aria-label="color" disabled>
-        <FormatColorFill />
-        <ArrowDropDown />
-      </ToggleButton>
-    </ToggleButtonGroup>
+    <ThemeProvider theme={muiTheme}>
+      <ToggleButtonGroup
+        value={formats}
+        onChange={handleFormat}
+        aria-label="text formatting"
+      >
+        <ToggleButton value="bold" aria-label="bold">
+          <FormatBold />
+        </ToggleButton>
+        <ToggleButton value="italic" aria-label="italic">
+          <FormatItalic />
+        </ToggleButton>
+        <ToggleButton value="underlined" aria-label="underlined">
+          <FormatUnderlined />
+        </ToggleButton>
+        <ToggleButton value="color" aria-label="color" disabled>
+          <FormatColorFill />
+          <ArrowDropDown />
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </ThemeProvider>
   );
 };

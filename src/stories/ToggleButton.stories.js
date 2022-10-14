@@ -26,11 +26,24 @@ export default {
   },
 };
 
-const Template = (args) => <ToggleButtons {...args} />;
-
-export const ToggleButtonBasic = Template.bind({});
+export const ToggleButtonBasic = ToggleButtons.bind({});
 ToggleButtonBasic.args = {
-  label: "Label",
+  color: "primary",
+  disabled: false,
+  data: [
+    {
+      toggleButtonValue: "web",
+      toggleButtonLabel: "Web",
+    },
+    {
+      toggleButtonValue: "android",
+      toggleButtonLabel: "Android ",
+    },
+    {
+      toggleButtonValue: "ios",
+      toggleButtonLabel: "iOS ",
+    },
+  ],
 };
 export const ToggleButtonSizes = ToggleButtonSize.bind({});
 export const ToggleButtonColors = ToggleButtonColor.bind({});
