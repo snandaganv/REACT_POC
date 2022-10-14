@@ -16,6 +16,14 @@ const muiTheme = createTheme({
         },
       },
     },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          textTransform: "capitalize",
+        },
+      },
+    },
+
     MuiToggleButton: {
       styleOverrides: {
         root: {
