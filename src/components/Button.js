@@ -1,8 +1,11 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import Button from "@mui/material/Button";
+import { IconButton } from "@mui/material";
 import { FormGroup, Stack, Box } from "@mui/material";
 import Send from "@mui/icons-material/Send";
+import { Alarm } from "@mui/icons-material";
+import AddShoppingCart from "@mui/icons-material/AddShoppingCart";
 import Delete from "@mui/icons-material/Delete";
 import { LoadingButton } from "@mui/lab";
 import { CopyBlock, dracula } from "react-code-blocks";
@@ -146,6 +149,59 @@ export const ButtonSizes = ({ size }) => {
       </Box>
     </ThemeProvider>
   );
+};
+
+export const ButtonIconExamples = ({ disabled }) => {
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <Stack direction="row" spacing={1}>
+        <IconButton aria-label="delete">
+          <Delete />
+        </IconButton>
+        <IconButton aria-label="delete" disabled color="primary">
+          <Delete />
+        </IconButton>
+        <IconButton color="secondary" aria-label="add an alarm">
+          <Alarm />
+        </IconButton>
+        <IconButton color="primary" aria-label="add to shopping cart">
+          <AddShoppingCart />
+        </IconButton>
+      </Stack>
+    </ThemeProvider>
+  );
+};
+export const ButtonIcon = ({ onClick, color, disabled, size, icon }) => {
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <Stack direction="row" spacing={1}>
+        <IconButton
+          aria-label=""
+          size={size}
+          disabled={disabled}
+          color={color}
+          onClick={onClick}
+        >
+          {icon}
+        </IconButton>
+      </Stack>
+    </ThemeProvider>
+  );
+};
+
+ButtonIcon.propTypes = {
+  children: PropTypes.any,
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
+  color: PropTypes.string,
+  size: PropTypes.oneOf([
+    "primary",
+    "success",
+    "secondary",
+    "error",
+    "info",
+    "warning",
+  ]),
 };
 
 export const ButtonHandingClick = ({ onClick }) => {
