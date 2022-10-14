@@ -24,6 +24,7 @@ export {
   ButtonHandingClick as ButtonHandingClicks,
   ButtonIconLabelButton as ButtonIconLabelButtons,
   ButtonLoadings as ButtonLoading,
+  ButtonIcon as ButtonIcons,
 } from "./Button";
 
 export {
