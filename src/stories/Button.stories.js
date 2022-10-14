@@ -36,7 +36,7 @@ export default {
 
 export const ButtonDefault = ButtonDefaults.bind({});
 ButtonDefault.args = {
-  label: "Button",
+  children: "Button",
   variant: "contained",
   color: "primary",
   size: "medium",
@@ -56,3 +56,8 @@ export const ButtonSize = ButtonSizes.bind({});
 export const ButtonIconLabelButtons = ButtonIconLabelButton.bind({});
 
 export const ButtonLoading = ButtonLoadings.bind({});
+ButtonLoading.args = {
+  children: "Submit",
+  variant: "outlined",
+  loading: true,
+};
