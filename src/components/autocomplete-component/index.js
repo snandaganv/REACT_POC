@@ -15,7 +15,7 @@ const AutocompleteComponent = (props) => {
   };
   return (
     <ThemeProvider theme={muiTheme}>
-      <Autocomplete disabled={disabled} id={id} options={options} autoComplete={autoComplete}
+      <Autocomplete disabled={disabled} id={id} options={options} autoComplete={autoComplete} onChange={handleChange}
         autoSelect={autoSelect} autoHighlight={autoHighlight} clearOnBlur={clearOnBlur} clearOnEscape={clearOnEscape} closeText={closeText} clearText={clearText}
         disableCloseOnSelect={disableCloseOnSelect} fullWidth={fullWidth} multiple={multiple} disableClearable={disableClearable}
         loading={loading} readOnly={readOnly}
