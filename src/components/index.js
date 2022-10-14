@@ -11,6 +11,13 @@ export { default as TabsComponent } from "./tabs-component";
 export { default as MenuIcon } from "./menu-icons-component";
 export { default as SearchIconsComponent } from "./search-icons-component";
 export { default as TextFieldComponent } from "./textfield-component";
+export { default as DateTimeComponent } from "./datetime-component";
+export { default as SliderComponent } from "./slider-component";
+export { default as CardComponent } from "./card-component";
+export { default as SliderComponent } from "./slider-component";
+
+
+
 
 export {
   ButtonDefaults as ButtonDefault,
