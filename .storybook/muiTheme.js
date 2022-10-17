@@ -16,6 +16,15 @@ const muiTheme = createTheme({
         },
       },
     },
+    MuiFab: {
+      styleOverrides: {
+        root: {
+          textTransform: "capitalize",
+          fontStyle: "normal",
+        },
+      },
+    },
+
     MuiFormControlLabel: {
       styleOverrides: {
         root: {
