@@ -4,7 +4,10 @@ export default {
     title: 'Feedback/Slider',
     component: SliderComponent,
     argTypes: {
-        
+      orientation: {
+        options: ['horizontal', 'vertical'],
+        control: { type: 'radio' },
+    },
     },
 };
 

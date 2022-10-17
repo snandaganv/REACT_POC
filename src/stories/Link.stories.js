@@ -5,7 +5,10 @@ export default {
     component: LinkComponent,
     argTypes: {
         children: [],
-        color: 'primary',
+        color: {
+            options: ["primary", "secondary"],
+            control: { type: "radio" },
+        },
         
         underline: {
             options: ['always', 'hover', 'none'],

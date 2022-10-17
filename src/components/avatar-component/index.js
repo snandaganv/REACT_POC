@@ -50,14 +50,14 @@ const AvatarComponent = (props) => {
     {
       type === 'text' && sizes === 'medium' && (
         <ThemeProvider theme={muiTheme}>
-      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '32px'}}></Avatar>
+      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '32px',width: '42px', height: '42px'}}></Avatar>
       </ThemeProvider>
       )
     }
     {
       type === 'text' && sizes === 'large' && (
         <ThemeProvider theme={muiTheme}>
-      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '40px'}}></Avatar>
+      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '40px',width: '52px', height: '52px'}}></Avatar>
       </ThemeProvider>
       )
     }
