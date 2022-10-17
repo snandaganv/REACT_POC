@@ -1,7 +1,6 @@
 import { Radio } from "@mui/material";
 import {
   RadioButtonBasics,
-  RadioButtonColor,
   RadioButtonSize,
   RadiosButtonGroup,
   RadioButtonControlleds,
@@ -18,10 +17,6 @@ export default {
       options: ["small", "medium", "large"],
       control: { type: "radio" },
     },
-    color: {
-      options: ["default", "success", "secondary"],
-      control: { type: "radio" },
-    },
     labelPlacement: {
       options: ["top", "start", "bottom", "end"],
       control: { type: "radio" },
@@ -35,16 +30,16 @@ export default {
 
 export const RadioButtonBasic = RadioButtonBasics.bind({});
 RadioButtonBasic.args = {
-  label: "Label",
+  label: "Radio button Label",
   row: true,
   size: "medium",
   labelPlacement: "end",
   disabled: false,
+  checked: true,
 };
 export const RadiosButtonGroups = RadiosButtonGroup.bind({});
 export const RadioButtonDirections = RadioButtonDirection.bind({});
 export const RadioButtonControlled = RadioButtonControlleds.bind({});
 export const RadioButtonSizes = RadioButtonSize.bind({});
-export const RadioButtonColors = RadioButtonColor.bind({});
 export const RadioButtonLabelPlacement = RadioButtonLabelPlacements.bind({});
 export const RadioButtonShowError = RadioButtonShowErrors.bind({});

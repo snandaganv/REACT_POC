@@ -1,11 +1,14 @@
 import { Button } from "@mui/material";
 import Delete from "@mui/icons-material/Delete";
+import { Alarm } from "@mui/icons-material";
 import {
   ButtonDefaults,
   ButtonBasics,
   ButtonHandingClick,
   ButtonColors,
   ButtonSizes,
+  ButtonIcon,
+  ButtonIconExamples,
   ButtonIconLabelButton,
   ButtonLoadings,
 } from "../components/Button";
@@ -36,7 +39,7 @@ export default {
 
 export const ButtonDefault = ButtonDefaults.bind({});
 ButtonDefault.args = {
-  label: "Button",
+  children: "Button",
   variant: "contained",
   color: "primary",
   size: "medium",
@@ -53,6 +56,19 @@ export const ButtonColor = ButtonColors.bind({});
 
 export const ButtonSize = ButtonSizes.bind({});
 
+export const ButtonIcons = ButtonIcon.bind({});
+ButtonIcons.args = {
+  color: "primary",
+  icon: <Alarm />,
+};
+
+export const ButtonIconBasic = ButtonIconExamples.bind({});
+
 export const ButtonIconLabelButtons = ButtonIconLabelButton.bind({});
 
 export const ButtonLoading = ButtonLoadings.bind({});
+ButtonLoading.args = {
+  children: "Submit",
+  variant: "outlined",
+  loading: true,
+};

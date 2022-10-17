@@ -7,7 +7,7 @@ import muiTheme from '../../../.storybook/muiTheme';
 
 const AvatarComponent = (props) => {
 
-  const { type, src, avatarText,width,height,variant } = props;
+  const { type, src, avatarText,variant,sizes } = props;
 
   function stringToColor(string) {
     let hash = 0;
@@ -40,15 +40,38 @@ const AvatarComponent = (props) => {
 
   return (
     <>
-    {type === 'text' ?
-    <ThemeProvider theme={muiTheme}>
-      <Avatar {...stringAvatar(avatarText)}></Avatar>
+    {
+      type === 'text' && sizes === 'small'&& (
+        <ThemeProvider theme={muiTheme}>
+      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '24px'}}></Avatar>
       </ThemeProvider>
-      :
-      <ThemeProvider theme={muiTheme}>
-      <Avatar src={src} sx={{ width: width, height: height }} variant={variant}></Avatar>
-      </ThemeProvider>
+      )
     }
+    {
+      type === 'text' && sizes === 'medium' && (
+        <ThemeProvider theme={muiTheme}>
+      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '32px'}}></Avatar>
+      </ThemeProvider>
+      )
+    }
+    {
+      type === 'text' && sizes === 'large' && (
+        <ThemeProvider theme={muiTheme}>
+      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '40px'}}></Avatar>
+      </ThemeProvider>
+      )
+    }
+    {sizes === 'small' && type === 'image' && (<ThemeProvider theme={muiTheme}>
+      <Avatar src={src} sx={{ width: '24px', height: '24px' }} variant={variant}></Avatar>
+      </ThemeProvider>)}
+      {sizes === 'medium' && type === 'image' && (<ThemeProvider theme={muiTheme}>
+      <Avatar src={src} sx={{ width: '32px', height: '32px' }} variant={variant}></Avatar>
+      </ThemeProvider>)}
+      {sizes === 'large' && type === 'image' && (<ThemeProvider theme={muiTheme}>
+      <Avatar src={src} sx={{ width: '40px', height: '40px' }} variant={variant}></Avatar>
+      </ThemeProvider>)}
+      
+    
     </>
   );
 }
@@ -57,16 +80,15 @@ AvatarComponent.prototype = {
   avatarText: PropTypes.string,
   type: PropTypes.string,
   src: PropTypes.string,
-  width: PropTypes.number,
-  height: PropTypes.number,
+  sizes: PropTypes.string,
+
 };
 
 AvatarComponent.defaultProps = {
   avatarText : '',
   type : 'text',
   src : '',
-  width:24,
-  height:24
+  sizes:'small'
 };
 
 

@@ -12,6 +12,10 @@ export default {
             options: ['circular', 'rounded', 'square'],
             control: { type: 'radio' },
         },
+        sizes: {
+            options: ['small', 'medium', 'large'],
+            control: { type: 'radio' },
+        }
     },
 };
 
@@ -22,6 +26,5 @@ Default.args = {
     type:'text',
     avatarText:'Software Tester',
     src:'',
-    width:24,
-    height:24
+    sizes: 'small'
 }
