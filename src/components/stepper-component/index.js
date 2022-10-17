@@ -890,6 +890,7 @@ export const CarouselEffect = (props) => {
     </Box>
   );
 };
+
 CarouselEffect.propTypes = {
   data: PropTypes.array,
 };

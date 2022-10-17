@@ -132,6 +132,7 @@ DotsAndProgressStepper.args = {
 };
 
 export const customizedStepper = CustomizedSteppers.bind({});
+
 customizedStepper.args = {
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
 };
