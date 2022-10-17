@@ -1,5 +1,3 @@
-
-// import Select from '../components/Select-component';
 import { Select } from "@mui/material";
 import {
     DefaultSelects,
@@ -36,7 +34,6 @@ SelectDefault.args = {
     disabled: false,
     error: false,
     required: false,
-    //size: false,
     selectoptions: [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option 2' }, { value: 3, label: 'Option 3' }],
 };
 
@@ -86,6 +83,5 @@ export const MultipleSelectPlaceholder = MultipleSelectPlaceholders.bind({});
 
 export const GroupedSelect = GroupSelect.bind({});
 
-// export const Testin = Testing.bind({});
 
 

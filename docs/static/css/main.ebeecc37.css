@@ -1,0 +1,14 @@
+@import url(https://rsms.me/inter/inter.css);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+
+*,html{box-sizing:border-box}
+
+.MuiPaper-elevation8.MuiPickersPopper-paper>div.daterangepickerCalen:first-child>div:first-child{display:none}
+
+.cellHeader{font-weight:bold !important}
+
+.MuiDataGrid-columnHeaderTitle{font-weight:bold !important}.data-table-container{width:'100%';font-size:'25px';min-height:300px !important}
+
+
+/*# sourceMappingURL=main.ebeecc37.css.map*/

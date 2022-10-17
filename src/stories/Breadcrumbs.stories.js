@@ -1,6 +1,6 @@
-import { Breadcrumbs } from "@mui/material";
+
 import BreadcrumbsComponent from "../components/breadcrumbs-component";
-import Link from '@mui/material/Link';
+
 
 export default {
     title: 'Navigation/Breadcrumbs',
@@ -23,7 +23,8 @@ Default.args = {
     itemsBeforeCollapse: 2,
     maxItems: 3,
     separator:'›',
-    linkArray:[{href: '/',label:'Core'},{href: '/google.com',label:'MUI'},{href: '/material-ui/getting-started/installation/',label:'MUI'},{href: '/material-ui/getting-started/installation/',label:'Core2'}],
+    linkArray:[{href: '/',label:'Core'},{href: '/',label:'Core'},{href: '/',label:'Core'},{href: '/',label:'Core'},{href: '/google.com',label:'MUI'},{href: '/material-ui/getting-started/installation/',label:'MUI'},{href: '/material-ui/getting-started/installation/',label:'Core2'}],
     color:'inherit',
     underline:'hover',
+    separatorIcon: 'calendar_view_day'
 }
