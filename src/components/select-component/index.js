@@ -11,18 +11,8 @@ import Checkbox from '@mui/material/Checkbox';
 import ListItemText from '@mui/material/ListItemText';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import ListSubheader from '@mui/material/ListSubheader';
 import { ThemeProvider } from '@mui/material/styles';
 import muiTheme from '../../../.storybook/muiTheme';
-
-
-
-// const age = [
-//     'Option 1',
-//     'Option 2',
-//     'Option 3',
-// ];
-
 
 export const DefaultSelects = ({
     props,
@@ -36,7 +26,6 @@ export const DefaultSelects = ({
 
 }) => {
 
-    const theme = useTheme();
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -73,7 +62,6 @@ DefaultSelects.propTypes = {
 };
 
 export const SelectBasics = ({ size, props, selectlabel, selectoptions }) => {
-    const theme = useTheme();
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -103,7 +91,6 @@ export const SelectBasics = ({ size, props, selectlabel, selectoptions }) => {
 }
 
 export const SelectVariants = ({ props, selectlabel, selectoptions }) => {
-    const theme = useTheme();
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -170,7 +157,6 @@ export const SelectVariants = ({ props, selectlabel, selectoptions }) => {
 }
 
 export const SelectAutoWidt = ({ props, selectlabel, autowidth }) => {
-    const theme = useTheme();
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -373,7 +359,7 @@ export const MultipleSelects = ({ selectlabel }) => {
     const theme = useTheme();
     const [personName, setPersonName] = React.useState([]);
 
-    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+    const handleChange = (event: SelectChangeEvent) => {
         const {
             target: { value },
         } = event;
@@ -413,7 +399,7 @@ export const MultipleSelects = ({ selectlabel }) => {
 export const MultipleSelectCheckmarks = ({ }) => {
     const [personName, setPersonName] = React.useState([]);
 
-    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+    const handleChange = (event: SelectChangeEvent) => {
         const {
             target: { value },
         } = event;
@@ -461,7 +447,7 @@ export const MultipleSelectChips = ({ }) => {
     const theme = useTheme();
     const [personName, setPersonName] = React.useState([]);
 
-    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+    const handleChange = (event: SelectChangeEvent) => {
         const {
             target: { value },
         } = event;
@@ -510,7 +496,7 @@ export const MultipleSelectPlaceholders = ({ }) => {
     const theme = useTheme();
     const [personName, setPersonName] = React.useState([]);
 
-    const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+    const handleChange = (event: SelectChangeEvent) => {
         const {
             target: { value },
         } = event;
