@@ -14,8 +14,6 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import { useTheme } from "@mui/material/styles";
 import { oneOf, PropTypes } from "prop-types";
 import Check from "@mui/icons-material/Check";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
@@ -798,7 +796,7 @@ CustomizedSteppers.defaultProps = {
   numberOfSteps: [],
 };
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export const CarouselEffect = (props) => {
   const { images } = props;
@@ -833,31 +831,21 @@ export const CarouselEffect = (props) => {
       >
         <Typography>{images[activeStep].label}</Typography>
       </Paper>
-      <AutoPlaySwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {images.map((step, index) => (
-          <div key={step.label}>
-            {Math.abs(activeStep - index) <= 2 ? (
-              <Box
-                component="img"
-                sx={{
-                  height: 255,
-                  display: "block",
-                  maxWidth: 400,
-                  overflow: "hidden",
-                  width: "100%",
-                }}
-                src={step.imgPath}
-                alt={step.label}
-              />
-            ) : null}
-          </div>
-        ))}
-      </AutoPlaySwipeableViews>
+      <div>
+        <Box
+          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+          component="img"
+          sx={{
+            height: 255,
+            display: "block",
+            maxWidth: 400,
+            overflow: "hidden",
+            width: "100%",
+          }}
+          src={images[activeStep].imgPath}
+          //   alt={step.label}
+        />
+      </div>
       <MobileStepper
         steps={maxSteps}
         position="static"
