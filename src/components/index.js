@@ -68,7 +68,6 @@ export {
   SwitchColors as SwitchColor,
   SwitchControlles as SwitchControlled,
   SwitchFormGroups as SwitchFormGroup,
-  SwitchCustomizations as SwitchCustomization,
   SwitchLabelsPlacement as SwitchLabelsPlacements,
 } from "./Switches";
 

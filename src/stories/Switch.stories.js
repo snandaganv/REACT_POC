@@ -1,9 +1,7 @@
 import { Switch } from "@mui/material";
 import {
   Switches,
-  SwitchesBasics,
   SwitchLabels,
-  SwitchColors,
   SwitchSizes,
   SwitchControlles,
   SwitchCustomizations,
@@ -15,15 +13,11 @@ export default {
   title: "Input/Switch",
   component: Switch,
   argTypes: {
-    onclick: {
+    onClick: {
       action: "checked",
     },
     size: {
       options: ["small", "medium"],
-      control: { type: "radio" },
-    },
-    color: {
-      options: ["default", "warning", "primary", "secondary"],
       control: { type: "radio" },
     },
     labelPlacement: {
@@ -35,14 +29,13 @@ export default {
 
 export const Switchs = Switches.bind({});
 Switchs.args = {
-  label: "Label",
+  label: "Switch label",
   disabled: false,
+  checked: true,
+  defaultChecked: false,
 };
-export const SwitchesBasic = SwitchesBasics.bind({});
 export const SwitchLabel = SwitchLabels.bind({});
 export const SwitchSize = SwitchSizes.bind({});
-export const SwitchColor = SwitchColors.bind({});
 export const SwitchControlled = SwitchControlles.bind({});
 export const SwitchFormGroup = SwitchFormGroups.bind({});
 export const SwitchLabelsPlacements = SwitchLabelsPlacement.bind({});
-export const SwitchCustomization = SwitchCustomizations.bind({});

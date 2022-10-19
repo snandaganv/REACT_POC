@@ -5,14 +5,20 @@ export default {
     component: TabsComponent,
     argTypes: {
         children: [],
-        indicatorColor: 'secondary',
+        indicatorColor: {
+            options: ['primary', 'secondary'],
+            control: { type: 'radio' },
+        },
         allowScrollButtonsMobile: false,
         onChange: {
             action: "change",
         },
         centered: false,
         orientation: 'horizontal',
-        textColor: 'primary'
+        textColor: {
+            options: ['primary', 'secondary'],
+            control: { type: 'radio' },
+        },
     },
 };
 
