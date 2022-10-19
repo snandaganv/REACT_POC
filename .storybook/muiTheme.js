@@ -114,7 +114,7 @@ const muiTheme = createTheme({
       letterSpacing: "0.15px",
     },
     button: {
-      fontStyle: "italic",
+      fontStyle: "normal",
     },
     h1: {
       fontSize: 96,
