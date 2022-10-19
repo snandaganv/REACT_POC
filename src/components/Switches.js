@@ -16,11 +16,14 @@ import muiTheme from "../../.storybook/muiTheme";
 
 export const Switches = ({
   label,
-  onclick,
+  defaultChecked,
+  onClick,
   disabled,
   size,
   labelPlacement,
-  color,
+  checked,
+  onChange,
+  required,
 }) => {
   return (
     <ThemeProvider theme={muiTheme}>
@@ -28,17 +31,17 @@ export const Switches = ({
         <FormControlLabel
           control={
             <Switch
-              defaultChecked
-              onClick={onclick}
+              defaultChecked={defaultChecked}
+              onClick={onClick}
               size={size}
-              color={color}
-              style={{ textTransform: "capitalize" }}
+              checked={checked}
+              onChange={onChange}
+              required={required}
             />
           }
           label={label}
           disabled={disabled}
           labelPlacement={labelPlacement}
-          style={{ textTransform: "capitalize" }}
         />
       </FormGroup>
     </ThemeProvider>
@@ -46,50 +49,37 @@ export const Switches = ({
 };
 Switches.propTypes = {
   label: PropTypes.string,
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
   onClick: PropTypes.func,
+  onChange: PropTypes.func,
+  size: PropTypes.string,
+  required: PropTypes.bool,
   labelPlacement: PropTypes.oneOf(["top", "start", "bottom", "end"]),
-};
-
-export const SwitchesBasics = ({ props }) => {
-  const label = { inputProps: { "aria-label": "Switch demo" } };
-  return (
-    <FormGroup row="row">
-      <Switch {...label} defaultChecked />
-      <Switch {...label} />
-      <Switch {...label} disabled defaultChecked />
-      <Switch {...label} disabled />
-    </FormGroup>
-  );
 };
 
 export const SwitchLabels = ({ label }) => {
   return (
-    <FormGroup>
-      <FormControlLabel control={<Switch defaultChecked />} label="Label" />
-      <FormControlLabel disabled control={<Switch />} label="Disabled" />
-    </FormGroup>
+    <ThemeProvider theme={muiTheme}>
+      <FormGroup>
+        <FormControlLabel control={<Switch defaultChecked />} label="On" />
+        <FormControlLabel control={<Switch />} label="Off" />
+        <FormControlLabel disabled control={<Switch />} label="Disabled" />
+      </FormGroup>
+    </ThemeProvider>
   );
 };
 
 export const SwitchSizes = ({ size }) => {
   const label = { inputProps: { "aria-label": "Switch Size demo" } };
   return (
-    <div>
-      <Switch {...label} defaultChecked size="small" />
-      <Switch {...label} defaultChecked />
-    </div>
-  );
-};
-
-export const SwitchColors = ({ color }) => {
-  const label = { inputProps: { "aria-label": "Switch Color demo" } };
-  return (
-    <FormGroup row="row">
-      <Switch {...label} defaultChecked />
-      <Switch {...label} defaultChecked color="secondary" />
-      <Switch {...label} defaultChecked color="warning" />
-      <Switch {...label} defaultChecked color="default" />
-    </FormGroup>
+    <ThemeProvider theme={muiTheme}>
+      <div>
+        <Switch {...label} defaultChecked size="small" />
+        <Switch {...label} defaultChecked />
+      </div>
+    </ThemeProvider>
   );
 };
 
@@ -100,11 +90,13 @@ export const SwitchControlles = ({ onChange }) => {
     setChecked(event.target.checked);
   };
   return (
-    <Switch
-      checked={checked}
-      onChange={handleChange}
-      inputProps={{ "aria-label": "controlled" }}
-    />
+    <ThemeProvider theme={muiTheme}>
+      <Switch
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ "aria-label": "controlled" }}
+      />
+    </ThemeProvider>
   );
 };
 
@@ -122,42 +114,44 @@ export const SwitchFormGroups = ({ props }) => {
     });
   };
   return (
-    <FormControl component="fieldset" variant="standard">
-      <FormLabel component="legend">Assign responsibility</FormLabel>
-      <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={state.gilad}
-              onChange={handleChange}
-              name="gilad"
-            />
-          }
-          label="Gilad Gray"
-        />
-        <FormControlLabel
-          control={
-            <Switch
-              checked={state.jason}
-              onChange={handleChange}
-              name="jason"
-            />
-          }
-          label="Jason Killian"
-        />
-        <FormControlLabel
-          control={
-            <Switch
-              checked={state.antoine}
-              onChange={handleChange}
-              name="antoine"
-            />
-          }
-          label="Antoine Llorca"
-        />
-      </FormGroup>
-      <FormHelperText>Be careful</FormHelperText>
-    </FormControl>
+    <ThemeProvider theme={muiTheme}>
+      <FormControl component="fieldset" variant="standard">
+        <FormLabel component="legend">Assign responsibility</FormLabel>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={state.gilad}
+                onChange={handleChange}
+                name="gilad"
+              />
+            }
+            label="Gilad Gray"
+          />
+          <FormControlLabel
+            control={
+              <Switch
+                checked={state.jason}
+                onChange={handleChange}
+                name="jason"
+              />
+            }
+            label="Jason Killian"
+          />
+          <FormControlLabel
+            control={
+              <Switch
+                checked={state.antoine}
+                onChange={handleChange}
+                name="antoine"
+              />
+            }
+            label="Antoine Llorca"
+          />
+        </FormGroup>
+        <FormHelperText>Be careful</FormHelperText>
+      </FormControl>
+    </ThemeProvider>
   );
 };
 
@@ -344,58 +338,66 @@ export const SwitchCustomizations = ({ props }) => {
     },
   }));
   return (
-    <FormGroup>
-      <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-        label="MUI switch"
-      />
-      <FormControlLabel
-        control={<Android12Switch defaultChecked />}
-        label="Android 12"
-      />
-      <FormControlLabel
-        control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
-        label="iOS style"
-      />
-      <Stack direction="row" spacing={1} alignItems="center">
-        <Typography>Off</Typography>
-        <AntSwitch defaultChecked inputProps={{ "aria-label": "ant design" }} />
-        <Typography>On</Typography>
-      </Stack>
-    </FormGroup>
+    <ThemeProvider theme={muiTheme}>
+      <FormGroup>
+        <FormControlLabel
+          control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+          label="MUI switch"
+        />
+        <FormControlLabel
+          control={<Android12Switch defaultChecked />}
+          label="Android 12"
+        />
+        <FormControlLabel
+          control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
+          label="iOS style"
+        />
+        <Stack direction="row" spacing={1} alignItems="center">
+          <Typography>Off</Typography>
+          <AntSwitch
+            defaultChecked
+            inputProps={{ "aria-label": "ant design" }}
+            color="primary"
+          />
+          <Typography>On</Typography>
+        </Stack>
+      </FormGroup>
+    </ThemeProvider>
   );
 };
 
 export const SwitchLabelsPlacement = ({ labelPlacement }) => {
   return (
-    <FormControl component="fieldset">
-      <FormLabel component="legend">Label placement</FormLabel>
-      <FormGroup aria-label="position" row>
-        <FormControlLabel
-          value="top"
-          control={<Switch color="primary" />}
-          label="Top"
-          labelPlacement="top"
-        />
-        <FormControlLabel
-          value="start"
-          control={<Switch color="primary" />}
-          label="Start"
-          labelPlacement="start"
-        />
-        <FormControlLabel
-          value="bottom"
-          control={<Switch color="primary" />}
-          label="Bottom"
-          labelPlacement="bottom"
-        />
-        <FormControlLabel
-          value="end"
-          control={<Switch color="primary" />}
-          label="End"
-          labelPlacement="end"
-        />
-      </FormGroup>
-    </FormControl>
+    <ThemeProvider theme={muiTheme}>
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Label placement</FormLabel>
+        <FormGroup aria-label="position" row>
+          <FormControlLabel
+            value="top"
+            control={<Switch defaultChecked color="primary" />}
+            label="Top"
+            labelPlacement="top"
+          />
+          <FormControlLabel
+            value="start"
+            control={<Switch color="primary" />}
+            label="Start"
+            labelPlacement="start"
+          />
+          <FormControlLabel
+            value="bottom"
+            control={<Switch defaultChecked color="primary" />}
+            label="Bottom"
+            labelPlacement="bottom"
+          />
+          <FormControlLabel
+            value="end"
+            control={<Switch color="primary" />}
+            label="End"
+            labelPlacement="end"
+          />
+        </FormGroup>
+      </FormControl>
+    </ThemeProvider>
   );
 };
