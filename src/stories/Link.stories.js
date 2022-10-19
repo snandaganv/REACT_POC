@@ -32,4 +32,5 @@ Default.args = {
     color: 'primary',
     children: 'I am an Link',
     href:'',
+    variant: 'body1',
 }
