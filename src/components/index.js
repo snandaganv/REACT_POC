@@ -68,7 +68,6 @@ export {
   SwitchColors as SwitchColor,
   SwitchControlles as SwitchControlled,
   SwitchFormGroups as SwitchFormGroup,
-  SwitchCustomizations as SwitchCustomization,
   SwitchLabelsPlacement as SwitchLabelsPlacements,
 } from "./Switches";
 
@@ -105,3 +104,31 @@ export {
   AccordionControlled as AccordionsControlled,
   AccordionCustomization as AccordionCustomizations,
 } from "./Accordion";
+
+export {
+  DefaultSelects as SelectDefault,
+  SelectBasics as BasicSelect,
+  SelectVariants as SelectVariant,
+  SelectAutoWidt as SelectAutoWidth,
+  SelectSizes as SelectSize,
+  SelectLabels as SelectLabel,
+  SelectOtherProps as SelectOtherProp,
+  MultipleSelects as MultipleSelect,
+  MultipleSelectCheckmarks as MultipleSelectCheckmark,
+  MultipleSelectChips as MultipleSelectChip,
+  MultipleSelectPlaceholders as MultipleSelectPlaceholder,
+  GroupSelect as GroupedSelect,
+} from "./select-component";
+
+export {
+  MenuBasic as BasicMenu,
+  MenuDense as DenseMenu,
+  MenuIcon as IconMenu,
+  ListMenuSimple as SimpleListMenu,
+  SelectAutoWidt as SelectAutoWidth,
+  MenuAccount as AccountMenu,
+  MenuLong as LongMenu,
+  MenuTypography as TypographyMenu,
+  MenuPositioned as PositionedMenu,
+  ContextMenus as ContextMenu,
+} from "./menu-component";
