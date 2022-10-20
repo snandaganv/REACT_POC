@@ -32,10 +32,12 @@ const muiTheme = createTheme({
         },
       },
     },
-    MuiFormControlLabel: {
+
+    MuiToggleButton: {
       styleOverrides: {
         root: {
           textTransform: "capitalize",
+          fontStyle: "normal",
         },
       },
     },
@@ -98,6 +100,7 @@ const muiTheme = createTheme({
   },
   typography: {
     fontFamily: "Inter var, sans-serif",
+    fontStyle: "normal",
     subtitle1: {
       fontSize: 16,
       fontWeight: "regular",
