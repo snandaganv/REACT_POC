@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { PropTypes } from "prop-types";
-import { Slider } from "@mui/material";
+import { Slider,Box } from "@mui/material";
 import { ThemeProvider } from '@mui/material/styles';
 import muiTheme from '../../../.storybook/muiTheme';
 
 
 
 const SliderComponent = (props) => {
-  const {disabled,defaultValue,size,step,min,max,valueLabelDisplay,marks,range,rangeValue,track} = props;
+  const {disabled,defaultValue,size,step,min,max,valueLabelDisplay,marks,range,rangeValue,track,orientation} = props;
   const [value, setValue] = React.useState(range ? rangeValue:defaultValue);
 
   const handleChange = (event, newValue) => {
@@ -15,11 +15,14 @@ const SliderComponent = (props) => {
   };
   return (
     <ThemeProvider theme={muiTheme}>
-      <Slider disabled={disabled} value={value} defaultValue={defaultValue} onChange={handleChange} size={size}
+                  <Box height={300}>
+
+      <Slider disabled={disabled} value={value} defaultValue={defaultValue} orientation={orientation} onChange={handleChange} size={size}
         valueLabelDisplay={valueLabelDisplay} step={step} marks={marks} min={min} max={max} track={track}
       >
 
       </Slider>
+      </Box>
     
     </ThemeProvider>
   );
