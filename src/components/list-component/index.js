@@ -46,7 +46,7 @@ import People from '@mui/icons-material/People';
 import PermMedia from '@mui/icons-material/PermMedia';
 import Dns from '@mui/icons-material/Dns';
 import Public from '@mui/icons-material/Public';
-import { FixedSizeList } from 'react-window';
+
 
 export const BasicLists=(props)=> {
   const {disablePadding,basicLists}=props
@@ -443,34 +443,3 @@ export const GutterlessLists = (props) => {
 }
 
 
-/*virtual list*/
-function renderRow(props) {
-  const { index, style } = props;
-
-  return (
-    <ListItem style={style} key={index} component="div" disablePadding>
-      <ListItemButton>
-        <ListItemText primary={`Item ${index + 1}`} />
-      </ListItemButton>
-    </ListItem>
-  );
-}
-
-export const VirtualizedLists =(props)=> {
-  const {itemCount}=props
-  return (
-    <Box
-      sx={{ width: '100%', height: 400, maxWidth: 360, bgcolor: 'background.paper' }}
-    >
-      <FixedSizeList
-        height={400}
-        width={360}
-        itemSize={46}
-        itemCount={itemCount}
-        overscanCount={5}
-      >
-        {renderRow}
-      </FixedSizeList>
-    </Box>
-  );
-}

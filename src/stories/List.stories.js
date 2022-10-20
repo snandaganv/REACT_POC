@@ -1,6 +1,6 @@
 import React from "react";
 import List from '@mui/material/List';
-import {BasicLists,NestedLists,FolderLists,SelectedListItems,AlignItemsLists,InteractiveLists,CheckboxLists,SwitchListSecondarys,PinnedSubheaderLists,GutterlessLists,VirtualizedLists} from "../components/list-component";
+import {BasicLists,NestedLists,FolderLists,SelectedListItems,AlignItemsLists,InteractiveLists,CheckboxLists,SwitchListSecondarys,PinnedSubheaderLists,GutterlessLists} from "../components/list-component";
 import ImageIcon from '@mui/icons-material/Image';
 import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
@@ -101,8 +101,3 @@ GutterlessList.args={
 }
 
 
-export const VirtualizedList = VirtualizedLists.bind({});
-VirtualizedList.args={
-  itemCount:200,
-
-}
