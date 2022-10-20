@@ -6,7 +6,7 @@ import Link from '@mui/material/Link';
 
 import { ThemeProvider } from '@mui/material/styles';
 import muiTheme from '../../../.storybook/muiTheme';
-import { Icon } from "@mui/material";
+import { Icon, iconClasses } from "@mui/material";
 
 
 const BreadcrumbsComponent = (props) => {
@@ -22,10 +22,10 @@ const BreadcrumbsComponent = (props) => {
         separator={<Icon fontSize="small">{separatorIcon}</Icon>}
         aria-label="breadcrumb"
       >
-      {linkArray.map((item,i,arr) => arr.length - 1 === i ? <Typography color="text.primary">{item.label}</Typography>:<Link href={item.href} underline={underline} color={underline} style={{opacity:'0.6'}}>{item.label}</Link>)}
+      {linkArray.map((item,i,arr) => arr.length - 1 === i ? <Typography color="text.primary"><Icon fontSize="inherit">{item.icon}</Icon>{item.label}</Typography>:<Link color='#4D5050'sx={{ display: 'flex', alignItems: 'center' }} href={item.href} underline={underline} style={{opacity:'0.6'}}><Icon fontSize="inherit">{item.icon}</Icon>{item.label}</Link>)}
       </Breadcrumbs>
       : <Breadcrumbs {...props} onClick={onClicked}>
-      {linkArray.map((item,i,arr) => arr.length - 1 === i ? <Typography color="text.primary">{item.label}</Typography>:<Link href={item.href} underline={underline} color={underline} style={{opacity:'0.6'}}>{item.label}</Link>)}
+      {linkArray.map((item,i,arr) => arr.length - 1 === i ? <Typography color="text.primary"><Icon fontSize="inherit">{item.icon}</Icon>{item.label}</Typography>:<Link color='#4D5050'sx={{ display: 'flex', alignItems: 'center' }}  href={item.href} underline={underline} style={{opacity:'0.6'}}><Icon fontSize="inherit">{item.icon}</Icon>{item.label}</Link>)}
       </Breadcrumbs>}
       </ThemeProvider>
     </>

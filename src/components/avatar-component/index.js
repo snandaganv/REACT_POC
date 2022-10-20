@@ -43,21 +43,21 @@ const AvatarComponent = (props) => {
     {
       type === 'text' && sizes === 'small'&& (
         <ThemeProvider theme={muiTheme}>
-      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '24px'}}></Avatar>
+      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '16px',width: '24px', height: '24px'}}></Avatar>
       </ThemeProvider>
       )
     }
     {
       type === 'text' && sizes === 'medium' && (
         <ThemeProvider theme={muiTheme}>
-      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '32px',width: '42px', height: '42px'}}></Avatar>
+      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '20px',width: '32px', height: '32px'}}></Avatar>
       </ThemeProvider>
       )
     }
     {
       type === 'text' && sizes === 'large' && (
         <ThemeProvider theme={muiTheme}>
-      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '40px',width: '52px', height: '52px'}}></Avatar>
+      <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '26px',width: '42px', height: '42px'}}></Avatar>
       </ThemeProvider>
       )
     }

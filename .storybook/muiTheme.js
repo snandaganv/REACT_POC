@@ -32,10 +32,12 @@ const muiTheme = createTheme({
         },
       },
     },
-    MuiFormControlLabel: {
+
+    MuiToggleButton: {
       styleOverrides: {
         root: {
           textTransform: "capitalize",
+          fontStyle: "normal",
         },
       },
     },
@@ -44,6 +46,27 @@ const muiTheme = createTheme({
         root: {
           color: "primary",
         },
+      },
+    },
+    MuiBottomNavigation: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#1A3BDD",
+        },
+      },
+    },
+
+    MuiBottomNavigationAction: {
+      styleOverrides: {
+        // root: {
+        //   color: "#C6C8F9;",
+        // },
+        root: {
+          color: "#C6C8F9;",
+          "&.Mui-selected": {
+            "color": "#ffffff",
+          }
+        }
       },
     },
   },
@@ -98,6 +121,7 @@ const muiTheme = createTheme({
   },
   typography: {
     fontFamily: "Inter var, sans-serif",
+    fontStyle: "normal",
     subtitle1: {
       fontSize: 16,
       fontWeight: "regular",
