@@ -132,3 +132,9 @@ export {
   MenuPositioned as PositionedMenu,
   ContextMenus as ContextMenu,
 } from "./menu-component";
+
+export {
+  SimpleBottomNavigations as SimpleBottomNavigation,
+  LabelBottomNavigations as LabelBottomNavigation,
+  FixedBottomNavigations as FixedBottomNavigation,
+} from "./bottomnavigation-component";
