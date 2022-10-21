@@ -59,7 +59,14 @@ export const ToggleButtons = ({
 };
 
 ToggleButtons.propTypes = {
-  color: PropTypes.oneOf(["primary", "secondary"]),
+  color: PropTypes.oneOf([
+    "primary",
+    "success",
+    "secondary",
+    "error",
+    "info",
+    "warning",
+  ]),
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
   exclusive: PropTypes.bool,
