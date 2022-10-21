@@ -10,7 +10,6 @@ import {
   HorizontalLinearSteppers,
   CustomizedSteppers,
   CustomizedIconSteppers,
-  CarouselEffect,
 } from "../components/stepper-component";
 import SettingsIcon from "@mui/icons-material/Settings";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
@@ -105,26 +104,6 @@ TextMobileStepper.args = {
   ],
 };
 
-export const TextWithCarouselEffect = CarouselEffect.bind({});
-TextWithCarouselEffect.args = {
-  images: [
-    {
-      label: "Ford Mustang",
-      imgPath:
-        "https://th.bing.com/th/id/OIP.3-6CJQBsK8JEsrJ4EKUXjQHaEZ?pid=ImgDet&rs=1",
-    },
-    {
-      label: "Bird",
-      imgPath:
-        "https://www.bing.com/th?id=OIP.QEZzSmGHbkQbz5OFjOkNIwHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
-    },
-    {
-      label: "Bali, Indonesia",
-      imgPath:
-        "https://th.bing.com/th/id/OIP.rf8lgrJWLK3dckwifmpi-gHaE8?pid=ImgDet&rs=1",
-    },
-  ],
-};
 export const DotsAndProgressStepper = DotsAndProgressMobileSteppers.bind({});
 DotsAndProgressStepper.args = {
   numberOfSteps: 4,

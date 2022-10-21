@@ -13,10 +13,27 @@ const muiTheme = createTheme({
           // Some CSS
           textTransform: "capitalize",
           fontStyle: "normal",
+          fontWeight: 400,
         },
       },
     },
     MuiFab: {
+      styleOverrides: {
+        root: {
+          textTransform: "capitalize",
+          fontStyle: "normal",
+          fontWeight: 400,
+        },
+      },
+    },
+    MuiStepLabel: {
+      styleOverrides: {
+        root: {
+          fontWeight: 500,
+        },
+      },
+    },
+    MuiTab: {
       styleOverrides: {
         root: {
           textTransform: "capitalize",
