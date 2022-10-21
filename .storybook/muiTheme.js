@@ -48,6 +48,27 @@ const muiTheme = createTheme({
         },
       },
     },
+    MuiBottomNavigation: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#1A3BDD",
+        },
+      },
+    },
+
+    MuiBottomNavigationAction: {
+      styleOverrides: {
+        // root: {
+        //   color: "#C6C8F9;",
+        // },
+        root: {
+          color: "#C6C8F9;",
+          "&.Mui-selected": {
+            "color": "#ffffff",
+          }
+        }
+      },
+    },
   },
 
   palette: {
@@ -117,7 +138,7 @@ const muiTheme = createTheme({
       letterSpacing: "0.15px",
     },
     button: {
-      fontStyle: "italic",
+      fontStyle: "normal",
     },
     h1: {
       fontSize: 96,

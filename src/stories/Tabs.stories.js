@@ -14,7 +14,10 @@ export default {
             action: "change",
         },
         centered: false,
-        orientation: 'horizontal',
+        orientation: {
+            options: ['horizontal', 'vertical'],
+            control: { type: 'radio' },
+        },
         textColor: {
             options: ['primary', 'secondary'],
             control: { type: 'radio' },
@@ -32,8 +35,8 @@ Default.args = {
     ariaLabel: 'Story book Tabs',
     centered:false,
     orientation:'horizontal',
-    textColor:'secondary',
-    tabsArray:[{index: 0,label:'Item First'},{index: 1,label:'Item Second'},{index: 2,label:'Item Third'}],
+    textColor:'primary',
+    tabsArray:[{index: 0,label:'Item First',icon:'home_icon',position: 'start'},{index: 1,label:'Item Second',icon:'star_icon',position: 'start'},{index: 2,label:'Item Third',icon:'calendar_view_day',position: 'bottom'}],
     scrollButtons: 'auto',
     variant:'scrollable'
 }
