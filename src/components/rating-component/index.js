@@ -28,7 +28,7 @@ function getLabelText(value) {
 }
 
 function getcustomratingcolor(iconColor,iconHoverColor) {
-    if(iconColor!=null && iconHoverColor!=null && iconColor!='' && iconHoverColor!=''  )
+    if(iconColor!==null && iconHoverColor!==null && iconColor!=='' && iconHoverColor!==''  )
     {
     return {
         "& .MuiRating-iconFilled": {
