@@ -36,6 +36,8 @@ export const FloatingActionButtons = (props) => {
     </ThemeProvider>
   );
 };
+FloatingActionButtons.propTypes = {};
+FloatingActionButtons.defaultProps = {};
 
 export const Fabs = (props) => {
   const {
@@ -205,21 +207,21 @@ export const FloatingActionButtonZoom = (props) => {
           minHeight: boxHeight,
         }}
       >
-        <AppBar position={appBarPosition} color="default">
+        <AppBar position="static" color="default">
           <Tabs
             value={value}
             onChange={handleChange}
-            indicatorColor={indicatorColor}
-            textColor={textColor}
-            variant={tabsvariant}
-            aria-label={arialabel}
+            indicatorColor="primary"
+            textColor="primary"
+            variant="fullWidth"
+            aria-label="action tabs example"
           >
             {tabsArray.map((item) => (
               <Tab
                 key={item.index}
                 label={item.label}
                 {...a11yProps(item.index)}
-              />
+              ></Tab>
             ))}
           </Tabs>
         </AppBar>
@@ -254,14 +256,12 @@ export const FloatingActionButtonZoom = (props) => {
 
 FloatingActionButtonZoom.propTypes = {
   tabsArray: PropTypes.array,
-  arialabel: PropTypes.string,
   boxHeight: PropTypes.number,
   boxWidth: PropTypes.number,
 };
 
 FloatingActionButtonZoom.defaultProps = {
   tabsArray: [],
-  arialabel: "",
   boxHeight: 200,
   boxWidth: 500,
 };

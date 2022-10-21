@@ -8,10 +8,7 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
 import UpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Navigation from "@mui/icons-material/Navigation";
 import { Fab } from "@mui/material";
-import { color } from "@mui/system";
-import { green } from "@mui/material/colors";
 
 export default {
   title: "Input/Floating Action Button",
@@ -106,12 +103,6 @@ FloatingActionButtonAnimation.args = {
       icon: <UpIcon />,
     },
   ],
-  appBarPosition: "static",
-
-  indicatorColor: "primary",
-  textColor: "primary",
-  arialabel: "aria-label example",
-  tabsvariant: "fullWidth",
   boxHeight: 200,
   boxWidth: 500,
   bgcolor: "background.paper",

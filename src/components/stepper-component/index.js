@@ -13,6 +13,8 @@ import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import { useTheme } from "@mui/material/styles";
 import { oneOf, PropTypes } from "prop-types";
+import { ThemeProvider } from "@mui/material/styles";
+import muiTheme from "../../../.storybook/muiTheme";
 import Check from "@mui/icons-material/Check";
 import StepConnector, {
   stepConnectorClasses,
@@ -24,15 +26,17 @@ import { CheckSharp } from "@mui/icons-material";
 export const Steppercomponent = (props) => {
   const { orientation, numberOfSteps } = props;
   return (
-    <Box>
-      <Stepper activeStep={1} orientation={orientation}>
-        {numberOfSteps.map((label) => (
-          <Step key={label}>
-            <StepLabel>{label}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-    </Box>
+    <ThemeProvider theme={muiTheme}>
+      <Box>
+        <Stepper activeStep={1} orientation={orientation}>
+          {numberOfSteps.map((label) => (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+      </Box>
+    </ThemeProvider>
   );
 };
 Steppercomponent.prototype = {
@@ -91,61 +95,63 @@ export const HorizontalLinearSteppers = (props) => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Stepper activeStep={activeStep}>
-        {numberOfSteps.map((label, index) => {
-          const stepProps = {};
-          const labelProps = {};
-          if (isStepOptional(index)) {
-            labelProps.optional = (
-              <Typography variant="caption">Optional</Typography>
+    <ThemeProvider theme={muiTheme}>
+      <Box sx={{ width: "100%" }}>
+        <Stepper activeStep={activeStep}>
+          {numberOfSteps.map((label, index) => {
+            const stepProps = {};
+            const labelProps = {};
+            if (isStepOptional(index)) {
+              labelProps.optional = (
+                <Typography variant="caption">Optional</Typography>
+              );
+            }
+            if (isStepSkipped(index)) {
+              stepProps.completed = false;
+            }
+            return (
+              <Step key={label} {...stepProps}>
+                <StepLabel {...labelProps}>{label}</StepLabel>
+              </Step>
             );
-          }
-          if (isStepSkipped(index)) {
-            stepProps.completed = false;
-          }
-          return (
-            <Step key={label} {...stepProps}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
-            </Step>
-          );
-        })}
-      </Stepper>
-      {activeStep === numberOfSteps.length ? (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
-          </Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleReset}>Reset</Button>
-          </Box>
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-            <Box sx={{ flex: "1 1 auto" }} />
-            {isStepOptional(activeStep) && (
-              <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
-                Skip
+          })}
+        </Stepper>
+        {activeStep === numberOfSteps.length ? (
+          <React.Fragment>
+            <Typography sx={{ mt: 2, mb: 1 }}>
+              All steps completed - you&apos;re finished
+            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Box sx={{ flex: "1 1 auto" }} />
+              <Button onClick={handleReset}>Reset</Button>
+            </Box>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
+            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Button
+                color="inherit"
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                sx={{ mr: 1 }}
+              >
+                Back
               </Button>
-            )}
-            <Button onClick={handleNext}>
-              {activeStep === numberOfSteps.length - 1 ? "Finish" : "Next"}
-            </Button>
-          </Box>
-        </React.Fragment>
-      )}
-    </Box>
+              <Box sx={{ flex: "1 1 auto" }} />
+              {isStepOptional(activeStep) && (
+                <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
+                  Skip
+                </Button>
+              )}
+              <Button onClick={handleNext}>
+                {activeStep === numberOfSteps.length - 1 ? "Finish" : "Next"}
+              </Button>
+            </Box>
+          </React.Fragment>
+        )}
+      </Box>
+    </ThemeProvider>
   );
 };
 
@@ -206,65 +212,67 @@ export const HorizontalNonLinearSteppers = (props) => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Stepper nonLinear={nonLinear} activeStep={activeStep}>
-        {numberOfSteps.map((label, index) => (
-          <Step key={label} completed={completed[index]}>
-            <StepButton color="inherit" onClick={handleStep(index)}>
-              {label}
-            </StepButton>
-          </Step>
-        ))}
-      </Stepper>
-      <div>
-        {allStepsCompleted() ? (
-          <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1 }}>
-              All steps completed - you&apos;re finished
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-              <Box sx={{ flex: "1 1 auto" }} />
-              <Button onClick={handleReset}>Reset</Button>
-            </Box>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1, py: 1 }}>
-              Step {activeStep + 1}
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-              <Button
-                color="inherit"
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                sx={{ mr: 1 }}
-              >
-                Back
-              </Button>
-              <Box sx={{ flex: "1 1 auto" }} />
-              <Button onClick={handleNext} sx={{ mr: 1 }}>
-                Next
-              </Button>
-              {activeStep !== numberOfSteps.length &&
-                (completed[activeStep] ? (
-                  <Typography
-                    variant="caption"
-                    sx={{ display: "inline-block" }}
-                  >
-                    x Step {activeStep + 1} already completed
-                  </Typography>
-                ) : (
-                  <Button onClick={handleComplete}>
-                    {completedSteps() === totalSteps() - 1
-                      ? "Finish"
-                      : "Complete Step"}
-                  </Button>
-                ))}
-            </Box>
-          </React.Fragment>
-        )}
-      </div>
-    </Box>
+    <ThemeProvider theme={muiTheme}>
+      <Box sx={{ width: "100%" }}>
+        <Stepper nonLinear={nonLinear} activeStep={activeStep}>
+          {numberOfSteps.map((label, index) => (
+            <Step key={label} completed={completed[index]}>
+              <StepButton color="inherit" onClick={handleStep(index)}>
+                {label}
+              </StepButton>
+            </Step>
+          ))}
+        </Stepper>
+        <div>
+          {allStepsCompleted() ? (
+            <React.Fragment>
+              <Typography sx={{ mt: 2, mb: 1 }}>
+                All steps completed - you&apos;re finished
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                <Box sx={{ flex: "1 1 auto" }} />
+                <Button onClick={handleReset}>Reset</Button>
+              </Box>
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <Typography sx={{ mt: 2, mb: 1, py: 1 }}>
+                Step {activeStep + 1}
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                <Button
+                  color="inherit"
+                  disabled={activeStep === 0}
+                  onClick={handleBack}
+                  sx={{ mr: 1 }}
+                >
+                  Back
+                </Button>
+                <Box sx={{ flex: "1 1 auto" }} />
+                <Button onClick={handleNext} sx={{ mr: 1 }}>
+                  Next
+                </Button>
+                {activeStep !== numberOfSteps.length &&
+                  (completed[activeStep] ? (
+                    <Typography
+                      variant="caption"
+                      sx={{ display: "inline-block" }}
+                    >
+                      x Step {activeStep + 1} already completed
+                    </Typography>
+                  ) : (
+                    <Button onClick={handleComplete}>
+                      {completedSteps() === totalSteps() - 1
+                        ? "Finish"
+                        : "Complete Step"}
+                    </Button>
+                  ))}
+              </Box>
+            </React.Fragment>
+          )}
+        </div>
+      </Box>
+    </ThemeProvider>
   );
 };
 
@@ -295,52 +303,54 @@ export const VerticalLinearStepper = (props) => {
   };
 
   return (
-    <Box sx={{ maxWidth: 400 }}>
-      <Stepper activeStep={activeStep} orientation="vertical">
-        {versteps.map((step, index) => (
-          <Step key={step.label}>
-            <StepLabel
-              optional={
-                index === versteps.length - 1 ? (
-                  <Typography variant="caption">Last step</Typography>
-                ) : null
-              }
-            >
-              {step.label}
-            </StepLabel>
-            <StepContent>
-              <Typography>{step.description}</Typography>
-              <Box sx={{ mb: 2 }}>
-                <div>
-                  <Button
-                    variant="contained"
-                    onClick={handleNext}
-                    sx={{ mt: 1, mr: 1 }}
-                  >
-                    {index === versteps.length - 1 ? "Finish" : "Continue"}
-                  </Button>
-                  <Button
-                    disabled={index === 0}
-                    onClick={handleBack}
-                    sx={{ mt: 1, mr: 1 }}
-                  >
-                    Back
-                  </Button>
-                </div>
-              </Box>
-            </StepContent>
-          </Step>
-        ))}
-      </Stepper>
-      {activeStep === versteps.length && (
-        <Paper square elevation={0} sx={{ p: 3 }}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
-          <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-            Reset
-          </Button>
-        </Paper>
-      )}
-    </Box>
+    <ThemeProvider theme={muiTheme}>
+      <Box sx={{ maxWidth: 400 }}>
+        <Stepper activeStep={activeStep} orientation="vertical">
+          {versteps.map((step, index) => (
+            <Step key={step.label}>
+              <StepLabel
+                optional={
+                  index === versteps.length - 1 ? (
+                    <Typography variant="caption">Last step</Typography>
+                  ) : null
+                }
+              >
+                {step.label}
+              </StepLabel>
+              <StepContent>
+                <Typography>{step.description}</Typography>
+                <Box sx={{ mb: 2 }}>
+                  <div>
+                    <Button
+                      variant="contained"
+                      onClick={handleNext}
+                      sx={{ mt: 1, mr: 1 }}
+                    >
+                      {index === versteps.length - 1 ? "Finish" : "Continue"}
+                    </Button>
+                    <Button
+                      disabled={index === 0}
+                      onClick={handleBack}
+                      sx={{ mt: 1, mr: 1 }}
+                    >
+                      Back
+                    </Button>
+                  </div>
+                </Box>
+              </StepContent>
+            </Step>
+          ))}
+        </Stepper>
+        {activeStep === versteps.length && (
+          <Paper square elevation={0} sx={{ p: 3 }}>
+            <Typography>All steps completed - you&apos;re finished</Typography>
+            <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+              Reset
+            </Button>
+          </Paper>
+        )}
+      </Box>
+    </ThemeProvider>
   );
 };
 
@@ -354,13 +364,15 @@ VerticalLinearStepper.defaultProps = {
 export const AlternativeLabel = (props) => {
   const { alternativeLabel, numberOfSteps } = props;
   return (
-    <Stepper activeStep={1} alternativeLabel={alternativeLabel}>
-      {numberOfSteps.map((label) => (
-        <Step key={label}>
-          <StepLabel>{label}</StepLabel>
-        </Step>
-      ))}
-    </Stepper>
+    <ThemeProvider theme={muiTheme}>
+      <Stepper activeStep={1} alternativeLabel={alternativeLabel}>
+        {numberOfSteps.map((label) => (
+          <Step key={label}>
+            <StepLabel>{label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+    </ThemeProvider>
   );
 };
 AlternativeLabel.propTypes = {
@@ -379,28 +391,30 @@ export const HorizontalStepperWithErrors = (props) => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Stepper activeStep={1}>
-        {numberOfSteps.map((label, index) => {
-          const labelProps = {};
-          if (isStepFailed(index)) {
-            labelProps.optional = (
-              <Typography variant="caption" color="error">
-                Alert message
-              </Typography>
+    <ThemeProvider theme={muiTheme}>
+      <Box sx={{ width: "100%" }}>
+        <Stepper activeStep={1}>
+          {numberOfSteps.map((label, index) => {
+            const labelProps = {};
+            if (isStepFailed(index)) {
+              labelProps.optional = (
+                <Typography variant="caption" color="error">
+                  Alert message
+                </Typography>
+              );
+
+              labelProps.error = true;
+            }
+
+            return (
+              <Step key={label}>
+                <StepLabel {...labelProps}>{label}</StepLabel>
+              </Step>
             );
-
-            labelProps.error = true;
-          }
-
-          return (
-            <Step key={label}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
-            </Step>
-          );
-        })}
-      </Stepper>
-    </Box>
+          })}
+        </Stepper>
+      </Box>
+    </ThemeProvider>
   );
 };
 HorizontalStepperWithErrors.propTypes = {
@@ -427,54 +441,61 @@ export const TextMobileSteppers = (props) => {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          height: 50,
-          pl: 2,
-          bgcolor: "background.default",
-        }}
-      >
-        <Typography>{numberOfSteps[activeStep].label}</Typography>
-      </Paper>
-      <Box sx={{ height: 255, maxWidth: 400, width: "100%", p: 2 }}>
-        {numberOfSteps[activeStep].description}
+    <ThemeProvider theme={muiTheme}>
+      <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+        <Paper
+          square
+          elevation={0}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            height: 50,
+            pl: 2,
+            bgcolor: "#ccc",
+          }}
+        >
+          <Typography>{numberOfSteps[activeStep].label}</Typography>
+        </Paper>
+        <Box sx={{ height: 255, maxWidth: 400, width: "100%", p: 2 }}>
+          <Typography> {numberOfSteps[activeStep].description}</Typography>
+        </Box>
+        <MobileStepper
+          variant="text"
+          steps={maxSteps}
+          position="static"
+          activeStep={activeStep}
+          sx={{ bgcolor: "#ccc" }}
+          nextButton={
+            <Button
+              size="small"
+              onClick={handleNext}
+              disabled={activeStep === maxSteps - 1}
+            >
+              Next
+              {theme.direction === "rtl" ? (
+                <KeyboardArrowLeft />
+              ) : (
+                <KeyboardArrowRight />
+              )}
+            </Button>
+          }
+          backButton={
+            <Button
+              size="small"
+              onClick={handleBack}
+              disabled={activeStep === 0}
+            >
+              {theme.direction === "rtl" ? (
+                <KeyboardArrowRight />
+              ) : (
+                <KeyboardArrowLeft />
+              )}
+              Back
+            </Button>
+          }
+        />
       </Box>
-      <MobileStepper
-        variant="text"
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            Next
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      />
-    </Box>
+    </ThemeProvider>
   );
 };
 TextMobileSteppers.propTypes = {
@@ -498,37 +519,39 @@ export const DotsAndProgressMobileSteppers = (props) => {
   };
 
   return (
-    <MobileStepper
-      variant={variant}
-      steps={numberOfSteps}
-      position="static"
-      activeStep={activeStep}
-      sx={{ flexGrow: 1 }}
-      nextButton={
-        <Button
-          size="small"
-          onClick={handleNext}
-          disabled={activeStep === numberOfSteps - 1}
-        >
-          Next
-          {theme.direction === "rtl" ? (
-            <KeyboardArrowLeft />
-          ) : (
-            <KeyboardArrowRight />
-          )}
-        </Button>
-      }
-      backButton={
-        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-          {theme.direction === "rtl" ? (
-            <KeyboardArrowRight />
-          ) : (
-            <KeyboardArrowLeft />
-          )}
-          Back
-        </Button>
-      }
-    />
+    <ThemeProvider theme={muiTheme}>
+      <MobileStepper
+        variant={variant}
+        steps={numberOfSteps}
+        position="static"
+        activeStep={activeStep}
+        sx={{ flexGrow: 1 }}
+        nextButton={
+          <Button
+            size="small"
+            onClick={handleNext}
+            disabled={activeStep === numberOfSteps - 1}
+          >
+            Next
+            {theme.direction === "rtl" ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )}
+          </Button>
+        }
+        backButton={
+          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+            {theme.direction === "rtl" ? (
+              <KeyboardArrowRight />
+            ) : (
+              <KeyboardArrowLeft />
+            )}
+            Back
+          </Button>
+        }
+      />
+    </ThemeProvider>
   );
 };
 DotsAndProgressMobileSteppers.propTypes = {
@@ -608,55 +631,57 @@ export const CustomizedIconSteppers = (props) => {
     setActiveStep(0);
   };
   return (
-    <Stack sx={{ width: "100%" }} spacing={4}>
-      <Stepper
-        alternativeLabel
-        activeStep={activeStep}
-        connector={<ColorlibConnector />}
-      >
-        {data.map((steps) => (
-          <Step key={steps.label}>
-            <StepButton>
-              <StepLabel
-                StepIconProps={{ iconname: steps.icon }}
-                StepIconComponent={ColorlibStepIcon}
+    <ThemeProvider theme={muiTheme}>
+      <Stack sx={{ width: "100%" }} spacing={4}>
+        <Stepper
+          alternativeLabel
+          activeStep={activeStep}
+          connector={<ColorlibConnector />}
+        >
+          {data.map((steps) => (
+            <Step key={steps.label}>
+              <StepButton>
+                <StepLabel
+                  StepIconProps={{ iconname: steps.icon }}
+                  StepIconComponent={ColorlibStepIcon}
+                >
+                  {steps.label}
+                </StepLabel>
+              </StepButton>
+            </Step>
+          ))}
+        </Stepper>
+        {activeStep === data.length ? (
+          <React.Fragment>
+            <Typography sx={{ mt: 2, mb: 1 }}>
+              All steps completed - you&apos;re finished
+            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Box sx={{ flex: "1 1 auto" }} />
+              <Button onClick={handleReset}>Reset</Button>
+            </Box>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
+            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Button
+                color="inherit"
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                sx={{ mr: 1 }}
               >
-                {steps.label}
-              </StepLabel>
-            </StepButton>
-          </Step>
-        ))}
-      </Stepper>
-      {activeStep === data.length ? (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
-          </Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleReset}>Reset</Button>
-          </Box>
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleNext}>
-              {activeStep === data.length - 1 ? "Finish" : "Next"}
-            </Button>
-          </Box>
-        </React.Fragment>
-      )}
-    </Stack>
+                Back
+              </Button>
+              <Box sx={{ flex: "1 1 auto" }} />
+              <Button onClick={handleNext}>
+                {activeStep === data.length - 1 ? "Finish" : "Next"}
+              </Button>
+            </Box>
+          </React.Fragment>
+        )}
+      </Stack>
+    </ThemeProvider>
   );
 };
 
@@ -744,48 +769,50 @@ export const CustomizedSteppers = (props) => {
   };
 
   return (
-    <Stack sx={{ width: "100%" }} spacing={4}>
-      <Stepper
-        alternativeLabel
-        activeStep={activeStep}
-        connector={<QontoConnector />}
-      >
-        {numberOfSteps.map((label) => (
-          <Step key={label}>
-            <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-      {activeStep === numberOfSteps.length ? (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
-          </Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleReset}>Reset</Button>
-          </Box>
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleNext}>
-              {activeStep === numberOfSteps.length - 1 ? "Finish" : "Next"}
-            </Button>
-          </Box>
-        </React.Fragment>
-      )}
-    </Stack>
+    <ThemeProvider theme={muiTheme}>
+      <Stack sx={{ width: "100%" }} spacing={4}>
+        <Stepper
+          alternativeLabel
+          activeStep={activeStep}
+          connector={<QontoConnector />}
+        >
+          {numberOfSteps.map((label) => (
+            <Step key={label}>
+              <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+        {activeStep === numberOfSteps.length ? (
+          <React.Fragment>
+            <Typography sx={{ mt: 2, mb: 1 }}>
+              All steps completed - you&apos;re finished
+            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Box sx={{ flex: "1 1 auto" }} />
+              <Button onClick={handleReset}>Reset</Button>
+            </Box>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
+            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Button
+                color="inherit"
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                sx={{ mr: 1 }}
+              >
+                Back
+              </Button>
+              <Box sx={{ flex: "1 1 auto" }} />
+              <Button onClick={handleNext}>
+                {activeStep === numberOfSteps.length - 1 ? "Finish" : "Next"}
+              </Button>
+            </Box>
+          </React.Fragment>
+        )}
+      </Stack>
+    </ThemeProvider>
   );
 };
 CustomizedSteppers.propTypes = {
@@ -794,93 +821,4 @@ CustomizedSteppers.propTypes = {
 
 CustomizedSteppers.defaultProps = {
   numberOfSteps: [],
-};
-
-// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-export const CarouselEffect = (props) => {
-  const { images } = props;
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-  };
-
-  return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          height: 50,
-          pl: 2,
-          bgcolor: "background.default",
-        }}
-      >
-        <Typography>{images[activeStep].label}</Typography>
-      </Paper>
-      <div>
-        <Box
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          component="img"
-          sx={{
-            height: 255,
-            display: "block",
-            maxWidth: 400,
-            overflow: "hidden",
-            width: "100%",
-          }}
-          src={images[activeStep].imgPath}
-          //   alt={step.label}
-        />
-      </div>
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            Next
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      />
-    </Box>
-  );
-};
-CarouselEffect.propTypes = {
-  data: PropTypes.array,
-};
-CarouselEffect.defaultProps = {
-  data: [],
 };
