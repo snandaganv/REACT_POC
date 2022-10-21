@@ -16,7 +16,7 @@ export default {
       control: { type: "radio" },
     },
     color: {
-      options: ["primary", "secondary"],
+      options: ["primary", "success", "secondary", "error", "info", "warning"],
       control: { type: "radio" },
     },
     orientation: {
