@@ -34,8 +34,6 @@ export {
   ChipSizes as ChipSize,
   ChipAvatars as ChipAvatar,
   ChipIcons as ChipIcon,
-  ChipDoneDeleteIcons as ChipDoneDeleteIcon,
-  ChipClickableAndDeletables as ChipClickableAndDeletable,
   ChipClickableLinks as ChiplickableLink,
 } from "./Chip";
 
@@ -82,9 +80,7 @@ export {
 
 export {
   Badges as Badge,
-  ShoppingCartBadge as ShoppingCartBadges,
-  Customizations as Customization,
-  DotBadge as DotBadges,
+  BadgeDot as DotBadges,
   BadgeAlignments as BadgeAlignment,
   BadgeVisibility as BadgeVisibilitys,
 } from "./Badge";
@@ -125,7 +121,7 @@ export {
   MenuDense as DenseMenu,
   MenuIcon as IconMenu,
   ListMenuSimple as SimpleListMenu,
-  SelectAutoWidt as SelectAutoWidth,
+  // SelectAutoWidt as SelectAutoWidth,
   MenuAccount as AccountMenu,
   MenuLong as LongMenu,
   MenuTypography as TypographyMenu,
