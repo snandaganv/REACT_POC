@@ -15,6 +15,7 @@ export { default as SelectComponent } from "./select-component";
 export { default as DateTimeComponent } from "./datetime-component";
 export { default as SliderComponent } from "./slider-component";
 export { default as CardComponent } from "./card-component";
+export { default as RatingComponent } from "./rating-component";
 
 export {
   ButtonDefaults as ButtonDefault,
