@@ -2,6 +2,7 @@ import { createTheme } from "@mui/material/styles";
 
 import variables from "../src/assets/styles/variables.scss";
 import "../src/assets/styles/fonts.scss";
+import { palette } from "@mui/system";
 
 const muiTheme = createTheme({
   components: {
@@ -41,7 +42,6 @@ const muiTheme = createTheme({
         },
       },
     },
-
     MuiFormControlLabel: {
       styleOverrides: {
         root: {
@@ -49,7 +49,6 @@ const muiTheme = createTheme({
         },
       },
     },
-
     MuiToggleButton: {
       styleOverrides: {
         root: {
@@ -72,18 +71,31 @@ const muiTheme = createTheme({
         },
       },
     },
-
     MuiBottomNavigationAction: {
       styleOverrides: {
-        // root: {
-        //   color: "#C6C8F9;",
-        // },
         root: {
           color: "#C6C8F9;",
           "&.Mui-selected": {
-            "color": "#ffffff",
-          }
-        }
+            color: "#ffffff",
+          },
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          // color: "#1A3BDD",
+        },
+        label: {
+          textTransform: "capitalize",
+          fontStyle: "normal",
+          color: palette.primary,
+        },
+        outlinedPrimary: {
+          textTransform: "capitalize",
+          fontStyle: "normal",
+          // color: "white",
+        },
       },
     },
   },
