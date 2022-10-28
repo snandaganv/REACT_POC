@@ -50,9 +50,6 @@ function getprimaryorsecondaryratingcolor(color) {
           }
         };
     }
-    else{
-        null;
-    }
 }
 
 function getcustomratingcolor(iconColor,iconHoverColor) {
