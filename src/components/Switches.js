@@ -16,7 +16,6 @@ import muiTheme from "../../.storybook/muiTheme";
 
 export const Switches = ({
   label,
-  defaultChecked,
   onClick,
   disabled,
   size,
@@ -31,7 +30,6 @@ export const Switches = ({
         <FormControlLabel
           control={
             <Switch
-              defaultChecked={defaultChecked}
               onClick={onClick}
               size={size}
               checked={checked}
@@ -51,7 +49,6 @@ Switches.propTypes = {
   label: PropTypes.string,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
   onClick: PropTypes.func,
   onChange: PropTypes.func,
   size: PropTypes.string,
