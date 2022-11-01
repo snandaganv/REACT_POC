@@ -18,7 +18,6 @@ export const CheckBoxBasics = ({
   checked,
   disabled,
   labelPlacement,
-  defaultChecked,
   onChange,
   required,
 }) => {
@@ -31,7 +30,6 @@ export const CheckBoxBasics = ({
               onClick={onClick}
               size={size}
               checked={checked}
-              defaultChecked={defaultChecked}
               onChange={onChange}
               required={required}
             />
@@ -47,7 +45,6 @@ export const CheckBoxBasics = ({
 CheckBoxBasics.prototype = {
   label: PropTypes.string,
   checked: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
   required: PropTypes.bool,
   onChange: PropTypes.func,
   onClick: PropTypes.func,

@@ -83,9 +83,6 @@ const muiTheme = createTheme({
     },
     MuiChip: {
       styleOverrides: {
-        root: {
-          // color: "#1A3BDD",
-        },
         label: {
           textTransform: "capitalize",
           fontStyle: "normal",
@@ -94,7 +91,15 @@ const muiTheme = createTheme({
         outlinedPrimary: {
           textTransform: "capitalize",
           fontStyle: "normal",
-          // color: "white",
+        },
+      },
+    },
+
+    MuiTooltip: {
+      styleOverrides: {
+        popper: {
+          textTransform: "capitalize",
+          fontStyle: "normal",
         },
       },
     },

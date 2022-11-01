@@ -122,7 +122,7 @@ export {
   MenuDense as DenseMenu,
   MenuIcon as IconMenu,
   ListMenuSimple as SimpleListMenu,
-  // SelectAutoWidt as SelectAutoWidth,
+  //SelectAutoWidt as SelectAutoWidth,
   MenuAccount as AccountMenu,
   MenuLong as LongMenu,
   MenuTypography as TypographyMenu,
