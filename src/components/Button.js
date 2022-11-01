@@ -8,7 +8,6 @@ import { Alarm } from "@mui/icons-material";
 import AddShoppingCart from "@mui/icons-material/AddShoppingCart";
 import Delete from "@mui/icons-material/Delete";
 import { LoadingButton } from "@mui/lab";
-import { CopyBlock, dracula } from "react-code-blocks";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../.storybook/muiTheme";
 
@@ -231,19 +230,6 @@ export const ButtonIconLabelButton = ({ startIcon, endIcon }) => {
             Send
           </Button>
         </Stack>
-        <CopyBlock
-          language="html"
-          text={`<Button variant="outlined" startIcon={<DeleteIcon />}>
-        Delete
-      </Button>
-      <Button variant="contained" endIcon={<SendIcon />}>
-        Send
-      </Button>`}
-          codeBlock
-          theme={dracula}
-          showLineNumbers={true}
-          wrapLines={true}
-        />
       </FormGroup>
     </ThemeProvider>
   );
