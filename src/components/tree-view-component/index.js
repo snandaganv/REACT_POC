@@ -35,7 +35,7 @@ function loopAll(arr) {
       allIds.push(arr[i].nodeId)
     }
   }
-  return result;    
+  return allIds;    
 }
 const TreeViewComponent = (props) => {
   const {treeViwList,ariaLabel,endIcon,expandIcon,collapseIcon} = props;
@@ -46,7 +46,13 @@ const TreeViewComponent = (props) => {
   const [selected, setSelected] = React.useState([]);
 
 
+  const handleToggle = (event,nodeIds) => {
+    setExpanded(nodeIds);
+  };
 
+  const handleSelect = (event,nodeIds) => {
+    setSelected(nodeIds);
+  };
 const handleExpandClick = () => {
   setExpanded((oldExpanded) =>
     oldExpanded.length === 0 ? nodeIdAll : [],
@@ -83,6 +89,8 @@ const handleSelectClick = () => {
       sx={{ height: 240, flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
       expanded={expanded}
       selected={selected}
+      onNodeToggle={handleToggle}
+      onNodeSelect={handleSelect}
       multiSelect
     >
 
