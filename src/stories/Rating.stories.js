@@ -10,6 +10,10 @@ export default {
         size: {
             options: ["small", "medium", "large"],
             control: { type: "radio" },
+          },
+          color: {
+            options: ["default","primary", "secondary"],
+            control: { type: "radio" },
           }
     },
 };
@@ -39,6 +43,7 @@ Default.args = {
         4.5: 'Excellent',
         5: 'Excellent+',
       },
+     
    
 }
 
@@ -95,9 +100,9 @@ NoRating.args = {
 const SizesTemplate = () =>
 <> 
 <Stack direction="column" spacing={1}>
-<RatingComponent size="small" precision="0.5" defaultValue="2" name="rating-small" ></RatingComponent>
-<RatingComponent size="medium" precision="0.5" defaultValue="3" name="rating-small" ></RatingComponent>
-<RatingComponent size="large" precision="0.5" defaultValue="4" name="rating-small" ></RatingComponent>
+<RatingComponent size="small" precision="0.5" hoverFeedback="true" defaultValue="2" name="rating-small" ></RatingComponent>
+<RatingComponent size="medium" precision="0.5" hoverFeedback="true"  defaultValue="3" name="rating-small" ></RatingComponent>
+<RatingComponent size="large" precision="0.5" hoverFeedback="true"  defaultValue="4" name="rating-small" ></RatingComponent>
 
 </Stack>
 </>;
@@ -129,7 +134,7 @@ CustomRating.args = {
       },
       icon:<FavoriteIcon  fontSize="inherit" />,
       emptyIcon:<FavoriteBorderIcon fontSize="inherit" />,
-      ratingColor:'#ff6d75',
-      ratingHoverColor:'#ff3d47',
+      color:'primary',
+     
    
 }

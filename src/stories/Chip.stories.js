@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Chip } from "@mui/material";
 import {
   ChipsBasics,
   ChipClickables,
@@ -6,17 +6,15 @@ import {
   ChipSizes,
   ChipIcons,
   ChipAvatars,
-  ChipClickableAndDeletables,
-  ChipDoneDeleteIcons,
   ChipClickableLinks,
 } from "../components/Chip";
 
 export default {
   title: "Data Display/Chip",
-  component: Button,
+  component: Chip,
   argTypes: {
     variant: {
-      options: ["contained", "outlined"],
+      options: ["filled", "outlined"],
       control: { type: "radio" },
     },
     size: {
@@ -24,17 +22,10 @@ export default {
       control: { type: "radio" },
     },
     color: {
-      options: [
-        "default",
-        "primary",
-        "success",
-        "secondary",
-        "error",
-        "info",
-        "warning",
-      ],
+      options: ["primary", "success", "secondary", "error", "info", "warning"],
       control: { type: "radio" },
     },
+    onClick: { action: "Clicked" },
     direction: {
       options: ["row", "row-reverse", "column", "column-reverse"],
       control: { type: "radio" },
@@ -45,10 +36,11 @@ export default {
 export const ChipsBasic = ChipsBasics.bind({});
 ChipsBasic.args = {
   label: "Chip",
-  variant: "contained",
+  variant: "outlined",
   color: "primary",
   size: "medium",
   direction: "row",
+  disabled: false,
 };
 
 export const ChipClickable = ChipClickables.bind({});
@@ -56,6 +48,4 @@ export const ChipsColor = ChipsColors.bind({});
 export const ChipSize = ChipSizes.bind({});
 export const ChipAvatar = ChipAvatars.bind({});
 export const ChipIcon = ChipIcons.bind({});
-export const ChipDoneDeleteIcon = ChipDoneDeleteIcons.bind({});
-export const ChipClickableAndDeletable = ChipClickableAndDeletables.bind({});
 export const ChipClickableLink = ChipClickableLinks.bind({});

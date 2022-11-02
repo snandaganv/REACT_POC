@@ -27,6 +27,31 @@ function getLabelText(value) {
   return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
 }
 
+function getprimaryorsecondaryratingcolor(color) {
+    if(color=='primary')
+    {
+    return {
+        "& .MuiRating-iconFilled": {
+        color:  '#1A3BDD'
+      },
+      '& .MuiRating-iconHover': {
+        color: '#6f7fd0',
+      }
+    };
+    }
+    else if(color=='secondary')
+    {
+        return {
+            "& .MuiRating-iconFilled": {
+            color:  '#34E4C0'
+          },
+          '& .MuiRating-iconHover': {
+            color: '#67b7a6',
+          }
+        };
+    }
+}
+
 function getcustomratingcolor(iconColor,iconHoverColor) {
     if(iconColor!==null && iconHoverColor!==null && iconColor!=='' && iconHoverColor!==''  )
     {
@@ -47,13 +72,15 @@ else
 
 
   const RatingComponent = (props) => {
-    const {precision,size,name,defaultValue,disabled,readOnly,hoverFeedback,max,labels,icon,emptyIcon,ratingColor,ratingHoverColor} = props;
+    const {precision,size,name,defaultValue,disabled,readOnly,hoverFeedback,max,labels,icon,emptyIcon,color} = props;
     const [value, setNewvalue] =  React.useState(defaultValue);
   
     const [hover, setHover] = React.useState(-1);
     
-    const customiconstyle=getcustomratingcolor(ratingColor,ratingHoverColor);
-
+    //Below Line if allowing cutom user colors, currently below line is commented as we are not allowing custom colors
+    //Only primary or secondary colors are available
+   //const customiconstyle=getcustomratingcolor(ratingColor,ratingHoverColor);
+    const customiconstyle=getprimaryorsecondaryratingcolor(color);
     return (
       <ThemeProvider theme={muiTheme}>
          <Box
@@ -96,7 +123,6 @@ else
 
 
   RatingComponent.prototype = {
-
     hoverFeedback:PropTypes.bool,
     precision: PropTypes.number,
     defaultValue:PropTypes.number,
@@ -108,12 +134,10 @@ else
     labels:PropTypes.array,
     icon:any,
     emptyIcon:any,
-    ratingColor:PropTypes.string,
-    ratingHoverColor:PropTypes.string,
+    color: PropTypes.string,
   };
   
   RatingComponent.defaultProps = {
-      
     hoverFeedback:false,
     precision: 0.5,
     defaultValue: 2,
@@ -136,8 +160,7 @@ else
       },
   icon:<StarIcon  fontSize="inherit" />,
   emptyIcon:<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />,
-  ratingColor:null,
-  ratingHoverColor:null,
+  color: 'default',
   };
   
  
