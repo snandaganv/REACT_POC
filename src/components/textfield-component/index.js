@@ -21,7 +21,7 @@ const TextFieldComponent = (props) => {
   return (
     <>
     <ThemeProvider theme={muiTheme}>
-      <TextField label={label} fullWidth={fullWidth} type={type} autoFocus={autoFocus} size={size} className={size === 'small' ? 'smallClassSize':'mediumClassSize'} defaultValue={defaultValue}  helperText={helperText} row={row} color={color} variant ={variant} error={error} disabled={disabled} onChange={onChanged}></TextField>
+      <TextField label={label} fullWidth={fullWidth} type={type} autoFocus={autoFocus} size={size} className={size === 'small' ? 'small-class-size':'medium-class-size'} defaultValue={defaultValue}  helperText={helperText} row={row} color={color} variant ={variant} error={error} disabled={disabled} onChange={onChanged}></TextField>
       </ThemeProvider>
     </>
   );
