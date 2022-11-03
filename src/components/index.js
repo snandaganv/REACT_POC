@@ -135,3 +135,12 @@ export {
   LabelBottomNavigations as LabelBottomNavigation,
   FixedBottomNavigations as FixedBottomNavigation,
 } from "./bottomnavigation-component";
+
+export {
+  DefaultCircularProgresses as DefaultCircularProgress,
+  CircularProgressWithValueLabels as CircularProgressWithValueLabel,
+  CircularProgressIntegrations as CircularProgressIntegration,
+  DefaultLinearProgresses as DefaultLinearProgress,
+  LinearProgressWithValueLabels as LinearProgressWithValueLabel,
+  LinearBufferProgresses as LinearBufferProgress,
+} from "./progress-component";
