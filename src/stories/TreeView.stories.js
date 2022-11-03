@@ -1,7 +1,7 @@
 import TreeViewComponent from "../components/tree-view-component";
 
 export default {
-    title: 'Feedback/TreeList',
+    title: 'Feedback/TreeView',
     component: TreeViewComponent,
     argTypes: {
         
