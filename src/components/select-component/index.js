@@ -156,7 +156,7 @@ export const SelectVariants = ({ props, selectlabel, selectoptions }) => {
     );
 }
 
-export const SelectAutoWidt = ({ props, selectlabel, autowidth }) => {
+export const SelectAutoWidths = ({ props, selectlabel, autowidth }) => {
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
