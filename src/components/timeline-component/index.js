@@ -262,3 +262,4 @@ RightAlignedTimelines.propTypes = {
   oppositeTimelineData: PropTypes.array,
   position: PropTypes.oneOf(["alternate", "left", "right"]),
 };
+
