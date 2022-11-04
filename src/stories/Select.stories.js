@@ -4,7 +4,7 @@ import {
     SelectBasics,
     SelectOtherProps,
     SelectVariants,
-    SelectAutoWidt,
+    SelectAutoWidths,
     SelectSizes,
     SelectLabels,
     MultipleSelects,
@@ -48,7 +48,7 @@ SelectVariant.args = {
     selectlabel: [{ label: 'Select' }],
     selectoptions: [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option 2' }, { value: 3, label: 'Option 3' }],
 };
-export const SelectAutoWidth = SelectAutoWidt.bind({});
+export const SelectAutoWidth = SelectAutoWidths.bind({});
 SelectAutoWidth.args = {
     selectlabel: [{ label: 'Sort' }],
     autowidth: [{ value: 1, label: 'Options' }, { value: 2, label: 'Option Two' }, { value: 3, label: 'Option Twenty' }],
