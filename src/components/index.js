@@ -191,7 +191,16 @@ export {
   VerticalLinearSteppers as VerticalLinearStepper,
   TextMobileSteppers as TextMobileStepper,
   DotsAndProgressMobileSteppers as DotsAndProgressMobileStepper,
-  HorizontalLinearSteppers as HorizontalLinearStepper,
+  //HorizontalLinearSteppers as HorizontalLinearStepper,
   CustomizedSteppers as CustomizedStepper,
   CustomizedIconSteppers as CustomizedIconStepper,
 } from "./stepper-component";
+
+export {
+  SnackbarBasic as SnackbarBasics,
+  SnackbarAlert as SnackbarAlerts,
+  SnackbarPositioned as SnackbarPositions,
+  SnackbarMessageLength as SnackbarMessageLengths,
+  SnackbarTransition as SnackbarTransitions,
+  SnackbarFloatingsActionButtons as SnackbarFloatingActionButton,
+} from "./Snackbar";
