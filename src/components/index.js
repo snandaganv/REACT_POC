@@ -16,6 +16,7 @@ export { default as DateTimeComponent } from "./datetime-component";
 export { default as SliderComponent } from "./slider-component";
 export { default as CardComponent } from "./card-component";
 export { default as RatingComponent } from "./rating-component";
+export { default as BackdropComponent } from "./backdrop-component";
 
 export {
   ButtonDefaults as ButtonDefault,
@@ -135,3 +136,13 @@ export {
   LabelBottomNavigations as LabelBottomNavigation,
   FixedBottomNavigations as FixedBottomNavigation,
 } from "./bottomnavigation-component";
+
+export {
+  TimelineDefaults as TimelineDefault,
+  ColorsTimeline as TimelineColors,
+  OutlinedTimelines as OutlinedTimeline,
+  OppositeContentTimelines as OppositeContentTimeline,
+  RightAlignedTimelines as RightAlignedTimeline,
+  LeftAlignedTimelines as LeftAlignedTimeline,
+  CustomizedTimelines as CustomizedTimeline,
+} from "./timeline-component";
