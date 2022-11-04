@@ -1,10 +1,10 @@
 import { Stepper } from "@mui/material";
 import {
-  Steppercomponent,
+  DefaultSteppers,
   HorizontalNonLinearSteppers,
-  AlternativeLabel,
+  AlternativeLabelSteppers,
   HorizontalStepperWithErrors,
-  VerticalLinearStepper,
+  VerticalLinearSteppers,
   TextMobileSteppers,
   DotsAndProgressMobileSteppers,
   HorizontalLinearSteppers,
@@ -30,7 +30,7 @@ export default {
   },
 };
 
-export const DefaultStepper = Steppercomponent.bind({});
+export const DefaultStepper = DefaultSteppers.bind({});
 DefaultStepper.args = {
   orientation: "horizontal",
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
@@ -46,14 +46,14 @@ HorizontalNonLinearStepper.args = {
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
 };
 
-export const AlternativeLabelStepper = AlternativeLabel.bind({});
+export const AlternativeLabelStepper = AlternativeLabelSteppers.bind({});
 AlternativeLabelStepper.args = {
   alternativeLabel: true,
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
 };
 
-export const VerticalStepper = VerticalLinearStepper.bind({});
-VerticalStepper.args = {
+export const VerticalLinearStepper = VerticalLinearSteppers.bind({});
+VerticalLinearStepper.args = {
   versteps: [
     {
       label: "Select campaign settings",
@@ -75,8 +75,8 @@ VerticalStepper.args = {
     },
   ],
 };
-export const ErrorStepper = HorizontalStepperWithErrors.bind({});
-ErrorStepper.args = {
+export const HorizontalStepperWithError = HorizontalStepperWithErrors.bind({});
+HorizontalStepperWithError.args = {
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
   errorstepnumber: 3,
 };
@@ -104,8 +104,10 @@ TextMobileStepper.args = {
   ],
 };
 
-export const DotsAndProgressStepper = DotsAndProgressMobileSteppers.bind({});
-DotsAndProgressStepper.args = {
+export const DotsAndProgressMobileStepper = DotsAndProgressMobileSteppers.bind(
+  {}
+);
+DotsAndProgressMobileStepper.args = {
   numberOfSteps: 4,
   variant: "dots",
 };

@@ -1,8 +1,4 @@
-import {
-  ElevationPage,
-  SimplePaper,
-  BasicPaper,
-} from "../components/paper-component";
+import { Elevations, DefaultPapers } from "../components/paper-component";
 import { Paper } from "@mui/material";
 
 export default {
@@ -16,7 +12,7 @@ export default {
   },
 };
 
-export const DefaultPaper = SimplePaper.bind({});
+export const DefaultPaper = DefaultPapers.bind({});
 DefaultPaper.args = {
   variant: "elevation",
   elevation: 2,
@@ -25,4 +21,4 @@ DefaultPaper.args = {
   height: 128,
 };
 
-export const Elevations = ElevationPage.bind({});
+export const Elevation = Elevations.bind({});
