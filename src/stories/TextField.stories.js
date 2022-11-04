@@ -50,5 +50,9 @@ Default.args = {
     variant:'outlined',
     error:false,
     disabled:false,
-    defaultValue:'Please enter name'
+    defaultValue:'Please enter name',
+    required: true,
+    icon:'account_circle',
+    startIcon: true,
+    endIcon: false
 }
