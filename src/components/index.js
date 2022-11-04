@@ -108,7 +108,7 @@ export {
   DefaultSelects as SelectDefault,
   SelectBasics as BasicSelect,
   SelectVariants as SelectVariant,
-  SelectAutoWidt as SelectAutoWidth,
+  SelectAutoWidths as SelectAutoWidth,
   SelectSizes as SelectSize,
   SelectLabels as SelectLabel,
   SelectOtherProps as SelectOtherProp,
@@ -120,15 +120,14 @@ export {
 } from "./select-component";
 
 export {
-  MenuBasic as BasicMenu,
-  MenuDense as DenseMenu,
-  MenuIcon as IconMenu,
-  ListMenuSimple as SimpleListMenu,
-  //SelectAutoWidt as SelectAutoWidth,
-  MenuAccount as AccountMenu,
-  MenuLong as LongMenu,
-  MenuTypography as TypographyMenu,
-  MenuPositioned as PositionedMenu,
+  BasicMenus as BasicMenu,
+  DenseMenus as DenseMenu,
+  IconMenus as IconMenu,
+  SimpleListMenus as SimpleListMenu,
+  AccountMenus as AccountMenu,
+  LongMenus as LongMenu,
+  TypographyMenus as TypographyMenu,
+  PositionedMenus as PositionedMenu,
   ContextMenus as ContextMenu,
 } from "./menu-component";
 
@@ -139,6 +138,7 @@ export {
 } from "./bottomnavigation-component";
 
 export {
+
   TimelineDefaults as TimelineDefault,
   ColorsTimeline as TimelineColors,
   OutlinedTimelines as OutlinedTimeline,
@@ -147,3 +147,16 @@ export {
   LeftAlignedTimelines as LeftAlignedTimeline,
   CustomizedTimelines as CustomizedTimeline,
 } from "./timeline-component";
+
+  SimpleDialogs as SimpleDialog,
+  AlertDialogs as AlertDialog,
+  AlertDialogSlides as AlertDialogSlide,
+  FormDialogs as FormDialog,
+  CustomizedDialogs as CustomizedDialog,
+  FullScreenDialogs as FullScreenDialog,
+  MaxWidthDialogs as MaxWidthDialog,
+  ConfirmationDialogs as ConfirmationDialog,
+  DraggableDialogs as DraggableDialog,
+  ScrollDialog as ScrollDialog,
+} from "./dialog-component";
+

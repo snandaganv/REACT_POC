@@ -1,19 +1,16 @@
 import { Menu } from "@mui/material";
 import { ContentCopy, ContentCut, ContentPaste, Cloud, Check, Send, PriorityHigh, Drafts } from "@mui/icons-material";
 import {
-    MenuBasic,
-    MenuDefault,
-    MenuIcon,
-    MenuDense,
-    ListMenuSimple,
-    MenuAccount,
-    MenuLong,
-    MenuTypography,
+    BasicMenus,
+    IconMenus,
+    DenseMenus,
+    SimpleListMenus,
+    AccountMenus,
+    TypographyMenus,
+    LongMenus,
+    PositionedMenus,
     Divider,
-    MenuFade,
-    MenuPositioned,
     ContextMenus,
-    Testing
 } from "../components/menu-component";
 
 export default {
@@ -21,13 +18,13 @@ export default {
     component: Menu,
 };
 
-export const BasicMenu = MenuBasic.bind({});
+export const BasicMenu = BasicMenus.bind({});
 BasicMenu.args = {
     label: "Dashboard",
     menulist: [{ value: 1, label: 'Profile' }, { value: 2, label: 'My account' }, { value: 3, label: 'Logout' }],
 };
 
-export const DenseMenu = MenuDense.bind({});
+export const DenseMenu = DenseMenus.bind({});
 DenseMenu.args = {
     autoFocus: false,
     dense: true,
@@ -47,7 +44,7 @@ DenseMenu.args = {
     ]
 };
 
-export const IconMenu = MenuIcon.bind({});
+export const IconMenu = IconMenus.bind({});
 IconMenu.args = {
     menuicons: [
         { icon: <ContentCut fontSize="small" />, typography: "⌘X", label: "Cut" },
@@ -57,7 +54,7 @@ IconMenu.args = {
     menuclip: [{ icon: <Cloud fontSize="small" />, label: "Web Clipboard" }]
 };
 
-export const SimpleListMenu = ListMenuSimple.bind({});
+export const SimpleListMenu = SimpleListMenus.bind({});
 SimpleListMenu.args = {
     simplemenu: [
         { label: "Show some love to MUI" },
@@ -67,7 +64,7 @@ SimpleListMenu.args = {
     ]
 };
 
-export const AccountMenu = MenuAccount.bind({});
+export const AccountMenu = AccountMenus.bind({});
 AccountMenu.args = {
     typomenus: [
         { icon: <Send fontSize="small" />, label: "A short message" },
@@ -77,14 +74,14 @@ AccountMenu.args = {
 };
 
 
-export const LongMenu = MenuLong.bind({});
+export const LongMenu = LongMenus.bind({});
 LongMenu.args = {
     longtext: [
         { value: 1, option: 'options 1' }, { value: 2, option: 'options 2' }, { value: 3, label: 'options 3' }, { value: 4, label: 'options 4' }, { value: 5, label: 'options 5' }, { value: 6, label: 'options 6' }, { value: 7, label: 'options 7' }, { value: 8, label: 'options 8' }, { value: 9, label: 'options 9' }, { value: 10, label: 'options 10' }, { value: 11, label: 'options 11' }, { value: 12, label: 'options 12' }, { value: 13, label: 'options 13' }, { value: 14, label: 'options 14' }, { value: 15, label: 'options 15' }
     ]
 };
 
-export const TypographyMenu = MenuTypography.bind({});
+export const TypographyMenu = TypographyMenus.bind({});
 TypographyMenu.args = {
     typomenus: [
         { icon: <Send fontSize="small" />, label: "A short message" },
@@ -93,7 +90,7 @@ TypographyMenu.args = {
     ]
 };
 
-export const PositionedMenu = MenuPositioned.bind({});
+export const PositionedMenu = PositionedMenus.bind({});
 PositionedMenu.args = {
     label: "Dashboard",
     menulist: [{ value: 1, label: 'Profile' }, { value: 2, label: 'My account' }, { value: 3, label: 'Logout' }],
