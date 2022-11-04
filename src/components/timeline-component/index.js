@@ -14,7 +14,6 @@ import Typography from "@mui/material/Typography";
 import { timelineOppositeContentClasses } from "@mui/lab/TimelineOppositeContent";
 import { PropTypes } from "prop-types";
 
-
 export const TimelineDefaults = (props) => {
   const { data, position } = props;
   return (
