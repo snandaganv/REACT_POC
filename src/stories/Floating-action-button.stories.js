@@ -1,9 +1,9 @@
 import {
   FloatingActionButtons,
-  Fabs,
-  FloatingActionButtonSize,
-  FloatingActionButtonExtendedSize,
-  FloatingActionButtonZoom,
+  DefaultFloatingActionButton,
+  FloatingActionButtonSizes,
+  FloatingActionButtonExtendedSizes,
+  FloatingActionButtonAnimations,
 } from "../components/fab-component";
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
@@ -35,7 +35,8 @@ export default {
   },
 };
 
-export const DefaultFloatingActionButtonCircle = Fabs.bind({});
+export const DefaultFloatingActionButtonCircle =
+  DefaultFloatingActionButton.bind({});
 DefaultFloatingActionButtonCircle.args = {
   color: "default",
   variant: "circular",
@@ -45,7 +46,8 @@ DefaultFloatingActionButtonCircle.args = {
   href: "",
   icons: <AddIcon />,
 };
-export const DefaultFloatingActionButtonExtended = Fabs.bind({});
+export const DefaultFloatingActionButtonExtended =
+  DefaultFloatingActionButton.bind({});
 DefaultFloatingActionButtonExtended.args = {
   color: "default",
   variant: "extended",
@@ -57,10 +59,10 @@ DefaultFloatingActionButtonExtended.args = {
   label: "Fab",
 };
 
-export const BasicFloatingActionButton = FloatingActionButtons.bind({});
-export const FloatingActionButtonSizes = FloatingActionButtonSize.bind({});
-export const FloatingActionButtonExtendedSizes =
-  FloatingActionButtonExtendedSize.bind({});
+export const FloatingActionButton = FloatingActionButtons.bind({});
+export const FloatingActionButtonSize = FloatingActionButtonSizes.bind({});
+export const FloatingActionButtonExtendedSize =
+  FloatingActionButtonExtendedSizes.bind({});
 
 const fabStyle = {
   position: "absolute",
@@ -75,7 +77,8 @@ const boxStyle = {
   minHeight: 200,
 };
 
-export const FloatingActionButtonAnimation = FloatingActionButtonZoom.bind({});
+export const FloatingActionButtonAnimation =
+  FloatingActionButtonAnimations.bind({});
 FloatingActionButtonAnimation.args = {
   tabsArray: [
     {

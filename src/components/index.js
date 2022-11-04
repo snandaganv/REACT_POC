@@ -18,7 +18,6 @@ export { default as CardComponent } from "./card-component";
 export { default as RatingComponent } from "./rating-component";
 export { default as BackdropComponent } from "./backdrop-component";
 
-
 export {
   ButtonDefaults as ButtonDefault,
   ButtonBasics as ButtonBasic,
@@ -138,7 +137,6 @@ export {
 } from "./bottomnavigation-component";
 
 export {
-
   TimelineDefaults as TimelineDefault,
   ColorsTimeline as TimelineColors,
   OutlinedTimelines as OutlinedTimeline,
@@ -148,6 +146,7 @@ export {
   CustomizedTimelines as CustomizedTimeline,
 } from "./timeline-component";
 
+export {
   SimpleDialogs as SimpleDialog,
   AlertDialogs as AlertDialog,
   AlertDialogSlides as AlertDialogSlide,
@@ -160,3 +159,39 @@ export {
   ScrollDialog as ScrollDialog,
 } from "./dialog-component";
 
+export {
+  DefaultCircularProgresses as DefaultCircularProgress,
+  CircularProgressWithValueLabels as CircularProgressWithValueLabel,
+  CircularProgressIntegrations as CircularProgressIntegration,
+  DefaultLinearProgresses as DefaultLinearProgress,
+  LinearProgressWithValueLabels as LinearProgressWithValueLabel,
+  LinearBufferProgresses as LinearBufferProgress,
+} from "./progress-component";
+
+export {
+  DefaultPapers as DefaultPaper,
+  Elevations as Elevation,
+} from "./paper-component";
+
+export {
+  DefaultFloatingActionButton as DefaultFloatingActionButtonCircle,
+  DefaultFloatingActionButton as DefaultFloatingActionButtonExtended,
+  FloatingActionButtons as FloatingActionButton,
+  FloatingActionButtonSizes as FloatingActionButtonSize,
+  FloatingActionButtonExtendedSizes as FloatingActionButtonExtendedSize,
+  FloatingActionButtonAnimations as FloatingActionButtonAnimation,
+} from "./fab-component";
+
+export {
+  DefaultSteppers as DefaultStepper,
+  HorizontalLinearSteppers as HorizontalLinearStepper,
+  HorizontalNonLinearSteppers as HorizontalNonLinearStepper,
+  AlternativeLabelSteppers as AlternativeLabelStepper,
+  HorizontalStepperWithErrors as HorizontalStepperWithError,
+  VerticalLinearSteppers as VerticalLinearStepper,
+  TextMobileSteppers as TextMobileStepper,
+  DotsAndProgressMobileSteppers as DotsAndProgressMobileStepper,
+  HorizontalLinearSteppers as HorizontalLinearStepper,
+  CustomizedSteppers as CustomizedStepper,
+  CustomizedIconSteppers as CustomizedIconStepper,
+} from "./stepper-component";

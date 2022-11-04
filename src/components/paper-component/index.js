@@ -5,7 +5,7 @@ import { PropTypes } from "prop-types";
 import Grid from "@mui/material/Grid";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
-export const SimplePaper = (props) => {
+export const DefaultPapers = (props) => {
   const { elevation, variant, square, width, height } = props;
   return (
     <Box
@@ -24,7 +24,7 @@ export const SimplePaper = (props) => {
   );
 };
 
-SimplePaper.propTypes = {
+DefaultPapers.propTypes = {
   variant: PropTypes.oneOf(["elevation", "outlined"]),
   elevation: PropTypes.number,
   square: PropTypes.bool,
@@ -32,7 +32,7 @@ SimplePaper.propTypes = {
   height: PropTypes.number,
 };
 
-SimplePaper.defaultProps = {
+DefaultPapers.defaultProps = {
   variant: "elevation",
   elevation: 2,
   square: false,
@@ -51,7 +51,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const darkTheme = createTheme({ palette: { mode: "dark" } });
 const lightTheme = createTheme({ palette: { mode: "light" } });
 
-export const ElevationPage = (props) => {
+export const Elevations = (props) => {
   return (
     <Grid container spacing={2}>
       {[lightTheme, darkTheme].map((theme, index) => (
@@ -79,5 +79,5 @@ export const ElevationPage = (props) => {
   );
 };
 
-ElevationPage.propTypes = {};
-ElevationPage.defaultProps = {};
+Elevations.propTypes = {};
+Elevations.defaultProps = {};

@@ -39,7 +39,7 @@ export const FloatingActionButtons = (props) => {
 FloatingActionButtons.propTypes = {};
 FloatingActionButtons.defaultProps = {};
 
-export const Fabs = (props) => {
+export const DefaultFloatingActionButton = (props) => {
   const {
     color,
     variant,
@@ -71,7 +71,7 @@ export const Fabs = (props) => {
   );
 };
 
-Fabs.propTypes = {
+DefaultFloatingActionButton.propTypes = {
   color: PropTypes.oneOf([
     "default",
     "error",
@@ -90,7 +90,7 @@ Fabs.propTypes = {
   label: PropTypes.node,
 };
 
-Fabs.defaultProps = {
+DefaultFloatingActionButton.defaultProps = {
   color: "primary",
   variant: "extended",
   size: "medium",
@@ -100,7 +100,7 @@ Fabs.defaultProps = {
   label: "",
 };
 
-export const FloatingActionButtonSize = (props) => {
+export const FloatingActionButtonSizes = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Box sx={{ "& > :not(style)": { m: 1 } }}>
@@ -117,10 +117,10 @@ export const FloatingActionButtonSize = (props) => {
     </ThemeProvider>
   );
 };
-FloatingActionButtonSize.propTypes = {};
-FloatingActionButtonSize.defaultProps = {};
+FloatingActionButtonSizes.propTypes = {};
+FloatingActionButtonSizes.defaultProps = {};
 
-export const FloatingActionButtonExtendedSize = (props) => {
+export const FloatingActionButtonExtendedSizes = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Box sx={{ "& > :not(style)": { m: 1 } }}>
@@ -140,8 +140,8 @@ export const FloatingActionButtonExtendedSize = (props) => {
     </ThemeProvider>
   );
 };
-FloatingActionButtonExtendedSize.propTypes = {};
-FloatingActionButtonExtendedSize.defaultProps = {};
+FloatingActionButtonExtendedSizes.propTypes = {};
+FloatingActionButtonExtendedSizes.defaultProps = {};
 
 export const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -173,18 +173,8 @@ function a11yProps(index) {
   };
 }
 
-export const FloatingActionButtonZoom = (props) => {
-  const {
-    tabsArray,
-    indicatorColor,
-    tabsvariant,
-    textColor,
-    arialabel,
-    appBarPosition,
-    boxHeight,
-    boxWidth,
-    bgcolor,
-  } = props;
+export const FloatingActionButtonAnimations = (props) => {
+  const { tabsArray, boxHeight, boxWidth, bgcolor } = props;
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -254,13 +244,13 @@ export const FloatingActionButtonZoom = (props) => {
   );
 };
 
-FloatingActionButtonZoom.propTypes = {
+FloatingActionButtonAnimations.propTypes = {
   tabsArray: PropTypes.array,
   boxHeight: PropTypes.number,
   boxWidth: PropTypes.number,
 };
 
-FloatingActionButtonZoom.defaultProps = {
+FloatingActionButtonAnimations.defaultProps = {
   tabsArray: [],
   boxHeight: 200,
   boxWidth: 500,

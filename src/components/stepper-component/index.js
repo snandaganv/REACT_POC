@@ -22,8 +22,8 @@ import StepConnector, {
 import { styled } from "@mui/material/styles";
 import { Stack } from "@mui/system";
 import { CheckSharp } from "@mui/icons-material";
-
-export const Steppercomponent = (props) => {
+import variables from "../../assets/styles/variables.scss";
+export const DefaultSteppers = (props) => {
   const { orientation, numberOfSteps } = props;
   return (
     <ThemeProvider theme={muiTheme}>
@@ -39,12 +39,12 @@ export const Steppercomponent = (props) => {
     </ThemeProvider>
   );
 };
-Steppercomponent.prototype = {
+DefaultSteppers.prototype = {
   orientation: PropTypes.oneOf(["horizontal", "vertical"]),
   numberOfSteps: PropTypes.array,
 };
 
-Steppercomponent.defaultProps = {
+DefaultSteppers.defaultProps = {
   orientation: "horizontal",
   numberOfSteps: [],
 };
@@ -286,7 +286,7 @@ HorizontalNonLinearSteppers.defaultProps = {
   numberOfSteps: [],
 };
 
-export const VerticalLinearStepper = (props) => {
+export const VerticalLinearSteppers = (props) => {
   const { versteps } = props;
   const [activeStep, setActiveStep] = React.useState(0);
 
@@ -354,14 +354,14 @@ export const VerticalLinearStepper = (props) => {
   );
 };
 
-VerticalLinearStepper.propTypes = {
+VerticalLinearSteppers.propTypes = {
   numberOfSteps: PropTypes.array,
 };
-VerticalLinearStepper.defaultProps = {
+VerticalLinearSteppers.defaultProps = {
   numberOfSteps: [],
 };
 
-export const AlternativeLabel = (props) => {
+export const AlternativeLabelSteppers = (props) => {
   const { alternativeLabel, numberOfSteps } = props;
   return (
     <ThemeProvider theme={muiTheme}>
@@ -375,11 +375,11 @@ export const AlternativeLabel = (props) => {
     </ThemeProvider>
   );
 };
-AlternativeLabel.propTypes = {
+AlternativeLabelSteppers.propTypes = {
   alternativeLabel: PropTypes.bool,
   numberOfSteps: PropTypes.array,
 };
-AlternativeLabel.defaultProps = {
+AlternativeLabelSteppers.defaultProps = {
   alternativeLabel: true,
   numberOfSteps: [],
 };
@@ -568,12 +568,12 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      backgroundColor: "#1a3bdd",
+      backgroundColor: variables.blue,
     },
   },
   [`&.${stepConnectorClasses.completed}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      backgroundColor: "#2e7d32",
+      backgroundColor: variables.successMain,
     },
   },
   [`& .${stepConnectorClasses.line}`]: {
@@ -597,11 +597,11 @@ export const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
   justifyContent: "center",
   alignItems: "center",
   ...(ownerState.active && {
-    backgroundColor: "#1a2bdd",
+    backgroundColor: variables.blue,
     boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
   }),
   ...(ownerState.completed && {
-    backgroundColor: "#2e7d32",
+    backgroundColor: variables.successMain,
   }),
 }));
 
@@ -706,10 +706,10 @@ export const CustomizedSteppers = (props) => {
       height: 22,
       alignItems: "center",
       ...(ownerState.active && {
-        color: "#1a3bdd",
+        color: variables.blue,
       }),
       "& .QontoStepIcon-completedIcon": {
-        color: "#2E7D32",
+        color: variables.successMain,
         zIndex: 1,
         fontSize: 18,
       },
@@ -740,12 +740,12 @@ export const CustomizedSteppers = (props) => {
     },
     [`&.${stepConnectorClasses.active}`]: {
       [`& .${stepConnectorClasses.line}`]: {
-        borderColor: "#1a3bdd",
+        borderColor: variables.blue,
       },
     },
     [`&.${stepConnectorClasses.completed}`]: {
       [`& .${stepConnectorClasses.line}`]: {
-        borderColor: "#2E7D32",
+        borderColor: variables.successMain,
       },
     },
     [`& .${stepConnectorClasses.line}`]: {
