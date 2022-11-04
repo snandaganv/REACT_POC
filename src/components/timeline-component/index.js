@@ -33,7 +33,7 @@ export const TimelineDefaults = (props) => {
   );
 };
 
-TimelineDefaults.PropTypes = {
+TimelineDefaults.propTypes = {
   data: PropTypes.array,
   position: PropTypes.oneOf(["alternate", "left", "right"]),
 };
@@ -154,7 +154,7 @@ export const OppositeContentTimelines = (props) => {
   );
 };
 
-OppositeContentTimelines.PropTypes = {
+OppositeContentTimelines.propTypes = {
   oppositeTimelineData: PropTypes.array,
   position: PropTypes.oneOf(["alternate", "left", "right"]),
 };
@@ -192,7 +192,7 @@ export const CustomizedTimelines = (props) => {
     </ThemeProvider>
   );
 };
-CustomizedTimelines.PropTypes = {
+CustomizedTimelines.propTypes = {
   customizedTimelineData: PropTypes.array,
   position: PropTypes.oneOf(["alternate", "left", "right"]),
 };
@@ -225,7 +225,7 @@ export const LeftAlignedTimelines = (props) => {
     </ThemeProvider>
   );
 };
-LeftAlignedTimelines.PropTypes = {
+LeftAlignedTimelines.propTypes = {
   oppositeTimelineData: PropTypes.array,
   position: PropTypes.oneOf(["alternate", "left", "right"]),
 };
@@ -258,7 +258,7 @@ export const RightAlignedTimelines = (props) => {
     </ThemeProvider>
   );
 };
-RightAlignedTimelines.PropTypes = {
+RightAlignedTimelines.propTypes = {
   oppositeTimelineData: PropTypes.array,
   position: PropTypes.oneOf(["alternate", "left", "right"]),
 };
