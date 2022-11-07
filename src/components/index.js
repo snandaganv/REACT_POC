@@ -191,7 +191,6 @@ export {
   VerticalLinearSteppers as VerticalLinearStepper,
   TextMobileSteppers as TextMobileStepper,
   DotsAndProgressMobileSteppers as DotsAndProgressMobileStepper,
-  //HorizontalLinearSteppers as HorizontalLinearStepper,
   CustomizedSteppers as CustomizedStepper,
   CustomizedIconSteppers as CustomizedIconStepper,
 } from "./stepper-component";
