@@ -39,7 +39,7 @@ module "static_website" {
   name   = "${var.deploy_repo}-${var.deploy_env}-static-website"
 
   s3_bucket_name       = "${var.deploy_repo}-${var.deploy_env}-bucket"
-  dns_name             = "${var.deploy_repo}-${var.deploy_env}.agcloud.bz"
+  dns_name             = "${var.deploy_repo}-${var.deploy_env}-storybook.agcloud.bz"
   #dns_name             = var.dns_name
   acm_certificate_arn  = data.aws_ssm_parameter.cert.value
   block_ofac_countries = var.block_ofac_countries
