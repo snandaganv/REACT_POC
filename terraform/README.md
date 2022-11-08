@@ -37,3 +37,4 @@ terraform destroy -input=false -var-file='./.env/dev/terraform.tfvars'
 `-input=false` specifies that we don't want prompted for input for variables not directly set.
 
 `-var-file='./.env/dev/terraform.tfvars'` specifies that we want to specify variables in our terraform configuration from the **terraform.tfvars** file.
+
