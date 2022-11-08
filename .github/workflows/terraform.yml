@@ -1,0 +1,30 @@
+# GitHub environment secrets for AGSHAREDSERVICES-DEV
+# TERRAFORM_ROLE_TO_ASSUME: arn:aws:iam::154012156735:role/MasterAutomationRole
+
+name: "Terraform Deployment"
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run the workflow against'
+        type: environment
+        required: true
+  push:
+    branches: [ main ]
+    paths: 'terraform/**'
+  pull_request:
+    branches: [ main ]
+    paths: 'terraform/**'
+
+jobs:
+  terraform:
+    permissions:
+      id-token: write  # need this for OIDC
+      contents: read   # This is required for actions/checkout@v2
+    uses: ArisGlobal/SharedActions/.github/workflows/terraform.yml@latest
+    with:
+      # need to specify working-directory as that's where the terraform files live in the source code
+      working-directory: ./terraform
+      frontend-flag: true
+    secrets: inherit

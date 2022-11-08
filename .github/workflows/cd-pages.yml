@@ -1,4 +1,4 @@
-name: CD Workflow for AG Design System
+name: CD Workflow to deploy to GitHub Pages for AG Design System
 
 on:
   workflow_dispatch:
@@ -18,9 +18,8 @@ jobs:
   build-and-deploy:
     permissions:
       id-token: write # need this for OIDC
-      contents: read
-    uses: ArisGlobal/SharedActions/.github/workflows/storybook-cd-s3.yml@latest
-    secrets: inherit
+      contents: write # for JamesIves/github-pages-deploy-action to push changes in repo
+    uses: ArisGlobal/SharedActions/.github/workflows/storybook-cd-github-pages.yml@latest
 
 # comment out dependabot PR auto merge for now due to some packages should not be upgraded due to a known issue
 #   dependabot-pr-auto-merge:
