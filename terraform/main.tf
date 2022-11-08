@@ -38,7 +38,7 @@ module "static_website" {
   source = "github.com/arisglobal/sharedactions/terraform/modules/s3_cloudfront"
   name   = "${var.deploy_repo}-${var.deploy_env}-static-website"
 
-  s3_bucket_name       = "${var.deploy_repo}-${var.deploy_env}"
+  s3_bucket_name       = "${var.deploy_repo}-${var.deploy_env}-bucket"
   dns_name             = "${var.deploy_repo}-${var.deploy_env}.agcloud.bz"
   #dns_name             = var.dns_name
   acm_certificate_arn  = data.aws_ssm_parameter.cert.value
