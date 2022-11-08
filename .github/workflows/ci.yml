@@ -3,8 +3,13 @@ name: CI Workflow for AG Design System
 on:
   push:
     branches: [ main ]
+    paths:
+      - "!terraform/**" # exclude changes from terraform directory as Terraform has its own workflow
   pull_request:
     branches: [ main ]
+    paths:
+      - "!terraform/**" # exclude changes from terraform directory as Terraform has its own workflow
+
 
 permissions:
   contents: read
