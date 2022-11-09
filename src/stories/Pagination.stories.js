@@ -14,7 +14,6 @@ import {
 import { Pagination } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import AddIcon from "@mui/icons-material/Add";
 
 export default {
   title: "Navigation/Pagination",

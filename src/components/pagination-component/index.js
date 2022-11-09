@@ -222,7 +222,7 @@ TablePaginationDemo.propTypes = {
   onRowsPerPageChange: PropTypes.func,
 };
 
-export const BasicPaginationDemo = (props) => {
+export const BasicPaginationDemo = () => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2}>
@@ -235,7 +235,7 @@ export const BasicPaginationDemo = (props) => {
   );
 };
 
-export const PaginationOutlined = (props) => {
+export const PaginationOutlined = () => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2}>
@@ -248,7 +248,7 @@ export const PaginationOutlined = (props) => {
   );
 };
 
-export const PaginationRounded = (props) => {
+export const PaginationRounded = () => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2}>
@@ -259,7 +259,7 @@ export const PaginationRounded = (props) => {
   );
 };
 
-export const PaginationSizeDemo = (props) => {
+export const PaginationSizeDemo = () => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2}>
@@ -271,7 +271,7 @@ export const PaginationSizeDemo = (props) => {
   );
 };
 
-export const PaginationButtonsDemo = (props) => {
+export const PaginationButtonsDemo = () => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2}>
@@ -282,12 +282,12 @@ export const PaginationButtonsDemo = (props) => {
   );
 };
 
-export const PaginationRangesDemo = (props) => {
+export const PaginationRangesDemo = () => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2}>
         <Pagination count={11} defaultPage={6} siblingCount={0} />
-        <Pagination count={11} defaultPage={6} /> {/* Default ranges */}
+        <Pagination count={11} defaultPage={6} />
         <Pagination
           count={11}
           defaultPage={6}
