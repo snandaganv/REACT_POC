@@ -11,12 +11,12 @@ export { default as TabsComponent } from "./tabs-component";
 export { default as MenuIcon } from "./menu-icons-component";
 export { default as SearchIconsComponent } from "./search-icons-component";
 export { default as TextFieldComponent } from "./textfield-component";
-export { default as SelectComponent } from "./select-component";
+export { DefaultSelects } from "./select-component";
 export { default as DateTimeComponent } from "./datetime-component";
 export { default as SliderComponent } from "./slider-component";
 export { default as CardComponent } from "./card-component";
 export { default as RatingComponent } from "./rating-component";
-export { default as BackdropComponent } from "./backdrop-component";
+export { BackdropDefaults } from "./backdrop-component";
 
 export {
   ButtonDefaults as ButtonDefault,
@@ -42,7 +42,6 @@ export {
 export {
   CheckBoxBasics as CheckBoxBasic,
   CheckboxSizes as CheckboxSize,
-  CheckboxColors as CheckboxColor,
   CheckboxGroup as CheckboxGroups,
   CheckboxFormGroups as CheckboxFormGroup,
   CheckboxInderterminate as CheckboxInderterminates,
@@ -55,17 +54,14 @@ export {
   RadioButtonDirection as RadioButtonDirections,
   RadioButtonControlleds as RadioButtonControlled,
   RadioButtonSize as RadioButtonSizes,
-  RadioButtonColor as RadioButtonColors,
   RadioButtonLabelPlacements as RadioButtonLabelPlacement,
   RadioButtonShowErrors as RadioButtonShowError,
 } from "./RadioButton";
 
 export {
   Switches as Switchs,
-  SwitchesBasics as SwitchesBasic,
   SwitchLabels as SwitchLabel,
   SwitchSizes as SwitchSize,
-  SwitchColors as SwitchColor,
   SwitchControlles as SwitchControlled,
   SwitchFormGroups as SwitchFormGroup,
   SwitchLabelsPlacement as SwitchLabelsPlacements,
@@ -156,7 +152,6 @@ export {
   MaxWidthDialogs as MaxWidthDialog,
   ConfirmationDialogs as ConfirmationDialog,
   DraggableDialogs as DraggableDialog,
-  ScrollDialog as ScrollDialog,
 } from "./dialog-component";
 
 export {
