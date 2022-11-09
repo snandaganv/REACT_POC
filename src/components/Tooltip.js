@@ -31,7 +31,6 @@ export const TooltipsBasic = ({
   TransitionProps,
   disableTouchListener,
   PopperProps,
-  ...props
 }) => {
   return (
     <ThemeProvider theme={muiTheme}>
@@ -98,6 +97,7 @@ TooltipsBasic.propTypes = {
     "bottom-end",
   ]),
 };
+
 export const TooltipsPositioned = ({ placement }) => {
   return (
     <ThemeProvider theme={muiTheme}>
@@ -175,10 +175,7 @@ export const TooltipsArrow = ({ arrow }) => {
   );
 };
 
-export const TooltipsTrigger = ({
-  disableFocusListener,
-  disableTouchListener,
-}) => {
+export const TooltipsTrigger = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleTooltipClose = () => {
@@ -233,7 +230,7 @@ export const TooltipsTrigger = ({
   );
 };
 
-export const TooltipsControlled = ({ onClose, onOpen }) => {
+export const TooltipsControlled = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleClose = () => {
@@ -258,10 +255,7 @@ export const TooltipsControlled = ({ onClose, onOpen }) => {
   );
 };
 
-export const TooltipsTransition = ({
-  TransitionComponent,
-  TransitionProps,
-}) => {
+export const TooltipsTransition = () => {
   return (
     <ThemeProvider theme={muiTheme}>
       <div>

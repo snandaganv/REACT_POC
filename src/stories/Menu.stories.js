@@ -9,7 +9,6 @@ import {
     TypographyMenus,
     LongMenus,
     PositionedMenus,
-    Divider,
     ContextMenus,
 } from "../components/menu-component";
 

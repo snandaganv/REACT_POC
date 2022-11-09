@@ -4,7 +4,7 @@ import { Menu } from "@mui/material";
 import { Button } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
-import { ContentCut, ContentCopy, ContentPaste, PersonAdd, Settings, Logout, Cloud, Check, Drafts, Send, PriorityHigh } from '@mui/icons-material';
+import {PersonAdd, Settings, Logout } from '@mui/icons-material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {
     Box,
@@ -12,7 +12,6 @@ import {
     MenuList,
     MenuItem,
     Typography,
-    Icon,
     Divider,
     ListItemText,
     ListItemIcon,
@@ -22,7 +21,6 @@ import {
     Avatar,
     Tooltip,
 } from "@mui/material";
-import { typography } from "@mui/system";
 
 export const BasicMenus = ({ label, menulist }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
