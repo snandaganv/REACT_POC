@@ -34,7 +34,7 @@
     "web-vitals": "^3.0.4"
   },
   "scripts": {
-    "build": "microbundle-crl --external='react,react-dom,react-is'  --no-compress --format modern,cjs",
+    "build": "microbundle-crl --external='react,react-dom,react-is' --no-compress --format modern,cjs",
     "build:core": "microbundle-crl --no-compress --format modern,cjs",
     "build:alert": "cd src/components/alert-component && microbundle-crl --no-compress --format modern,cjs",
     "start": "react-scripts start",
@@ -99,7 +99,10 @@
     "semantic-release": "^19.0.5",
     "storybook-dark-mode": "^1.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
-    "webpack": "^5.74.0"
+    "webpack": "^5.74.0",
+    "@mui/material": "^5.10.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "files": [
     "dist"
