@@ -11,7 +11,7 @@ export { default as TabsComponent } from "./tabs-component";
 export { default as MenuIcon } from "./menu-icons-component";
 export { default as SearchIconsComponent } from "./search-icons-component";
 export { default as TextFieldComponent } from "./textfield-component";
-export { default as SelectComponent } from "./select-component";
+//export { default as SelectComponent } from "./select-component";
 export { default as DateTimeComponent } from "./datetime-component";
 export { default as SliderComponent } from "./slider-component";
 export { default as CardComponent } from "./card-component";
@@ -30,7 +30,7 @@ export {
 export {
   ChipsBasics as ChipsBasic,
   ChipClickables as ChipClickable,
-  ChipsColors as ChipsColor,
+  //ChipsColors as ChipsColor,
   ChipSizes as ChipSize,
   ChipAvatars as ChipAvatar,
   ChipIcons as ChipIcon,
@@ -42,7 +42,7 @@ export {
 export {
   CheckBoxBasics as CheckBoxBasic,
   CheckboxSizes as CheckboxSize,
-  CheckboxColors as CheckboxColor,
+  //CheckboxColors as CheckboxColor,
   CheckboxGroup as CheckboxGroups,
   CheckboxFormGroups as CheckboxFormGroup,
   CheckboxInderterminate as CheckboxInderterminates,
@@ -55,7 +55,7 @@ export {
   RadioButtonDirection as RadioButtonDirections,
   RadioButtonControlleds as RadioButtonControlled,
   RadioButtonSize as RadioButtonSizes,
-  RadioButtonColor as RadioButtonColors,
+  //RadioButtonColor as RadioButtonColors,
   RadioButtonLabelPlacements as RadioButtonLabelPlacement,
   RadioButtonShowErrors as RadioButtonShowError,
 } from "./RadioButton";
@@ -65,7 +65,7 @@ export {
   SwitchesBasics as SwitchesBasic,
   SwitchLabels as SwitchLabel,
   SwitchSizes as SwitchSize,
-  SwitchColors as SwitchColor,
+  //SwitchColors as SwitchColor,
   SwitchControlles as SwitchControlled,
   SwitchFormGroups as SwitchFormGroup,
   SwitchCustomizations as SwitchCustomization,
@@ -121,15 +121,15 @@ export {
   GroupSelect as GroupedSelect,
 } from "./select-component";
 
-export {
-  MenuBasic as BasicMenu,
-  MenuDense as DenseMenu,
-  MenuIcon as IconMenu,
-  ListMenuSimple as SimpleListMenu,
-  SelectAutoWidt as SelectAutoWidth,
-  MenuAccount as AccountMenu,
-  MenuLong as LongMenu,
-  MenuTypography as TypographyMenu,
-  MenuPositioned as PositionedMenu,
-  ContextMenus as ContextMenu,
-} from "./menu-component";
+// export {
+//   MenuBasic as BasicMenu,
+//   MenuDense as DenseMenu,
+//   MenuIcon as IconMenu,
+//   ListMenuSimple as SimpleListMenu,
+//   SelectAutoWidt as SelectAutoWidth,
+//   MenuAccount as AccountMenu,
+//   MenuLong as LongMenu,
+//   MenuTypography as TypographyMenu,
+//   MenuPositioned as PositionedMenu,
+//   ContextMenus as ContextMenu,
+// } from "./menu-component";
