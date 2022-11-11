@@ -1,17 +1,17 @@
 import { Select } from "@mui/material";
 import {
-    DefaultSelects,
-    SelectBasics,
-    SelectOtherProps,
-    SelectVariants,
-    SelectAutoWidths,
-    SelectSizes,
-    SelectLabels,
-    MultipleSelects,
-    MultipleSelectCheckmarks,
-    MultipleSelectChips,
-    MultipleSelectPlaceholders,
-    GroupSelect,
+    SelectsDefault,
+    SelectsBasic,
+    SelectsVariant,
+    SelectsAutoWidth,
+    SelectsSize,
+    SelectsLabel,
+    SelectsOtherProps,
+    SelectsMultiple,
+    SelectsMultipleCheckmark,
+    SelectsMultipleChip,
+    SelectsMultiplePlaceholder,
+    SelectsGroup,
 
 
 } from "../components/select-component";
@@ -27,7 +27,7 @@ export default {
         },
     },
 };
-export const SelectDefault = DefaultSelects.bind({});
+export const SelectDefault = SelectsDefault.bind({});
 SelectDefault.args = {
     selectlabel: [{ label: 'Select' }],
     variant: "outlined",
@@ -37,51 +37,51 @@ SelectDefault.args = {
     selectoptions: [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option 2' }, { value: 3, label: 'Option 3' }],
 };
 
-export const BasicSelect = SelectBasics.bind({});
-BasicSelect.args = {
+export const SelectBasic = SelectsBasic.bind({});
+SelectBasic.args = {
     selectlabel: [{ label: 'Name' }],
     size: false,
     selectoptions: [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option 2' }, { value: 3, label: 'Option 3' }],
 };
-export const SelectVariant = SelectVariants.bind({});
+export const SelectVariant = SelectsVariant.bind({});
 SelectVariant.args = {
     selectlabel: [{ label: 'Select' }],
     selectoptions: [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option 2' }, { value: 3, label: 'Option 3' }],
 };
-export const SelectAutoWidth = SelectAutoWidths.bind({});
+export const SelectAutoWidth = SelectsAutoWidth.bind({});
 SelectAutoWidth.args = {
     selectlabel: [{ label: 'Sort' }],
     autowidth: [{ value: 1, label: 'Options' }, { value: 2, label: 'Option Two' }, { value: 3, label: 'Option Twenty' }],
 };
-export const SelectSize = SelectSizes.bind({});
+export const SelectSize = SelectsSize.bind({});
 SelectSize.args = {
     selectlabel: [{ label: 'Name' }],
     selectoptions: [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option 2' }, { value: 3, label: 'Option 3' }],
 };
-export const SelectLabel = SelectLabels.bind({});
+export const SelectLabel = SelectsLabel.bind({});
 SelectLabel.args = {
     selectlabel: [{ label: 'Select' }],
     selectoptions: [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option 2' }, { value: 3, label: 'Option 3' }],
 };
 
-export const SelectOtherProp = SelectOtherProps.bind({});
+export const SelectOtherProp = SelectsOtherProps.bind({});
 SelectOtherProp.args = {
     selectlabel: [{ label: 'Select' }],
     selectoptions: [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option 2' }, { value: 3, label: 'Option 3' }],
 };
-export const MultipleSelect = MultipleSelects.bind({});
-MultipleSelect.args = {
+export const SelectMultiple = SelectsMultiple.bind({});
+SelectMultiple.args = {
     selectlabel: [{ label: 'Select' }],
     selectmultiple: [{ value: 1, label: 'Option 1' }, { value: 2, label: 'Option222 2' }, { value: 3, label: 'Option 3' }, { value: 4, label: 'Option 4' }, { value: 5, label: 'Option 5' }, { value: 6, label: 'Option 6' }, { value: 7, label: 'Option 7' }, { value: 8, label: 'Option 8' }, { value: 9, label: 'Option 9' }],
 };
 
-export const MultipleSelectCheckmark = MultipleSelectCheckmarks.bind({});
+export const SelectMultipleCheckmark = SelectsMultipleCheckmark.bind({});
 
-export const MultipleSelectChip = MultipleSelectChips.bind({});
+export const SelectMultipleChip = SelectsMultipleChip.bind({});
 
-export const MultipleSelectPlaceholder = MultipleSelectPlaceholders.bind({});
+export const SelectMultiplePlaceholder = SelectsMultiplePlaceholder.bind({});
 
-export const GroupedSelect = GroupSelect.bind({});
+export const SelectGroup = SelectsGroup.bind({});
 
 
 

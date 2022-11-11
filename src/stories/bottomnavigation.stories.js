@@ -5,9 +5,9 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ArchiveIcon from '@mui/icons-material/Archive';
 import FolderIcon from '@mui/icons-material/Folder';
 import {
-    SimpleBottomNavigations,
-    LabelBottomNavigations,
-    FixedBottomNavigations,
+    BottomNavigationsSimple,
+    BottomNavigationsLabel,
+    BottomNavigationsFixed,
 } from "../components/bottomnavigation-component";
 
 
@@ -17,8 +17,8 @@ export default {
 
 };
 
-export const SimpleBottomNavigation = SimpleBottomNavigations.bind({});
-SimpleBottomNavigation.args = {
+export const BottomNavigationSimple = BottomNavigationsSimple.bind({});
+BottomNavigationSimple.args = {
     navicons: [
         { icon: <RestoreIcon />, label: "Recents" },
         { icon: <FavoriteIcon />, label: "Favorites" },
@@ -26,8 +26,8 @@ SimpleBottomNavigation.args = {
     ],
 };
 
-export const LabelBottomNavigation = LabelBottomNavigations.bind({});
-LabelBottomNavigation.args = {
+export const BottomNavigationLabel = BottomNavigationsLabel.bind({});
+BottomNavigationLabel.args = {
     navicons: [
         { icon: <RestoreIcon />, label: "Recents", value: "recents" },
         { icon: <FavoriteIcon />, label: "Favorites", value: "favorites" },
@@ -36,8 +36,8 @@ LabelBottomNavigation.args = {
     ],
     showLabels: false,
 };
-export const FixedBottomNavigation = FixedBottomNavigations.bind({});
-FixedBottomNavigation.args = {
+export const BottomNavigationFixed = BottomNavigationsFixed.bind({});
+BottomNavigationFixed.args = {
     navicons: [
         { icon: <RestoreIcon />, label: "Recents" },
         { icon: <FavoriteIcon />, label: "Favorites" },

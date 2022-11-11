@@ -24,7 +24,7 @@ import {
 } from "@mui/material";
 import { typography } from "@mui/system";
 
-export const BasicMenus = ({ label, menulist }) => {
+export const MenusBasic = ({ label, menulist }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -54,12 +54,12 @@ export const BasicMenus = ({ label, menulist }) => {
     );
 }
 
-BasicMenus.propTypes = {
+MenusBasic.propTypes = {
     label: PropTypes.string,
     dense: PropTypes.bool,
 };
 
-export const DenseMenus = ({ dense, densetext, densetext1, denseicon, autoFocus, disableGutters, divider }) => {
+export const MenusDense = ({ dense, densetext, densetext1, denseicon, autoFocus, disableGutters, divider }) => {
     return (
         <Paper sx={{ width: 320 }}>
             <MenuList dense={dense} autoFocus={autoFocus}>
@@ -89,14 +89,14 @@ export const DenseMenus = ({ dense, densetext, densetext1, denseicon, autoFocus,
         </Paper>
     );
 }
-DenseMenus.propTypes = {
+MenusDense.propTypes = {
     dense: PropTypes.bool,
     autoFocus: PropTypes.bool,
     disableGutters: PropTypes.bool,
     divider: PropTypes.bool,
 };
 
-export const IconMenus = ({ menuicons, menuclip }) => {
+export const MenusIcon = ({ menuicons, menuclip }) => {
     return (
         <Paper sx={{ width: 320, maxWidth: '100%' }} >
             <MenuList>
@@ -127,7 +127,7 @@ const options = [
     'Hide all notification content',
 ];
 
-export const SimpleListMenus = ({ }) => {
+export const MenusSimpleList = ({ }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [selectedIndex, setSelectedIndex] = React.useState(1);
     const open = Boolean(anchorEl);
@@ -190,7 +190,7 @@ export const SimpleListMenus = ({ }) => {
 }
 
 
-export const AccountMenus = ({ }) => {
+export const MenusAccount = ({ }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -302,7 +302,7 @@ const options1 = [
 
 const ITEM_HEIGHT = 48;
 
-export const LongMenus = ({ }) => {
+export const MenusLong = ({ }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -344,7 +344,7 @@ export const LongMenus = ({ }) => {
     );
 }
 
-export const TypographyMenus = ({ typomenus }) => {
+export const MenusTypography = ({ typomenus }) => {
     return (
         <Paper sx={{ width: 230 }}>
             <MenuList>
@@ -361,7 +361,7 @@ export const TypographyMenus = ({ typomenus }) => {
     );
 }
 
-export const PositionedMenus = ({ menulist, label }) => {
+export const MenusPositioned = ({ menulist, label }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -400,7 +400,7 @@ export const PositionedMenus = ({ menulist, label }) => {
     );
 }
 
-export const ContextMenus = ({ typo, contxtmenu }) => {
+export const MenusContext = ({ typo, contxtmenu }) => {
     const [contextMenu, setContextMenu] = React.useState(null);
 
     const handleContextMenu = (event: React.MouseEvent) => {

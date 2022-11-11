@@ -14,7 +14,7 @@ import Chip from '@mui/material/Chip';
 import { ThemeProvider } from '@mui/material/styles';
 import muiTheme from '../../../.storybook/muiTheme';
 
-export const DefaultSelects = ({
+export const SelectsDefault = ({
     props,
     variant,
     disabled,
@@ -56,12 +56,12 @@ export const DefaultSelects = ({
     );
 }
 
-DefaultSelects.propTypes = {
+SelectsDefault.propTypes = {
     selectlabel: PropTypes.array,
     variant: PropTypes.oneOf(["standard", "filled"]),
 };
 
-export const SelectBasics = ({ size, props, selectlabel, selectoptions }) => {
+export const SelectsBasic = ({ size, props, selectlabel, selectoptions }) => {
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -90,7 +90,7 @@ export const SelectBasics = ({ size, props, selectlabel, selectoptions }) => {
     );
 }
 
-export const SelectVariants = ({ props, selectlabel, selectoptions }) => {
+export const SelectsVariant = ({ props, selectlabel, selectoptions }) => {
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -156,7 +156,7 @@ export const SelectVariants = ({ props, selectlabel, selectoptions }) => {
     );
 }
 
-export const SelectAutoWidths = ({ props, selectlabel, autowidth }) => {
+export const SelectsAutoWidth = ({ props, selectlabel, autowidth }) => {
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -184,7 +184,7 @@ export const SelectAutoWidths = ({ props, selectlabel, autowidth }) => {
     );
 }
 
-export const SelectSizes = ({ selectlabel, selectoptions }) => {
+export const SelectsSize = ({ selectlabel, selectoptions }) => {
     const [age, setAge] = React.useState('');
 
     const handleChange = (event: SelectChangeEvent) => {
@@ -212,7 +212,7 @@ export const SelectSizes = ({ selectlabel, selectoptions }) => {
     );
 }
 
-export const SelectLabels = ({ props, selectlabel, selectoptions }) => {
+export const SelectsLabel = ({ props, selectlabel, selectoptions }) => {
     const theme = useTheme();
     const [age, setAge] = React.useState('');
 
@@ -255,7 +255,7 @@ export const SelectLabels = ({ props, selectlabel, selectoptions }) => {
     );
 }
 
-export const SelectOtherProps = ({ selectlabel, selectoptions }) => {
+export const SelectsOtherProps = ({ selectlabel, selectoptions }) => {
     const [age, setAge] = React.useState('');
     const handleChange = (event: SelectChangeEvent) => {
         setAge(event.target.value)
@@ -355,7 +355,7 @@ const names = [
     'Option 9',
 ];
 
-export const MultipleSelects = ({ selectlabel }) => {
+export const SelectsMultiple = ({ selectlabel }) => {
     const theme = useTheme();
     const [personName, setPersonName] = React.useState([]);
 
@@ -396,7 +396,7 @@ export const MultipleSelects = ({ selectlabel }) => {
     );
 }
 
-export const MultipleSelectCheckmarks = ({ }) => {
+export const SelectsMultipleCheckmark = ({ }) => {
     const [personName, setPersonName] = React.useState([]);
 
     const handleChange = (event: SelectChangeEvent) => {
@@ -443,7 +443,7 @@ function getStyles(name: string, personName: string[], theme: Theme) {
     };
 }
 
-export const MultipleSelectChips = ({ }) => {
+export const SelectsMultipleChip = ({ }) => {
     const theme = useTheme();
     const [personName, setPersonName] = React.useState([]);
 
@@ -492,7 +492,7 @@ export const MultipleSelectChips = ({ }) => {
     );
 }
 
-export const MultipleSelectPlaceholders = ({ }) => {
+export const SelectsMultiplePlaceholder = ({ }) => {
     const theme = useTheme();
     const [personName, setPersonName] = React.useState([]);
 
@@ -543,7 +543,7 @@ export const MultipleSelectPlaceholders = ({ }) => {
     );
 }
 
-export const GroupSelect = ({ }) => {
+export const SelectsGroup = ({ }) => {
     const theme = useTheme();
     const [personName, setPersonName] = React.useState([]);
 

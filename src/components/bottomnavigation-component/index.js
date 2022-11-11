@@ -18,7 +18,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 
-export const SimpleBottomNavigations = ({ navicons, }) => {
+export const BottomNavigationsSimple = ({ navicons, }) => {
     const [value, setValue] = React.useState(0);
 
     return (
@@ -42,7 +42,7 @@ export const SimpleBottomNavigations = ({ navicons, }) => {
     );
 }
 
-export const LabelBottomNavigations = ({ navicons, showLabels }) => {
+export const BottomNavigationsLabel = ({ navicons, showLabels }) => {
     const [value, setValue] = React.useState('recents');
 
     const handleChange = (event, newValue) => {
@@ -68,7 +68,7 @@ function refreshMessages() {
     );
 }
 
-export const FixedBottomNavigations = ({ navicons, messages1 }) => {
+export const BottomNavigationsFixed = ({ navicons, messages1 }) => {
     const [value, setValue] = React.useState(0);
     const ref = React.useRef(null);
     const [messages, setMessages] = React.useState(() => refreshMessages());

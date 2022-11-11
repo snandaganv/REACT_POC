@@ -100,36 +100,36 @@ export {
 } from "./Accordion";
 
 export {
-  DefaultSelects as SelectDefault,
-  SelectBasics as BasicSelect,
-  SelectVariants as SelectVariant,
-  SelectAutoWidths as SelectAutoWidth,
-  SelectSizes as SelectSize,
-  SelectLabels as SelectLabel,
-  SelectOtherProps as SelectOtherProp,
-  MultipleSelects as MultipleSelect,
-  MultipleSelectCheckmarks as MultipleSelectCheckmark,
-  MultipleSelectChips as MultipleSelectChip,
-  MultipleSelectPlaceholders as MultipleSelectPlaceholder,
-  GroupSelect as GroupedSelect,
+  SelectsDefault as SelectsDefault,
+  SelectsBasic as SelectBasic,
+  SelectsVariant as SelectVariant,
+  SelectsAutoWidth as SelectAutoWidth,
+  SelectsSize as SelectSize,
+  SelectsLabel as SelectLabel,
+  SelectsOtherProps as SelectOtherProp,
+  SelectsMultiple as SelectMultiple,
+  SelectsMultipleCheckmark as SelectMultipleCheckmark,
+  SelectsMultipleChip as SelectMultipleChip,
+  SelectsMultiplePlaceholder as SelectMultiplePlaceholder,
+  SelectsGroup as SelectGroup,
 } from "./select-component";
 
 export {
-  BasicMenus as BasicMenu,
-  DenseMenus as DenseMenu,
-  IconMenus as IconMenu,
-  SimpleListMenus as SimpleListMenu,
-  AccountMenus as AccountMenu,
-  LongMenus as LongMenu,
-  TypographyMenus as TypographyMenu,
-  PositionedMenus as PositionedMenu,
-  ContextMenus as ContextMenu,
+  MenusBasic as MenuBasic,
+  MenusDense as MenuDense,
+  MenusIcon as MenuIcon,
+  MenusSimpleList as MenuSimpleList,
+  MenusAccount as MenuAccount,
+  MenusLong as MenuLong,
+  MenusTypography as MenuTypography,
+  MenusPositioned as MenuPositioned,
+  MenusContext as MenuContext,
 } from "./menu-component";
 
 export {
-  SimpleBottomNavigations as SimpleBottomNavigation,
-  LabelBottomNavigations as LabelBottomNavigation,
-  FixedBottomNavigations as FixedBottomNavigation,
+  BottomNavigationsSimple as BottomNavigationSimple,
+  BottomNavigationsLabel as BottomNavigationLabel,
+  BottomNavigationsFixed as BottomNavigationFixed,
 } from "./bottomnavigation-component";
 
 export {
@@ -143,15 +143,16 @@ export {
 } from "./timeline-component";
 
 export {
-  SimpleDialogs as SimpleDialog,
-  AlertDialogs as AlertDialog,
-  AlertDialogSlides as AlertDialogSlide,
-  FormDialogs as FormDialog,
-  CustomizedDialogs as CustomizedDialog,
-  FullScreenDialogs as FullScreenDialog,
-  MaxWidthDialogs as MaxWidthDialog,
-  ConfirmationDialogs as ConfirmationDialog,
-  DraggableDialogs as DraggableDialog,
+  DialogsSimple as DialogSimple,
+  DialogsAlert as DialogAlert,
+  DialogsSlideAlert as DialogSlideAlert,
+  DialogsForm as DialogForm,
+  DialogsCustomized as DialogCustomized,
+  DialogsFullScreen as DialogFullScreen,
+  DialogsMaxWidth as DialogMaxWidth,
+  DialogsConfirmation as DialogConfirmation,
+  DialogsDraggable as DialogDraggable,
+  DialogsScroll as DialogScroll,
 } from "./dialog-component";
 
 export {
@@ -198,3 +199,5 @@ export {
   SnackbarTransition as SnackbarTransitions,
   SnackbarFloatingsActionButtons as SnackbarFloatingActionButton,
 } from "./Snackbar";
+
+

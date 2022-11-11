@@ -1,16 +1,16 @@
 import { Menu } from "@mui/material";
 import { ContentCopy, ContentCut, ContentPaste, Cloud, Check, Send, PriorityHigh, Drafts } from "@mui/icons-material";
 import {
-    BasicMenus,
-    IconMenus,
-    DenseMenus,
-    SimpleListMenus,
-    AccountMenus,
-    TypographyMenus,
-    LongMenus,
-    PositionedMenus,
+    MenusBasic,
+    MenusIcon,
+    MenusDense,
+    MenusSimpleList,
+    MenusAccount,
+    MenusTypography,
+    MenusLong,
+    MenusPositioned,
     Divider,
-    ContextMenus,
+    MenusContext,
 } from "../components/menu-component";
 
 export default {
@@ -18,14 +18,14 @@ export default {
     component: Menu,
 };
 
-export const BasicMenu = BasicMenus.bind({});
-BasicMenu.args = {
+export const MenuBasic = MenusBasic.bind({});
+MenuBasic.args = {
     label: "Dashboard",
     menulist: [{ value: 1, label: 'Profile' }, { value: 2, label: 'My account' }, { value: 3, label: 'Logout' }],
 };
 
-export const DenseMenu = DenseMenus.bind({});
-DenseMenu.args = {
+export const MenuDense = MenusDense.bind({});
+MenuDense.args = {
     autoFocus: false,
     dense: true,
     disableGutters: false,
@@ -44,8 +44,8 @@ DenseMenu.args = {
     ]
 };
 
-export const IconMenu = IconMenus.bind({});
-IconMenu.args = {
+export const MenuIcon = MenusIcon.bind({});
+MenuIcon.args = {
     menuicons: [
         { icon: <ContentCut fontSize="small" />, typography: "⌘X", label: "Cut" },
         { icon: <ContentCopy fontSize="small" />, typography: "⌘C", label: "Copy" },
@@ -54,8 +54,8 @@ IconMenu.args = {
     menuclip: [{ icon: <Cloud fontSize="small" />, label: "Web Clipboard" }]
 };
 
-export const SimpleListMenu = SimpleListMenus.bind({});
-SimpleListMenu.args = {
+export const MenuSimpleList = MenusSimpleList.bind({});
+MenuSimpleList.args = {
     simplemenu: [
         { label: "Show some love to MUI" },
         { label: "Show all notification content" },
@@ -64,8 +64,8 @@ SimpleListMenu.args = {
     ]
 };
 
-export const AccountMenu = AccountMenus.bind({});
-AccountMenu.args = {
+export const MenuAccount = MenusAccount.bind({});
+MenuAccount.args = {
     typomenus: [
         { icon: <Send fontSize="small" />, label: "A short message" },
         { icon: <PriorityHigh fontSize="small" />, label: "A very long text that overflows" },
@@ -74,15 +74,15 @@ AccountMenu.args = {
 };
 
 
-export const LongMenu = LongMenus.bind({});
-LongMenu.args = {
+export const MenuLong = MenusLong.bind({});
+MenuLong.args = {
     longtext: [
         { value: 1, option: 'options 1' }, { value: 2, option: 'options 2' }, { value: 3, label: 'options 3' }, { value: 4, label: 'options 4' }, { value: 5, label: 'options 5' }, { value: 6, label: 'options 6' }, { value: 7, label: 'options 7' }, { value: 8, label: 'options 8' }, { value: 9, label: 'options 9' }, { value: 10, label: 'options 10' }, { value: 11, label: 'options 11' }, { value: 12, label: 'options 12' }, { value: 13, label: 'options 13' }, { value: 14, label: 'options 14' }, { value: 15, label: 'options 15' }
     ]
 };
 
-export const TypographyMenu = TypographyMenus.bind({});
-TypographyMenu.args = {
+export const MenuTypography = MenusTypography.bind({});
+MenuTypography.args = {
     typomenus: [
         { icon: <Send fontSize="small" />, label: "A short message" },
         { icon: <PriorityHigh fontSize="small" />, label: "A very long text that overflows" },
@@ -90,14 +90,14 @@ TypographyMenu.args = {
     ]
 };
 
-export const PositionedMenu = PositionedMenus.bind({});
-PositionedMenu.args = {
+export const MenuPositioned = MenusPositioned.bind({});
+MenuPositioned.args = {
     label: "Dashboard",
     menulist: [{ value: 1, label: 'Profile' }, { value: 2, label: 'My account' }, { value: 3, label: 'Logout' }],
 };
 
-export const ContextMenu = ContextMenus.bind({});
-ContextMenu.args = {
+export const MenuContext = MenusContext.bind({});
+MenuContext.args = {
     typo: [
         { label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ipsum purus, bibendum sit amet vulputate eget, porta semper ligula. Donec bibendum vulputate erat, ac fringilla mi finibus nec. Donec ac dolor sed dolor porttitor blandit vel vel purus. Fusce vel malesuada ligula. Nam quis vehicula ante, eu finibus est. Proin ullamcorper fermentum orci, quis finibus massa. Nunc lobortis, massa ut rutrum ultrices, metus metus finibus ex, sit amet facilisis neque enim sed neque. Quisque accumsan metus vel maximus consequat. Suspendisse lacinia tellus a libero volutpat maximus." },
     ],
