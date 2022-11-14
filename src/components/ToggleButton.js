@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { Box } from "@mui/material";
-import { CopyBlock, dracula } from "react-code-blocks";
+
 import {
   FormatBold,
   FormatItalic,
@@ -104,20 +104,6 @@ export const ToggleButtonSize = ({ size, color, onClick }) => {
           {children}
         </ToggleButtonGroup>
       </Box>
-      <CopyBlock
-        language="html"
-        text={`<ToggleButtonGroup size="small" {...control}>
-        {children}
-      </ToggleButtonGroup>
-      <ToggleButtonGroup {...control}>{children}</ToggleButtonGroup>
-      <ToggleButtonGroup size="large" {...control}>
-        {children}
-      </ToggleButtonGroup>`}
-        codeBlock
-        theme={dracula}
-        showLineNumbers={true}
-        wrapLines={true}
-      />
     </>
   );
 };

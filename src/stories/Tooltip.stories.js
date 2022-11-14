@@ -28,11 +28,12 @@ export default {
     arrow: { control: "boolean" },
   },
 };
-
-export const TooltipBasic = TooltipsBasic.bind({});
+const Template = (args) => <TooltipsBasic {...args}></TooltipsBasic>;
+export const TooltipBasic = Template.bind({});
 TooltipBasic.args = {
   title: "Delete",
 };
+
 export const TooltipPositioned = TooltipsPositioned.bind({});
 export const TooltipArrow = TooltipsArrow.bind({});
 export const TooltipTrigger = TooltipsTrigger.bind({});

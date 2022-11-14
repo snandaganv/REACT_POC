@@ -42,7 +42,8 @@ export default {
   },
 };
 
-export const ChipsBasic = ChipsBasics.bind({});
+const Template = (args) => <ChipsBasics {...args}></ChipsBasics>;
+export const ChipsBasic = Template.bind({});
 ChipsBasic.args = {
   label: "Chip",
   variant: "contained",
