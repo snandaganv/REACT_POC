@@ -25,7 +25,9 @@ export default {
     },
   },
 };
-export const TimelineDefault = TimelineDefaults.bind({});
+
+const TimelineDefaultsTemplate = (args)=><TimelineDefaults {...args}></TimelineDefaults>
+export const TimelineDefault = TimelineDefaultsTemplate.bind({});
 TimelineDefault.args = {
   data: [
     { label: "Eat", color: "grey", variant: "filled" },
@@ -35,12 +37,33 @@ TimelineDefault.args = {
   ],
   position: "right",
 };
-export const TimelineColors = ColorsTimeline.bind({});
 
-export const OutlinedTimeline = OutlinedTimelines.bind({});
+const ColorsTimelineTemplate = (args)=><ColorsTimeline {...args}></ColorsTimeline>
+export const TimelineColors = ColorsTimelineTemplate.bind({});
+TimelineColors.args={
+  position:'alternate',
+  data:[{label:'Grey',color:'grey'},
+  {label:'Primary',color:'primary'},
+  {label:'Secondary',color:'secondary'},
+  {label:'Success',color:'success'},
+  {label:'Info',color:'info'},
+  {label:'Warning',color:'warning'},
+  {label:'Error',color:'error'},
+]
+}
 
-export const OppositeContentTimeline = OppositeContentTimelines.bind({});
+const OutlinedTimelinesTemplate = (args)=><OutlinedTimelines {...args}></OutlinedTimelines>
+export const OutlinedTimeline = OutlinedTimelinesTemplate.bind({});
+OutlinedTimeline.args={
+  position:'alternate',
+  data:[{variant:'outlined',label:'Eat'},
+  {variant:'outlined',label:'Code',color:'primary'},
+  {variant:'outlined',label:'Sleep',color:'secondary'},
+  {variant:'outlined',label:'Repeat'}]
+}
 
+const OppositeContentTimelinesTemplate = (args)=><OppositeContentTimelines {...args}></OppositeContentTimelines>
+export const OppositeContentTimeline = OppositeContentTimelinesTemplate.bind({});
 OppositeContentTimeline.args = {
   oppositeTimelineData: [
     { label: "Eat", oppositeLabel: "9.30am", color: "grey", variant: "filled" },
@@ -66,7 +89,8 @@ OppositeContentTimeline.args = {
   position: "right",
 };
 
-export const RightAlignedTimeline = RightAlignedTimelines.bind({});
+const RightAlignedTimelinesTemplate = (args)=><RightAlignedTimelines {...args}></RightAlignedTimelines>
+export const RightAlignedTimeline = RightAlignedTimelinesTemplate.bind({});
 
 RightAlignedTimeline.args = {
   oppositeTimelineData: [
@@ -93,7 +117,8 @@ RightAlignedTimeline.args = {
   position: "right",
 };
 
-export const LeftAlignedTimeline = LeftAlignedTimelines.bind({});
+const LeftAlignedTimelinesTemplate = (args)=><LeftAlignedTimelines {...args}></LeftAlignedTimelines>
+export const LeftAlignedTimeline = LeftAlignedTimelinesTemplate.bind({});
 
 LeftAlignedTimeline.args = {
   oppositeTimelineData: [
@@ -120,14 +145,15 @@ LeftAlignedTimeline.args = {
   position: "right",
 };
 
-export const CustomizedTimeline = CustomizedTimelines.bind({});
+const CustomizedTimelinesTemplate = (args)=><CustomizedTimelines {...args}></CustomizedTimelines>
+export const CustomizedTimeline = CustomizedTimelinesTemplate.bind({});
 CustomizedTimeline.args = {
   customizedTimelineData: [
     {
       label: "Eat",
       oppositeLabel: "9.00am",
       text: "Because you need strength",
-      icon: <FastfoodIcon />,
+      icon: 'fastfood',
       color: "grey",
       variant: "filled",
     },
@@ -135,7 +161,7 @@ CustomizedTimeline.args = {
       label: "Code",
       oppositeLabel: "10.00am",
       text: "Because it's awesome!",
-      icon: <LaptopMacIcon />,
+      icon: 'laptop_mac',
       color: "primary",
       variant: "filled",
     },
@@ -143,7 +169,7 @@ CustomizedTimeline.args = {
       label: "Sleep",
       oppositeLabel: "",
       text: "Because you need rest",
-      icon: <HotelIcon />,
+      icon: 'hotel',
       color: "primary",
       variant: "outlined",
     },
@@ -151,7 +177,7 @@ CustomizedTimeline.args = {
       label: "Repeat",
       oppositeLabel: "",
       text: "Because this is the life you love!",
-      icon: <RepeatIcon />,
+      icon: 'repeat',
       color: "secondary",
       variant: "filled",
     },

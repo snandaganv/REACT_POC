@@ -22,12 +22,13 @@ export default {
   },
 };
 
-export const BackdropDefault = BackdropDefaults.bind({});
+const Template = (args)=><BackdropDefaults{...args}></BackdropDefaults>
+export const BackdropDefault = Template.bind({});
 BackdropDefault.args = {
   label: "Show Backdrop",
   // variant: "text",
   // size: "large",
   // buttoncolor: "primary",
   color: "secondary",
-  invisible: false,
+  invisible: true,
 };

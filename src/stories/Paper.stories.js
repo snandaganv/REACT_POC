@@ -12,7 +12,8 @@ export default {
   },
 };
 
-export const DefaultPaper = DefaultPapers.bind({});
+const Template = (args)=><DefaultPapers><Paper {...args}/></DefaultPapers>
+export const DefaultPaper = Template.bind({});
 DefaultPaper.args = {
   variant: "elevation",
   elevation: 2,

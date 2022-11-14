@@ -32,8 +32,8 @@ export default {
     },
   },
 };
-
-export const ChipsBasic = ChipsBasics.bind({});
+const Template = (args)=><ChipsBasics {...args}></ChipsBasics>
+export const ChipsBasic = Template.bind({});
 ChipsBasic.args = {
   label: "Chip",
   variant: "outlined",
@@ -43,9 +43,54 @@ ChipsBasic.args = {
   disabled: false,
 };
 
-export const ChipClickable = ChipClickables.bind({});
-export const ChipsColor = ChipsColors.bind({});
-export const ChipSize = ChipSizes.bind({});
-export const ChipAvatar = ChipAvatars.bind({});
-export const ChipIcon = ChipIcons.bind({});
-export const ChipClickableLink = ChipClickableLinks.bind({});
+const ChipClickableTemplate = (args)=><ChipClickables {...args}></ChipClickables>
+export const ChipClickable = ChipClickableTemplate.bind({});
+ChipClickable.args={
+  label:'Clickable',
+  variant:'outlined',
+  color:'primary'
+}
+const ChipsColorTemplate = (args)=><ChipsColors {...args}></ChipsColors>
+export const ChipsColor = ChipsColorTemplate.bind({});
+ChipsColor.args={
+  colors:['primary','success','error','info','warning']
+}
+
+const ChipSizesTemplate = (args)=><ChipSizes {...args}></ChipSizes>
+export const ChipSize = ChipSizesTemplate.bind({});
+ChipSize.args={
+  sizes:['small','medium'],
+  color:'primary',
+  variant:'outlined'
+}
+
+const ChipAvatarsTemplate = (args)=><ChipAvatars {...args}></ChipAvatars>
+export const ChipAvatar = ChipAvatarsTemplate.bind({});
+ChipAvatar.args={
+  label:'Avatar',
+  variant:'outlined',
+  color:'primary'
+}
+
+const ChipIconsTemplate = (args)=><ChipIcons {...args}></ChipIcons>
+export const ChipIcon = ChipIconsTemplate.bind({});
+ChipIcon.args={
+  chipicons:[{icon:'face',label:'Custom delete icon',variant:'' ,deleteIcon:'',color:'primary'},
+  {icon:'face',label:'Custom delete icon',variant:'outlined' ,color:'primary'},
+  {icon:'',label:'Custom delete icon',deleteIcon:'cancel',color:'primary'},
+  {icon:'',label:'Custom delete icon',variant:'outlined' ,deleteIcon:'cancel',color:'primary'},
+  {icon:'face',label:'Custom delete icon',deleteIcon:'cancel',color:'primary'},
+  {icon:'face',label:'Custom delete icon',variant:'outlined' ,deleteIcon:'cancel',color:'primary'}
+ 
+],
+}
+const ChipClickableLinksTemplate = (args)=><ChipClickableLinks {...args}></ChipClickableLinks>
+export const ChipClickableLink = ChipClickableLinksTemplate.bind({});
+ChipClickableLink.args={
+  label:'Clickable Link',
+  component:'a',
+  href:'https://design.arisglobal.com/agcomp/chip',
+  color:'primary',
+  variant:'outlined'
+}
+

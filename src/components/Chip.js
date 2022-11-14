@@ -1,12 +1,13 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import { Stack, Chip } from "@mui/material";
-import { Avatar } from "@mui/material";
+import { Avatar ,Icon} from "@mui/material";
 import { Face } from "@mui/icons-material";
 import Done from "@mui/icons-material/Done";
 import Cancel from "@mui/icons-material/Cancel";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../.storybook/muiTheme";
+
 
 export const ChipsBasics = ({
   label,
@@ -63,7 +64,8 @@ ChipsBasics.propTypes = {
   ]),
 };
 
-export const ChipClickables = ({ onClick }) => {
+export const ChipClickables = ( props,onClick ) => {
+  const {label,variant,color}=props;
   const handleClick = () => {
     console.info("You clicked the Chip.");
   };
@@ -71,11 +73,11 @@ export const ChipClickables = ({ onClick }) => {
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2} direction="row">
         <Stack direction="row" spacing={1}>
-          <Chip label="Clickable" onClick={handleClick} color="primary" />
+          <Chip label={label} onClick={handleClick} color={color} />
           <Chip
-            label="Clickable"
-            variant="outlined"
-            color="primary"
+            label={label}
+            variant={variant}
+            color={color}
             onClick={handleClick}
           />
         </Stack>
@@ -84,50 +86,53 @@ export const ChipClickables = ({ onClick }) => {
   );
 };
 
-export const ChipsColors = ({ color }) => {
+export const ChipsColors = (props) => {
+  const {colors}=props;
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack direction="row" spacing={1}>
-        <Chip label="primary" color="primary" />
-        <Chip label="success" color="success" />
-        <Chip label="error" color="error" />
-        <Chip label="info" color="info" />
-        <Chip label="warning" color="warning" />
+        {colors.map((color)=>
+        <Chip label={color} color={color} />)}
       </Stack>
     </ThemeProvider>
   );
 };
 
-export const ChipSizes = ({ size }) => {
+export const ChipSizes = (props) => {
+  const {sizes,variant,color}=props;
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack direction="row" spacing={1}>
-        <Chip label="Small" size="small" color="primary" />
-        <Chip label="Medium" size="medium" variant="outlined" color="primary" />
+      {sizes.map((size)=>
+      <>
+        <Chip label={size} size={size} variant={variant} color={color} />
+        </>)}
       </Stack>
     </ThemeProvider>
   );
 };
 
-export const ChipAvatars = ({ avatar }) => {
+export const ChipAvatars = (props) => {
+  const {label,variant,color}=props;
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack direction="row" spacing={1}>
-        <Chip avatar={<Avatar>M</Avatar>} label="Avatar" color="primary" />
+        <Chip avatar={<Avatar>M</Avatar>} label={label} color={color} />
         <Chip
           avatar={
             <Avatar alt="Natacha" src="https://i.pravatar.cc/150?img=32" />
           }
-          label="Avatar"
-          variant="outlined"
-          color="primary"
+          label={label}
+          variant={variant}
+          color={color}
         />
       </Stack>
     </ThemeProvider>
   );
 };
 
-export const ChipIcons = ({ icon }) => {
+export const ChipIcons = (props) => {
+  const{chipicons}=props;
   const handleClick = () => {
     console.info("You clicked the Chip.");
   };
@@ -138,69 +143,29 @@ export const ChipIcons = ({ icon }) => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack direction="row" spacing={1}>
-        <Chip icon={<Face />} label="With Icon" color="primary" />
+        {chipicons.map((chipicon)=>
+        <>
         <Chip
-          icon={<Face />}
-          label="With Icon"
-          variant="outlined"
-          color="primary"
-        />
-        <Chip
-          label="Custom delete icon"
+          icon={<Icon>{chipicon.icon}</Icon>}
+          label={chipicon.label}
+          variant={chipicon.variant}
           onClick={handleClick}
           onDelete={handleDelete}
-          deleteIcon={<Done />}
-          color="primary"
-        />
-        <Chip
-          label="Custom delete icon"
-          variant="outlined"
-          onClick={handleClick}
-          onDelete={handleDelete}
-          deleteIcon={<Done />}
-          color="primary"
-        />
-        <Chip
-          label="Custom delete icon"
-          icon={<Face />}
-          onClick={handleClick}
-          onDelete={handleDelete}
-          deleteIcon={<Cancel />}
-          color="primary"
-        />
-        <Chip
-          icon={<Face />}
-          label="Custom delete icon"
-          variant="outlined"
-          onClick={handleClick}
-          onDelete={handleDelete}
-          deleteIcon={<Cancel />}
-          color="primary"
-        />
+          deleteIcon={<Icon>{chipicon.deleteIcon}</Icon>}
+          color={chipicon.color}
+        /></>)}
       </Stack>
     </ThemeProvider>
   );
 };
 
-export const ChipClickableLinks = ({ clickable }) => {
+export const ChipClickableLinks = (props, clickable ) => {
+  const{label,component,href,color,variant}=props;
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack direction="row" spacing={1}>
-        <Chip
-          label="Clickable Link"
-          component="a"
-          href="https://design.arisglobal.com/agcomp/chip"
-          clickable
-          color="primary"
-        />
-        <Chip
-          label="Clickable Link"
-          component="a"
-          href="https://design.arisglobal.com/agcomp/chip"
-          variant="outlined"
-          clickable
-          color="primary"
-        />
+        <Chip label={label} component={component} href={href} clickable  color={color}/>
+        <Chip label={label} component={component} href={href} variant={variant} clickable color={color}/>
       </Stack>
     </ThemeProvider>
   );

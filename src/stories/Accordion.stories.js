@@ -8,7 +8,8 @@ export default {
   title: "Surfaces/Accordion",
 };
 
-export const AccordionBasics = AccordionBasic.bind({});
+const Template = (args)=><AccordionBasic {...args}></AccordionBasic>
+export const AccordionBasics = Template.bind({});
 AccordionBasics.args = {
   data: [
     {
@@ -29,7 +30,8 @@ AccordionBasics.args = {
   ],
 };
 
-export const AccordionsControlled = AccordionControlled.bind({});
+const AccordionControlledTemplate = (args)=><AccordionControlled {...args}></AccordionControlled>
+export const AccordionsControlled = AccordionControlledTemplate.bind({});
 AccordionsControlled.args = {
   data: [
     {
@@ -54,7 +56,8 @@ AccordionsControlled.args = {
   ],
 };
 
-export const AccordionCustomizations = AccordionCustomization.bind({});
+const AccordionCustomizationTemplate = (args)=><AccordionCustomization {...args}></AccordionCustomization>
+export const AccordionCustomizations = AccordionCustomizationTemplate.bind({});
 AccordionCustomizations.args = {
   data: [
     {

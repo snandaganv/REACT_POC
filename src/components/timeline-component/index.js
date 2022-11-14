@@ -13,6 +13,7 @@ import muiTheme from "../../../.storybook/muiTheme";
 import Typography from "@mui/material/Typography";
 import { timelineOppositeContentClasses } from "@mui/lab/TimelineOppositeContent";
 import { PropTypes } from "prop-types";
+import { Icon } from "@mui/material";
 
 export const TimelineDefaults = (props) => {
   const { data, position } = props;
@@ -176,7 +177,7 @@ export const CustomizedTimelines = (props) => {
             <TimelineSeparator>
               <TimelineConnector />
               <TimelineDot color={label.color} variant={label.variant}>
-                {label.icon}
+                <Icon>{label.icon}</Icon>
               </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
