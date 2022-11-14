@@ -44,8 +44,8 @@ MenuDense.args = {
     ]
 };
 
-export const MenuIcon = MenusIcon.bind({});
-MenuIcon.args = {
+export const MenuIcons = MenusIcon.bind({});
+MenuIcons.args = {
     menuicons: [
         { icon: <ContentCut fontSize="small" />, typography: "⌘X", label: "Cut" },
         { icon: <ContentCopy fontSize="small" />, typography: "⌘C", label: "Copy" },

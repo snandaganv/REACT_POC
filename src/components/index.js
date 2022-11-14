@@ -117,7 +117,7 @@ export {
 export {
   MenusBasic as MenuBasic,
   MenusDense as MenuDense,
-  MenusIcon as MenuIcon,
+  MenusIcon as MenuIcons,
   MenusSimpleList as MenuSimpleList,
   MenusAccount as MenuAccount,
   MenusLong as MenuLong,
