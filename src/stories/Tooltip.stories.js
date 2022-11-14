@@ -28,8 +28,8 @@ export default {
     arrow: { control: "boolean" },
   },
 };
-const Template = (args) => <TooltipsBasic {...args}></TooltipsBasic>;
-export const TooltipBasic = Template.bind({});
+//const Template = (args) => <TooltipsBasic {...args}></TooltipsBasic>;
+export const TooltipBasic = TooltipsBasic.bind({});
 TooltipBasic.args = {
   title: "Delete",
 };
