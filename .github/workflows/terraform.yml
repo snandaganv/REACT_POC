@@ -10,6 +10,8 @@ on:
         description: 'Environment to run the workflow against'
         type: environment
         required: true
+
+# comment out because testing in poc env, once ready to test in dev or other envs, enable them
 #  push:
 #    branches: [ main ]
 #    paths: 'terraform/**'
@@ -17,8 +19,26 @@ on:
 #    branches: [ main ]
 #    paths: 'terraform/**'
 
+permissions:  # added using https://github.com/step-security/secure-workflows
+  contents: read
+
 jobs:
+
+  infracost:
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: ArisGlobal/SharedActions/.github/workflows/terraform-infracost.yml@latest
+    with:
+      # need to specify working-directory as that's where the terraform files live in the source code
+      working-directory: ./terraform
+      terraform-var-file: ./.env/${{ github.event.inputs.environment || 'dev' }}/terraform.tfvars
+      usage-file: ./.env/${{ github.event.inputs.environment || 'dev' }}/infracost-usage.yml
+      infracost-flag: true # flag whether or not to run infracost analysis
+    secrets: inherit
+
   terraform:
+    needs: infracost
     permissions:
       id-token: write  # need this for OIDC
       contents: read   # This is required for actions/checkout@v2
@@ -26,5 +46,4 @@ jobs:
     with:
       # need to specify working-directory as that's where the terraform files live in the source code
       working-directory: ./terraform
-      frontend-flag: true
     secrets: inherit
