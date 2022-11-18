@@ -38,3 +38,11 @@ terraform destroy -input=false -var-file='./.env/dev/terraform.tfvars'
 
 `-var-file='./.env/dev/terraform.tfvars'` specifies that we want to specify variables in our terraform configuration from the **terraform.tfvars** file.
 
+### terraform-docs
+
+We can use the following command to auto generate README for a composite module, which generates the variables and outputs in table format.  Once README is auto generated, we can then add additional sections to that README. 
+
+```
+terraform-docs markdown table --output-file README.md .
+```
+
