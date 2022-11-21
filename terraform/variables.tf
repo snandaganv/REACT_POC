@@ -25,8 +25,8 @@ variable "block_ofac_countries" {
   default     = false
 }
 
-#variable "dns_name" {
-#  description = "dns name"
-#  type        = string
-#  default     = ""
-#}
+variable "dns_name" {
+  description = "dns name"
+  type        = string
+  default     = ""
+}
