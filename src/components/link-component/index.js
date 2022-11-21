@@ -25,7 +25,7 @@ LinkComponent.defaultProps = {
     children: [],
     color: '',
     underline: '',
-    variant: '',
+    variant: 'body1',
     href:'',
 };
 
