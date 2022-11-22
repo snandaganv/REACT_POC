@@ -1,110 +1,170 @@
-import { Menu } from "@mui/material";
-import { ContentCopy, ContentCut, ContentPaste, Cloud, Check, Send, PriorityHigh, Drafts } from "@mui/icons-material";
+import { Avatar, Menu } from "@mui/material";
+import { Check } from "@mui/icons-material";
 import {
-    MenuBasic,
-    MenuDefault,
-    MenuIcon,
-    MenuDense,
-    ListMenuSimple,
-    MenuAccount,
-    MenuLong,
-    MenuTypography,
-    Divider,
-    MenuFade,
-    MenuPositioned,
-    ContextMenus,
-    Testing
+  MenusBasic,
+  MenusDense,
+  MenusIcon,
+  MenusSimpleList,
+  MenusAccount,
+  MenusLong,
+  MenusTypography,
+  MenusPositioned,
+  MenusContext,
 } from "../components/menu-component";
 
 export default {
-    title: 'Navigation/Menu',
-    component: Menu,
+  title: "Navigation/Menu",
+  component: Menu,
 };
 
-export const BasicMenu = MenuBasic.bind({});
-BasicMenu.args = {
-    label: "Dashboard",
-    menulist: [{ value: 1, label: 'Profile' }, { value: 2, label: 'My account' }, { value: 3, label: 'Logout' }],
+const MenusBasicTemplate = (args) => <MenusBasic {...args}></MenusBasic>;
+export const MenuBasic = MenusBasicTemplate.bind({});
+MenuBasic.args = {
+  label: "Dashboard",
+  menulist: [
+    { value: 1, label: "Profile" },
+    { value: 2, label: "My account" },
+    { value: 3, label: "Logout" },
+  ],
 };
 
-export const DenseMenu = MenuDense.bind({});
-DenseMenu.args = {
-    autoFocus: false,
-    dense: true,
-    disableGutters: false,
-    divider: false,
-    denseicon: [
-        { text: "Single" },
-        { text: 1.15 },
-        { text: "Double" },
-        { icon: <Check fontSize="small" />, text: "Custom: 1.2" },
-    ],
-    densetext: [
-        { textspacaf: "Add space after paragraph" },
-    ],
-    densetext1: [
-        { textspacbf: "Add space before paragraph" },
-    ]
+const MenusDenseTemplate = (args) => <MenusDense {...args}></MenusDense>;
+export const MenuDense = MenusDenseTemplate.bind({});
+MenuDense.args = {
+  autoFocus: false,
+  dense: true,
+  disableGutters: false,
+  divider: false,
+  denseicon: [
+    { text: "Single" },
+    { text: 1.15 },
+    { text: "Double" },
+    { icon: "check", text: "Custom: 1.2" },
+  ],
+  densetext: [{ textspacaf: "Add space after paragraph" }],
+  densetext1: [{ textspacbf: "Add space before paragraph" }],
 };
 
-export const IconMenu = MenuIcon.bind({});
-IconMenu.args = {
-    menuicons: [
-        { icon: <ContentCut fontSize="small" />, typography: "⌘X", label: "Cut" },
-        { icon: <ContentCopy fontSize="small" />, typography: "⌘C", label: "Copy" },
-        { icon: <ContentPaste fontSize="small" />, typography: "⌘V", label: "Paste" },
-    ],
-    menuclip: [{ icon: <Cloud fontSize="small" />, label: "Web Clipboard" }]
+const MenusIconTemplate = (args) => <MenusIcon {...args}></MenusIcon>;
+export const MenuIcons = MenusIconTemplate.bind({});
+MenuIcons.args = {
+  menuiconData: [
+    { icon: "content_cut", typography: "⌘X", label: "Cut" },
+    { icon: "content_copy", typography: "⌘C", label: "Copy" },
+    {
+      icon: "content_paste",
+      typography: "⌘V",
+      label: "Paste",
+    },
+  ],
+  menuclip: [{ icon: "cloud", label: "Web Clipboard" }],
 };
 
-export const SimpleListMenu = ListMenuSimple.bind({});
-SimpleListMenu.args = {
-    simplemenu: [
-        { label: "Show some love to MUI" },
-        { label: "Show all notification content" },
-        { label: "Hide sensitive notification content" },
-        { label: "Hide all notification content" },
-    ]
+const MenusSimpleListTemplate = (args) => (
+  <MenusSimpleList {...args}></MenusSimpleList>
+);
+export const MenuSimpleList = MenusSimpleListTemplate.bind({});
+MenuSimpleList.args = {
+  options: [
+    "Show some love to MUI",
+    "Show all notification content",
+    "Hide sensitive notification content",
+    "Hide all notification content",
+  ],
 };
 
-export const AccountMenu = MenuAccount.bind({});
-AccountMenu.args = {
-    typomenus: [
-        { icon: <Send fontSize="small" />, label: "A short message" },
-        { icon: <PriorityHigh fontSize="small" />, label: "A very long text that overflows" },
-        { icon: <Drafts fontSize="small" />, textlbl: " A very long text that overflows" },
-    ]
+const MenusAccountTemplate = (args) => <MenusAccount {...args}></MenusAccount>;
+export const MenuAccount = MenusAccountTemplate.bind({});
+MenuAccount.args = {
+  menuLabel: ["Contact", "Profile"],
+  menuData: [
+    { icon: <Avatar />, label: "Profile" },
+    {
+      icon: <Avatar />,
+      label: "My Account",
+    },
+  ],
+  menuAccountData: [
+    {
+      icon: "person_add",
+      label: " Add another account",
+    },
+    {
+      icon: "settings",
+      label: " Settings",
+    },
+    {
+      icon: "logout",
+      label: " Logout",
+    },
+  ],
 };
 
-
-export const LongMenu = MenuLong.bind({});
-LongMenu.args = {
-    longtext: [
-        { value: 1, option: 'options 1' }, { value: 2, option: 'options 2' }, { value: 3, label: 'options 3' }, { value: 4, label: 'options 4' }, { value: 5, label: 'options 5' }, { value: 6, label: 'options 6' }, { value: 7, label: 'options 7' }, { value: 8, label: 'options 8' }, { value: 9, label: 'options 9' }, { value: 10, label: 'options 10' }, { value: 11, label: 'options 11' }, { value: 12, label: 'options 12' }, { value: 13, label: 'options 13' }, { value: 14, label: 'options 14' }, { value: 15, label: 'options 15' }
-    ]
+const MenusLongTemplate = (args) => <MenusLong {...args}></MenusLong>;
+export const MenuLong = MenusLongTemplate.bind({});
+MenuLong.args = {
+  option: [
+    "None",
+    "Atria",
+    "Callisto",
+    "Dione",
+    "Ganymede",
+    "Hangouts Call",
+    "Luna",
+    "Oberon",
+    "Phobos",
+    "Pyxis",
+    "Sedna",
+    "Titania",
+    "Triton",
+    "Umbriel",
+  ],
 };
 
-export const TypographyMenu = MenuTypography.bind({});
-TypographyMenu.args = {
-    typomenus: [
-        { icon: <Send fontSize="small" />, label: "A short message" },
-        { icon: <PriorityHigh fontSize="small" />, label: "A very long text that overflows" },
-        { icon: <Drafts fontSize="small" />, textlbl: " A very long text that overflows" },
-    ]
+const MenusTypographyTemplate = (args) => (
+  <MenusTypography {...args}></MenusTypography>
+);
+export const MenuTypography = MenusTypographyTemplate.bind({});
+MenuTypography.args = {
+  typomenus: [
+    { icon: "send", label: "A short message" },
+    {
+      icon: "priority_high",
+      label: "A very long text that overflows",
+    },
+    {
+      icon: "drafts",
+      textlbl: " A very long text that overflows",
+    },
+  ],
 };
 
-export const PositionedMenu = MenuPositioned.bind({});
-PositionedMenu.args = {
-    label: "Dashboard",
-    menulist: [{ value: 1, label: 'Profile' }, { value: 2, label: 'My account' }, { value: 3, label: 'Logout' }],
+const MenusPositionedTemplate = (args) => (
+  <MenusPositioned {...args}></MenusPositioned>
+);
+export const MenuPositioned = MenusPositionedTemplate.bind({});
+MenuPositioned.args = {
+  label: "Dashboard",
+  menulist: [
+    { value: 1, label: "Profile" },
+    { value: 2, label: "My account" },
+    { value: 3, label: "Logout" },
+  ],
 };
 
-export const ContextMenu = ContextMenus.bind({});
-ContextMenu.args = {
-    typo: [
-        { label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ipsum purus, bibendum sit amet vulputate eget, porta semper ligula. Donec bibendum vulputate erat, ac fringilla mi finibus nec. Donec ac dolor sed dolor porttitor blandit vel vel purus. Fusce vel malesuada ligula. Nam quis vehicula ante, eu finibus est. Proin ullamcorper fermentum orci, quis finibus massa. Nunc lobortis, massa ut rutrum ultrices, metus metus finibus ex, sit amet facilisis neque enim sed neque. Quisque accumsan metus vel maximus consequat. Suspendisse lacinia tellus a libero volutpat maximus." },
-    ],
-    contxtmenu: [{ value: 1, label: 'Copy' }, { value: 2, label: 'Print' }, { value: 3, label: 'Highlight' }, { value: 4, label: 'Email' }]
+const MenusContextTemplate = (args) => <MenusContext {...args}></MenusContext>;
+export const MenuContext = MenusContextTemplate.bind({});
+MenuContext.args = {
+  typo: [
+    {
+      label:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ipsum purus, bibendum sit amet vulputate eget, porta semper ligula. Donec bibendum vulputate erat, ac fringilla mi finibus nec. Donec ac dolor sed dolor porttitor blandit vel vel purus. Fusce vel malesuada ligula. Nam quis vehicula ante, eu finibus est. Proin ullamcorper fermentum orci, quis finibus massa. Nunc lobortis, massa ut rutrum ultrices, metus metus finibus ex, sit amet facilisis neque enim sed neque. Quisque accumsan metus vel maximus consequat. Suspendisse lacinia tellus a libero volutpat maximus.",
+    },
+  ],
+  contxtmenu: [
+    { value: 1, label: "Copy" },
+    { value: 2, label: "Print" },
+    { value: 3, label: "Highlight" },
+    { value: 4, label: "Email" },
+  ],
 };
-
-

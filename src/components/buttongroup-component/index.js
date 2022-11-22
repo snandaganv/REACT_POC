@@ -13,7 +13,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
 import { PropTypes } from "prop-types";
 
-export const BasicButtonGroup = (props) => {
+export const ButtonGroupDefaults = (props) => {
   const {
     variant,
     color,
@@ -47,7 +47,7 @@ export const BasicButtonGroup = (props) => {
     </ThemeProvider>
   );
 };
-BasicButtonGroup.propTypes = {
+ButtonGroupDefaults.propTypes = {
   label: PropTypes.string,
   size: PropTypes.oneOf(["small", "medium", "large"]),
   color: PropTypes.oneOf([
@@ -66,7 +66,7 @@ BasicButtonGroup.propTypes = {
   numberOfButtons: PropTypes.array,
   onClick: PropTypes.func,
 };
-BasicButtonGroup.defaultProps = {
+ButtonGroupDefaults.defaultProps = {
   numberOfButtons: [],
   size: "medium",
   color: "primary",
@@ -76,13 +76,9 @@ BasicButtonGroup.defaultProps = {
   disableRipple: false,
   disableElevation: false,
 };
-const buttons = [
-  <Button key="one">One</Button>,
-  <Button key="two">Two</Button>,
-  <Button key="three">Three</Button>,
-];
 
-export const VariantButtonGroup = (props) => {
+export const ButtonGroupVariants = (props) => {
+  const { buttons, buttonData } = props;
   return (
     <Box
       sx={{
@@ -95,21 +91,31 @@ export const VariantButtonGroup = (props) => {
       }}
     >
       <ThemeProvider theme={muiTheme}>
-        <ButtonGroup variant="outlined" aria-label="outlined button group">
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup variant="text" aria-label="text button group">
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup variant="contained" aria-label="text button group">
-          {buttons}
-        </ButtonGroup>
+        {buttonData.map((data) => (
+          <ButtonGroup
+            key={data.variant}
+            variant={data.variant}
+            aria-label={data.arialLabel}
+          >
+            {buttons}
+          </ButtonGroup>
+        ))}
       </ThemeProvider>
     </Box>
   );
 };
 
-export const GroupSizesColors = (props) => {
+ButtonGroupVariants.propTypes = {
+  buttonData: PropTypes.array,
+  buttons: PropTypes.array,
+};
+ButtonGroupVariants.defaultProps = {
+  buttonData: [],
+  buttons: [],
+};
+
+export const ButtonGroupSizesColors = (props) => {
+  const { buttons, buttonData } = props;
   return (
     <Box
       sx={{
@@ -122,28 +128,31 @@ export const GroupSizesColors = (props) => {
       }}
     >
       <ThemeProvider theme={muiTheme}>
-        <ButtonGroup
-          color="primary"
-          size="small"
-          aria-label="small button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          color="secondary"
-          aria-label="medium secondary button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup color="error" size="large" aria-label="large button group">
-          {buttons}
-        </ButtonGroup>
+        {buttonData.map((data) => (
+          <ButtonGroup
+            key={data.size}
+            color={data.color}
+            size={data.size}
+            aria-label={data.label}
+          >
+            {buttons}
+          </ButtonGroup>
+        ))}
       </ThemeProvider>
     </Box>
   );
 };
 
-export const GroupOrientation = (props) => {
+ButtonGroupSizesColors.propTypes = {
+  buttonData: PropTypes.array,
+  buttons: PropTypes.array,
+};
+ButtonGroupSizesColors.defaultProps = {
+  buttonData: [],
+  buttons: [],
+};
+export const ButtonGroupVerticals = (props) => {
+  const { buttons, buttonData } = props;
   return (
     <Box
       sx={{
@@ -154,32 +163,30 @@ export const GroupOrientation = (props) => {
       }}
     >
       <ThemeProvider theme={muiTheme}>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical outlined button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical contained button group"
-          variant="contained"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical contained button group"
-          variant="text"
-        >
-          {buttons}
-        </ButtonGroup>
+        {buttonData.map((data) => (
+          <ButtonGroup
+            key={data.variant}
+            orientation={data.orientation}
+            aria-label={data.arialLabel}
+            variant={data.variant}
+          >
+            {buttons}
+          </ButtonGroup>
+        ))}
       </ThemeProvider>
     </Box>
   );
 };
 
-export const SplitButton = (props) => {
+ButtonGroupVerticals.propTypes = {
+  buttonData: PropTypes.array,
+  buttons: PropTypes.array,
+};
+ButtonGroupVerticals.defaultProps = {
+  buttonData: [],
+  buttons: [],
+};
+export const SplitButtons = (props) => {
   const {
     options,
     disabledoption,
@@ -280,7 +287,7 @@ export const SplitButton = (props) => {
     </React.Fragment>
   );
 };
-SplitButton.propTypes = {
+SplitButtons.propTypes = {
   label: PropTypes.string,
   size: PropTypes.oneOf(["small", "medium", "large"]),
   color: PropTypes.oneOf([
@@ -291,17 +298,18 @@ SplitButton.propTypes = {
     "info",
     "warning",
   ]),
-  disabledoption: PropTypes.bool,
+  disabledoption: PropTypes.number,
   disabled: PropTypes.bool,
   disableRipple: PropTypes.bool,
   disableElevation: PropTypes.bool,
   options: PropTypes.array,
   onClick: PropTypes.func,
 };
-SplitButton.defaultProps = {
+SplitButtons.defaultProps = {
   options: [],
   size: "medium",
   color: "primary",
+  disabledoption: 0,
   disabled: false,
   fullWidth: false,
   disableRipple: false,
