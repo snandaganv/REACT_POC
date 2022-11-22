@@ -15,6 +15,8 @@ export { default as TextFieldComponent } from "./textfield-component";
 export { default as DateTimeComponent } from "./datetime-component";
 export { default as SliderComponent } from "./slider-component";
 export { default as CardComponent } from "./card-component";
+export { default as TransferListComponent } from "./transfer-list-component";
+export { default as TreeViewComponent } from "./tree-view-component";
 
 export {
   ButtonDefaults as ButtonDefault,
@@ -133,3 +135,31 @@ export {
 //   MenuPositioned as PositionedMenu,
 //   ContextMenus as ContextMenu,
 // } from "./menu-component";
+
+export {
+  DialogsSimple as DialogSimple,
+  DialogsAlert as DialogAlert,
+  DialogsSlideAlert as DialogSlideAlert,
+  DialogsForm as DialogForm,
+  DialogsCustomized as DialogCustomized,
+  DialogsFullScreen as DialogFullScreen,
+  DialogsMaxWidth as DialogMaxWidth,
+  DialogsConfirmation as DialogConfirmation,
+  DialogsDraggable as DialogDraggable,
+  DialogsScroll as DialogScroll,
+} from "./dialog-component";
+
+export {
+  PapersBasic as PaperBasic,
+  Elevations as Elevation,
+} from "./paper-component";
+
+export {
+  TimelinesBasic as TimelineBasic,
+  TimelinesColors as TimelineColors,
+  TimelinesOutlined as TimelineOutlined,
+  TimelinesOppositeContent as TimelineOppositeContent,
+  TimelinesRightAligned as TimelineRightAligned,
+  TimelinesLeftAligned as TimelineLeftAligned,
+  TimelinesCustomized as TimelineCustomized
+} from "./timeline-component";
