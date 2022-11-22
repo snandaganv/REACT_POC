@@ -12,7 +12,7 @@ import MobileStepper from "@mui/material/MobileStepper";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import { useTheme } from "@mui/material/styles";
-import { oneOf, PropTypes } from "prop-types";
+import { PropTypes } from "prop-types";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
 import Check from "@mui/icons-material/Check";
