@@ -121,6 +121,23 @@ export {
   GroupSelect as GroupedSelect,
 } from "./select-component";
 export {
+  SimpleBottomNavigations as SimpleBottomNavigationsComp,
+  LabelBottomNavigations as LabelBottomNavigationsComp,
+  FixedBottomNavigations as FixedBottomNavigationsComp,
+} from "./bottomnavigation-component";
+export {
+  DefaultSteppers as DefaultSteppersComp,
+  HorizontalLinearSteppers as HorizontalLinearSteppersComp,
+  HorizontalNonLinearSteppers as HorizontalNonLinearSteppersComp,
+  VerticalLinearSteppers as VerticalLinearSteppersComp,
+  AlternativeLabelSteppers as AlternativeLabelSteppersComp,
+  HorizontalStepperWithErrors as HorizontalStepperWithErrorsComp,
+  TextMobileSteppers as TextMobileSteppersComp,
+  DotsAndProgressMobileSteppers as DotsAndProgressMobileSteppersComp,
+  CustomizedIconSteppers as CustomizedIconSteppersComp,
+  CustomizedSteppers as CustomizedSteppersComp,
+} from "./stepper-component";
+export {
   SnackbarBasic as SnackbarBasicComp,
   SnackbarAlert as SnackbarAlertComp,
   SnackbarPositioned as SnackbarPositionedComp,
