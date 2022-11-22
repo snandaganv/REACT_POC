@@ -15,7 +15,6 @@ export { default as TextFieldComponent } from "./textfield-component";
 export { default as DateTimeComponent } from "./datetime-component";
 export { default as SliderComponent } from "./slider-component";
 export { default as CardComponent } from "./card-component";
-
 export {
   ButtonDefaults as ButtonDefault,
   ButtonBasics as ButtonBasic,
@@ -121,7 +120,22 @@ export {
   GroupSelect as GroupedSelect,
 } from "./select-component";
 
-// export {
+
+
+export {
+  ListDividers as ListDivider,
+  InsetDividers as InsetDivider,
+  SubheaderDividers as SubheaderDivider,
+  MiddleDividers as MiddleDivider,
+  DividerTexts as DividerText,
+  VerticalDividers as VerticalDivider,
+  VerticalDividerMiddles as VerticalDividerMiddle,
+  VerticalDividerTexts as VerticalDividerText
+}
+ from "./divider-component";
+
+
+ // export {
 //   MenuBasic as BasicMenu,
 //   MenuDense as DenseMenu,
 //   MenuIcon as IconMenu,
