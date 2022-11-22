@@ -1,7 +1,7 @@
 import "../index.css";
-
 export { default as AlertComponent } from "./alert-component";
 export { default as AvatarComponent } from "./avatar-component";
+
 export { default as BasicTable } from "./basic-table";
 export { default as BreadcrumbsComponent } from "./breadcrumbs-component";
 export { default as DataTable } from "./data-table";
@@ -15,6 +15,8 @@ export { default as TextFieldComponent } from "./textfield-component";
 export { default as DateTimeComponent } from "./datetime-component";
 export { default as SliderComponent } from "./slider-component";
 export { default as CardComponent } from "./card-component";
+
+export { default as BackdropComponent } from "./backdrop-component";
 
 export {
   ButtonDefaults as ButtonDefault,
