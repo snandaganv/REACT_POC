@@ -1,7 +1,6 @@
 import { Checkbox } from "@mui/material";
 import {
   CheckBoxBasics,
-  CheckboxColors,
   CheckboxSizes,
   CheckboxGroup,
   CheckboxFormGroups,
@@ -30,14 +29,12 @@ export default {
 };
 export const CheckBoxBasic = CheckBoxBasics.bind({});
 CheckBoxBasic.args = {
-  label: "Label",
-  color: "primary",
+  label: "Checkbox label",
   size: "medium",
   disabled: false,
   labelPlacement: "end",
 };
 export const CheckboxSize = CheckboxSizes.bind({});
-export const CheckboxColor = CheckboxColors.bind({});
 export const CheckboxGroups = CheckboxGroup.bind({});
 CheckboxGroups.args = {
   row: true,

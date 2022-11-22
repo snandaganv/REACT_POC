@@ -37,14 +37,7 @@ export {
   ChipClickableLinks as ChiplickableLink,
 } from "./Chip";
 
-export {
-  CheckBoxBasics as CheckBoxBasic,
-  CheckboxSizes as CheckboxSize,
-  CheckboxGroup as CheckboxGroups,
-  CheckboxFormGroups as CheckboxFormGroup,
-  CheckboxInderterminate as CheckboxInderterminates,
-  CheckboxLabelsPlacement as CheckboxLabelsPlacements,
-} from "./Checkbox";
+export { CheckBoxBasics as CheckBoxBasic } from "./Checkbox";
 
 export {
   RadioButtonBasics as RadioButtonBasic,
