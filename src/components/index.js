@@ -120,6 +120,14 @@ export {
   MultipleSelectPlaceholders as MultipleSelectPlaceholder,
   GroupSelect as GroupedSelect,
 } from "./select-component";
+export {
+  SnackbarBasic as SnackbarBasicComp,
+  SnackbarAlert as SnackbarAlertComp,
+  SnackbarPositioned as SnackbarPositionedComp,
+  SnackbarMessageLength as SnackbarMessageLengthComp,
+  SnackbarTransition as SnackbarTransitionComp,
+  SnackbarFloatingsActionButtons as SnackbarFloatingsActionButtonsComp,
+} from "./Snackbar";
 
 // export {
 //   MenuBasic as BasicMenu,
