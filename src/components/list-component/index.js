@@ -93,7 +93,7 @@ export const BasicLists=(props)=> {
       )}
      {nestedLists.map((nestedList) => {
       return (
-          <>        
+          <div>     
           <ListItemButton onClick={handleClick} key={nestedList.id}>
           <ListItemIcon><Icon>{nestedList.icon}</Icon> </ListItemIcon>
           <ListItemText primary={nestedList.primary}/>
@@ -107,7 +107,7 @@ export const BasicLists=(props)=> {
           </ListItemButton>
         </List>
       </Collapse>
-        </>
+      </div>
       );
     })}
        </List>  
