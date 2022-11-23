@@ -2,7 +2,6 @@ import { createTheme } from "@mui/material/styles";
 
 import variables from "../src/assets/styles/variables.scss";
 import "../src/assets/styles/fonts.scss";
-import { palette } from "@mui/system";
 
 const muiTheme = createTheme({
   components: {
@@ -86,7 +85,7 @@ const muiTheme = createTheme({
         label: {
           textTransform: "capitalize",
           fontStyle: "normal",
-          color: palette.primary,
+          color: "#ffffff",
         },
         outlinedPrimary: {
           textTransform: "capitalize",

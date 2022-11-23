@@ -34,7 +34,7 @@
     "web-vitals": "^3.0.4"
   },
   "scripts": {
-    "build": "microbundle-crl --external='react,react-dom,react-is' --no-compress --format modern,cjs",
+    "build": "microbundle-crl --no-compress --format modern,cjs",
     "build:core": "microbundle-crl --no-compress --format modern,cjs",
     "build:alert": "cd src/components/alert-component && microbundle-crl --no-compress --format modern,cjs",
     "start": "react-scripts start",

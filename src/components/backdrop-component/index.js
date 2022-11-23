@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import { PropTypes } from "prop-types";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
-import { createTheme } from "@mui/system";
+
 
 export const BackdropDefaults = (props) => {
   const [open, setOpen] = React.useState(false);
@@ -18,16 +18,7 @@ export const BackdropDefaults = (props) => {
     setOpen(!open);
   };
 
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#1A3BDD",
-      },
-      secondary: {
-        main: "#fff",
-      },
-    },
-  });
+  
 
   return (
     <div>
@@ -52,7 +43,7 @@ export const BackdropDefaults = (props) => {
         onClick={handleClose}
         invisible={invisible}
       >
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={muiTheme}>
           <CircularProgress color={color} />
         </ThemeProvider>
       </Backdrop>

@@ -7,7 +7,9 @@ import {
   FormControl,
   FormLabel,
 } from "@mui/material";
-import { Box, FormHelperText } from "@mui/material";
+import Box from "@mui/material/Box";
+import FormHelperText from "@mui/material/FormHelperText";
+
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../.storybook/muiTheme";
 
