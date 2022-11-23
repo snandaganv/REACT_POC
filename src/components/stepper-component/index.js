@@ -20,7 +20,7 @@ import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
 import { styled } from "@mui/material/styles";
-import { Stack } from '@mui/material';
+import { Stack } from "@mui/material";
 import { CheckSharp } from "@mui/icons-material";
 import variables from "../../assets/styles/variables.scss";
 export const DefaultSteppers = (props) => {

@@ -2,7 +2,7 @@ import * as React from "react";
 import { PropTypes } from "prop-types";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import Box  from "@mui/material/Box";
+import Box from "@mui/material/Box";
 import {
   FormatBold,
   FormatItalic,

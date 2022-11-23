@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import  Box from "@mui/material/Box";
+import Box from "@mui/material/Box";
 import Grid  from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { IconButton } from "@mui/material";

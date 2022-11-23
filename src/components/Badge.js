@@ -4,23 +4,10 @@ import
 
   FormControlLabel
  from "@mui/material/FormControlLabel";
-import 
-
-  ButtonGroup
- from "@mui/material/ButtonGroup";
-import 
-
-  Box
-
- from "@mui/material/Box";
-import 
-  Badge
-  
-from "@mui/material/Badge";
-import 
- 
-  Switch
-from "@mui/material/Switch";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import Box from "@mui/material/Box";
+import Badge from "@mui/material/Badge";
+import Switch from "@mui/material/Switch";
 import { Remove, Add, Mail } from "@mui/icons-material";
 import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
