@@ -74,27 +74,6 @@ CheckboxSizes.args = {
   label: "label",
 };
 
-export const CheckboxGroup = ({ row, onclick, ...props }) => {
-  const checkList = ["Apple", "Banana", "Orange", "Grape"];
-  return (
-    <ThemeProvider theme={muiTheme}>
-      <FormGroup row={row}>
-        {checkList.map((item, index) => (
-          <div key={index}>
-            <Checkbox
-              value={item}
-              type="checkbox"
-              onClick={onclick}
-              {...props}
-            />
-            <span>{item}</span>
-          </div>
-        ))}
-      </FormGroup>
-    </ThemeProvider>
-  );
-};
-
 export const CheckboxFormGroups = ({ checked }) => {
   const [state, setState] = React.useState({
     gilad: true,
@@ -197,10 +176,6 @@ export const CheckboxFormGroups = ({ checked }) => {
     </ThemeProvider>
   );
 };
-CheckboxGroup.args = {
-  row: true,
-};
-
 export const CheckboxInderterminate = ({
   label,
   row,

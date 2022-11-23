@@ -38,18 +38,9 @@ export {
 } from "./Chip";
 
 export { CheckBoxBasics as CheckBoxBasic } from "./Checkbox";
-
-export {
-  RadioButtonBasics as RadioButtonBasic,
-  RadiosButtonGroup as RadiosButtonGroups,
-  RadioButtonDirection as RadioButtonDirections,
-  RadioButtonControlleds as RadioButtonControlled,
-  RadioButtonSize as RadioButtonSizes,
-  RadioButtonLabelPlacements as RadioButtonLabelPlacement,
-  RadioButtonShowErrors as RadioButtonShowError,
-} from "./RadioButton";
-
+export { RadioButtonBasics as RadioButtonBasic } from "./RadioButton";
 export { SwitchesBasic as SwitchBasic } from "./Switches";
+export { BadgesBasic as BadgeBasic } from "./Badge";
 
 export {
   ToggleButtons as ToggleButtonBasic,
@@ -59,8 +50,6 @@ export {
   ToggleButtonExclusiveSelections as ToggleButtonExclusiveSelection,
   ToggleButtonMultipleSelections as ToggleButtonMultipleSelection,
 } from "./ToggleButton";
-
-export { BadgesBasic as BadgeBasic } from "./Badge";
 
 export {
   TooltipsBasic as TooltipBasic,
