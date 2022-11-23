@@ -128,14 +128,7 @@ export {
 export {
   DefaultSteppers as DefaultSteppersComp,
   HorizontalLinearSteppers as HorizontalLinearSteppersComp,
-  HorizontalNonLinearSteppers as HorizontalNonLinearSteppersComp,
-  VerticalLinearSteppers as VerticalLinearSteppersComp,
-  AlternativeLabelSteppers as AlternativeLabelSteppersComp,
-  HorizontalStepperWithErrors as HorizontalStepperWithErrorsComp,
-  TextMobileSteppers as TextMobileSteppersComp,
-  DotsAndProgressMobileSteppers as DotsAndProgressMobileSteppersComp,
-  CustomizedIconSteppers as CustomizedIconSteppersComp,
-  CustomizedSteppers as CustomizedSteppersComp,
+  
 } from "./stepper-component";
 export {
   SnackbarBasic as SnackbarBasicComp,
