@@ -11,6 +11,17 @@ import {
   MenusPositioned,
   MenusContext,
 } from "../components/menu-component";
+import ContentCut from "@mui/icons-material/ContentCut";
+import ContentCopy from "@mui/icons-material/ContentCopy";
+import ContentPaste from "@mui/icons-material/ContentPaste";
+import Cloud from "@mui/icons-material/Cloud";
+import PersonAdd from "@mui/icons-material/PersonAdd";
+import Settings from "@mui/icons-material/Settings";
+import Logout from "@mui/icons-material/Logout";
+import DraftsIcon from "@mui/icons-material/Drafts";
+import SendIcon from "@mui/icons-material/Send";
+import PriorityHighIcon from "@mui/icons-material/PriorityHigh";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 export default {
   title: "Navigation/Menu",
@@ -39,7 +50,7 @@ MenuDense.args = {
     { text: "Single" },
     { text: 1.15 },
     { text: "Double" },
-    { icon: "check", text: "Custom: 1.2" },
+    { icon: <Check />, text: "Custom: 1.2" },
   ],
   densetext: [{ textspacaf: "Add space after paragraph" }],
   densetext1: [{ textspacbf: "Add space before paragraph" }],
@@ -49,15 +60,15 @@ const MenusIconTemplate = (args) => <MenusIcon {...args}></MenusIcon>;
 export const MenuIcons = MenusIconTemplate.bind({});
 MenuIcons.args = {
   menuiconData: [
-    { icon: "content_cut", typography: "⌘X", label: "Cut" },
-    { icon: "content_copy", typography: "⌘C", label: "Copy" },
+    { icon: <ContentCut />, typography: "⌘X", label: "Cut" },
+    { icon: <ContentCopy />, typography: "⌘C", label: "Copy" },
     {
-      icon: "content_paste",
+      icon: <ContentPaste />,
       typography: "⌘V",
       label: "Paste",
     },
   ],
-  menuclip: [{ icon: "cloud", label: "Web Clipboard" }],
+  menuclip: [{ icon: <Cloud />, label: "Web Clipboard" }],
 };
 
 const MenusSimpleListTemplate = (args) => (
@@ -86,15 +97,15 @@ MenuAccount.args = {
   ],
   menuAccountData: [
     {
-      icon: "person_add",
+      icon: <PersonAdd />,
       label: " Add another account",
     },
     {
-      icon: "settings",
+      icon: <Settings />,
       label: " Settings",
     },
     {
-      icon: "logout",
+      icon: <Logout />,
       label: " Logout",
     },
   ],
@@ -103,6 +114,7 @@ MenuAccount.args = {
 const MenusLongTemplate = (args) => <MenusLong {...args}></MenusLong>;
 export const MenuLong = MenusLongTemplate.bind({});
 MenuLong.args = {
+  icon: <MoreVertIcon />,
   option: [
     "None",
     "Atria",
@@ -127,13 +139,13 @@ const MenusTypographyTemplate = (args) => (
 export const MenuTypography = MenusTypographyTemplate.bind({});
 MenuTypography.args = {
   typomenus: [
-    { icon: "send", label: "A short message" },
+    { icon: <SendIcon />, label: "A short message" },
     {
-      icon: "priority_high",
+      icon: <PriorityHighIcon />,
       label: "A very long text that overflows",
     },
     {
-      icon: "drafts",
+      icon: <DraftsIcon />,
       textlbl: " A very long text that overflows",
     },
   ],

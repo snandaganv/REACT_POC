@@ -9,44 +9,44 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "./index.scss";
 
-import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../../.storybook/muiTheme';
+import { ThemeProvider } from "@mui/material/styles";
+import muiTheme from "../../../.storybook/muiTheme";
 
 const BasicTable = (props) => {
   const { columns, data, size } = props;
 
   return (
     <ThemeProvider theme={muiTheme}>
-    <TableContainer component={Paper}>
-      <Table aria-label="simple table" size={size}>
-        <TableHead>
-          <TableRow>
-            {columns &&
-              columns.map((title, index) => {
-                return (
-                  <TableCell key={"header_" + index} className="cellHeader">
-                    {title}
-                  </TableCell>
-                );
-              })}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((row) => (
-            <TableRow key={row.Name}>
+      <TableContainer component={Paper}>
+        <Table aria-label="simple table" size={size}>
+          <TableHead>
+            <TableRow>
               {columns &&
                 columns.map((title, index) => {
                   return (
-                    <TableCell key={"header_d_" + index}>
-                      {row[title]}
+                    <TableCell key={"header_" + index} className="cellHeader">
+                      {title}
                     </TableCell>
                   );
                 })}
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {data.map((row) => (
+              <TableRow key={row.Name}>
+                {columns &&
+                  columns.map((title, index) => {
+                    return (
+                      <TableCell key={"header_d_" + index}>
+                        {row[title]}
+                      </TableCell>
+                    );
+                  })}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </ThemeProvider>
   );
 };

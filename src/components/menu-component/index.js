@@ -4,7 +4,6 @@ import { Menu } from "@mui/material";
 import { Button } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {
   Box,
   Paper,
@@ -69,9 +68,7 @@ export const MenusDense = ({
       <MenuList dense={dense} autoFocus={autoFocus}>
         {denseicon.map((item) => (
           <MenuItem disableGutters={disableGutters} divider={divider}>
-            <ListItemIcon>
-              <Icon>{item.icon}</Icon>
-            </ListItemIcon>
+            <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText>{item.text}</ListItemText>
           </MenuItem>
         ))}
@@ -107,9 +104,7 @@ export const MenusIcon = ({ menuiconData, menuclip }) => {
       <MenuList>
         {menuiconData.map((item) => (
           <MenuItem>
-            <ListItemIcon fontSize="small">
-              <Icon>{item.icon}</Icon>
-            </ListItemIcon>
+            <ListItemIcon fontSize="small">{item.icon}</ListItemIcon>
             <ListItemText>{item.label}</ListItemText>
             <Typography variant="body2" color="text.secondary">
               {item.typography}
@@ -119,9 +114,7 @@ export const MenusIcon = ({ menuiconData, menuclip }) => {
         <Divider />
         {menuclip.map((item) => (
           <MenuItem>
-            <ListItemIcon fontSize="small">
-              <Icon>{item.icon}</Icon>
-            </ListItemIcon>
+            <ListItemIcon fontSize="small">{item.icon}</ListItemIcon>
             <ListItemText>{item.label}</ListItemText>
           </MenuItem>
         ))}
@@ -260,15 +253,13 @@ export const MenusAccount = (props) => {
       >
         {menuData.map((data) => (
           <MenuItem>
-            <Icon fontSize="large">{data.icon}</Icon> {data.label}
+            {data.icon} {data.label}
           </MenuItem>
         ))}
         <Divider />
         {menuAccountData.map((data) => (
           <MenuItem>
-            <ListItemIcon>
-              <Icon>{data.icon}</Icon>
-            </ListItemIcon>
+            <ListItemIcon>{data.icon}</ListItemIcon>
             {data.label}
           </MenuItem>
         ))}
@@ -284,7 +275,7 @@ MenusAccount.propTypes = {
 const ITEM_HEIGHT = 48;
 
 export const MenusLong = (props) => {
-  const { option } = props;
+  const { option, icon } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -296,9 +287,7 @@ export const MenusLong = (props) => {
 
   return (
     <div>
-      <IconButton onClick={handleClick}>
-        <MoreVertIcon />
-      </IconButton>
+      <IconButton onClick={handleClick}>{icon}</IconButton>
       <Menu
         id="long-menu"
         MenuListProps={{
@@ -337,9 +326,7 @@ export const MenusTypography = ({ typomenus }) => {
       <MenuList>
         {typomenus.map((item) => (
           <MenuItem>
-            <ListItemIcon fontSize="small">
-              <Icon>{item.icon}</Icon>
-            </ListItemIcon>
+            <ListItemIcon fontSize="small">{item.icon}</ListItemIcon>
             <Typography variant="inherit">{item.label}</Typography>
             <Typography variant="inherit" noWrap>
               {item.textlbl}
