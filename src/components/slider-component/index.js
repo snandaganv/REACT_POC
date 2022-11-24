@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { PropTypes } from "prop-types";
-import { Slider,Box } from "@mui/material";
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
 import { ThemeProvider } from '@mui/material/styles';
 import muiTheme from '../../../.storybook/muiTheme';
 

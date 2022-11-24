@@ -22,7 +22,6 @@ import {
     Avatar,
     Tooltip,
 } from "@mui/material";
-import { typography } from "@mui/system";
 
 export const BasicMenus = ({ label, menulist }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
