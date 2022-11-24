@@ -6,11 +6,11 @@ import muiTheme from "../../../.storybook/muiTheme";
 
 const SearchIconsComponent = (props) => {
   return (
-    <>
+    <React.Fragment>
       <ThemeProvider theme={muiTheme}>
         <SearchIcon {...props}></SearchIcon>
       </ThemeProvider>
-    </>
+    </React.Fragment>
   );
 };
 

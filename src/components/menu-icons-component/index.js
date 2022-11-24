@@ -4,11 +4,11 @@ import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
 const MenuIconsComponent = (props) => {
   return (
-    <>
+    <React.Fragment>
       <ThemeProvider theme={muiTheme}>
         <div>{props.childComponent(props)}</div>
       </ThemeProvider>
-    </>
+    </React.Fragment>
   );
 };
 

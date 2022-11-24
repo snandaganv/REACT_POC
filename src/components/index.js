@@ -8,7 +8,7 @@ export { default as DataTable } from "./data-table";
 export { default as IconComponent } from "./icon-component";
 export { default as LinkComponent } from "./link-component";
 export { default as TabsComponent } from "./tabs-component";
-export { default as MenuIcon } from "./menu-icons-component";
+export { default as MenuIconsComponent } from "./menu-icons-component";
 export { default as SearchIconsComponent } from "./search-icons-component";
 export { default as TextFieldComponent } from "./textfield-component";
 //export { default as SelectComponent } from "./select-component";
@@ -135,3 +135,15 @@ export {
 //   MenuPositioned as PositionedMenu,
 //   ContextMenus as ContextMenu,
 // } from "./menu-component";
+export {
+  PaginationDefaults as PaginationDefault,
+  PaginationsTable as PaginationTable,
+  PaginationsControlled as PaginationControlled,
+  PaginationsCustomsIcons as PaginationCustomIcons,
+  PaginationsBasic as PaginationBasic,
+  PaginationsOutlined as PaginationOutlined,
+  PaginationsRounded as PaginationRounded,
+  PaginationSizes as PaginationSize,
+  PaginationsButtons as PaginationButtons,
+  PaginationsRanges as PaginationRanges,
+} from "./pagination-component";

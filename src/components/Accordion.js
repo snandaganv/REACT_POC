@@ -17,20 +17,18 @@ export const AccordionBasic = (props) => {
     <div>
       {data.map((item, index) => {
         return (
-          <>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls={"panel-content" + index}
-                id={"panel-header" + index}
-              >
-                <Typography key={"header_" + index}>{item.heading}</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography key={"content" + index}>{item.content}</Typography>
-              </AccordionDetails>
-            </Accordion>
-          </>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={"panel-content" + index}
+              id={"panel-header" + index}
+            >
+              <Typography key={"header_" + index}>{item.heading}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography key={"content" + index}>{item.content}</Typography>
+            </AccordionDetails>
+          </Accordion>
         );
       })}
     </div>
@@ -57,34 +55,32 @@ export const AccordionControlled = (props) => {
     <div>
       {data.map((item, index) => {
         return (
-          <>
-            <Accordion
-              expanded={expanded === "panel" + index}
-              onChange={handleChange("panel" + index)}
+          <Accordion
+            expanded={expanded === "panel" + index}
+            onChange={handleChange("panel" + index)}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={"panel-content" + index}
+              id={"panel-header" + index}
             >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls={"panel-content" + index}
-                id={"panel-header" + index}
+              <Typography
+                sx={{ width: "33%", flexShrink: 0 }}
+                key={"header_" + index}
               >
-                <Typography
-                  sx={{ width: "33%", flexShrink: 0 }}
-                  key={"header_" + index}
-                >
-                  {item.heading}
-                </Typography>
-                <Typography
-                  sx={{ color: "text.secondary" }}
-                  key={"secondary" + index}
-                >
-                  {item.secondaryHeading}
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography key={"content" + index}>{item.content}</Typography>
-              </AccordionDetails>
-            </Accordion>
-          </>
+                {item.heading}
+              </Typography>
+              <Typography
+                sx={{ color: "text.secondary" }}
+                key={"secondary" + index}
+              >
+                {item.secondaryHeading}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography key={"content" + index}>{item.content}</Typography>
+            </AccordionDetails>
+          </Accordion>
         );
       })}
     </div>
@@ -145,22 +141,20 @@ export const AccordionCustomization = (props) => {
     <div>
       {data.map((item, index) => {
         return (
-          <>
-            <Accordion
-              expanded={expanded === "panel" + index}
-              onChange={handleChange("panel" + index)}
+          <Accordion
+            expanded={expanded === "panel" + index}
+            onChange={handleChange("panel" + index)}
+          >
+            <AccordionSummary
+              aria-controls={"panel-content" + index}
+              id={"panel-header" + index}
             >
-              <AccordionSummary
-                aria-controls={"panel-content" + index}
-                id={"panel-header" + index}
-              >
-                <Typography key={"header_" + index}>{item.heading}</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography key={"content" + index}>{item.content}</Typography>
-              </AccordionDetails>
-            </Accordion>
-          </>
+              <Typography key={"header_" + index}>{item.heading}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography key={"content" + index}>{item.content}</Typography>
+            </AccordionDetails>
+          </Accordion>
         );
       })}
     </div>

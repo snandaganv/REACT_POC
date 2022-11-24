@@ -9,13 +9,13 @@ const IconComponent = (props) => {
   const { color, fontSize } = props;
 
   return (
-    <>
+    <React.Fragment>
       <ThemeProvider theme={muiTheme}>
         <Icon {...props}>
           <Home color={color} fontSize={fontSize}></Home>
         </Icon>
       </ThemeProvider>
-    </>
+    </React.Fragment>
   );
 };
 
