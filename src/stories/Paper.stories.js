@@ -11,7 +11,7 @@ export default {
     },
   },
 };
-const PapersBasicTemplate = (args) => <PapersBasic ><Paper {...args}></Paper></PapersBasic>
+const PapersBasicTemplate = (args) => <PapersBasic {...args}></PapersBasic>
 export const PaperBasic = PapersBasicTemplate.bind({});
 PaperBasic.args = {
   variant: "elevation",

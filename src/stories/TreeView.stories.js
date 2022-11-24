@@ -1,18 +1,18 @@
-import TreeViewComponent from "../components/tree-view-component";
+import { TreeViewsComponent } from "../components/tree-view-component";
 
 export default {
     title: 'Feedback/TreeView',
-    component: TreeViewComponent,
+    component: TreeViewsComponent,
     argTypes: {
 
     },
 };
 
-const Template = (args) => <TreeViewComponent {...args}></TreeViewComponent>;
+const TreeViewsComponentTemplate = (args) => <TreeViewsComponent {...args}></TreeViewsComponent>;
 
-export const Default = Template.bind({});
+export const TreeViewComponent = TreeViewsComponentTemplate.bind({});
 
-Default.args = {
+TreeViewComponent.args = {
     treeViwList: [{ 'itemName': 'Applicationss', nodeId: 1, items: [{ 'itemName': 'Calendar', nodeId: 2 }] }, { 'itemName': 'Documents', nodeId: 5, items: [{ 'itemName': 'OseS', nodeId: 4 }, { 'itemName': 'MU', nodeId: 8, items: [{ 'itemName': 'index.js', nodeId: 6 }] }] }],
     ariaLabel: 'tree view list',
     endIcon: 'close_square',

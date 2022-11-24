@@ -24,7 +24,7 @@ function union(a, b) {
   return [...a, ...not(b, a)];
 }
 
-const TransferListComponent = (props) => {
+export const TransfersListComponent = (props) => {
   const { extendedTransferList, leftListText, rightListText, leftListArray, rightListArray } = props;
   const [checked, setChecked] = React.useState([]);
   const [left, setLeft] = React.useState(leftListArray);
@@ -190,7 +190,7 @@ const TransferListComponent = (props) => {
 
 
 
-TransferListComponent.prototype = {
+TransfersListComponent.prototype = {
   extendedTransferList: PropTypes.boolean,
   leftListText: PropTypes.string,
   rightListText: PropTypes.string,
@@ -198,7 +198,7 @@ TransferListComponent.prototype = {
   rightListArray: PropTypes.any
 };
 
-TransferListComponent.defaultProps = {
+TransfersListComponent.defaultProps = {
   extendedTransferList: true,
   leftListText: 'Choices',
   rightListText: 'Chosen',
@@ -207,4 +207,4 @@ TransferListComponent.defaultProps = {
 };
 
 
-export default TransferListComponent;
+//export default TransferListComponent;

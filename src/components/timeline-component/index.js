@@ -121,7 +121,7 @@ export const TimelinesCustomized = (props) => {
             <TimelineSeparator>
               <TimelineConnector />
               <TimelineDot color={label.color} variant={label.variant}>
-                <Icon>{label.icon}</Icon>
+                {label.icon}
               </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>

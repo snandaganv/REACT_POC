@@ -127,8 +127,6 @@ DialogsSimple.propTypes = {
     fullScreen: PropTypes.bool,
     fullWidth: PropTypes.bool,
     disableEscapeKeyDown: PropTypes.bool,
-    //dialogheader: PropTypes.array,
-
 };
 
 
@@ -175,14 +173,6 @@ export const DialogsAlert = ({ label, disableSpacing, labelledby, describedby, a
         </ThemeProvider>
     );
 }
-// DialogsAlert.propTypes = {
-//     disableSpacing: PropTypes.bool,
-//     labelledby: PropTypes.string,
-//     describedby: PropTypes.string,
-//     alerttextdisagree: PropTypes.string,
-//     alerttextagree: PropTypes.string,
-//     dividers: PropTypes.bool,
-// };
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -233,14 +223,7 @@ export const DialogsSlideAlert = ({ label, labelledby, describedby, alerttextdis
         </ThemeProvider>
     );
 }
-// DialogsSlideAlert.propTypes = {
-//     disableSpacing: PropTypes.bool,
-//     labelledby: PropTypes.string,
-//     describedby: PropTypes.string,
-//     alerttextdisagree: PropTypes.string,
-//     alerttextagree: PropTypes.string,
-//     dividers: PropTypes.bool,
-// };
+
 export const DialogsForm = ({ alerttextdisagree, alerttextagree, label, describedby }) => {
     const [open, setOpen] = React.useState(false);
 
@@ -283,12 +266,7 @@ export const DialogsForm = ({ alerttextdisagree, alerttextagree, label, describe
         </ThemeProvider>
     );
 }
-// FormDialog.propTypes = {
-//     alerttextdisagree: PropTypes.string,
-//     alerttextagree: PropTypes.string,
-//     label: PropTypes.string,
-//     describedby: PropTypes.string,
-// };
+
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
         padding: theme.spacing(2),

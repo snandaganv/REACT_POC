@@ -31,7 +31,6 @@ PapersBasic.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
 };
-
 PapersBasic.defaultProps = {
   variant: "elevation",
   elevation: 2,

@@ -15,8 +15,13 @@ export { default as TextFieldComponent } from "./textfield-component";
 export { default as DateTimeComponent } from "./datetime-component";
 export { default as SliderComponent } from "./slider-component";
 export { default as CardComponent } from "./card-component";
-export { default as TransferListComponent } from "./transfer-list-component";
-export { default as TreeViewComponent } from "./tree-view-component";
+export {
+  TreeViewsComponent as TreeViewComponent
+} from "./tree-view-component";
+
+export {
+  TransfersListComponent as TransferListComponent
+} from "./transfer-list-component";
 
 export {
   ButtonDefaults as ButtonDefault,
@@ -122,19 +127,6 @@ export {
   MultipleSelectPlaceholders as MultipleSelectPlaceholder,
   GroupSelect as GroupedSelect,
 } from "./select-component";
-
-// export {
-//   MenuBasic as BasicMenu,
-//   MenuDense as DenseMenu,
-//   MenuIcon as IconMenu,
-//   ListMenuSimple as SimpleListMenu,
-//   SelectAutoWidt as SelectAutoWidth,
-//   MenuAccount as AccountMenu,
-//   MenuLong as LongMenu,
-//   MenuTypography as TypographyMenu,
-//   MenuPositioned as PositionedMenu,
-//   ContextMenus as ContextMenu,
-// } from "./menu-component";
 
 export {
   DialogsSimple as DialogSimple,

@@ -1,18 +1,18 @@
-import TransferListComponent from "../components/transfer-list-component";
+import { TransfersListComponent } from "../components/transfer-list-component";
 
 export default {
     title: 'Feedback/TransferList',
-    component: TransferListComponent,
+    component: TransfersListComponent,
     argTypes: {
 
     },
 };
 
-const Template = (args) => <TransferListComponent {...args}></TransferListComponent>;
+const TransfersListComponentTemplate = (args) => <TransfersListComponent {...args}></TransfersListComponent>;
 
-export const Default = Template.bind({});
+export const TransferListComponent = TransfersListComponent.bind({});
 
-Default.args = {
+TransferListComponent.args = {
     extendedTransferList: true,
     leftListText: 'Choices',
     rightListText: 'Chosen',

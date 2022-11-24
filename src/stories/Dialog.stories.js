@@ -23,14 +23,9 @@ const DialogsSimpleTemplate = (args) => <DialogsSimple {...args}></DialogsSimple
 export const DialogSimple = DialogsSimpleTemplate.bind({});
 DialogSimple.args = {
     label: "Open simple dialog",
-    //dialogheader: [{ label: "Set backup account" }],
     fullScreen: false,
     fullWidth: false,
-    //divider: false,
     disableEscapeKeyDown: false,
-
-
-
 };
 const DialogsAlertTemplate = (args) => <DialogsAlert {...args}></DialogsAlert>
 export const DialogAlert = DialogsAlertTemplate.bind({});
@@ -42,7 +37,6 @@ DialogAlert.args = {
     describedby: " Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.",
     alerttextdisagree: "Disagree",
     alerttextagree: "Agree",
-
 };
 const DialogsSlideAlertTemplate = (args) => <DialogsSlideAlert {...args}></DialogsSlideAlert>
 export const DialogSlideAlert = DialogsSlideAlertTemplate.bind({});
@@ -72,7 +66,6 @@ DialogCustomized.args = {
     ],
     dividers: true,
     submit: "Save Changes",
-
 }
 const DialogsFullScreenTemplate = (args) => <DialogsFullScreen {...args}></DialogsFullScreen>
 export const DialogFullScreen = DialogsFullScreenTemplate.bind({});
