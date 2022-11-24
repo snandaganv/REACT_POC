@@ -71,7 +71,7 @@ export const TreeViewsComponent = (props) => {
 
 
   return (
-    <>
+    <React.Fragment>
       <ThemeProvider theme={muiTheme}>
         <Box sx={{ mb: 1 }}>
           <Button onClick={handleExpandClick}>
@@ -99,7 +99,7 @@ export const TreeViewsComponent = (props) => {
         </TreeView>
 
       </ThemeProvider>
-    </>
+    </React.Fragment>
   );
 }
 

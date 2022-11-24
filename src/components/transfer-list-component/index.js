@@ -80,7 +80,7 @@ export const TransfersListComponent = (props) => {
 
   const customList = (items, title) => (
     <Paper sx={{ width: 200, height: 230, overflow: 'auto' }}>
-      {extendedTransferList && (<>
+      {extendedTransferList && (<React.Fragment>
         <CardHeader
           sx={{ px: 2, py: 1 }}
           avatar={
@@ -100,7 +100,7 @@ export const TransfersListComponent = (props) => {
           subheader={`${numberOfChecked(items)}/${items.length} selected`}
         />
         <Divider />
-      </>
+      </React.Fragment>
       )}
       <List dense component="div" role="list">
         {items.map((value) => {
@@ -133,7 +133,7 @@ export const TransfersListComponent = (props) => {
   );
 
   return (
-    <>
+    <React.Fragment>
       <ThemeProvider theme={muiTheme}>
         <Grid container spacing={2} justifyContent="center" alignItems="center">
           <Grid item>{extendedTransferList ? customList(left, leftListText) : customList(left)}</Grid>
@@ -184,7 +184,7 @@ export const TransfersListComponent = (props) => {
           <Grid item>{extendedTransferList ? customList(right, rightListText) : customList(right)}</Grid>
         </Grid>
       </ThemeProvider>
-    </>
+    </React.Fragment>
   );
 }
 

@@ -10,7 +10,7 @@ export default {
 
 const TransfersListComponentTemplate = (args) => <TransfersListComponent {...args}></TransfersListComponent>;
 
-export const TransferListComponent = TransfersListComponent.bind({});
+export const TransferListComponent = TransfersListComponentTemplate.bind({});
 
 TransferListComponent.args = {
     extendedTransferList: true,

@@ -20,6 +20,7 @@ PaperBasic.args = {
   width: 128,
   height: 128,
 };
+
 const ElevationsTemplate = (args) => <Elevations {...args}></Elevations>
 export const Elevation = ElevationsTemplate.bind({});
 

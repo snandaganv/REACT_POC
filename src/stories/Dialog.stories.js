@@ -25,6 +25,7 @@ DialogSimple.args = {
     label: "Open simple dialog",
     fullScreen: false,
     fullWidth: false,
+    //divider: false,
     disableEscapeKeyDown: false,
 };
 const DialogsAlertTemplate = (args) => <DialogsAlert {...args}></DialogsAlert>

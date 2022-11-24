@@ -146,7 +146,6 @@ TimelineLeftAligned.args = {
   position: "left",
 };
 
-
 const TimelinesCustomizedTemplate = (args) => <TimelinesCustomized {...args}></TimelinesCustomized>
 export const TimelineCustomized = TimelinesCustomizedTemplate.bind({});
 TimelineCustomized.args = {

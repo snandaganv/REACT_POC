@@ -5,6 +5,7 @@ import { PropTypes } from "prop-types";
 import Grid from "@mui/material/Grid";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
+
 export const PapersBasic = (props) => {
   const { elevation, variant, square, width, height } = props;
   return (

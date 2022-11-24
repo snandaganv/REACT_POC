@@ -4,7 +4,6 @@ export default {
     title: 'Feedback/TreeView',
     component: TreeViewsComponent,
     argTypes: {
-
     },
 };
 

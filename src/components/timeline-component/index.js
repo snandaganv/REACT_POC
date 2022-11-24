@@ -144,7 +144,6 @@ TimelinesCustomized.propTypes = {
 
 export const TimelinesLeftAligned = (props) => {
   const { oppositeTimelineData } = props;
-
   return (
     <ThemeProvider theme={muiTheme}>
       <Timeline
