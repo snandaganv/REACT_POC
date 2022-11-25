@@ -18,7 +18,6 @@ export { default as CardComponent } from "./card-component";
 export { default as RatingComponent } from "./rating-component";
 export { BackdropDefaults } from "./backdrop-component";
 
-
 export {
   ButtonDefaults as ButtonDefault,
   ButtonBasics as ButtonBasic,
@@ -127,9 +126,6 @@ export {
   ContextMenus as ContextMenu,
 } from "./menu-component";
 
-
-
-
 export {
   SimpleBottomNavigations as SimpleBottomNavigation,
   LabelBottomNavigations as LabelBottomNavigation,
@@ -202,3 +198,10 @@ export {
   SnackbarTransition as SnackbarTransitions,
   SnackbarFloatingsActionButtons as SnackbarFloatingActionButton,
 } from "./Snackbar";
+
+export {
+  AppBarsBasic as AppBarBasic,
+  AppBarsWithPrimarySearch as AppBarWithPrimarySearch,
+  AppBarsBottom as AppBarBottom,
+  AppBarsResponsive as AppBarResponsive,
+} from "./appbar-component";
