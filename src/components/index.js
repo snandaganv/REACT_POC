@@ -202,16 +202,3 @@ export {
   SnackbarTransition as SnackbarTransitions,
   SnackbarFloatingsActionButtons as SnackbarFloatingActionButton,
 } from "./Snackbar";
-
-export {
-  DrawersTemporary as DrawerTemporary,
-  DrawersSwipeableTemporary as DrawerTemporarySwipeable,
-  DrawersSwipeableEdge as DrawerEdgeSwipeable,
-  DrawersResponsive as DrawerResponsive,
-  DrawersPersistentLeft as DrawerLeftPersistent,
-  DrawersPersistentRight as DrawerRightPersistent,
-  DrawersMini as DrawerMini,
-  DrawersPermanentLeft as DrawerPermanentLeft,
-  DrawersPermanentRight as DrawerPermanentRight,
-  DrawersClipped as DrawerClipped
-} from "./drawer-component";
