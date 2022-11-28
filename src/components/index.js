@@ -18,7 +18,6 @@ export { default as CardComponent } from "./card-component";
 export { default as RatingComponent } from "./rating-component";
 export { BackdropDefaults } from "./backdrop-component";
 
-
 export {
   ButtonDefaults as ButtonDefault,
   ButtonBasics as ButtonBasic,
@@ -127,9 +126,6 @@ export {
   ContextMenus as ContextMenu,
 } from "./menu-component";
 
-
-
-
 export {
   SimpleBottomNavigations as SimpleBottomNavigation,
   LabelBottomNavigations as LabelBottomNavigation,
@@ -204,6 +200,14 @@ export {
 } from "./Snackbar";
 
 export {
+  SkeletonDefaults as SkeletonDefault,
+  SkeletonsVariants as SkeletonVariants,
+  SkeletonsAnimations as SkeletonAnimations,
+  SkeletonPulsateExamples as SkeletonPulsateExample,
+  SkeletonWaveExamples as SkeletonWaveExample,
+} from "./skeleton-component";
+
+export {
   DrawersTemporary as DrawerTemporary,
   DrawersSwipeableTemporary as DrawerTemporarySwipeable,
   DrawersSwipeableEdge as DrawerEdgeSwipeable,
@@ -215,3 +219,4 @@ export {
   DrawersPermanentRight as DrawerPermanentRight,
   DrawersClipped as DrawerClipped
 } from "./drawer-component";
+
