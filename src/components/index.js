@@ -200,6 +200,13 @@ export {
 } from "./Snackbar";
 
 export {
+  AppBarsBasic as AppBarBasic,
+  AppBarsWithPrimarySearch as AppBarWithPrimarySearch,
+  AppBarsBottom as AppBarBottom,
+  AppBarsResponsive as AppBarResponsive,
+} from "./appbar-component";
+
+export{
   SkeletonDefaults as SkeletonDefault,
   SkeletonsVariants as SkeletonVariants,
   SkeletonsAnimations as SkeletonAnimations,
