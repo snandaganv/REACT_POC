@@ -34,7 +34,6 @@ import Switch from '@mui/material/Switch';
 import RadioGroup from '@mui/material/RadioGroup';
 import Radio from '@mui/material/Radio';
 import Paper from '@mui/material/Paper';
-import Draggable from 'react-draggable';
 import { ThemeProvider } from '@mui/material/styles';
 import muiTheme from '../../../.storybook/muiTheme';
 
@@ -85,7 +84,7 @@ function SimpleDialog(props: SimpleDialogProps) {
     );
 }
 
-export const SimpleDialogs = ({ label, fullScreen, fullWidth, disableEscapeKeyDown }) => {
+export const DialogsSimple = ({ label, fullScreen, fullWidth, disableEscapeKeyDown }) => {
     const [open, setOpen] = React.useState(false);
     const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
@@ -122,18 +121,16 @@ export const SimpleDialogs = ({ label, fullScreen, fullWidth, disableEscapeKeyDo
         </ThemeProvider>
     );
 }
-SimpleDialogs.propTypes = {
+DialogsSimple.propTypes = {
     label: PropTypes.string,
     fullScreen: PropTypes.bool,
     fullWidth: PropTypes.bool,
     disableEscapeKeyDown: PropTypes.bool,
-    //dialogheader: PropTypes.array,
-
 };
 
 
 
-export const AlertDialogs = ({ label, disableSpacing, labelledby, describedby, alerttextdisagree, alerttextagree, dividers }) => {
+export const DialogsAlert = ({ label, disableSpacing, labelledby, describedby, alerttextdisagree, alerttextagree, dividers }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -175,14 +172,6 @@ export const AlertDialogs = ({ label, disableSpacing, labelledby, describedby, a
         </ThemeProvider>
     );
 }
-// AlertDialog.propTypes = {
-//     disableSpacing: PropTypes.bool,
-//     labelledby: PropTypes.string,
-//     describedby: PropTypes.string,
-//     alerttextdisagree: PropTypes.string,
-//     alerttextagree: PropTypes.string,
-//     dividers: PropTypes.bool,
-// };
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -193,7 +182,7 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export const AlertDialogSlides = ({ label, labelledby, describedby, alerttextdisagree, alerttextagree }) => {
+export const DialogsSlideAlert = ({ label, labelledby, describedby, alerttextdisagree, alerttextagree }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -233,15 +222,7 @@ export const AlertDialogSlides = ({ label, labelledby, describedby, alerttextdis
         </ThemeProvider>
     );
 }
-// AlertDialogSlide.propTypes = {
-//     disableSpacing: PropTypes.bool,
-//     labelledby: PropTypes.string,
-//     describedby: PropTypes.string,
-//     alerttextdisagree: PropTypes.string,
-//     alerttextagree: PropTypes.string,
-//     dividers: PropTypes.bool,
-// };
-export const FormDialogs = ({ alerttextdisagree, alerttextagree, label, describedby }) => {
+export const DialogsForm = ({ alerttextdisagree, alerttextagree, label, describedby }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -283,12 +264,7 @@ export const FormDialogs = ({ alerttextdisagree, alerttextagree, label, describe
         </ThemeProvider>
     );
 }
-// FormDialog.propTypes = {
-//     alerttextdisagree: PropTypes.string,
-//     alerttextagree: PropTypes.string,
-//     label: PropTypes.string,
-//     describedby: PropTypes.string,
-// };
+
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
         padding: theme.spacing(2),
@@ -328,7 +304,7 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
     );
 }
 
-export const CustomizedDialogs = ({ label, dialogtypo, dividers, submit }) => {
+export const DialogsCustomized = ({ label, dialogtypo, dividers, submit }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -371,7 +347,7 @@ export const CustomizedDialogs = ({ label, dialogtypo, dividers, submit }) => {
 }
 
 
-export const FullScreenDialogs = ({ label }) => {
+export const DialogsFullScreen = ({ label }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -430,7 +406,7 @@ export const FullScreenDialogs = ({ label }) => {
     );
 }
 
-export const MaxWidthDialogs = ({ label, content, selectoptions }) => {
+export const DialogsMaxWidth = ({ label, content, selectoptions }) => {
     const [open, setOpen] = React.useState(false);
     const [fullWidth, setFullWidth] = React.useState(true);
     const [maxWidth, setMaxWidth] = React.useState('sm');
@@ -445,7 +421,6 @@ export const MaxWidthDialogs = ({ label, content, selectoptions }) => {
 
     const handleMaxWidthChange = (event) => {
         setMaxWidth(
-            // @ts-expect-error autofill of arbitrary value is not handled.
             event.target.value,
         );
     };
@@ -606,7 +581,7 @@ ConfirmationDialogRaw.propTypes = {
     value: PropTypes.string.isRequired,
 };
 
-export const ConfirmationDialogs = ({ }) => {
+export const DialogsConfirmation = ({ }) => {
     const [open, setOpen] = React.useState(false);
     const [value, setValue] = React.useState('Dione');
 
@@ -655,63 +630,8 @@ export const ConfirmationDialogs = ({ }) => {
     );
 }
 
-function PaperComponent(props) {
-    return (
-        <Draggable
-            handle="#draggable-dialog-title"
-            cancel={'[class*="MuiDialogContent-root"]'}
-        >
-            <Paper {...props} />
-        </Draggable>
-    );
-}
 
-export const DraggableDialogs = ({ label, disableSpacing }) => {
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-    return (
-        <ThemeProvider theme={muiTheme}>
-            <div>
-                <Button onClick={handleClickOpen}>
-                    {label}
-                </Button>
-                <Dialog
-                    open={open}
-                    onClose={handleClose}
-                    PaperComponent={PaperComponent}
-                    aria-labelledby="draggable-dialog-title"
-                >
-                    <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
-                        Subscribe
-                    </DialogTitle>
-                    <DialogContent>
-                        <DialogContentText>
-                            To subscribe to this website, please enter your email address here. We
-                            will send updates occasionally.
-                        </DialogContentText>
-                    </DialogContent>
-                    <DialogActions disableSpacing={disableSpacing}>
-                        <Button autoFocus onClick={handleClose}>
-                            Cancel
-                        </Button>
-                        <Button onClick={handleClose}>Subscribe</Button>
-                    </DialogActions>
-                </Dialog>
-            </div>
-        </ThemeProvider>
-    );
-}
-
-
-export const ScrollDialogs = ({ label, disableSpacing, alerttextdisagree, alerttextagree }) => {
+export const DialogsScroll = ({ label, disableSpacing, alerttextdisagree, alerttextagree }) => {
     const [open, setOpen] = React.useState(false);
     const [scroll, setScroll] = React.useState('paper');
 

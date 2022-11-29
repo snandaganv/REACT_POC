@@ -143,15 +143,15 @@ export {
 } from "./timeline-component";
 
 export {
-  SimpleDialogs as SimpleDialog,
-  AlertDialogs as AlertDialog,
-  AlertDialogSlides as AlertDialogSlide,
-  FormDialogs as FormDialog,
-  CustomizedDialogs as CustomizedDialog,
-  FullScreenDialogs as FullScreenDialog,
-  MaxWidthDialogs as MaxWidthDialog,
-  ConfirmationDialogs as ConfirmationDialog,
-  DraggableDialogs as DraggableDialog,
+  DialogsSimple as DialogSimple,
+  DialogsAlert as DialogAlert,
+  DialogsSlideAlert as DialogSlideAlert,
+  DialogsForm as DialogForm,
+  DialogsCustomized as DialogCustomized,
+  DialogsFullScreen as DialogFullScreen,
+  DialogsMaxWidth as DialogMaxWidth,
+  DialogsConfirmation as DialogConfirmation,
+  DialogsScroll as DialogScroll,
 } from "./dialog-component";
 
 export {
