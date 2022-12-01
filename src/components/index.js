@@ -206,7 +206,7 @@ export {
   AppBarsResponsive as AppBarResponsive,
 } from "./appbar-component";
 
-export{
+export {
   SkeletonDefaults as SkeletonDefault,
   SkeletonsVariants as SkeletonVariants,
   SkeletonsAnimations as SkeletonAnimations,
@@ -226,4 +226,12 @@ export {
   DrawersPermanentRight as DrawerPermanentRight,
   DrawersClipped as DrawerClipped
 } from "./drawer-component";
+
+export {
+  SpeedDialsBasic as SpeedDialBasic,
+  SpeedDialsPlayground as SpeedDialPlayground,
+  SpeedDialsControlledOpen as SpeedDialControlledOpen,
+  SpeedDialsCustomIcon as SpeedDialCustomIcon,
+  SpeedDialsTooltipOpen as SpeedDialTooltipOpen
+} from "./speeddial-component";
 
