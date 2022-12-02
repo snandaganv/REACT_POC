@@ -4,7 +4,6 @@ import {
   SwitchLabels,
   SwitchSizes,
   SwitchControlles,
-  SwitchCustomizations,
   SwitchLabelsPlacement,
   SwitchFormGroups,
 } from "../components/Switches";
@@ -35,7 +34,128 @@ Switchs.args = {
   defaultChecked: false,
 };
 export const SwitchLabel = SwitchLabels.bind({});
+SwitchLabel.parameters = {
+  docs: {
+    source: {
+      code: `<FormGroup>
+      <FormControlLabel control={<Switch defaultChecked />} label="On" />
+      <FormControlLabel control={<Switch />} label="Off" />
+      <FormControlLabel disabled control={<Switch />} label="Disabled" />
+    </FormGroup>`,
+      language: "react",
+      type: "JSX",
+    },
+  },
+};
 export const SwitchSize = SwitchSizes.bind({});
+SwitchSize.parameters = {
+  docs: {
+    source: {
+      code: `const label = { inputProps: { "aria-label": "Switch Size demo" } };
+      <div>
+      <Switch {...label} defaultChecked size="small" />
+      <Switch {...label} defaultChecked />
+    </div>`,
+      language: "react",
+      type: "JSX",
+    },
+  },
+};
 export const SwitchControlled = SwitchControlles.bind({});
+SwitchControlled.parameters = {
+  docs: {
+    source: {
+      code: `const [checked, setChecked] = React.useState(true);
+      <Switch
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ "aria-label": "controlled" }}
+      />`,
+      language: "react",
+      type: "JSX",
+    },
+  },
+};
 export const SwitchFormGroup = SwitchFormGroups.bind({});
+SwitchFormGroup.parameters = {
+  docs: {
+    source: {
+      code: `<FormControl component="fieldset" variant="standard">
+      <FormLabel component="legend">Assign responsibility</FormLabel>
+      <FormGroup>
+        <FormControlLabel
+          control={
+            <Switch
+              checked={state.gilad}
+              onChange={handleChange}
+              name="gilad"
+            />
+          }
+          label="Gilad Gray"
+        />
+        <FormControlLabel
+          control={
+            <Switch
+              checked={state.jason}
+              onChange={handleChange}
+              name="jason"
+            />
+          }
+          label="Jason Killian"
+        />
+        <FormControlLabel
+          control={
+            <Switch
+              checked={state.antoine}
+              onChange={handleChange}
+              name="antoine"
+            />
+          }
+          label="Antoine Llorca"
+        />
+      </FormGroup>
+      <FormHelperText>Be careful</FormHelperText>
+    </FormControl>`,
+      language: "react",
+      type: "JSX",
+    },
+  },
+};
 export const SwitchLabelsPlacements = SwitchLabelsPlacement.bind({});
+SwitchLabelsPlacements.parameters = {
+  docs: {
+    source: {
+      code: `<FormControl component="fieldset">
+      <FormLabel component="legend">Label placement</FormLabel>
+      <FormGroup aria-label="position" row>
+        <FormControlLabel
+          value="top"
+          control={<Switch defaultChecked color="primary" />}
+          label="Top"
+          labelPlacement="top"
+        />
+        <FormControlLabel
+          value="start"
+          control={<Switch color="primary" />}
+          label="Start"
+          labelPlacement="start"
+        />
+        <FormControlLabel
+          value="bottom"
+          control={<Switch defaultChecked color="primary" />}
+          label="Bottom"
+          labelPlacement="bottom"
+        />
+        <FormControlLabel
+          value="end"
+          control={<Switch color="primary" />}
+          label="End"
+          labelPlacement="end"
+        />
+      </FormGroup>
+    </FormControl>`,
+      language: "react",
+      type: "JSX",
+    },
+  },
+};
