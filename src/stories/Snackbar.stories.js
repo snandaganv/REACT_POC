@@ -24,7 +24,9 @@ export default {
   },
 };
 
-export const SnackbarBasics = SnackbarBasic.bind({});
+const Template = (args) => <SnackbarBasic {...args}></SnackbarBasic>;
+
+export const SnackbarBasics = Template.bind({});
 SnackbarBasics.args = {
   snackLabel: "UNDO",
   message: "Note archived ",
@@ -32,7 +34,10 @@ SnackbarBasics.args = {
   autoHideDuration: 9000,
   anchorOrigin: { vertical: "bottom", horizontal: "left" },
 };
-export const SnackbarAlerts = SnackbarAlert.bind({});
+
+const Template1 = (args) => <SnackbarAlert {...args}></SnackbarAlert>;
+
+export const SnackbarAlerts = Template1.bind({});
 SnackbarAlerts.args = {
   severity: "success",
   alertMessage: "This is a success message!",
@@ -40,10 +45,16 @@ SnackbarAlerts.args = {
   buttonLabel: "Open success snackbar",
   autoHideDuration: 6000,
 };
-export const SnackbarPositions = SnackbarPositioned.bind({});
-export const SnackbarMessageLengths = SnackbarMessageLength.bind({});
-export const SnackbarTransitions = SnackbarTransition.bind({});
-export const SnackbarFloatingActionButton = SnackbarFloatingsActionButtons.bind(
+
+const Template2 = (args) => <SnackbarPositioned {...args}></SnackbarPositioned>;
+
+export const SnackbarPositions = Template2.bind({});
+const Template3 = (args) => <SnackbarMessageLength {...args}></SnackbarMessageLength>;
+const Template4 = (args) => <SnackbarTransition {...args}></SnackbarTransition>;
+const Template5 = (args) => <SnackbarFloatingsActionButtons {...args}></SnackbarFloatingsActionButtons>;
+export const SnackbarMessageLengths = Template3.bind({});
+export const SnackbarTransitions = Template4.bind({});
+export const SnackbarFloatingActionButton = Template5.bind(
   {}
 );
 SnackbarFloatingActionButton.args = {

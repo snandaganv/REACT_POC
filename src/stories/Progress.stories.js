@@ -24,22 +24,27 @@ export default {
   },
 };
 
-export const DefaultCircularProgress = DefaultCircularProgresses.bind({});
-DefaultCircularProgress.args = {
+const Template = (args) => <DefaultCircularProgresses {...args}></DefaultCircularProgresses>;
+export const DefaultCircularProgrs = Template.bind({});
+DefaultCircularProgrs.args = {
   color: "primary",
   disableShrink: false,
   variant: "indeterminate",
   value: 50,
 };
 
+const Template1 = (args) => <CircularProgressWithValueLabels {...args}></CircularProgressWithValueLabels>;
+
 export const CircularProgressWithValueLabel =
-  CircularProgressWithValueLabels.bind({});
+Template1.bind({});
 CircularProgressWithValueLabel.args = {
   time: 800,
   steps: 10,
   color: "primary",
 };
-export const CircularProgressIntegration = CircularProgressIntegrations.bind(
+
+const Template2 = (args) => <CircularProgressIntegrations {...args}></CircularProgressIntegrations>;
+export const CircularProgressIntegration = Template2.bind(
   {}
 );
 CircularProgressIntegration.args = {
@@ -48,14 +53,16 @@ CircularProgressIntegration.args = {
   color: "primary",
 };
 
-export const DefaultLinearProgress = DefaultLinearProgresses.bind({});
-DefaultLinearProgress.args = {
+const Template3 = (args) => <DefaultLinearProgresses {...args}></DefaultLinearProgresses>;
+export const DefaultLinearProgres = Template3.bind({});
+DefaultLinearProgres.args = {
   color: "primary",
   variant: "indeterminate",
   value: 50,
 };
 
-export const LinearProgressWithValueLabel = LinearProgressWithValueLabels.bind(
+const Template4 = (args) => <LinearProgressWithValueLabels {...args}></LinearProgressWithValueLabels>;
+export const LinearProgressWithValueLabel = Template4.bind(
   {}
 );
 LinearProgressWithValueLabel.args = {
@@ -64,7 +71,8 @@ LinearProgressWithValueLabel.args = {
   color: "primary",
 };
 
-export const LinearBufferProgress = LinearBufferProgresses.bind({});
+const Template5 = (args) => <LinearBufferProgresses {...args}></LinearBufferProgresses>;
+export const LinearBufferProgress = Template5.bind({});
 LinearBufferProgress.args = {
   color: "primary",
   variant: "buffer",
