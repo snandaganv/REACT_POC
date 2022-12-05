@@ -1,15 +1,14 @@
 import { create } from "@storybook/theming";
-import ArisGlobalLogoDark from "../src/assets/images/ArisGlobalLogoDark.svg";
-import ArisGlobalLogoLight from "../src/assets/images/ArisGlobalLogoLight.svg";
+import ArisGlobalLogo from "../src/assets/images/ArisGlobalLogo.png";
 
 const lightTheme = create({
   base: "light",
-  brandImage: ArisGlobalLogoLight,
+  brandImage: ArisGlobalLogo,
 });
 
 const darkTheme = create({
   base: "dark",
-  brandImage: ArisGlobalLogoDark,
+  brandImage: ArisGlobalLogo,
 });
 
 export const parameters = {
