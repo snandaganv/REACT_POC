@@ -10,13 +10,14 @@ export default {
     argTypes: { 
     }
 }
-export const ListDivider = ListDividers.bind({});
+const Template1 = (args) => <ListDividers {...args}></ListDividers>;
+export const ListDivider = Template1.bind({});
 ListDivider.args={
     listDividers:[{id:0,primary:'Inbox'},{id:1,primary:'Drafts'},{id:2, primary:'Spam'}],
     light:true
 }
-
-export const InsetDivider = InsetDividers.bind({});
+const Template2 = (args) => <InsetDividers {...args}></InsetDividers>;
+export const InsetDivider = Template2.bind({});
 InsetDivider.args={
    insetDividers:[{id:0, primary:'Photos',secondary:'Jan 9, 2014',icon:<ImageIcon />},
                   {id:1, primary:'Work',secondary:'Jan 7, 2014',icon:<WorkIcon />},
@@ -24,7 +25,8 @@ InsetDivider.args={
                variant:'inset',
                component:'li'
 }
- export const SubheaderDivider = SubheaderDividers.bind({});
+const Template3 = (args) => <SubheaderDividers {...args}></SubheaderDividers>;
+ export const SubheaderDivider = Template3.bind({});
  SubheaderDivider.args={
     dividers:[{id:0,primary:'Photos',secondary:'Jan 9, 2014',variant:''},
                         {id:1,primary:'Work',secondary:'Jan 7, 2014',variant:'inset'},
@@ -32,14 +34,14 @@ InsetDivider.args={
                 subdividers:[       {id:2,primary:'Vacation',secondary:'July 20, 2014',icon: <BeachAccessIcon />} ],      
                         component:'li',                   
  }
-
- export const MiddleDivider = MiddleDividers.bind({});
+ const Template4 = (args) => <MiddleDividers {...args}></MiddleDividers>;
+ export const MiddleDivider = Template4.bind({});
  MiddleDivider.args={
     variant:"middle",
 
  }
-
- export const DividerText = DividerTexts.bind({});
+ const Template5 = (args) => <DividerTexts {...args}></DividerTexts>;
+ export const DividerText = Template5.bind({});
  DividerText.args={
     textaligns: 
        [{align:'center',text:'CENTER'},{ align:'left',text:'LEFT'},{align: 'right',text:'RIGHT'}],
@@ -52,22 +54,23 @@ InsetDivider.args={
       ,
 
  }
-
- export const VerticalDivider = VerticalDividers.bind({});
+ const Template6 = (args) => <VerticalDividers {...args}></VerticalDividers>;
+ export const VerticalDivider = Template6.bind({});
  VerticalDivider.args={
     orientation:'vertical',
      flexItem:true 
 
  }
-
- export const VerticalDividerMiddle = VerticalDividerMiddles.bind({});
+ const Template7 = (args) => <VerticalDividerMiddles {...args}></VerticalDividerMiddles>;
+ export const VerticalDividerMiddle = Template7.bind({});
  VerticalDividerMiddle.args={
 
     orientation:'vertical',
      variant:'middle',
       flexItem:true,
  }
-export const VerticalDividerText = VerticalDividerTexts.bind({});
+ const Template8 = (args) => <VerticalDividerTexts {...args}></VerticalDividerTexts>;
+export const VerticalDividerText = Template8.bind({});
 VerticalDividerText.args={   
    content :<div>
      {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.

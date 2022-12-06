@@ -21,15 +21,18 @@ export default {
     },
   },
 };
+const Template = (args) => <Badges {...args}></Badges>;
 
-export const BadgeBasic = Badges.bind({});
+export const BadgeBasic = Template.bind({});
 BadgeBasic.args = {
   color: "primary",
   badgeContent: 4,
   anchorOrigin: { vertical: "top", horizontal: "right" },
   icon: <Mail color="action" />,
 };
-
-export const BadgesDot = BadgeDot.bind({});
-export const BadgeAlignment = BadgeAlignments.bind({});
-export const BadgeVisibilitys = BadgeVisibility.bind({});
+const Template1 = (args) => <BadgeDot {...args}></BadgeDot>;
+export const BadgesDot = Template1.bind({});
+const Template2 = (args) => <BadgeAlignments {...args}></BadgeAlignments>;
+export const BadgeAlignment = Template2.bind({});
+const Template3 = (args) => <BadgeVisibility {...args}></BadgeVisibility>;
+export const BadgeVisibilitys = Template3.bind({});
