@@ -1,13 +1,10 @@
-import BottomNavigation from "@mui/material";
-import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import ArchiveIcon from '@mui/icons-material/Archive';
 import FolderIcon from '@mui/icons-material/Folder';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import RestoreIcon from '@mui/icons-material/Restore';
+import BottomNavigation from "@mui/material";
 import {
-    SimpleBottomNavigations,
-    LabelBottomNavigations,
-    FixedBottomNavigations,
+    FixedBottomNavigations, LabelBottomNavigations, SimpleBottomNavigations
 } from "../components/bottomnavigation-component";
 
 
@@ -16,8 +13,8 @@ export default {
     component: BottomNavigation,
 
 };
-
-export const SimpleBottomNavigation = SimpleBottomNavigations.bind({});
+const SimpleBottomNavigationsTemplate = (args) => <SimpleBottomNavigations {...args}></SimpleBottomNavigations>
+export const SimpleBottomNavigation = SimpleBottomNavigationsTemplate.bind({});
 SimpleBottomNavigation.args = {
     navicons: [
         { icon: <RestoreIcon />, label: "Recents" },
@@ -25,8 +22,8 @@ SimpleBottomNavigation.args = {
         { icon: <LocationOnIcon />, label: "Nearby" },
     ],
 };
-
-export const LabelBottomNavigation = LabelBottomNavigations.bind({});
+const LabelBottomNavigationsTemplate = (args) => <LabelBottomNavigations {...args}></LabelBottomNavigations>
+export const LabelBottomNavigation = LabelBottomNavigationsTemplate.bind({});
 LabelBottomNavigation.args = {
     navicons: [
         { icon: <RestoreIcon />, label: "Recents", value: "recents" },
@@ -36,7 +33,9 @@ LabelBottomNavigation.args = {
     ],
     showLabels: false,
 };
-export const FixedBottomNavigation = FixedBottomNavigations.bind({});
+
+const FixedBottomNavigationsTemplate = (args) => <FixedBottomNavigations {...args}></FixedBottomNavigations>
+export const FixedBottomNavigation = FixedBottomNavigationsTemplate.bind({});
 FixedBottomNavigation.args = {
     navicons: [
         { icon: <RestoreIcon />, label: "Recents" },
