@@ -8,7 +8,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
 import { PropTypes } from "prop-types";
 
-export const BasicPagination = (props) => {
+export const PaginationDefaults = (props) => {
   const {
     count,
     color,
@@ -46,7 +46,7 @@ export const BasicPagination = (props) => {
     </ThemeProvider>
   );
 };
-BasicPagination.propTypes = {
+PaginationDefaults.propTypes = {
   count: PropTypes.number,
   size: PropTypes.oneOf(["small", "medium", "large"]),
   color: PropTypes.oneOf(["primary", "secondary", "standard"]),
@@ -60,7 +60,8 @@ BasicPagination.propTypes = {
   showFirstButton: PropTypes.bool,
   showLastButton: PropTypes.bool,
 };
-export const PaginationControlled = (props) => {
+
+export const PaginationsControlled = (props) => {
   const {
     count,
     color,
@@ -106,7 +107,7 @@ export const PaginationControlled = (props) => {
     </ThemeProvider>
   );
 };
-PaginationControlled.propTypes = {
+PaginationsControlled.propTypes = {
   count: PropTypes.number,
   size: PropTypes.oneOf(["small", "medium", "large"]),
   color: PropTypes.oneOf(["primary", "secondary", "standard"]),
@@ -122,7 +123,7 @@ PaginationControlled.propTypes = {
   onChange: PropTypes.func,
 };
 
-export const CustomIconsDemo = (props) => {
+export const PaginationsCustomsIcons = (props) => {
   const {
     count,
     color,
@@ -169,7 +170,7 @@ export const CustomIconsDemo = (props) => {
     </ThemeProvider>
   );
 };
-CustomIconsDemo.propTypes = {
+PaginationsCustomsIcons.propTypes = {
   count: PropTypes.number,
   size: PropTypes.oneOf(["small", "medium", "large"]),
   color: PropTypes.oneOf(["primary", "secondary", "standard"]),
@@ -185,7 +186,7 @@ CustomIconsDemo.propTypes = {
   renderItem: PropTypes.func,
 };
 
-export const TablePaginationDemo = (props) => {
+export const PaginationsTable = (props) => {
   const { count, showFirstButton, showLastButton } = props;
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -213,7 +214,7 @@ export const TablePaginationDemo = (props) => {
   );
 };
 
-TablePaginationDemo.propTypes = {
+PaginationsTable.propTypes = {
   count: PropTypes.number,
   showFirstButton: PropTypes.bool,
   showLastButton: PropTypes.bool,
@@ -222,85 +223,165 @@ TablePaginationDemo.propTypes = {
   onRowsPerPageChange: PropTypes.func,
 };
 
-export const BasicPaginationDemo = (props) => {
+export const PaginationsBasic = (props) => {
+  const { data, count, variant, shape, size } = props;
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2}>
-        <Pagination count={10} />
-        <Pagination count={10} color="primary" />
-        <Pagination count={10} color="secondary" />
-        <Pagination count={10} disabled />
+        {data.map((item) => (
+          <Pagination
+            count={count}
+            color={item.color}
+            disabled={item.disabled}
+            variant={variant}
+            shape={shape}
+            size={size}
+          />
+        ))}
+      </Stack>
+    </ThemeProvider>
+  );
+};
+PaginationsBasic.propTypes = {
+  count: PropTypes.number,
+  size: PropTypes.oneOf(["small", "medium", "large"]),
+  color: PropTypes.oneOf(["primary", "secondary", "standard"]),
+  shape: PropTypes.oneOf(["circular", "rounded"]),
+  disabled: PropTypes.bool,
+  data: PropTypes.array,
+};
+
+export const PaginationsOutlined = (props) => {
+  const { data, count, shape, size } = props;
+
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <Stack spacing={2}>
+        {data.map((item) => (
+          <Pagination
+            count={count}
+            color={item.color}
+            disabled={item.disabled}
+            variant={item.variant}
+            shape={shape}
+            size={size}
+          />
+        ))}
+      </Stack>
+    </ThemeProvider>
+  );
+};
+PaginationsOutlined.propTypes = {
+  count: PropTypes.number,
+  size: PropTypes.oneOf(["small", "medium", "large"]),
+  color: PropTypes.oneOf(["primary", "secondary", "standard"]),
+  shape: PropTypes.oneOf(["circular", "rounded"]),
+  disabled: PropTypes.bool,
+  data: PropTypes.array,
+};
+export const PaginationsRounded = (props) => {
+  const { data, count, size } = props;
+
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <Stack spacing={2}>
+        {data.map((item) => (
+          <Pagination
+            count={count}
+            color={item.color}
+            disabled={item.disabled}
+            variant={item.variant}
+            shape={item.shape}
+            size={size}
+          />
+        ))}
       </Stack>
     </ThemeProvider>
   );
 };
 
-export const PaginationOutlined = (props) => {
+PaginationsRounded.propTypes = {
+  count: PropTypes.number,
+  data: PropTypes.array,
+  size: PropTypes.oneOf(["small", "medium", "large"]),
+};
+
+export const PaginationSizes = (props) => {
+  const { data, count } = props;
+
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2}>
-        <Pagination count={10} variant="outlined" />
-        <Pagination count={10} variant="outlined" color="primary" />
-        <Pagination count={10} variant="outlined" color="secondary" />
-        <Pagination count={10} variant="outlined" disabled />
+        {data.map((item) => (
+          <Pagination
+            count={count}
+            color={item.color}
+            disabled={item.disabled}
+            variant={item.variant}
+            shape={item.shape}
+            size={item.size}
+          />
+        ))}
       </Stack>
     </ThemeProvider>
   );
 };
+PaginationSizes.propTypes = {
+  count: PropTypes.number,
+  data: PropTypes.array,
+};
 
-export const PaginationRounded = (props) => {
+export const PaginationsButtons = (props) => {
+  const { data, count } = props;
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2}>
-        <Pagination count={10} shape="rounded" />
-        <Pagination count={10} variant="outlined" shape="rounded" />
+        {data.map((item) => (
+          <Pagination
+            count={count}
+            color={item.color}
+            disabled={item.disabled}
+            variant={item.variant}
+            shape={item.shape}
+            size={item.size}
+            showFirstButton={item.showFirstButton}
+            showLastButton={item.showLastButton}
+            hidePrevButton={item.hidePrevButton}
+            hideNextButton={item.hideNextButton}
+          />
+        ))}
       </Stack>
     </ThemeProvider>
   );
 };
+PaginationsButtons.propTypes = {
+  count: PropTypes.number,
+  data: PropTypes.array,
+};
 
-export const PaginationSizeDemo = (props) => {
+export const PaginationsRanges = (props) => {
+  const { data, count } = props;
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack spacing={2}>
-        <Pagination count={10} size="small" />
-        <Pagination count={10} />
-        <Pagination count={10} size="large" />
+        {data.map((item) => (
+          <Pagination
+            count={count}
+            color={item.color}
+            disabled={item.disabled}
+            variant={item.variant}
+            shape={item.shape}
+            size={item.size}
+            defaultPage={item.defaultPage}
+            siblingCount={item.siblingCount}
+            boundaryCount={item.boundaryCount}
+          />
+        ))}
       </Stack>
     </ThemeProvider>
   );
 };
-
-export const PaginationButtonsDemo = (props) => {
-  return (
-    <ThemeProvider theme={muiTheme}>
-      <Stack spacing={2}>
-        <Pagination count={10} showFirstButton showLastButton />
-        <Pagination count={10} hidePrevButton hideNextButton />
-      </Stack>
-    </ThemeProvider>
-  );
-};
-
-export const PaginationRangesDemo = (props) => {
-  return (
-    <ThemeProvider theme={muiTheme}>
-      <Stack spacing={2}>
-        <Pagination count={11} defaultPage={6} siblingCount={0} />
-        <Pagination count={11} defaultPage={6} /> {/* Default ranges */}
-        <Pagination
-          count={11}
-          defaultPage={6}
-          siblingCount={0}
-          boundaryCount={2}
-        />
-        <Pagination
-          count={20}
-          defaultPage={8}
-          siblingCount={2}
-          boundaryCount={2}
-        />
-      </Stack>
-    </ThemeProvider>
-  );
+PaginationsRanges.propTypes = {
+  count: PropTypes.number,
+  data: PropTypes.array,
 };

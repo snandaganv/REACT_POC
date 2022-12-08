@@ -224,7 +224,7 @@ export {
   DrawersMini as DrawerMini,
   DrawersPermanentLeft as DrawerPermanentLeft,
   DrawersPermanentRight as DrawerPermanentRight,
-  DrawersClipped as DrawerClipped
+  DrawersClipped as DrawerClipped,
 } from "./drawer-component";
 
 export {
@@ -232,6 +232,26 @@ export {
   SpeedDialsPlayground as SpeedDialPlayground,
   SpeedDialsControlledOpen as SpeedDialControlledOpen,
   SpeedDialsCustomIcon as SpeedDialCustomIcon,
-  SpeedDialsTooltipOpen as SpeedDialTooltipOpen
+  SpeedDialsTooltipOpen as SpeedDialTooltipOpen,
 } from "./speeddial-component";
 
+export {
+  ButtonGroupDefaults as ButtonGroupDefault,
+  ButtonGroupVariants as ButtonGroupVariant,
+  ButtonGroupSizesColors as ButtonGroupSizesAndColors,
+  ButtonGroupVerticals as ButtonGroupVertical,
+  SplitButton as SplitButtons,
+} from "./buttongroup-component";
+
+export {
+  PaginationDefaults as PaginationDefault,
+  PaginationsTable as PaginationTable,
+  PaginationsControlled as PaginationControlled,
+  PaginationsCustomsIcons as PaginationCustomIcons,
+  PaginationsBasic as PaginationBasic,
+  PaginationsOutlined as PaginationOutlined,
+  PaginationsRounded as PaginationRounded,
+  PaginationSizes as PaginationSize,
+  PaginationsButtons as PaginationButtons,
+  PaginationsRanges as PaginationRanges,
+} from "./pagination-component";

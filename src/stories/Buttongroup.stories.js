@@ -1,10 +1,10 @@
 import React from "react";
 
 import {
-  BasicButtonGroup,
-  VariantButtonGroup,
-  GroupSizesColors,
-  GroupOrientation,
+  ButtonGroupDefaults,
+  ButtonGroupVariants,
+  ButtonGroupSizesColors,
+  ButtonGroupVerticals,
   SplitButton,
 } from "../components/buttongroup-component";
 import ButtonGroup from "@mui/material/ButtonGroup";
@@ -29,14 +29,15 @@ export default {
       options: ["horizontal", "vertical"],
       control: { type: "radio" },
     },
-    onClick: {
-      action: "clicked",
-    },
   },
 };
 
-export const Default = BasicButtonGroup.bind({});
-Default.args = {
+const ButtonGroupDefaultTemplate = (args) => (
+  <ButtonGroupDefaults {...args}></ButtonGroupDefaults>
+);
+
+export const ButtonGroupDefault = ButtonGroupDefaultTemplate.bind({});
+ButtonGroupDefault.args = {
   numberOfButtons: ["one", "two", "three"],
   variant: "contained",
   size: "medium",
@@ -47,10 +48,25 @@ Default.args = {
   disableRipple: false,
   disableElevation: false,
 };
-export const ButtonVariants = VariantButtonGroup.bind({});
-export const SizesAndColors = GroupSizesColors.bind({});
-export const VerticalGroup = GroupOrientation.bind({});
-export const SplitButtons = SplitButton.bind({});
+const ButtonGroupVariantsTemplate = (args) => (
+  <ButtonGroupVariants {...args}></ButtonGroupVariants>
+);
+export const ButtonGroupVariant = ButtonGroupVariantsTemplate.bind({});
+
+const ButtonGroupSizesColorsTemplate = (args) => (
+  <ButtonGroupSizesColors {...args}></ButtonGroupSizesColors>
+);
+export const ButtonGroupSizesAndColors = ButtonGroupSizesColorsTemplate.bind(
+  {}
+);
+const ButtonGroupVerticalsTemplate = (args) => (
+  <ButtonGroupVerticals {...args}></ButtonGroupVerticals>
+);
+export const ButtonGroupVertical = ButtonGroupVerticalsTemplate.bind({});
+
+const SplitButtonsTemplate = (args) => <SplitButton {...args}></SplitButton>;
+
+export const SplitButtons = SplitButtonsTemplate.bind({});
 SplitButtons.args = {
   options: ["Create a merge commit", "Squash and merge", "Rebase and merge"],
   disabledoption: 0,
