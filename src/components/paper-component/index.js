@@ -5,26 +5,18 @@ import { PropTypes } from "prop-types";
 import Grid from "@mui/material/Grid";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
-export const DefaultPapers = (props) => {
-  const { elevation, variant, square, width, height } = props;
+export const PapersBasic = (props) => {
+  const { elevation, variant, square, styles } = props;
   return (
     <Box
-      sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        "& > :not(style)": {
-          m: 1,
-          width: { width },
-          height: { height },
-        },
-      }}
+      sx={styles}
     >
-      <Paper elevation={elevation} variant={variant} square={square} />
+      <Paper elevation={elevation} variant={variant} square={square} >{props.children}</Paper>
     </Box>
   );
 };
 
-DefaultPapers.propTypes = {
+PapersBasic.propTypes = {
   variant: PropTypes.oneOf(["elevation", "outlined"]),
   elevation: PropTypes.number,
   square: PropTypes.bool,
@@ -32,7 +24,7 @@ DefaultPapers.propTypes = {
   height: PropTypes.number,
 };
 
-DefaultPapers.defaultProps = {
+PapersBasic.defaultProps = {
   variant: "elevation",
   elevation: 2,
   square: false,
