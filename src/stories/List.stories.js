@@ -19,15 +19,16 @@ export default {
     argTypes: { 
     }
 }
-export const BasicList = BasicLists.bind({});
+const Template9 = (args) => <BasicLists {...args}></BasicLists>;
+export const BasicList = Template9.bind({});
 BasicList.args = {   
   
 basicLists:[{id:0,primary:'Inbox',icon:<InboxIcon />},{id:1,primary:'Drafts',icon:<DraftsIcon />},{id:2,primary:'Trash'},{id:4,primary:'Spam'}],
   
   disablePadding:true,
 };
-
-export const NestedList = NestedLists.bind({});
+const Template7 = (args) => <NestedLists {...args}></NestedLists>;
+export const NestedList = Template7.bind({});
 NestedList.args={  
   basicLists:[{id:0,primary:'sent mail',icon: <SendIcon />},
   {id:1,primary:'drafts', icon: <DraftsIcon />}],
@@ -36,17 +37,18 @@ NestedList.args={
             timeout:"auto",
                 
 }
-
-export const FolderList = FolderLists.bind({});
+const Template8 = (args) => <FolderLists {...args}></FolderLists>;
+export const FolderList = Template8.bind({});
 FolderList.args={  
   folderLists:[{id:1,label: 'Photo',date:'Jan 9, 2014',icon:<ImageIcon/>},{id:2,label: 'Work',date:'Jan 7, 2014',icon:<WorkIcon/>},{id:3,label: 'Vacation',date:'July 20, 2014',icon:<BeachAccessIcon/>}],
  }
-export const SelectedListItem =  SelectedListItems.bind({});
+ const Template = (args) => <SelectedListItems {...args}></SelectedListItems>;
+export const SelectedListItem =  Template.bind({});
 SelectedListItem.args={
   selectedListItems:[{id:0,primary:'Inbox',icon:  <InboxIcon />},{id:1,primary:'Drafts',icon:  <DraftsIcon />},{id:2,primary:'Trash',icon:''},{id:3,primary:'Spam',icon:''}]
 }
-
-export const AlignItemsList = AlignItemsLists.bind({});
+const Template1 = (args) => <AlignItemsLists {...args}></AlignItemsLists>;
+export const AlignItemsList = Template1.bind({});
 AlignItemsList.args={
 alignmentLists:[{primary:'Brunch this weekend?',secondaryText1:'Ali Connors',secondaryText2:"— I'll be in your neighborhood doing errands this…",src:"/static/images/avatar/1.jpg"},
                   {primary:'Summer BBQ',secondaryText1:'to Scott, Alex, Jennifer ',secondaryText2:"— Wish I could come, but I'm out of town this…",src:"/static/images/avatar/2.jpg"},
@@ -58,7 +60,8 @@ alignmentLists:[{primary:'Brunch this weekend?',secondaryText1:'Ali Connors',sec
   variant:"body2",
   color:"text.primary"
           }
-export const InteractiveList = InteractiveLists.bind({});
+          const Template2 = (args) => <InteractiveLists {...args}></InteractiveLists>;
+export const InteractiveList = Template2.bind({});
 InteractiveList.args={  
 interactiveLists:[{icon: <FolderIcon />,primary:'Single-line item',icon1: <DeleteIcon />,secondary:'Secondary text'},
 {icon: <FolderIcon />,primary:'Single-line item',icon1: <DeleteIcon />,secondary:'Secondary text'},
@@ -66,7 +69,8 @@ interactiveLists:[{icon: <FolderIcon />,primary:'Single-line item',icon1: <Delet
 edge:'end'
 
 }
-export const CheckboxList = CheckboxLists.bind({});
+const Template3 = (args) => <CheckboxLists {...args}></CheckboxLists>;
+export const CheckboxList = Template3.bind({});
 CheckboxList.args={
   checkboxLists:["List Item 1", "List Item 2","List Item 3"],
   edge:"end",
@@ -75,16 +79,17 @@ CheckboxList.args={
   disableRipple:false,
   cedge:"start"
 }
+const Template4 = (args) => <SwitchListSecondarys {...args}></SwitchListSecondarys>;
 
-export const SwitchListSecondary = SwitchListSecondarys.bind({});
+export const SwitchListSecondary = Template4.bind({});
 SwitchListSecondary.args={
   switchLists:[{primary:'Wi-Fi',id:'switch-list-label-wifi',value:'wifi',icon:<WifiIcon/>},
   {primary:'Bluetooth',id:'switch-list-label-bluetooth',value:'bluetooth',icon:<BluetoothIcon/>}],
   edge:"end",
 
 }
-
-export const PinnedSubheaderList = PinnedSubheaderLists.bind({});
+const Template5 = (args) => <PinnedSubheaderLists {...args}></PinnedSubheaderLists>;
+export const PinnedSubheaderList = Template5.bind({});
 PinnedSubheaderList.args={
   pinnedSubheaderLists:["I'm sticky 1","I'm sticky 2","I'm sticky 3","I'm sticky 4"],
   pinnedSubLists:['Item 0','Item 1','Item 2']
@@ -92,8 +97,8 @@ PinnedSubheaderList.args={
 }
 
 
-
-export const GutterlessList = GutterlessLists.bind({});
+const Template6 = (args) => <GutterlessLists {...args}></GutterlessLists>;
+export const GutterlessList = Template6.bind({});
 GutterlessList.args={
   gutterlessLists:[{id:0,primary:"List Item 1"},{id:1,primary:"List Item 2"},{id:3,primary:"List Item 3"}],
   disableGutters:true,
