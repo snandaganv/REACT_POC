@@ -36,6 +36,30 @@ TimelineDefault.args = {
   ],
   position: "right",
 };
+
+const HowToConsumeTimeLineComponent = (props) => (
+  <div>
+    <code>
+      This is how to consume the AGCP-UI Timeline component ,just pass in the
+      props when using the component .
+    </code>
+    <br />
+    <br />
+    <code>import {"{TimeLineDefaults}"} from "@arisglobal/agcp-ui" ;</code><br/>
+    <code>import {"{OppositeContentTimelines}"} from "@arisglobal/agcp-ui" ;</code><br/>
+    <code>import {"{CustomizedTimelines}"} from "@arisglobal/agcp-ui" ;</code>
+    <br /><br/>
+    <code>&lt;TimeLineDefaults {"{...props}"} &gt;&lt;/TimeLineDefaults&gt;</code><br/>
+    <code>&lt;OppositeContentTimelines {"{...props}"} &gt;&lt;/OppositeContentTimelines&gt;</code><br/>
+    <code>&lt;CustomizedTimelines {"{...props}"} &gt;&lt;/CustomizedTimelines&gt;</code>
+
+  </div>
+);
+const TemplateDiscription = (args) => (
+  <HowToConsumeTimeLineComponent {...args}></HowToConsumeTimeLineComponent>
+);
+export const HowToConsumeTimeLineComponents = TemplateDiscription.bind({});
+
 const Template1 = (args) => <ColorsTimeline {...args}></ColorsTimeline>;
 export const TimelineColors = Template1.bind({});
 const Template2 = (args) => <OutlinedTimelines {...args}></OutlinedTimelines>;

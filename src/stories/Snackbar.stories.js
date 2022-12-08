@@ -35,6 +35,24 @@ SnackbarBasics.args = {
   anchorOrigin: { vertical: "bottom", horizontal: "left" },
 };
 
+const HowToConsumeSnackbarComponent = (props) => (
+  <div>
+    <code>
+      This is how to consume the AGCP-UI Circular Snackbar component ,just pass
+      in the props when using the component .
+    </code>
+    <br />
+    <br />
+    <code>import {"{SnackbarBasic}"} from "@arisglobal/agcp-ui" ;</code>
+    <br />
+    <code>&lt;SnackbarBasic {"{...props}"}&gt;&lt;/SnackbarBasic&gt;</code>
+  </div>
+);
+const TemplateDiscription = (args) => (
+  <HowToConsumeSnackbarComponent {...args}></HowToConsumeSnackbarComponent>
+);
+export const HowToConsumeSnackbarComponents = TemplateDiscription.bind({});
+
 const Template1 = (args) => <SnackbarAlert {...args}></SnackbarAlert>;
 
 export const SnackbarAlerts = Template1.bind({});
@@ -49,14 +67,16 @@ SnackbarAlerts.args = {
 const Template2 = (args) => <SnackbarPositioned {...args}></SnackbarPositioned>;
 
 export const SnackbarPositions = Template2.bind({});
-const Template3 = (args) => <SnackbarMessageLength {...args}></SnackbarMessageLength>;
+const Template3 = (args) => (
+  <SnackbarMessageLength {...args}></SnackbarMessageLength>
+);
 const Template4 = (args) => <SnackbarTransition {...args}></SnackbarTransition>;
-const Template5 = (args) => <SnackbarFloatingsActionButtons {...args}></SnackbarFloatingsActionButtons>;
+const Template5 = (args) => (
+  <SnackbarFloatingsActionButtons {...args}></SnackbarFloatingsActionButtons>
+);
 export const SnackbarMessageLengths = Template3.bind({});
 export const SnackbarTransitions = Template4.bind({});
-export const SnackbarFloatingActionButton = Template5.bind(
-  {}
-);
+export const SnackbarFloatingActionButton = Template5.bind({});
 SnackbarFloatingActionButton.args = {
   icons: <AddIcon />,
   color: "primary",
