@@ -1,4 +1,4 @@
-import Avatar from '@mui/material/Avatar';
+import AvatarComponent from '../avatar-component';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Box from '@mui/material/Box';
@@ -7,7 +7,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
-import Paper from '@mui/material/Paper';
+import { PapersBasic } from '../paper-component';
 import { ThemeProvider } from "@mui/material/styles";
 import React from 'react';
 import muiTheme from "../../../.storybook/muiTheme";
@@ -80,25 +80,27 @@ export const FixedBottomNavigations = ({ navicons }) => {
                     {messages.map(({ primary, secondary, person }, index) => (
                         <ListItem button key={index + person}>
                             <ListItemAvatar>
-                                <Avatar alt="Profile Picture" src={person} />
+                                <AvatarComponent sizes="large" type="image" alt="Profile Picture" src={person} />
                             </ListItemAvatar>
                             <ListItemText primary={primary} secondary={secondary} />
                         </ListItem>
                     ))}
                 </List>
-                <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
-                    <BottomNavigation
-                        showLabels
-                        value={value}
-                        onChange={(event, newValue) => {
-                            setValue(newValue);
-                        }}
-                    >
-                        {navicons.map((item) => (
-                            <BottomNavigationAction icon={item.icon} label={item.label} />
-                        ))}
-                    </BottomNavigation>
-                </Paper>
+                <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} >
+                    <PapersBasic elevation={3}>
+                        <BottomNavigation
+                            showLabels
+                            value={value}
+                            onChange={(event, newValue) => {
+                                setValue(newValue);
+                            }}
+                        >
+                            {navicons.map((item) => (
+                                <BottomNavigationAction icon={item.icon} label={item.label} />
+                            ))}
+                        </BottomNavigation>
+                    </PapersBasic>
+                </Box>
             </Box>
         </ThemeProvider>
     );

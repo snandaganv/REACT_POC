@@ -1,4 +1,4 @@
-import { Elevations, DefaultPapers } from "../components/paper-component";
+import { Elevations, PapersBasic } from "../components/paper-component";
 import { Paper } from "@mui/material";
 
 export default {
@@ -12,13 +12,22 @@ export default {
   },
 };
 
-export const DefaultPaper = DefaultPapers.bind({});
-DefaultPaper.args = {
+const PapersBasicTemplate = (args) => <PapersBasic {...args}></PapersBasic>
+export const PaperBasic = PapersBasicTemplate.bind({});
+PaperBasic.args = {
   variant: "elevation",
   elevation: 2,
   square: false,
-  width: 128,
-  height: 128,
+  styles: {
+    display: "flex",
+    flexWrap: "wrap",
+    "& > :not(style)": {
+      m: 1,
+      width: 128,
+      height: 128,
+    },
+  }
 };
 
-export const Elevation = Elevations.bind({});
+const ElevationsTemplate = (args) => <Elevations {...args}></Elevations>
+export const Elevation = ElevationsTemplate.bind({});

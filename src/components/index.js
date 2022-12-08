@@ -163,7 +163,7 @@ export {
 } from "./progress-component";
 
 export {
-  DefaultPapers as DefaultPaper,
+  PapersBasic as PaperBasic,
   Elevations as Elevation,
 } from "./paper-component";
 
