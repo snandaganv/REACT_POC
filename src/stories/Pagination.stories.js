@@ -38,8 +38,9 @@ export default {
     },
   },
 };
+const Template9 = (args) => <BasicPagination {...args}></BasicPagination>;
 
-export const Default = BasicPagination.bind({});
+export const Default = Template9.bind({});
 Default.args = {
   count: 10,
   shape: "circular",
@@ -55,14 +56,20 @@ Default.args = {
   siblingCount: 1,
   boundaryCount: 1,
 };
-
-export const BasicPaginations = BasicPaginationDemo.bind({});
-export const OutlinedPagination = PaginationOutlined.bind({});
-export const RoundedPagination = PaginationRounded.bind({});
-export const PaginationSize = PaginationSizeDemo.bind({});
-export const PaginationButtons = PaginationButtonsDemo.bind({});
-export const PaginationRanges = PaginationRangesDemo.bind({});
-export const ControlledPagination = PaginationControlled.bind({});
+const Template2 = (args) => <BasicPaginationDemo {...args}></BasicPaginationDemo>;
+export const BasicPaginations = Template2.bind({});
+const Template3 = (args) => <PaginationOutlined {...args}></PaginationOutlined>;
+export const OutlinedPagination = Template3.bind({});
+const Template4 = (args) => <PaginationRounded {...args}></PaginationRounded>;
+export const RoundedPagination = Template4.bind({});
+const Template5 = (args) => <PaginationSizeDemo {...args}></PaginationSizeDemo>;
+export const PaginationSize = Template5.bind({});
+const Template6 = (args) => <PaginationButtonsDemo {...args}></PaginationButtonsDemo>;
+export const PaginationButtons = Template6.bind({});
+const Template8 = (args) => <PaginationRangesDemo {...args}></PaginationRangesDemo>;
+export const PaginationRanges = Template8.bind({});
+const Template7 = (args) => <PaginationControlled {...args}></PaginationControlled>;
+export const ControlledPagination = Template7.bind({});
 ControlledPagination.args = {
   count: 10,
   shape: "circular",
@@ -78,7 +85,8 @@ ControlledPagination.args = {
   siblingCount: 1,
   boundaryCount: 1,
 };
-export const CustomIcons = CustomIconsDemo.bind({});
+const Template71 = (args) => <CustomIconsDemo {...args}></CustomIconsDemo>;
+export const CustomIcons = Template71.bind({});
 CustomIcons.args = {
   previousIcon: ArrowBackIcon,
   nextIcon: ArrowForwardIcon,
@@ -96,7 +104,8 @@ CustomIcons.args = {
   siblingCount: 1,
   boundaryCount: 1,
 };
-export const TablePagination = TablePaginationDemo.bind({});
+const Template = (args) => <TablePaginationDemo {...args}></TablePaginationDemo>;
+export const TablePagination = Template.bind({});
 TablePagination.args = {
   count: 100,
   showFirstButton: false,

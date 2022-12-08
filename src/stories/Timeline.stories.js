@@ -25,7 +25,8 @@ export default {
     },
   },
 };
-export const TimelineDefault = TimelineDefaults.bind({});
+const Template = (args) => <TimelineDefaults {...args}></TimelineDefaults>;
+export const TimelineDefault = Template.bind({});
 TimelineDefault.args = {
   data: [
     { label: "Eat", color: "grey", variant: "filled" },
@@ -35,11 +36,14 @@ TimelineDefault.args = {
   ],
   position: "right",
 };
-export const TimelineColors = ColorsTimeline.bind({});
+const Template1 = (args) => <ColorsTimeline {...args}></ColorsTimeline>;
+export const TimelineColors = Template1.bind({});
+const Template2 = (args) => <OutlinedTimelines {...args}></OutlinedTimelines>;
 
-export const OutlinedTimeline = OutlinedTimelines.bind({});
+export const OutlinedTimeline = Template2.bind({});
+const Template3 = (args) => <OppositeContentTimelines {...args}></OppositeContentTimelines>;
 
-export const OppositeContentTimeline = OppositeContentTimelines.bind({});
+export const OppositeContentTimeline = Template3.bind({});
 
 OppositeContentTimeline.args = {
   oppositeTimelineData: [
@@ -66,7 +70,9 @@ OppositeContentTimeline.args = {
   position: "right",
 };
 
-export const RightAlignedTimeline = RightAlignedTimelines.bind({});
+
+const Template4 = (args) => <RightAlignedTimelines {...args}></RightAlignedTimelines>;
+export const RightAlignedTimeline = Template4.bind({});
 
 RightAlignedTimeline.args = {
   oppositeTimelineData: [
@@ -93,7 +99,8 @@ RightAlignedTimeline.args = {
   position: "right",
 };
 
-export const LeftAlignedTimeline = LeftAlignedTimelines.bind({});
+const Template5 = (args) => <LeftAlignedTimelines {...args}></LeftAlignedTimelines>;
+export const LeftAlignedTimeline = Template5.bind({});
 
 LeftAlignedTimeline.args = {
   oppositeTimelineData: [
@@ -119,8 +126,8 @@ LeftAlignedTimeline.args = {
   ],
   position: "right",
 };
-
-export const CustomizedTimeline = CustomizedTimelines.bind({});
+const Template6 = (args) => <CustomizedTimelines {...args}></CustomizedTimelines>;
+export const CustomizedTimeline = Template6.bind({});
 CustomizedTimeline.args = {
   customizedTimelineData: [
     {
