@@ -13,7 +13,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
 import { PropTypes } from "prop-types";
 
-export const BasicButtonGroup = (props) => {
+export const ButtonGroupDefaults = (props) => {
   const {
     variant,
     color,
@@ -47,7 +47,7 @@ export const BasicButtonGroup = (props) => {
     </ThemeProvider>
   );
 };
-BasicButtonGroup.propTypes = {
+ButtonGroupDefaults.propTypes = {
   label: PropTypes.string,
   size: PropTypes.oneOf(["small", "medium", "large"]),
   color: PropTypes.oneOf([
@@ -66,7 +66,7 @@ BasicButtonGroup.propTypes = {
   numberOfButtons: PropTypes.array,
   onClick: PropTypes.func,
 };
-BasicButtonGroup.defaultProps = {
+ButtonGroupDefaults.defaultProps = {
   numberOfButtons: [],
   size: "medium",
   color: "primary",
@@ -82,7 +82,7 @@ const buttons = [
   <Button key="three">Three</Button>,
 ];
 
-export const VariantButtonGroup = (props) => {
+export const ButtonGroupVariants = (props) => {
   return (
     <Box
       sx={{
@@ -109,7 +109,7 @@ export const VariantButtonGroup = (props) => {
   );
 };
 
-export const GroupSizesColors = (props) => {
+export const ButtonGroupSizesColors = (props) => {
   return (
     <Box
       sx={{
@@ -143,7 +143,7 @@ export const GroupSizesColors = (props) => {
   );
 };
 
-export const GroupOrientation = (props) => {
+export const ButtonGroupVerticals = (props) => {
   return (
     <Box
       sx={{
