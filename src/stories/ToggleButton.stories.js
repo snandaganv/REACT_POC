@@ -45,6 +45,44 @@ ToggleButtonBasic.args = {
     },
   ],
 };
+ToggleButtonBasic.parameters = {
+  docs: {
+    source: {
+      code: `const data = [
+        {
+          toggleButtonValue: "web",
+          toggleButtonLabel: "Web",
+        },
+        {
+          toggleButtonValue: "android",
+          toggleButtonLabel: "Android ",
+        },
+        {
+          toggleButtonValue: "ios",
+          toggleButtonLabel: "iOS ",
+        },
+      ]
+      <ToggleButtonGroup
+      color="primary"
+      size="medium"
+    >
+      {data.map((item, index) => {
+        return (
+          <ToggleButton
+            value={item.toggleButtonValue}
+            key={index}
+            disabled=false
+          >
+            {item.toggleButtonLabel}
+          </ToggleButton>
+        );
+      })}
+    </ToggleButtonGroup>`,
+      language: "react",
+      type: "JSX",
+    },
+  },
+};
 export const ToggleButtonSizes = ToggleButtonSize.bind({});
 ToggleButtonSizes.parameters = {
   docs: {

@@ -47,6 +47,25 @@ ButtonDefault.args = {
   disabled: false,
   startIcon: <Delete />,
 };
+ButtonDefault.parameters = {
+  docs: {
+    source: {
+      code: `<Stack direction={direction} spacing={2}>
+      <Button
+        variant="contained"
+        color="primary"
+        size="medium"
+        disabled=false
+        startIcon=<Delete />
+      >
+        Button
+      </Button>
+    </Stack>`,
+      language: "react",
+      type: "JSX",
+    },
+  },
+};
 
 export const ButtonBasic = ButtonBasics.bind({});
 ButtonBasic.parameters = {

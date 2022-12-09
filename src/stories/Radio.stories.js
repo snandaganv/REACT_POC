@@ -37,6 +37,31 @@ RadioButtonBasic.args = {
   disabled: false,
   checked: true,
 };
+RadioButtonBasic.parameters = {
+  docs: {
+    source: {
+      code: ` <FormControl>
+      <RadioGroup
+        row=true
+      >
+        <FormControlLabel
+          value={value}
+          control={
+            <Radio
+              size="medium"
+              checked=true
+            />
+          }
+          label="Radio button Label"
+          disabled=false
+        />
+      </RadioGroup>
+    </FormControl>`,
+      language: "react",
+      type: "JSX",
+    },
+  },
+};
 export const RadiosButtonGroups = RadiosButtonGroup.bind({});
 RadiosButtonGroups.parameters = {
   docs: {

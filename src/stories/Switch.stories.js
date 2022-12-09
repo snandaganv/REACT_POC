@@ -30,8 +30,23 @@ export const Switchs = Switches.bind({});
 Switchs.args = {
   label: "Switch label",
   disabled: false,
-  checked: true,
   defaultChecked: false,
+};
+Switchs.parameters = {
+  docs: {
+    source: {
+      code: `<FormControlLabel
+      control={
+        <Switch
+          size="medium"
+        />
+      }
+      label="Switch label"
+    />`,
+      language: "react",
+      type: "JSX",
+    },
+  },
 };
 export const SwitchLabel = SwitchLabels.bind({});
 SwitchLabel.parameters = {

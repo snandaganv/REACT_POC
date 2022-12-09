@@ -47,22 +47,32 @@ Default.args = {
   disableRipple: false,
   disableElevation: false,
 };
-// Default.parameters = {
-//   docs: {
-//     source: {
-//       code: `<Button
-//       color="primary"
-//       onClick={() => {
-//         alert("clicked");
-//       }}
-//     >
-//       Click me
-//     </Button>`,
-//       language: "react",
-//       type: "JSX",
-//     },
-//   },
-// };
+Default.parameters = {
+  docs: {
+    source: {
+      code: `
+      const numberOfButtons = ["one", "two", "three"],
+      <ButtonGroup
+      variant="contained"
+      size="medium"
+      color="primary"
+      orientation="horizontal"
+      disabled=flase
+      fullWidth="flase"
+      disableRipple="flase"
+      disableElevation="flase"
+    >
+      {numberOfButtons.map((label, index) => (
+        <Button  key={label}>
+          {label}
+        </Button>
+      ))}
+    </ButtonGroup>`,
+      language: "react",
+      type: "JSX",
+    },
+  },
+};
 export const ButtonVariants = VariantButtonGroup.bind({});
 ButtonVariants.parameters = {
   docs: {
