@@ -80,7 +80,7 @@ export const FixedBottomNavigations = ({ navicons }) => {
                     {messages.map(({ primary, secondary, person }, index) => (
                         <ListItem button key={index + person}>
                             <ListItemAvatar>
-                                <AvatarComponent sizes="large" type="image" alt="Profile Picture" src={person} />
+                                <AvatarComponent sizes="large" type="image" src={person} />
                             </ListItemAvatar>
                             <ListItemText primary={primary} secondary={secondary} />
                         </ListItem>
