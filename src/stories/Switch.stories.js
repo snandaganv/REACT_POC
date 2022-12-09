@@ -31,7 +31,6 @@ export const Switchs = Switches.bind({});
 Switchs.args = {
   label: "Switch label",
   disabled: false,
-  checked: true,
   defaultChecked: false,
 };
 export const SwitchLabel = SwitchLabels.bind({});
