@@ -14,33 +14,11 @@ import {
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../.storybook/muiTheme";
 
-export const Switches = ({
-  label,
-  onClick,
-  disabled,
-  size,
-  labelPlacement,
-  checked,
-  onChange,
-  required,
-}) => {
+export const Switches = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
       <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              onClick={onClick}
-              size={size}
-              checked={checked}
-              onChange={onChange}
-              required={required}
-            />
-          }
-          label={label}
-          disabled={disabled}
-          labelPlacement={labelPlacement}
-        />
+        <FormControlLabel {...props} control={<Switch {...props} />} />
       </FormGroup>
     </ThemeProvider>
   );

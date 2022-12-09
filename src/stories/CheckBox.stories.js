@@ -31,9 +31,7 @@ export const CheckBoxBasic = CheckBoxBasics.bind({});
 CheckBoxBasic.args = {
   label: "Checkbox label",
   size: "medium",
-  checked: true,
   disabled: false,
-  labelPlacement: "end",
 };
 export const CheckboxSize = CheckboxSizes.bind({});
 export const CheckboxGroups = CheckboxGroup.bind({});
