@@ -27,7 +27,7 @@ const TextFieldComponent = (props) => {
   }
   
   return (
-    <>
+    
     <ThemeProvider theme={muiTheme}>
       <TextField required={required} value = {value} error={(required && !value) ? true: false} label={label} fullWidth={fullWidth} type={type} autoFocus={autoFocus} size={size} className={size === 'small' ? 'small-class-size':'medium-class-size'} defaultValue={defaultValue}  helperText={helperText} row={row} color={color} variant ={variant}  disabled={disabled}
        onChange={onChanged}
@@ -44,7 +44,6 @@ const TextFieldComponent = (props) => {
         ),
       }}></TextField>
       </ThemeProvider>
-    </>
   );
 }
 

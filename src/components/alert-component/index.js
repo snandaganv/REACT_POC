@@ -10,12 +10,9 @@ import muiTheme from '../../../.storybook/muiTheme';
 const AlertComponent = (props) => {
   const {titleText} = props;
   return (
-    <>
      <ThemeProvider theme={muiTheme}>
       <Alert {...props}><AlertTitle>{titleText}</AlertTitle>{props.children}</Alert>
     </ThemeProvider>
-    
-    </>
   );
 }
 

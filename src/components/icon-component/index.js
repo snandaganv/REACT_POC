@@ -10,14 +10,14 @@ const IconComponent = (props) => {
   //const { closeText} = props;
   
   return (
-    <>
+    
     <ThemeProvider theme={muiTheme}>
       <Icon {...props}>
             <Home></Home>
       </Icon>
       </ThemeProvider>
 
-    </>
+    
   );
 }
 
