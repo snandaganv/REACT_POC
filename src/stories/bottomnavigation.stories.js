@@ -13,8 +13,9 @@ export default {
     component: BottomNavigation,
 
 };
-const SimpleBottomNavigationsTemplate = (args) => <SimpleBottomNavigations {...args}></SimpleBottomNavigations>
-export const SimpleBottomNavigation = SimpleBottomNavigationsTemplate.bind({});
+const Template = (args) => <SimpleBottomNavigations {...args}></SimpleBottomNavigations>;
+
+export const SimpleBottomNavigation = Template.bind({});
 SimpleBottomNavigation.args = {
     navicons: [
         { icon: <RestoreIcon />, label: "Recents" },
@@ -22,8 +23,9 @@ SimpleBottomNavigation.args = {
         { icon: <LocationOnIcon />, label: "Nearby" },
     ],
 };
-const LabelBottomNavigationsTemplate = (args) => <LabelBottomNavigations {...args}></LabelBottomNavigations>
-export const LabelBottomNavigation = LabelBottomNavigationsTemplate.bind({});
+const Template2 = (args) => <LabelBottomNavigations {...args}></LabelBottomNavigations>;
+
+export const LabelBottomNavigation = Template2.bind({});
 LabelBottomNavigation.args = {
     navicons: [
         { icon: <RestoreIcon />, label: "Recents", value: "recents" },
@@ -33,9 +35,9 @@ LabelBottomNavigation.args = {
     ],
     showLabels: false,
 };
+const Template3 = (args) => <FixedBottomNavigations {...args}></FixedBottomNavigations>;
 
-const FixedBottomNavigationsTemplate = (args) => <FixedBottomNavigations {...args}></FixedBottomNavigations>
-export const FixedBottomNavigation = FixedBottomNavigationsTemplate.bind({});
+export const FixedBottomNavigation = Template3.bind({});
 FixedBottomNavigation.args = {
     navicons: [
         { icon: <RestoreIcon />, label: "Recents" },
