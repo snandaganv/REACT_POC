@@ -17,20 +17,18 @@ export const AccordionBasic = (props) => {
     <div>
       {data.map((item, index) => {
         return (
-          <>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls={"panel-content" + index}
-                id={"panel-header" + index}
-              >
-                <Typography key={"header_" + index}>{item.heading}</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography key={"content" + index}>{item.content}</Typography>
-              </AccordionDetails>
-            </Accordion>
-          </>
+          <Accordion {...props}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={"panel-content" + index}
+              id={"panel-header" + index}
+            >
+              <Typography key={"header_" + index}>{item.heading}</Typography>
+            </AccordionSummary>
+            <AccordionDetails {...props}>
+              <Typography key={"content" + index}>{item.content}</Typography>
+            </AccordionDetails>
+          </Accordion>
         );
       })}
     </div>
@@ -80,7 +78,7 @@ export const AccordionControlled = (props) => {
                   {item.secondaryHeading}
                 </Typography>
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails {...props}>
                 <Typography key={"content" + index}>{item.content}</Typography>
               </AccordionDetails>
             </Accordion>
@@ -156,7 +154,7 @@ export const AccordionCustomization = (props) => {
               >
                 <Typography key={"header_" + index}>{item.heading}</Typography>
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails {...props}>
                 <Typography key={"content" + index}>{item.content}</Typography>
               </AccordionDetails>
             </Accordion>

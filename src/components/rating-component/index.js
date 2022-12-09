@@ -1,13 +1,12 @@
 import * as React from 'react';
-
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
 import { any, PropTypes } from "prop-types";
 import { Rating } from "@mui/material";
 import { ThemeProvider } from '@mui/material/styles';
 import muiTheme from '../../../.storybook/muiTheme';
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import { yellow } from '@mui/material/colors';
+import variable from '../../assets/styles/variables.scss'
+
 
 
 const labels = {
@@ -28,25 +27,25 @@ function getLabelText(value) {
 }
 
 function getprimaryorsecondaryratingcolor(color) {
-    if(color=='primary')
+    if(color==='primary')
     {
     return {
         "& .MuiRating-iconFilled": {
-        color:  '#1A3BDD'
+            color:  variable.primaryMain
       },
       '& .MuiRating-iconHover': {
-        color: '#6f7fd0',
+        color:  variable.primaryMain
       }
     };
     }
-    else if(color=='secondary')
+    else if(color==='secondary')
     {
         return {
             "& .MuiRating-iconFilled": {
-            color:  '#34E4C0'
+              color:  variable.secondaryPrimary
           },
           '& .MuiRating-iconHover': {
-            color: '#67b7a6',
+            color:  variable.secondaryPrimary
           }
         };
     }

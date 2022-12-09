@@ -1,7 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import Button from "@mui/material/Button";
-import  Box from "@mui/material/Box";
+import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import FormGroup from "@mui/material/FormGroup";
 import Stack from "@mui/material/Stack";
@@ -13,31 +13,11 @@ import { LoadingButton } from "@mui/lab";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../.storybook/muiTheme";
 
-export const ButtonDefaults = ({
-  children,
-  onClick,
-  variant,
-  color,
-  size,
-  direction,
-  disabled,
-  startIcon,
-  endIcon,
-}) => {
+export const ButtonDefaults = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
-      <Stack direction={direction} spacing={2}>
-        <Button
-          onClick={onClick}
-          variant={variant}
-          color={color}
-          size={size}
-          disabled={disabled}
-          startIcon={startIcon}
-          endIcon={endIcon}
-        >
-          {children}
-        </Button>
+      <Stack {...props}>
+        <Button {...props}>{props.children}</Button>
       </Stack>
     </ThemeProvider>
   );
@@ -237,41 +217,14 @@ export const ButtonIconLabelButton = ({ startIcon, endIcon }) => {
   );
 };
 
-export const ButtonLoadings = ({
-  loadingIndicator,
-  loading,
-  loadingPosition,
-  variant,
-  disabled,
-  startIcon,
-  endIcon,
-  children,
-}) => {
+export const ButtonLoadings = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
       <FormGroup>
-        <Stack direction="row" spacing={2} mb="12px">
-          <LoadingButton
-            loading={loading}
-            variant={variant}
-            loadingPosition={loadingPosition}
-            loadingIndicator={loadingIndicator}
-            disabled={disabled}
-            startIcon={startIcon}
-            endIcon={endIcon}
-          >
-            {children}
-          </LoadingButton>
+        <Stack {...props}>
+          <LoadingButton {...props}>{props.children}</LoadingButton>
         </Stack>
       </FormGroup>
     </ThemeProvider>
   );
-};
-
-ButtonLoadings.propTypes = {
-  children: PropTypes.any,
-  disabled: PropTypes.bool,
-  loading: PropTypes.bool,
-  loadingIndicator: PropTypes.node,
-  loadingPosition: PropTypes.oneOf(["start", "end", "center"]),
 };

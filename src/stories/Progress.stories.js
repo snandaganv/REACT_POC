@@ -24,7 +24,10 @@ export default {
   },
 };
 
-export const DefaultCircularProgress = DefaultCircularProgresses.bind({});
+const Template = (args) => (
+  <DefaultCircularProgresses {...args}></DefaultCircularProgresses>
+);
+export const DefaultCircularProgress = Template.bind({});
 DefaultCircularProgress.args = {
   color: "primary",
   disableShrink: false,
@@ -32,39 +35,79 @@ DefaultCircularProgress.args = {
   value: 50,
 };
 
-export const CircularProgressWithValueLabel =
-  CircularProgressWithValueLabels.bind({});
+const Template1 = (args) => (
+  <CircularProgressWithValueLabels {...args}></CircularProgressWithValueLabels>
+);
+
+const HowToConsumeProgressComponent = (props) => (
+  <div>
+    <code>
+      This is how to consume the AGCP-UI Circular Progress and Linear Progress
+      component ,just pass in the props when using the component .
+    </code>
+    <br />
+    <br />
+    <code>
+      import {"{DefaultCircularProgresses}"} from "@arisglobal/agcp-ui" ;
+    </code>
+    <br />
+    <code>
+      import {"{DefaultLinearProgresses}"} from "@arisglobal/agcp-ui" ;
+    </code>
+    <br />
+    <br />
+    <code>
+      &lt;DefaultCircularProgresses&gt;&lt;/DefaultCircularProgresses&gt;
+    </code>
+    <br />
+    <code>&lt;DefaultLinearProgresses&gt;&lt;/DefaultLinearProgresses&gt;</code>
+  </div>
+);
+const TemplateDiscription = (args) => (
+  <HowToConsumeProgressComponent {...args}></HowToConsumeProgressComponent>
+);
+export const HowToConsumeProgressComponents = TemplateDiscription.bind({});
+export const CircularProgressWithValueLabel = Template1.bind({});
 CircularProgressWithValueLabel.args = {
   time: 800,
   steps: 10,
   color: "primary",
 };
-export const CircularProgressIntegration = CircularProgressIntegrations.bind(
-  {}
+
+const Template2 = (args) => (
+  <CircularProgressIntegrations {...args}></CircularProgressIntegrations>
 );
+export const CircularProgressIntegration = Template2.bind({});
 CircularProgressIntegration.args = {
   icon: <SaveIcon />,
   label: "Save",
   color: "primary",
 };
 
-export const DefaultLinearProgress = DefaultLinearProgresses.bind({});
+const Template3 = (args) => (
+  <DefaultLinearProgresses {...args}></DefaultLinearProgresses>
+);
+export const DefaultLinearProgress = Template3.bind({});
 DefaultLinearProgress.args = {
   color: "primary",
   variant: "indeterminate",
   value: 50,
 };
 
-export const LinearProgressWithValueLabel = LinearProgressWithValueLabels.bind(
-  {}
+const Template4 = (args) => (
+  <LinearProgressWithValueLabels {...args}></LinearProgressWithValueLabels>
 );
+export const LinearProgressWithValueLabel = Template4.bind({});
 LinearProgressWithValueLabel.args = {
   time: 800,
   steps: 10,
   color: "primary",
 };
 
-export const LinearBufferProgress = LinearBufferProgresses.bind({});
+const Template5 = (args) => (
+  <LinearBufferProgresses {...args}></LinearBufferProgresses>
+);
+export const LinearBufferProgress = Template5.bind({});
 LinearBufferProgress.args = {
   color: "primary",
   variant: "buffer",

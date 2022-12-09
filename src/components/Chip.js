@@ -8,37 +8,11 @@ import Cancel from "@mui/icons-material/Cancel";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../.storybook/muiTheme";
 
-export const ChipsBasics = ({
-  label,
-  onClick,
-  variant,
-  color,
-  size,
-  direction,
-  icon,
-  clickable,
-  disabled,
-  deleteIcon,
-  onDelete,
-  avatar,
-}) => {
+export const ChipsBasics = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
-      <Stack direction={direction} spacing={2}>
-        <Chip
-          label={label}
-          variant={variant}
-          color={color}
-          size={size}
-          onClick={onClick}
-          clickable={clickable}
-          disabled={disabled}
-          icon={icon}
-          deleteIcon={deleteIcon}
-          onDelete={onDelete}
-          avatar={avatar}
-          style={{ textTransform: "capitalize" }}
-        />
+      <Stack {...props}>
+        <Chip {...props} />
       </Stack>
     </ThemeProvider>
   );

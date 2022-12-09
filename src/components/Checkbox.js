@@ -13,39 +13,18 @@ import FormHelperText from "@mui/material/FormHelperText";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../.storybook/muiTheme";
 
-export const CheckBoxBasics = ({
-  label,
-  onClick,
-  size,
-  checked,
-  disabled,
-  labelPlacement,
-  onChange,
-  required,
-}) => {
+export const CheckBoxBasics = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
       <FormGroup>
-        <FormControlLabel
-          control={
-            <Checkbox
-              onClick={onClick}
-              size={size}
-              checked={checked}
-              onChange={onChange}
-              required={required}
-            />
-          }
-          label={label}
-          disabled={disabled}
-          labelPlacement={labelPlacement}
-        />
+        <FormControlLabel {...props} control={<Checkbox {...props} />} />
       </FormGroup>
     </ThemeProvider>
   );
 };
 CheckBoxBasics.prototype = {
   label: PropTypes.string,
+  id: PropTypes.string,
   checked: PropTypes.bool,
   required: PropTypes.bool,
   onChange: PropTypes.func,

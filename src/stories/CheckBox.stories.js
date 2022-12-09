@@ -32,7 +32,6 @@ CheckBoxBasic.args = {
   label: "Checkbox label",
   size: "medium",
   disabled: false,
-  labelPlacement: "end",
 };
 CheckBoxBasic.parameters = {
   docs: {

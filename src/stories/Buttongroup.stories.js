@@ -1,10 +1,10 @@
 import React from "react";
 
 import {
-  BasicButtonGroup,
-  VariantButtonGroup,
-  GroupSizesColors,
-  GroupOrientation,
+  ButtonGroupDefaults,
+  ButtonGroupVariants,
+  ButtonGroupSizesColors,
+  ButtonGroupVerticals,
   SplitButton,
 } from "../components/buttongroup-component";
 import ButtonGroup from "@mui/material/ButtonGroup";
@@ -29,14 +29,15 @@ export default {
       options: ["horizontal", "vertical"],
       control: { type: "radio" },
     },
-    onClick: {
-      action: "clicked",
-    },
   },
 };
 
-export const Default = BasicButtonGroup.bind({});
-Default.args = {
+const ButtonGroupDefaultTemplate = (args) => (
+  <ButtonGroupDefaults {...args}></ButtonGroupDefaults>
+);
+
+export const ButtonGroupDefault = ButtonGroupDefaultTemplate.bind({});
+ButtonGroupDefault.args = {
   numberOfButtons: ["one", "two", "three"],
   variant: "contained",
   size: "medium",
@@ -47,136 +48,25 @@ Default.args = {
   disableRipple: false,
   disableElevation: false,
 };
-Default.parameters = {
-  docs: {
-    source: {
-      code: `
-      const numberOfButtons = ["one", "two", "three"],
-      <ButtonGroup
-      variant="contained"
-      size="medium"
-      color="primary"
-      orientation="horizontal"
-      disabled=flase
-      fullWidth="flase"
-      disableRipple="flase"
-      disableElevation="flase"
-    >
-      {numberOfButtons.map((label, index) => (
-        <Button  key={label}>
-          {label}
-        </Button>
-      ))}
-    </ButtonGroup>`,
-      language: "react",
-      type: "JSX",
-    },
-  },
-};
-export const ButtonVariants = VariantButtonGroup.bind({});
-ButtonVariants.parameters = {
-  docs: {
-    source: {
-      code: `    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        "& > *": {
-          m: 1,
-        },
-      }}
-    >
-        <ButtonGroup variant="outlined" aria-label="outlined button group">
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup variant="text" aria-label="text button group">
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup variant="contained" aria-label="text button group">
-          {buttons}
-        </ButtonGroup>
-    </Box>`,
-      language: "react",
-      type: "JSX",
-    },
-  },
-};
-export const SizesAndColors = GroupSizesColors.bind({});
-SizesAndColors.parameters = {
-  docs: {
-    source: {
-      code: `<Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        "& > *": {
-          m: 1,
-        },
-      }}
-    >
-        <ButtonGroup
-          color="primary"
-          size="small"
-          aria-label="small button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          color="secondary"
-          aria-label="medium secondary button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup color="error" size="large" aria-label="large button group">
-          {buttons}
-        </ButtonGroup>
-    </Box>`,
-      language: "react",
-      type: "JSX",
-    },
-  },
-};
-export const VerticalGroup = GroupOrientation.bind({});
-VerticalGroup.parameters = {
-  docs: {
-    source: {
-      code: `<Box
-      sx={{
-        display: "flex",
-        "& > *": {
-          m: 1,
-        },
-      }}
-    >
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical outlined button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical contained button group"
-          variant="contained"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical contained button group"
-          variant="text"
-        >
-          {buttons}
-        </ButtonGroup>
-    </Box>`,
-      language: "react",
-      type: "JSX",
-    },
-  },
-};
-export const SplitButtons = SplitButton.bind({});
+const ButtonGroupVariantsTemplate = (args) => (
+  <ButtonGroupVariants {...args}></ButtonGroupVariants>
+);
+export const ButtonGroupVariant = ButtonGroupVariantsTemplate.bind({});
+
+const ButtonGroupSizesColorsTemplate = (args) => (
+  <ButtonGroupSizesColors {...args}></ButtonGroupSizesColors>
+);
+export const ButtonGroupSizesAndColors = ButtonGroupSizesColorsTemplate.bind(
+  {}
+);
+const ButtonGroupVerticalsTemplate = (args) => (
+  <ButtonGroupVerticals {...args}></ButtonGroupVerticals>
+);
+export const ButtonGroupVertical = ButtonGroupVerticalsTemplate.bind({});
+
+const SplitButtonsTemplate = (args) => <SplitButton {...args}></SplitButton>;
+
+export const SplitButtons = SplitButtonsTemplate.bind({});
 SplitButtons.args = {
   options: ["Create a merge commit", "Squash and merge", "Rebase and merge"],
   disabledoption: 0,

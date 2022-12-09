@@ -85,7 +85,6 @@ const muiTheme = createTheme({
         label: {
           textTransform: "capitalize",
           fontStyle: "normal",
-          color: "#ffffff",
         },
         outlinedPrimary: {
           textTransform: "capitalize",
