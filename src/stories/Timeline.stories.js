@@ -25,7 +25,8 @@ export default {
     },
   },
 };
-export const TimelineDefault = TimelineDefaults.bind({});
+const Template = (args) => <TimelineDefaults {...args}></TimelineDefaults>;
+export const TimelineDefault = Template.bind({});
 TimelineDefault.args = {
   data: [
     { label: "Eat", color: "grey", variant: "filled" },
@@ -35,11 +36,38 @@ TimelineDefault.args = {
   ],
   position: "right",
 };
-export const TimelineColors = ColorsTimeline.bind({});
 
-export const OutlinedTimeline = OutlinedTimelines.bind({});
+const HowToConsumeTimeLineComponent = (props) => (
+  <div>
+    <code>
+      This is how to consume the AGCP-UI Timeline component ,just pass in the
+      props when using the component .
+    </code>
+    <br />
+    <br />
+    <code>import {"{TimeLineDefaults}"} from "@arisglobal/agcp-ui" ;</code><br/>
+    <code>import {"{OppositeContentTimelines}"} from "@arisglobal/agcp-ui" ;</code><br/>
+    <code>import {"{CustomizedTimelines}"} from "@arisglobal/agcp-ui" ;</code>
+    <br /><br/>
+    <code>&lt;TimeLineDefaults {"{...props}"} &gt;&lt;/TimeLineDefaults&gt;</code><br/>
+    <code>&lt;OppositeContentTimelines {"{...props}"} &gt;&lt;/OppositeContentTimelines&gt;</code><br/>
+    <code>&lt;CustomizedTimelines {"{...props}"} &gt;&lt;/CustomizedTimelines&gt;</code>
 
-export const OppositeContentTimeline = OppositeContentTimelines.bind({});
+  </div>
+);
+const TemplateDiscription = (args) => (
+  <HowToConsumeTimeLineComponent {...args}></HowToConsumeTimeLineComponent>
+);
+export const HowToConsumeTimeLineComponents = TemplateDiscription.bind({});
+
+const Template1 = (args) => <ColorsTimeline {...args}></ColorsTimeline>;
+export const TimelineColors = Template1.bind({});
+const Template2 = (args) => <OutlinedTimelines {...args}></OutlinedTimelines>;
+
+export const OutlinedTimeline = Template2.bind({});
+const Template3 = (args) => <OppositeContentTimelines {...args}></OppositeContentTimelines>;
+
+export const OppositeContentTimeline = Template3.bind({});
 
 OppositeContentTimeline.args = {
   oppositeTimelineData: [
@@ -66,7 +94,9 @@ OppositeContentTimeline.args = {
   position: "right",
 };
 
-export const RightAlignedTimeline = RightAlignedTimelines.bind({});
+
+const Template4 = (args) => <RightAlignedTimelines {...args}></RightAlignedTimelines>;
+export const RightAlignedTimeline = Template4.bind({});
 
 RightAlignedTimeline.args = {
   oppositeTimelineData: [
@@ -93,7 +123,8 @@ RightAlignedTimeline.args = {
   position: "right",
 };
 
-export const LeftAlignedTimeline = LeftAlignedTimelines.bind({});
+const Template5 = (args) => <LeftAlignedTimelines {...args}></LeftAlignedTimelines>;
+export const LeftAlignedTimeline = Template5.bind({});
 
 LeftAlignedTimeline.args = {
   oppositeTimelineData: [
@@ -119,8 +150,8 @@ LeftAlignedTimeline.args = {
   ],
   position: "right",
 };
-
-export const CustomizedTimeline = CustomizedTimelines.bind({});
+const Template6 = (args) => <CustomizedTimelines {...args}></CustomizedTimelines>;
+export const CustomizedTimeline = Template6.bind({});
 CustomizedTimeline.args = {
   customizedTimelineData: [
     {

@@ -29,30 +29,32 @@ export default {
     },
   },
 };
-
-export const DefaultStepper = DefaultSteppers.bind({});
+const Template2 = (args) => <DefaultSteppers {...args}></DefaultSteppers>;
+export const DefaultStepper = Template2.bind({});
 DefaultStepper.args = {
   orientation: "horizontal",
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
 };
 
-export const HorizontalLinearStepper = HorizontalLinearSteppers.bind({});
+const Template3 = (args) => <HorizontalLinearSteppers {...args}></HorizontalLinearSteppers>;
+export const HorizontalLinearStepper = Template3.bind({});
 HorizontalLinearStepper.args = {
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
 };
-export const HorizontalNonLinearStepper = HorizontalNonLinearSteppers.bind({});
+const Template4 = (args) => <HorizontalNonLinearSteppers {...args}></HorizontalNonLinearSteppers>;
+export const HorizontalNonLinearStepper = Template4.bind({});
 HorizontalNonLinearStepper.args = {
   nonLinear: true,
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
 };
-
-export const AlternativeLabelStepper = AlternativeLabelSteppers.bind({});
+const Template5 = (args) => <AlternativeLabelSteppers {...args}></AlternativeLabelSteppers>;
+export const AlternativeLabelStepper = Template5.bind({});
 AlternativeLabelStepper.args = {
   alternativeLabel: true,
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
 };
-
-export const VerticalLinearStepper = VerticalLinearSteppers.bind({});
+const Template6 = (args) => <VerticalLinearSteppers {...args}></VerticalLinearSteppers>;
+export const VerticalLinearStepper = Template6.bind({});
 VerticalLinearStepper.args = {
   versteps: [
     {
@@ -75,12 +77,14 @@ VerticalLinearStepper.args = {
     },
   ],
 };
-export const HorizontalStepperWithError = HorizontalStepperWithErrors.bind({});
+const Template7 = (args) => <HorizontalStepperWithErrors {...args}></HorizontalStepperWithErrors>;
+export const HorizontalStepperWithError = Template7.bind({});
 HorizontalStepperWithError.args = {
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
   errorstepnumber: 3,
 };
-export const TextMobileStepper = TextMobileSteppers.bind({});
+const Template8 = (args) => <TextMobileSteppers {...args}></TextMobileSteppers>;
+export const TextMobileStepper = Template8.bind({});
 TextMobileStepper.args = {
   numberOfSteps: [
     {
@@ -103,21 +107,22 @@ TextMobileStepper.args = {
     },
   ],
 };
-
-export const DotsAndProgressMobileStepper = DotsAndProgressMobileSteppers.bind(
+const Template9 = (args) => <DotsAndProgressMobileSteppers {...args}></DotsAndProgressMobileSteppers>;
+export const DotsAndProgressMobileStepper = Template9.bind(
   {}
 );
 DotsAndProgressMobileStepper.args = {
   numberOfSteps: 4,
   variant: "dots",
 };
-
-export const customizedStepper = CustomizedSteppers.bind({});
+const Template1 = (args) => <CustomizedSteppers {...args}></CustomizedSteppers>;
+export const customizedStepper = Template1.bind({});
 customizedStepper.args = {
   numberOfSteps: ["Step 1", "Step 2", "Step 3"],
 };
+const Template = (args) => <CustomizedIconSteppers {...args}></CustomizedIconSteppers>;
 
-export const CustomizedIconStepper = CustomizedIconSteppers.bind({});
+export const CustomizedIconStepper = Template.bind({});
 CustomizedIconStepper.args = {
   data: [
     {

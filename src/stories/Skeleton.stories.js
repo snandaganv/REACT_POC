@@ -22,6 +22,7 @@ export default {
     },
   },
 };
+
 const Template = (args) => (
   <SkeletonDefaults {...args}>{args.children}</SkeletonDefaults>
 );
@@ -33,6 +34,24 @@ SkeletonDefault.args = {
   height: 15,
   animation: "pulse",
 };
+
+const HowToConsumeSkeletonComponent = (props) => (
+  <div>
+    <code>
+      This is how to consume the AGCP-UI  Skeleton component ,just pass
+      in the props when using the component .
+    </code>
+    <br />
+    <br />
+    <code>import {"{SkeletonDefaults}"} from "@arisglobal/agcp-ui" ;</code>
+    <br />
+    <code>&lt;SkeletonDefaults&gt;&lt;/SkeletonDefaults&gt;</code>
+  </div>
+);
+const TemplateDiscription = (args) => (
+  <HowToConsumeSkeletonComponent {...args}></HowToConsumeSkeletonComponent>
+);
+export const HowToConsumeSkeletonComponents = TemplateDiscription.bind({});
 
 const VariantsTemplate = (args) => (
   <SkeletonsVariants {...args}></SkeletonsVariants>
