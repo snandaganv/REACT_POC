@@ -43,8 +43,7 @@ Switchs.parameters = {
       }
       label="Switch label"
     />`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -57,8 +56,7 @@ SwitchLabel.parameters = {
       <FormControlLabel control={<Switch />} label="Off" />
       <FormControlLabel disabled control={<Switch />} label="Disabled" />
     </FormGroup>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -71,8 +69,7 @@ SwitchSize.parameters = {
       <Switch {...label} defaultChecked size="small" />
       <Switch {...label} defaultChecked />
     </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -86,8 +83,7 @@ SwitchControlled.parameters = {
         onChange={handleChange}
         inputProps={{ "aria-label": "controlled" }}
       />`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -131,8 +127,7 @@ SwitchFormGroup.parameters = {
       </FormGroup>
       <FormHelperText>Be careful</FormHelperText>
     </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -169,8 +164,7 @@ SwitchLabelsPlacements.parameters = {
         />
       </FormGroup>
     </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };

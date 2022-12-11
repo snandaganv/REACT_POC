@@ -47,8 +47,7 @@ CheckBoxBasic.parameters = {
         labelPlacement="end"
       />
     </FormGroup>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -66,8 +65,7 @@ CheckboxSize.parameters = {
         sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
       />
     </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -92,8 +90,7 @@ CheckboxGroups.parameters = {
         </div>
       ))}
     </FormGroup>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -181,8 +178,7 @@ CheckboxFormGroup.parameters = {
         <FormHelperText>You can display an error</FormHelperText>
       </FormControl>
     </Box>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -215,8 +211,7 @@ CheckboxInderterminates.parameters = {
       />
       {children}
     </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -253,8 +248,7 @@ CheckboxLabelsPlacements.parameters = {
         />
       </FormGroup>
     </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };

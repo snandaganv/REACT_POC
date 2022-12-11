@@ -57,8 +57,7 @@ RadioButtonBasic.parameters = {
         />
       </RadioGroup>
     </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -84,8 +83,7 @@ RadiosButtonGroups.parameters = {
         />
       </RadioGroup>
     </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -105,8 +103,7 @@ RadioButtonDirections.parameters = {
         <FormControlLabel value="other" control={<Radio />} label="Other" />
       </RadioGroup>
     </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -131,8 +128,7 @@ RadioButtonControlled.parameters = {
           <FormControlLabel value="male" control={<Radio />} label="Male" />
         </RadioGroup>
       </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -164,8 +160,7 @@ RadioButtonSizes.parameters = {
           }}
         />
       </RadioGroup>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -205,8 +200,7 @@ RadioButtonLabelPlacement.parameters = {
         />
       </RadioGroup>
     </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -264,8 +258,7 @@ RadioButtonShowError.parameters = {
         </Button>
       </FormControl>
     </form>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };

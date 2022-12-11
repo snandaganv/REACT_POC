@@ -61,8 +61,7 @@ ButtonDefault.parameters = {
         Button
       </Button>
     </Stack>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -88,8 +87,7 @@ ButtonBasic.parameters = {
         Link
       </Button>
     </Stack>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -106,8 +104,7 @@ ButtonHandingClicks.parameters = {
     >
       Click me
     </Button>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -136,8 +133,7 @@ ButtonColor.parameters = {
         Warning
       </Button>
     </Stack>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -175,8 +171,7 @@ ButtonSize.parameters = {
         </Button>
       </div>
     </Box>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -198,8 +193,7 @@ ButtonIcons.parameters = {
       <Alarm />
       </IconButton>
     </Stack>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -222,8 +216,7 @@ ButtonIconBasic.parameters = {
         <AddShoppingCart />
       </IconButton>
     </Stack>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -240,8 +233,7 @@ ButtonIconLabelButtons.parameters = {
         Send
       </Button>
     </Stack>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -265,8 +257,7 @@ ButtonLoading.parameters = {
         </LoadingButton>
       </Stack>
     </FormGroup>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };

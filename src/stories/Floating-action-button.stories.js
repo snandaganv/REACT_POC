@@ -60,8 +60,7 @@ DefaultFloatingActionButtonCircle.parameters = {
         <AddIcon />
       </Fab>
     </Box>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -94,8 +93,7 @@ DefaultFloatingActionButtonExtended.parameters = {
         <AddIcon />
       </Fab>
     </Box>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -139,8 +137,7 @@ FloatingActionButtonSize.parameters = {
         <AddIcon />
       </Fab>
     </Box>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -164,8 +161,7 @@ FloatingActionButtonExtendedSize.parameters = {
         <NavigationIcon />
       </Fab>
     </Box>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -298,8 +294,7 @@ FloatingActionButtonAnimation.parameters = {
         </Zoom>
       ))}
     </Box>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };

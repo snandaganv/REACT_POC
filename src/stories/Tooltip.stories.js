@@ -48,8 +48,7 @@ TooltipBasic.parameters = {
     >
     <InfoOutlined />
     </Tooltip>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -117,8 +116,7 @@ TooltipPositioned.parameters = {
         </Grid>
       </Grid>
     </Box>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -185,8 +183,7 @@ TooltipTrigger.parameters = {
         </Grid>
       </Grid>
     </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -212,8 +209,7 @@ TooltipControlled.parameters = {
     >
       <Button>Controlled</Button>
     </Tooltip>>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -236,8 +232,7 @@ TooltipTransition.parameters = {
         <Button>Zoom</Button>
       </Tooltip>
     </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -250,8 +245,7 @@ TooltipFollowCursor.parameters = {
         Disabled Action
       </Box>
     </Tooltip>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };

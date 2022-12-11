@@ -37,6 +37,34 @@ SelectDefault.args = {
     { value: 3, label: "Option 3" },
   ],
 };
+SelectDefault.parameters = {
+  docs: {
+    source: {
+      code: `const selectlabel= [{ label: "Select" }]  
+      const selectoptions = [
+        { value: 1, label: "Option 1" },
+        { value: 2, label: "Option 2" },
+        { value: 3, label: "Option 3" },
+      ],
+      const             
+      <FormControl sx={{ m: 1, width: 300 }} size={size}>
+      <InputLabel id="demo-simple-select-label">{selectlabel.map((item) => { return item.label })}</InputLabel>
+      <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          onChange={handleChange}
+          input={<OutlinedInput label="Name" />}
+      >
+          <MenuItem value={null}>
+              <em>None</em>
+          </MenuItem>
+          {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
+      </Select>
+  </FormControl>`,
+      language: "html",
+    },
+  },
+};
 
 export const BasicSelect = SelectBasics.bind({});
 BasicSelect.args = {
@@ -71,8 +99,7 @@ BasicSelect.parameters = {
           {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
       </Select>
   </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -140,8 +167,7 @@ SelectVariant.parameters = {
           </FormControl>
 
   </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -180,8 +206,7 @@ SelectAutoWidth.parameters = {
           </Select>
       </FormControl>
   </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -223,8 +248,7 @@ SelectSize.parameters = {
             {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
         </Select>
     </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -283,8 +307,7 @@ SelectLabel.parameters = {
           <FormHelperText>Without label</FormHelperText>
       </FormControl>
   </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -370,8 +393,7 @@ SelectOtherProp.parameters = {
       </Select>
       <FormHelperText>Required</FormHelperText>
   </FormControl>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -440,8 +462,7 @@ MultipleSelect.parameters = {
             </Select>
         </FormControl>
     </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -482,8 +503,7 @@ MultipleSelectCheckmark.parameters = {
           </Select>
       </FormControl>
   </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -535,8 +555,7 @@ MultipleSelectChip.parameters = {
           </Select>
       </FormControl>
   </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -590,8 +609,7 @@ MultipleSelectPlaceholder.parameters = {
           </Select>
       </FormControl>
   </div>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -635,8 +653,7 @@ GroupedSelect.parameters = {
           </Select>
       </FormControl>
   </Box>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };

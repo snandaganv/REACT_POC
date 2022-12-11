@@ -78,8 +78,7 @@ ToggleButtonBasic.parameters = {
         );
       })}
     </ToggleButtonGroup>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -127,8 +126,7 @@ ToggleButtonSizes.parameters = {
         {children}
       </ToggleButtonGroup>
     </Box>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -147,8 +145,7 @@ ToggleButtonColors.parameters = {
       <ToggleButton value="android">Android</ToggleButton>
       <ToggleButton value="ios">iOS</ToggleButton>
     </ToggleButtonGroup>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -174,8 +171,7 @@ ToggleButtonOrientations.parameters = {
         Goals
       </ToggleButton>
     </ToggleButtonGroup>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -208,8 +204,7 @@ ToggleButtonExclusiveSelection.parameters = {
           <FormatAlignJustify />
         </ToggleButton>
       </ToggleButtonGroup>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
@@ -238,8 +233,7 @@ ToggleButtonMultipleSelection.parameters = {
           <ArrowDropDown />
         </ToggleButton>
       </ToggleButtonGroup>`,
-      language: "react",
-      type: "JSX",
+      language: "html",
     },
   },
 };
