@@ -16,7 +16,7 @@ const BreadcrumbsComponent = (props) => {
   }
   
   return (
-    <>
+    
     <ThemeProvider theme={muiTheme}>
       {separatorIcon ? <Breadcrumbs {...props}
         separator={<Icon fontSize="small">{separatorIcon}</Icon>}
@@ -28,7 +28,7 @@ const BreadcrumbsComponent = (props) => {
       {linkArray.map((item,i,arr) => arr.length - 1 === i ? <Typography color="text.primary"><Icon fontSize="inherit">{item.icon}</Icon>{item.label}</Typography>:<Link color='#4D5050'sx={{ display: 'flex', alignItems: 'center' }}  href={item.href} underline={underline} style={{opacity:'0.6'}}><Icon fontSize="inherit">{item.icon}</Icon>{item.label}</Link>)}
       </Breadcrumbs>}
       </ThemeProvider>
-    </>
+    
   );
 }
 
