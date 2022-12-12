@@ -29,6 +29,40 @@ AccordionBasics.args = {
   ],
 };
 
+const HowToConsumeAccordionComponent = (props) => (
+  <div>
+    <code>
+      This is how to consume the AGCP-UI Accordion component ,just pass in the
+      props when using the component .
+    </code>
+    <br />
+    <br />
+    <code>import {"{AccordionBasics}"} from "@arisglobal/agcp-ui" ;</code>
+    <br />
+    <code>import {"{AccordionsControlled}"} from "@arisglobal/agcp-ui" ;</code>
+    <br />
+    <code>
+      import {"{AccordionCustomizations}"} from "@arisglobal/agcp-ui" ;
+    </code>
+    <br />
+    <br />
+    <code>&lt;AccordionBasic {"{...props}"}&gt;&lt;/AccordionBasic&gt;</code>
+    <br></br>
+    <code>
+      &lt;AccordionControlled {"{...props}"}&gt;&lt;/AccordionControlled&gt;
+    </code>
+    <br></br>
+    <code>
+      &lt;AccordionCustomization {"{...props}"}
+      &gt;&lt;/AccordionCustomization&gt;
+    </code>
+  </div>
+);
+const TemplateDemo = (args) => (
+  <HowToConsumeAccordionComponent {...args}></HowToConsumeAccordionComponent>
+);
+export const HowToConsumeAccordionComponents = TemplateDemo.bind({});
+
 export const AccordionsControlled = AccordionControlled.bind({});
 AccordionsControlled.args = {
   data: [
