@@ -21,4 +21,22 @@ DefaultPaper.args = {
   height: 128,
 };
 
+const HowToConsumePaperComponent = (props) => (
+  <div>
+    <code>
+      This is how to consume the AGCP-UI Paper component ,just pass in the props
+      when using the component .
+    </code>
+    <br />
+    <br />
+    <code>import {"{DefaultPaper}"} from "@arisglobal/agcp-ui" ;</code>
+    <br />
+    <code>&lt;DefaultPapers&gt;&lt;/DefaultPapers&gt;</code>
+  </div>
+);
+const TemplateDemo = (args) => (
+  <HowToConsumePaperComponent {...args}></HowToConsumePaperComponent>
+);
+export const HowToConsumePaperComponents = TemplateDemo.bind({});
+
 export const Elevation = Elevations.bind({});
