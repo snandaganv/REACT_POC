@@ -7,12 +7,12 @@ import muiTheme from '../../../.storybook/muiTheme';
 const MenuIconsComponent = (props) => {
    
   return (
-    
+    <>
     <ThemeProvider theme={muiTheme}>
       <div>{props.childComponent(props)}</div>
       </ThemeProvider>
 
-    
+    </>
   );
 }
 

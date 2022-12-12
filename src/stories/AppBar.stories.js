@@ -45,52 +45,9 @@ AppBarBasic.args = {
   variant: "regular",
 };
 
-const HowToConsumeAppbarComponent = (props) => (
-  <div>
-    <code>
-      This is how to consume the AGCP-UI AppBar component ,just pass in the
-      props when using the component .
-    </code>
-    <br />
-    <br />
-    <code>import {"{AppBarsBasics}"} from "@arisglobal/agcp-ui" ;</code>
-    <br />
-    <code>
-      import {"{AppBarsWithPrimarySearch}"} from "@arisglobal/agcp-ui" ;
-    </code>
-    <br />
-    <code>import {"{AppBarsBottom}"} from "@arisglobal/agcp-ui" ;</code>
-    <br />
-    <code>import {"{AppBarsResponsive}"} from "@arisglobal/agcp-ui" ;</code>
-    <br />
-    <br />
-    <code>&lt;AppBarsBasic {"{...props}"}&gt;&lt;/AppBarsBasic&gt;</code>
-    <br></br>
-    <code>
-      &lt;AppBarsWithPrimarySearch {"{...props}"}
-      &gt;&lt;/AppBarsWithPrimarySearch&gt;
-    </code>
-    <br></br>
-    <code>
-      &lt;AppBarsBottom {"{...props}"}
-      &gt;&lt;/AppBarsBottom&gt;
-    </code>
-    <br></br>
-    <code>
-      &lt;AppBarsResponsive {"{...props}"}
-      &gt;&lt;/AppBarsResponsive&gt;
-    </code>
-  </div>
-);
-const TemplateDemo = (args) => (
-  <HowToConsumeAppbarComponent {...args}></HowToConsumeAppbarComponent>
-);
-export const HowToConsumeAppbarComponents = TemplateDemo.bind({});
-
 const AppBarsWithPrimarySearchTemplate = (args) => (
   <AppBarsWithPrimarySearch {...args}></AppBarsWithPrimarySearch>
 );
-
 export const AppBarWithPrimarySearch = AppBarsWithPrimarySearchTemplate.bind(
   {}
 );

@@ -55,7 +55,7 @@ export const AccordionControlled = (props) => {
     <div>
       {data.map((item, index) => {
         return (
-          
+          <>
             <Accordion
               expanded={expanded === "panel" + index}
               onChange={handleChange("panel" + index)}
@@ -82,7 +82,7 @@ export const AccordionControlled = (props) => {
                 <Typography key={"content" + index}>{item.content}</Typography>
               </AccordionDetails>
             </Accordion>
-         
+          </>
         );
       })}
     </div>

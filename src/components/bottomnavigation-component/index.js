@@ -1,22 +1,16 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import PropTypes from "prop-types";
+import AvatarComponent from '../avatar-component';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import { ThemeProvider } from "@mui/material/styles";
-import muiTheme from "../../../.storybook/muiTheme";
-import ArchiveIcon from '@mui/icons-material/Archive';
-import FolderIcon from '@mui/icons-material/Folder';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
+import { PapersBasic } from '../paper-component';
+import { ThemeProvider } from "@mui/material/styles";
+import React from 'react';
+import muiTheme from "../../../.storybook/muiTheme";
 
 export const SimpleBottomNavigations = ({ navicons, }) => {
     const [value, setValue] = React.useState(0);
@@ -68,7 +62,7 @@ function refreshMessages() {
     );
 }
 
-export const FixedBottomNavigations = ({ navicons, messages1 }) => {
+export const FixedBottomNavigations = ({ navicons, }) => {
     const [value, setValue] = React.useState(0);
     const ref = React.useRef(null);
     const [messages, setMessages] = React.useState(() => refreshMessages());
@@ -83,28 +77,30 @@ export const FixedBottomNavigations = ({ navicons, messages1 }) => {
             <Box sx={{ pb: 7 }} ref={ref}>
                 <CssBaseline />
                 <List>
-                    {messages.map(({ primary, secondary, person }, index) => (
+                    {messages.map(({ primary, secondary, person, ProfilePicture }, index) => (
                         <ListItem button key={index + person}>
                             <ListItemAvatar>
-                                <Avatar alt="Profile Picture" src={person} />
+                                <AvatarComponent sizes="large" type="image" alt={ProfilePicture} src={person} />
                             </ListItemAvatar>
                             <ListItemText primary={primary} secondary={secondary} />
                         </ListItem>
                     ))}
                 </List>
-                <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
-                    <BottomNavigation
-                        showLabels
-                        value={value}
-                        onChange={(event, newValue) => {
-                            setValue(newValue);
-                        }}
-                    >
-                        {navicons.map((item) => (
-                            <BottomNavigationAction icon={item.icon} label={item.label} />
-                        ))}
-                    </BottomNavigation>
-                </Paper>
+                <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} >
+                    <PapersBasic elevation={3}>
+                        <BottomNavigation
+                            showLabels
+                            value={value}
+                            onChange={(event, newValue) => {
+                                setValue(newValue);
+                            }}
+                        >
+                            {navicons.map((item) => (
+                                <BottomNavigationAction icon={item.icon} label={item.label} />
+                            ))}
+                        </BottomNavigation>
+                    </PapersBasic>
+                </Box>
             </Box>
         </ThemeProvider>
     );

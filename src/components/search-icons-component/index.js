@@ -9,10 +9,12 @@ const SearchIconsComponent = (props) => {
 
    
   return (
-    
+    <>
     <ThemeProvider theme={muiTheme}>
       <SearchIcon {...props}></SearchIcon>
       </ThemeProvider>
+
+    </>
   );
 }
 
