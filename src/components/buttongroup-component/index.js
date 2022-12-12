@@ -1,5 +1,5 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
+import { ButtonDefault } from "../Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Box from "@mui/material/Box";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -13,42 +13,14 @@ import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
 import { PropTypes } from "prop-types";
 
-export const ButtonGroupDefaults = (props) => {
-  const {
-    variant,
-    color,
-    size,
-    orientation,
-    disabled,
-    fullWidth,
-    disableRipple,
-    disableElevation,
-    numberOfButtons,
-    onClick,
-  } = props;
+export const ButtonGroupDefault = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
-      <ButtonGroup
-        variant={variant}
-        size={size}
-        color={color}
-        orientation={orientation}
-        disabled={disabled}
-        fullWidth={fullWidth}
-        disableRipple={disableRipple}
-        disableElevation={disableElevation}
-      >
-        {numberOfButtons.map((label, index) => (
-          <Button onClick={onClick} key={label}>
-            {label}
-          </Button>
-        ))}
-      </ButtonGroup>
+      <ButtonGroup {...props}>{props.children}</ButtonGroup>
     </ThemeProvider>
   );
 };
-ButtonGroupDefaults.propTypes = {
-  label: PropTypes.string,
+ButtonGroupDefault.propTypes = {
   size: PropTypes.oneOf(["small", "medium", "large"]),
   color: PropTypes.oneOf([
     "primary",
@@ -63,11 +35,9 @@ ButtonGroupDefaults.propTypes = {
   fullWidth: PropTypes.bool,
   disableRipple: PropTypes.bool,
   disableElevation: PropTypes.bool,
-  numberOfButtons: PropTypes.array,
   onClick: PropTypes.func,
 };
-ButtonGroupDefaults.defaultProps = {
-  numberOfButtons: [],
+ButtonGroupDefault.defaultProps = {
   size: "medium",
   color: "primary",
   orientation: "horizontal",
@@ -77,9 +47,9 @@ ButtonGroupDefaults.defaultProps = {
   disableElevation: false,
 };
 const buttons = [
-  <Button key="one">One</Button>,
-  <Button key="two">Two</Button>,
-  <Button key="three">Three</Button>,
+  <ButtonDefault key="one">One</ButtonDefault>,
+  <ButtonDefault key="two">Two</ButtonDefault>,
+  <ButtonDefault key="three">Three</ButtonDefault>,
 ];
 
 export const ButtonGroupVariants = (props) => {
@@ -94,17 +64,15 @@ export const ButtonGroupVariants = (props) => {
         },
       }}
     >
-      <ThemeProvider theme={muiTheme}>
-        <ButtonGroup variant="outlined" aria-label="outlined button group">
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup variant="text" aria-label="text button group">
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup variant="contained" aria-label="text button group">
-          {buttons}
-        </ButtonGroup>
-      </ThemeProvider>
+      <ButtonGroupDefault variant="outlined" aria-label="outlined button group">
+        {buttons}
+      </ButtonGroupDefault>
+      <ButtonGroupDefault variant="text" aria-label="text button group">
+        {buttons}
+      </ButtonGroupDefault>
+      <ButtonGroupDefault variant="contained" aria-label="text button group">
+        {buttons}
+      </ButtonGroupDefault>
     </Box>
   );
 };
@@ -121,24 +89,26 @@ export const ButtonGroupSizesColors = (props) => {
         },
       }}
     >
-      <ThemeProvider theme={muiTheme}>
-        <ButtonGroup
-          color="primary"
-          size="small"
-          aria-label="small button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          color="secondary"
-          aria-label="medium secondary button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup color="error" size="large" aria-label="large button group">
-          {buttons}
-        </ButtonGroup>
-      </ThemeProvider>
+      <ButtonGroupDefault
+        color="primary"
+        size="small"
+        aria-label="small button group"
+      >
+        {buttons}
+      </ButtonGroupDefault>
+      <ButtonGroupDefault
+        color="secondary"
+        aria-label="medium secondary button group"
+      >
+        {buttons}
+      </ButtonGroupDefault>
+      <ButtonGroupDefault
+        color="error"
+        size="large"
+        aria-label="large button group"
+      >
+        {buttons}
+      </ButtonGroupDefault>
     </Box>
   );
 };
@@ -153,28 +123,26 @@ export const ButtonGroupVerticals = (props) => {
         },
       }}
     >
-      <ThemeProvider theme={muiTheme}>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical outlined button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical contained button group"
-          variant="contained"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical contained button group"
-          variant="text"
-        >
-          {buttons}
-        </ButtonGroup>
-      </ThemeProvider>
+      <ButtonGroupDefault
+        orientation="vertical"
+        aria-label="vertical outlined button group"
+      >
+        {buttons}
+      </ButtonGroupDefault>
+      <ButtonGroupDefault
+        orientation="vertical"
+        aria-label="vertical contained button group"
+        variant="contained"
+      >
+        {buttons}
+      </ButtonGroupDefault>
+      <ButtonGroupDefault
+        orientation="vertical"
+        aria-label="vertical contained button group"
+        variant="text"
+      >
+        {buttons}
+      </ButtonGroupDefault>
     </Box>
   );
 };
@@ -217,8 +185,7 @@ export const SplitButton = (props) => {
 
   return (
     <React.Fragment>
-      <ThemeProvider theme={muiTheme}>
-        <ButtonGroup
+      <ButtonGroup
           variant={variant}
           size={size}
           color={color}
@@ -228,8 +195,8 @@ export const SplitButton = (props) => {
           ref={anchorRef}
           aria-label="split button"
         >
-          <Button onClick={handleClick}>{options[selectedIndex]} </Button>
-          <Button
+          <ButtonDefault onClick={handleClick}>{options[selectedIndex]} </ButtonDefault>
+          <ButtonDefault
             aria-controls={open ? "split-button-menu" : undefined}
             aria-expanded={open ? "true" : undefined}
             aria-label="select merge strategy"
@@ -237,9 +204,8 @@ export const SplitButton = (props) => {
             onClick={handleToggle}
           >
             <ArrowDropDownIcon />
-          </Button>
+          </ButtonDefault>
         </ButtonGroup>
-      </ThemeProvider>
       <Popper
         sx={{
           zIndex: 1,
@@ -280,6 +246,7 @@ export const SplitButton = (props) => {
     </React.Fragment>
   );
 };
+
 SplitButton.propTypes = {
   label: PropTypes.string,
   size: PropTypes.oneOf(["small", "medium", "large"]),

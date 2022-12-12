@@ -1,17 +1,17 @@
 import React from "react";
 
 import {
-  ButtonGroupDefaults,
+  ButtonGroupDefault,
   ButtonGroupVariants,
   ButtonGroupSizesColors,
   ButtonGroupVerticals,
   SplitButton,
 } from "../components/buttongroup-component";
-import ButtonGroup from "@mui/material/ButtonGroup";
+import { ButtonDefault } from "../components/Button";
 
 export default {
   title: "Input/Button Group",
-  component: ButtonGroup,
+  component: ButtonGroupDefault,
   argTypes: {
     variant: {
       options: ["contained", "outlined", "text"],
@@ -32,13 +32,20 @@ export default {
   },
 };
 
-const ButtonGroupDefaultTemplate = (args) => (
-  <ButtonGroupDefaults {...args}></ButtonGroupDefaults>
-);
+const ButtonGroupDefaultTemplate = (args) => {
+  const { buttonArray, ...realArgs } = args;
+  return (
+    <ButtonGroupDefault {...realArgs}>
+      {buttonArray.map((buttonLabel) => (
+        <ButtonDefault>{buttonLabel}</ButtonDefault>
+      ))}
+    </ButtonGroupDefault>
+  );
+};
 
-export const ButtonGroupDefault = ButtonGroupDefaultTemplate.bind({});
-ButtonGroupDefault.args = {
-  numberOfButtons: ["one", "two", "three"],
+export const ButtonGroupDefaults = ButtonGroupDefaultTemplate.bind({});
+ButtonGroupDefaults.args = {
+  buttonArray: ["one", "two", "three"],
   variant: "contained",
   size: "medium",
   color: "primary",
@@ -48,23 +55,21 @@ ButtonGroupDefault.args = {
   disableRipple: false,
   disableElevation: false,
 };
+
 const ButtonGroupVariantsTemplate = (args) => (
-  <ButtonGroupVariants {...args}></ButtonGroupVariants>
+  ButtonGroupVariants(args)
 );
 export const ButtonGroupVariant = ButtonGroupVariantsTemplate.bind({});
 
-const ButtonGroupSizesColorsTemplate = (args) => (
-  <ButtonGroupSizesColors {...args}></ButtonGroupSizesColors>
-);
+const ButtonGroupSizesColorsTemplate = (args) => ButtonGroupSizesColors(args);
 export const ButtonGroupSizesAndColors = ButtonGroupSizesColorsTemplate.bind(
   {}
 );
-const ButtonGroupVerticalsTemplate = (args) => (
-  <ButtonGroupVerticals {...args}></ButtonGroupVerticals>
-);
+
+const ButtonGroupVerticalsTemplate = (args) => ButtonGroupVerticals(args);
 export const ButtonGroupVertical = ButtonGroupVerticalsTemplate.bind({});
 
-const SplitButtonsTemplate = (args) => <SplitButton {...args}></SplitButton>;
+const SplitButtonsTemplate = (args) => SplitButton(args);
 
 export const SplitButtons = SplitButtonsTemplate.bind({});
 SplitButtons.args = {

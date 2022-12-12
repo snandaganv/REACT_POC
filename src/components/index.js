@@ -21,14 +21,15 @@ export { default as TransferListComponent } from "./transfer-list-component";
 export { default as TreeViewComponent } from "./tree-view-component";
 
 export {
-  ButtonDefaults as ButtonDefault,
+  ButtonDefault,
+  IconButtonDefault,
+  LoadingButtonDefault,
   ButtonBasics as ButtonBasic,
   ButtonColors as ButtonColor,
   ButtonSizes as ButtonSize,
-  ButtonHandingClick as ButtonHandingClicks,
+  ButtonHandlingClick as ButtonHandlingClicks,
   ButtonIconLabelButton as ButtonIconLabelButtons,
-  ButtonLoadings as ButtonLoading,
-  ButtonIcon as ButtonIcons,
+  ButtonLoadings as ButtonLoading
 } from "./Button";
 
 export {
@@ -238,12 +239,12 @@ export {
 } from "./speeddial-component";
 
 export {
-  ButtonGroupDefaults as ButtonGroupDefault,
-  ButtonGroupVariants as ButtonGroupVariant,
-  ButtonGroupSizesColors as ButtonGroupSizesAndColors,
-  ButtonGroupVerticals as ButtonGroupVertical,
-  SplitButton as SplitButtons,
-} from "./buttongroup-component";
+  ButtonGroupDefault,
+  ButtonGroupSizesColors,
+  ButtonGroupVariants,
+  ButtonGroupVerticals,
+  SplitButton
+} from "./buttongroup-component/";
 
 export {
   PaginationDefaults as PaginationDefault,

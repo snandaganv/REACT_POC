@@ -1,21 +1,19 @@
-import { Button } from "@mui/material";
-import Delete from "@mui/icons-material/Delete";
-import { Alarm } from "@mui/icons-material";
+import { Delete, Alarm, Menu, Home } from "@mui/icons-material";
 import {
-  ButtonDefaults,
+  ButtonDefault as ButtonComponent,
   ButtonBasics,
-  ButtonHandingClick,
+  ButtonHandlingClick,
   ButtonColors,
   ButtonSizes,
-  ButtonIcon,
   ButtonIconExamples,
   ButtonIconLabelButton,
   ButtonLoadings,
+  IconButtonDefault,
 } from "../components/Button";
 
 export default {
   title: "Input/Button",
-  component: Button,
+  component: ButtonComponent,
   argTypes: {
     variant: {
       options: ["contained", "outlined", "text"],
@@ -34,32 +32,57 @@ export default {
       control: { type: "radio" },
     },
     onClick: { action: "Clicked" },
+
+    icon: {
+      options: ["delete", "alarm", "home", "menu"],
+      control: { type: "radio" },
+      mapping: {
+        delete: <Delete></Delete>,
+        home: <Home></Home>,
+        menu: <Menu></Menu>,
+        alarm: <Alarm></Alarm>,
+      },
+    },
   },
 };
 
-export const ButtonDefault = ButtonDefaults.bind({});
-ButtonDefault.args = {
+const ButtonDefaultTemplate = (args) => {
+  const { icon, ...argsList } = args;
+  return (
+    <ButtonComponent {...argsList} startIcon={icon}>
+      {args.children}
+    </ButtonComponent>
+  );
+};
+
+export const ButtonDef = ButtonDefaultTemplate.bind({});
+ButtonDef.args = {
   children: "Button",
   variant: "contained",
   color: "primary",
   size: "medium",
   direction: "row",
   disabled: false,
-  startIcon: <Delete />,
+  icon: "delete",
 };
 
 export const ButtonBasic = ButtonBasics.bind({});
 
-export const ButtonHandingClicks = ButtonHandingClick.bind({});
+export const ButtonHandlingClicks = ButtonHandlingClick.bind({});
 
 export const ButtonColor = ButtonColors.bind({});
 
 export const ButtonSize = ButtonSizes.bind({});
 
-export const ButtonIcons = ButtonIcon.bind({});
+const ButtonIconTemplate = (args) => {
+  const { icon, ...argList } = args;
+  return <IconButtonDefault {...argList}>{icon}</IconButtonDefault>;
+};
+
+export const ButtonIcons = ButtonIconTemplate.bind({});
 ButtonIcons.args = {
   color: "primary",
-  icon: <Alarm />,
+  icon: "alarm",
 };
 
 export const ButtonIconBasic = ButtonIconExamples.bind({});

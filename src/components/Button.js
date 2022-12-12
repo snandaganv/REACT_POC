@@ -13,17 +13,31 @@ import { LoadingButton } from "@mui/lab";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../.storybook/muiTheme";
 
-export const ButtonDefaults = (props) => {
+export const ButtonDefault = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
-      <Stack {...props}>
-        <Button {...props}>{props.children}</Button>
-      </Stack>
+      <Button {...props}>{props.children}</Button>
     </ThemeProvider>
   );
 };
 
-ButtonDefaults.propTypes = {
+export const IconButtonDefault = (props) => {
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <IconButton {...props}>{props.children}</IconButton>
+    </ThemeProvider>
+  );
+};
+
+export const LoadingButtonDefault = (props) => {
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <LoadingButton {...props}>{props.children}</LoadingButton>
+    </ThemeProvider>
+  );
+};
+
+ButtonDefault.propTypes = {
   children: PropTypes.any,
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
@@ -43,92 +57,97 @@ ButtonDefaults.propTypes = {
     "column",
     "column-reverse",
   ]),
+  icon: PropTypes.any
+};
+
+IconButtonDefault.propTypes = { ...ButtonDefault.propTypes };
+LoadingButtonDefault.propTypes = {
+  loading: PropTypes.bool,
+  ...ButtonDefault.propTypes,
 };
 
 export const ButtonBasics = ({ direction }) => {
   return (
-    <ThemeProvider theme={muiTheme}>
-      <Stack spacing={2} direction="row">
-        <Button variant="text" color="primary">
-          Text
-        </Button>
-        <Button variant="contained" color="primary">
-          Contained
-        </Button>
-        <Button variant="outlined" color="primary">
-          Outlined
-        </Button>
-        <Button variant="contained" color="primary" disabled>
-          Disabled
-        </Button>
-        <Button variant="contained" color="primary" href="#contained-buttons">
-          Link
-        </Button>
-      </Stack>
-    </ThemeProvider>
+    <Stack spacing={2} direction="row">
+      <ButtonDefault variant="text" color="primary">
+        Text
+      </ButtonDefault>
+      <ButtonDefault variant="contained" color="primary">
+        Contained
+      </ButtonDefault>
+      <ButtonDefault variant="outlined" color="primary">
+        Outlined
+      </ButtonDefault>
+      <ButtonDefault variant="contained" color="primary" disabled>
+        Disabled
+      </ButtonDefault>
+      <ButtonDefault
+        variant="contained"
+        color="primary"
+        href="#contained-buttons"
+      >
+        Link
+      </ButtonDefault>
+    </Stack>
   );
 };
 
 export const ButtonColors = ({ color }) => {
   return (
-    <ThemeProvider theme={muiTheme}>
-      <Stack direction="row" spacing={2}>
-        <Button color="primary" variant="contained">
-          primary
-        </Button>
-        <Button color="secondary" variant="contained">
-          Secondary
-        </Button>
-        <Button variant="contained" color="success">
-          Success
-        </Button>
-        <Button variant="outlined" color="error">
-          Error
-        </Button>
-        <Button variant="outlined" color="info">
-          Info
-        </Button>
-        <Button variant="outlined" color="warning">
-          Warning
-        </Button>
-      </Stack>
-    </ThemeProvider>
+    <Stack direction="row" spacing={2}>
+      <ButtonDefault color="primary" variant="contained">
+        primary
+      </ButtonDefault>
+      <ButtonDefault color="secondary" variant="contained">
+        Secondary
+      </ButtonDefault>
+      <ButtonDefault variant="contained" color="success">
+        Success
+      </ButtonDefault>
+      <ButtonDefault variant="outlined" color="error">
+        Error
+      </ButtonDefault>
+      <ButtonDefault variant="outlined" color="info">
+        Info
+      </ButtonDefault>
+      <ButtonDefault variant="outlined" color="warning">
+        Warning
+      </ButtonDefault>
+    </Stack>
   );
 };
 
 export const ButtonSizes = ({ size }) => {
   return (
-    <ThemeProvider theme={muiTheme}>
-      <Box sx={{ "& button": { m: 1 } }}>
-        <div>
-          <Button size="small">Small</Button>
-          <Button size="medium">Medium</Button>
-          <Button size="large">Large</Button>
-        </div>
-        <div>
-          <Button variant="outlined" size="small">
-            Small
-          </Button>
-          <Button variant="outlined" size="medium">
-            Medium
-          </Button>
-          <Button variant="outlined" size="large">
-            Large
-          </Button>
-        </div>
-        <div>
-          <Button variant="contained" size="small">
-            Small
-          </Button>
-          <Button variant="contained" size="medium">
-            Medium
-          </Button>
-          <Button variant="contained" size="large">
-            Large
-          </Button>
-        </div>
-      </Box>
-    </ThemeProvider>
+    <Box sx={{ "& button": { m: 1 } }}>
+      <div>
+        <ButtonDefault size="small">Small</ButtonDefault>
+        <ButtonDefault size="medium">Medium</ButtonDefault>
+        <ButtonDefault size="large">Large</ButtonDefault>
+      </div>
+      <div>
+        <ButtonDefault variant="outlined" size="small">
+          Small
+        </ButtonDefault>
+        <ButtonDefault variant="outlined" size="medium">
+          Medium
+        </ButtonDefault>
+        <ButtonDefault variant="outlined" size="large">
+          Large
+        </ButtonDefault>
+      </div>
+      <div>
+        <ButtonDefault variant="contained" size="small">
+          Small
+        </ButtonDefault>
+        <ButtonDefault variant="contained" size="medium">
+          Medium
+        </ButtonDefault>
+        <ButtonDefault variant="contained" size="large">
+          Large
+        </ButtonDefault>
+      </div>
+    </Box>
   );
 };
 
@@ -136,95 +155,59 @@ export const ButtonIconExamples = ({ disabled }) => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack direction="row" spacing={1}>
-        <IconButton aria-label="delete">
+        <IconButtonDefault aria-label="delete">
           <Delete />
-        </IconButton>
-        <IconButton aria-label="delete" disabled color="primary">
+        </IconButtonDefault>
+        <IconButtonDefault aria-label="delete" disabled color="primary">
           <Delete />
-        </IconButton>
-        <IconButton color="secondary" aria-label="add an alarm">
+        </IconButtonDefault>
+        <IconButtonDefault color="secondary" aria-label="add an alarm">
           <Alarm />
-        </IconButton>
-        <IconButton color="primary" aria-label="add to shopping cart">
+        </IconButtonDefault>
+        <IconButtonDefault color="primary" aria-label="add to shopping cart">
           <AddShoppingCart />
-        </IconButton>
-      </Stack>
-    </ThemeProvider>
-  );
-};
-export const ButtonIcon = ({ onClick, color, disabled, size, icon }) => {
-  return (
-    <ThemeProvider theme={muiTheme}>
-      <Stack direction="row" spacing={1}>
-        <IconButton
-          aria-label=""
-          size={size}
-          disabled={disabled}
-          color={color}
-          onClick={onClick}
-        >
-          {icon}
-        </IconButton>
+        </IconButtonDefault>
       </Stack>
     </ThemeProvider>
   );
 };
 
-ButtonIcon.propTypes = {
-  children: PropTypes.any,
-  onClick: PropTypes.func,
-  disabled: PropTypes.bool,
-  color: PropTypes.string,
-  size: PropTypes.oneOf([
-    "primary",
-    "success",
-    "secondary",
-    "error",
-    "info",
-    "warning",
-  ]),
-};
-
-export const ButtonHandingClick = ({ onClick }) => {
+export const ButtonHandlingClick = ({ onClick }) => {
   return (
-    <ThemeProvider theme={muiTheme}>
-      <Button
-        color="primary"
-        onClick={() => {
-          alert("clicked");
-        }}
-      >
-        Click me
-      </Button>
-    </ThemeProvider>
+    <ButtonDefault
+      color="primary"
+      onClick={() => {
+        alert("clicked");
+      }}
+    >
+      Click me
+    </ButtonDefault>
   );
 };
 
 export const ButtonIconLabelButton = ({ startIcon, endIcon }) => {
   return (
-    <ThemeProvider theme={muiTheme}>
-      <FormGroup>
-        <Stack direction="row" spacing={2} mb="12px">
-          <Button variant="outlined" color="primary" startIcon={<Delete />}>
-            Delete
-          </Button>
-          <Button variant="contained" color="primary" endIcon={<Send />}>
-            Send
-          </Button>
-        </Stack>
-      </FormGroup>
-    </ThemeProvider>
+    <FormGroup>
+      <Stack direction="row" spacing={2} mb="12px">
+        <ButtonDefault
+          variant="outlined"
+          color="primary"
+          startIcon={<Delete />}
+        >
+          Delete
+        </ButtonDefault>
+        <ButtonDefault variant="contained" color="primary" endIcon={<Send />}>
+          Send
+        </ButtonDefault>
+      </Stack>
+    </FormGroup>
   );
 };
 
 export const ButtonLoadings = (props) => {
   return (
-    <ThemeProvider theme={muiTheme}>
-      <FormGroup>
-        <Stack {...props}>
-          <LoadingButton {...props}>{props.children}</LoadingButton>
-        </Stack>
-      </FormGroup>
-    </ThemeProvider>
+    <Stack direction="row" spacing={2} mb="12px">
+      <LoadingButtonDefault {...props}>{props.children}</LoadingButtonDefault>
+    </Stack>
   );
 };
