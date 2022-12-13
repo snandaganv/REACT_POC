@@ -1,17 +1,17 @@
 import { Select } from "@mui/material";
 import {
-  DefaultSelects,
-  SelectBasics,
-  SelectOtherProps,
-  SelectVariants,
-  SelectAutoWidths,
-  SelectSizes,
-  SelectLabels,
-  MultipleSelects,
-  MultipleSelectCheckmarks,
-  MultipleSelectChips,
-  MultipleSelectPlaceholders,
-  GroupSelect,
+  SelectsDefault,
+  SelectsBasic,
+  SelectsOtherProps,
+  SelectsVariant,
+  SelectsAutoWidth,
+  SelectsSize,
+  SelectsLabel,
+  SelectsMultiple,
+  SelectsMultipleCheckmark,
+  SelectsMultipleChip,
+  SelectsMultiplePlaceholder,
+  SelectsGroup,
 } from "../components/select-component";
 
 export default {
@@ -22,9 +22,16 @@ export default {
       options: ["outlined", "standard", "filled"],
       control: { type: "radio" },
     },
+    size: {
+      options: ["small", "medium"],
+      control: { type: "radio" },
+    },
   },
 };
-export const SelectDefault = DefaultSelects.bind({});
+const SelectsDefaultTemplate = (args) => (
+  <SelectsDefault {...args}></SelectsDefault>
+);
+export const SelectDefault = SelectsDefaultTemplate.bind({});
 SelectDefault.args = {
   selectlabel: [{ label: "Select" }],
   variant: "outlined",
@@ -66,7 +73,7 @@ SelectDefault.parameters = {
   },
 };
 
-export const BasicSelect = SelectBasics.bind({});
+export const BasicSelect = SelectsBasic.bind({});
 BasicSelect.args = {
   selectlabel: [{ label: "Name" }],
   size: false,
@@ -103,7 +110,10 @@ BasicSelect.parameters = {
     },
   },
 };
-export const SelectVariant = SelectVariants.bind({});
+const SelectsVariantTemplate = (args) => (
+  <SelectsVariant {...args}></SelectsVariant>
+);
+export const SelectVariant = SelectsVariantTemplate.bind({});
 SelectVariant.args = {
   selectlabel: [{ label: "Select" }],
   selectoptions: [
@@ -171,7 +181,10 @@ SelectVariant.parameters = {
     },
   },
 };
-export const SelectAutoWidth = SelectAutoWidths.bind({});
+const SelectsAutoWidthTemplate = (args) => (
+  <SelectsAutoWidth {...args}></SelectsAutoWidth>
+);
+export const SelectAutoWidth = SelectsAutoWidthTemplate.bind({});
 SelectAutoWidth.args = {
   selectlabel: [{ label: "Sort" }],
   autowidth: [
@@ -210,7 +223,8 @@ SelectAutoWidth.parameters = {
     },
   },
 };
-export const SelectSize = SelectSizes.bind({});
+const SelectsSizeTemplate = (args) => <SelectsSize {...args}></SelectsSize>;
+export const SelectSize = SelectsSizeTemplate.bind({});
 SelectSize.args = {
   selectlabel: [{ label: "Name" }],
   selectoptions: [
@@ -252,7 +266,8 @@ SelectSize.parameters = {
     },
   },
 };
-export const SelectLabel = SelectLabels.bind({});
+const SelectsLabelTemplate = (args) => <SelectsLabel {...args}></SelectsLabel>;
+export const SelectLabel = SelectsLabelTemplate.bind({});
 SelectLabel.args = {
   selectlabel: [{ label: "Select" }],
   selectoptions: [
@@ -312,7 +327,10 @@ SelectLabel.parameters = {
   },
 };
 
-export const SelectOtherProp = SelectOtherProps.bind({});
+const SelectsOtherPropsTemplate = (args) => (
+  <SelectsOtherProps {...args}></SelectsOtherProps>
+);
+export const SelectOtherProp = SelectsOtherPropsTemplate.bind({});
 SelectOtherProp.args = {
   selectlabel: [{ label: "Select" }],
   selectoptions: [
@@ -397,7 +415,7 @@ SelectOtherProp.parameters = {
     },
   },
 };
-export const MultipleSelect = MultipleSelects.bind({});
+export const MultipleSelect = SelectsMultiple.bind({});
 MultipleSelect.args = {
   selectlabel: [{ label: "Select" }],
   selectmultiple: [
@@ -467,7 +485,7 @@ MultipleSelect.parameters = {
   },
 };
 
-export const MultipleSelectCheckmark = MultipleSelectCheckmarks.bind({});
+export const MultipleSelectCheckmark = SelectsMultipleCheckmark.bind({});
 MultipleSelectCheckmark.parameters = {
   docs: {
     source: {
@@ -508,7 +526,7 @@ MultipleSelectCheckmark.parameters = {
   },
 };
 
-export const MultipleSelectChip = MultipleSelectChips.bind({});
+export const MultipleSelectChip = SelectsMultipleChip.bind({});
 MultipleSelectChip.parameters = {
   docs: {
     source: {
@@ -560,7 +578,7 @@ MultipleSelectChip.parameters = {
   },
 };
 
-export const MultipleSelectPlaceholder = MultipleSelectPlaceholders.bind({});
+export const MultipleSelectPlaceholder = SelectsMultiplePlaceholder.bind({});
 MultipleSelectPlaceholder.parameters = {
   docs: {
     source: {
@@ -614,7 +632,7 @@ MultipleSelectPlaceholder.parameters = {
   },
 };
 
-export const GroupedSelect = GroupSelect.bind({});
+export const GroupedSelect = SelectsGroup.bind({});
 GroupedSelect.parameters = {
   docs: {
     source: {

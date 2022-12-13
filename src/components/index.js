@@ -11,7 +11,6 @@ export { default as TabsComponent } from "./tabs-component";
 export { default as MenuIcon } from "./menu-icons-component";
 export { default as SearchIconsComponent } from "./search-icons-component";
 export { default as TextFieldComponent } from "./textfield-component";
-export { DefaultSelects } from "./select-component";
 export { default as DateTimeComponent } from "./datetime-component";
 export { default as SliderComponent } from "./slider-component";
 export { default as CardComponent } from "./card-component";
@@ -102,18 +101,18 @@ export {
 } from "./Accordion";
 
 export {
-  DefaultSelects as SelectDefault,
-  SelectBasics as BasicSelect,
-  SelectVariants as SelectVariant,
-  SelectAutoWidths as SelectAutoWidth,
-  SelectSizes as SelectSize,
-  SelectLabels as SelectLabel,
-  SelectOtherProps as SelectOtherProp,
-  MultipleSelects as MultipleSelect,
-  MultipleSelectCheckmarks as MultipleSelectCheckmark,
-  MultipleSelectChips as MultipleSelectChip,
-  MultipleSelectPlaceholders as MultipleSelectPlaceholder,
-  GroupSelect as GroupedSelect,
+  SelectsDefault as SelectDefault,
+  SelectsBasic as SelectBasic,
+  SelectsVariant as SelectVariant,
+  SelectsAutoWidth as SelectAutoWidth,
+  SelectsSize as SelectSize,
+  SelectsLabel as SelectLabel,
+  SelectsOtherProps as SelectOtherProp,
+  SelectsMultiple as SelectMultiple,
+  SelectsMultipleCheckmark as SelectMultipleCheckmark,
+  SelectsMultipleChip as SelectMultipleChip,
+  SelectsMultiplePlaceholder as SelectMultiplePlaceholder,
+  SelectsGroup as SelectGroup,
 } from "./select-component";
 
 export {
@@ -166,7 +165,7 @@ export {
 } from "./progress-component";
 
 export {
-  DefaultPapers as DefaultPaper,
+  PapersBasic as PaperBasic,
   Elevations as Elevation,
 } from "./paper-component";
 

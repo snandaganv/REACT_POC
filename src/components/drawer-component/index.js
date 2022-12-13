@@ -1,38 +1,31 @@
-import React from 'react';
+import { Global } from '@emotion/react';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import MenuIcon from '@mui/icons-material/Menu';
+import { default as AppBar, default as MuiAppBar } from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import List from '@mui/material/List';
+import { grey } from '@mui/material/colors';
+import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
+import { default as Drawer, default as MuiDrawer } from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../../.storybook/muiTheme';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import CssBaseline from '@mui/material/CssBaseline';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import Skeleton from '@mui/material/Skeleton';
+import { styled, ThemeProvider, useTheme } from '@mui/material/styles';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { styled, useTheme } from '@mui/material/styles';
-import MuiAppBar from '@mui/material/AppBar';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import MuiDrawer from '@mui/material/Drawer';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Skeleton from '@mui/material/Skeleton';
-import { grey } from '@mui/material/colors';
-import { Global } from '@emotion/react';
+import PropTypes from 'prop-types';
+import React from 'react';
+import muiTheme from '../../../.storybook/muiTheme';
 
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
-
-export const DrawersTemporary = ({ hideBackdrop, variant, elevation }) => {
+export const DrawersTemporary = ({ hideBackdrop, variant, elevation, drawernav, drawerlist }) => {
     const [state, setState] = React.useState({
         top: false,
         left: false,
@@ -57,29 +50,25 @@ export const DrawersTemporary = ({ hideBackdrop, variant, elevation }) => {
                 onKeyDown={toggleDrawer(anchor, false)}
             >
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
+                    {drawernav.map((drawernav, text, index) =>
+                        <ListItem key={drawernav.id} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <ListItemIcon>{drawernav.icon}</ListItemIcon>
+                                <ListItemText primary={drawernav.primary} />
                             </ListItemButton>
                         </ListItem>
-                    ))}
+                    )}
                 </List>
                 <Divider />
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
+                    {drawerlist.map((drawerlist, text, index) =>
+                        <ListItem key={drawerlist.id} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <ListItemIcon>{drawerlist.icon}</ListItemIcon>
+                                <ListItemText primary={drawerlist.primary} />
                             </ListItemButton>
                         </ListItem>
-                    ))}
+                    )}
                 </List>
             </Box>
         </ThemeProvider>
@@ -109,10 +98,7 @@ export const DrawersTemporary = ({ hideBackdrop, variant, elevation }) => {
     );
 }
 
-
-
-
-export const DrawersSwipeableTemporary = ({ disableBackdropTransition, disableDiscovery }) => {
+export const DrawersSwipeableTemporary = ({ disableBackdropTransition, disableDiscovery, drawernav, drawerlist, drawerbtn }) => {
     const [state, setState] = React.useState({
         top: false,
         left: false,
@@ -141,29 +127,25 @@ export const DrawersSwipeableTemporary = ({ disableBackdropTransition, disableDi
                 onKeyDown={toggleDrawer(anchor, false)}
             >
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
+                    {drawernav.map((drawernav, text, index) =>
+                        <ListItem key={drawernav.id} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <ListItemIcon>{drawernav.icon}</ListItemIcon>
+                                <ListItemText primary={drawernav.primary} />
                             </ListItemButton>
                         </ListItem>
-                    ))}
+                    )}
                 </List>
                 <Divider />
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
+                    {drawerlist.map((drawerlist, text, index) =>
+                        <ListItem key={drawerlist.id} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <ListItemIcon>{drawerlist.icon}</ListItemIcon>
+                                <ListItemText primary={drawerlist.primary} />
                             </ListItemButton>
                         </ListItem>
-                    ))}
+                    )}
                 </List>
             </Box>
         </ThemeProvider>
@@ -228,7 +210,7 @@ export const DrawersSwipeableEdge = (props) => {
         setOpen(newOpen);
     };
 
-    // This is used only for the example
+
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
@@ -298,16 +280,13 @@ DrawersSwipeableEdge.prototype = {
 const drawerWidth = 240;
 
 interface Props {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
+
     window?: () => Window;
 }
 
 export const DrawersResponsive = (props: Props,) => {
 
-    const { window, data, header, elevation } = props;
+    const { window, header, elevation, data, drawernav, drawerlist, } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
@@ -320,29 +299,25 @@ export const DrawersResponsive = (props: Props,) => {
                 <Toolbar />
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
+                    {drawernav.map((drawernav, text, index) =>
+                        <ListItem key={drawernav.id} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <ListItemIcon>{drawernav.icon}</ListItemIcon>
+                                <ListItemText primary={drawernav.primary} />
                             </ListItemButton>
                         </ListItem>
-                    ))}
+                    )}
                 </List>
                 <Divider />
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
+                    {drawerlist.map((drawerlist, text, index) =>
+                        <ListItem key={drawerlist.id} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <ListItemIcon>{drawerlist.icon}</ListItemIcon>
+                                <ListItemText primary={drawerlist.primary} />
                             </ListItemButton>
                         </ListItem>
-                    ))}
+                    )}
                 </List>
             </div>
         </ThemeProvider>
@@ -470,7 +445,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     justifyContent: 'flex-end',
 }));
 
-export const DrawersPersistentLeft = ({ data, header }) => {
+export const DrawersPersistentLeft = ({ data, header, drawernav, drawerlist, }) => {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -522,29 +497,25 @@ export const DrawersPersistentLeft = ({ data, header }) => {
                     </DrawerHeader>
                     <Divider />
                     <List>
-                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                            <ListItem key={text} disablePadding>
+                        {drawernav.map((drawernav, text, index) =>
+                            <ListItem key={drawernav.id} disablePadding>
                                 <ListItemButton>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
+                                    <ListItemIcon>{drawernav.icon}</ListItemIcon>
+                                    <ListItemText primary={drawernav.primary} />
                                 </ListItemButton>
                             </ListItem>
-                        ))}
+                        )}
                     </List>
                     <Divider />
                     <List>
-                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                            <ListItem key={text} disablePadding>
+                        {drawerlist.map((drawerlist, text, index) =>
+                            <ListItem key={drawerlist.id} disablePadding>
                                 <ListItemButton>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
+                                    <ListItemIcon>{drawerlist.icon}</ListItemIcon>
+                                    <ListItemText primary={drawerlist.primary} />
                                 </ListItemButton>
                             </ListItem>
-                        ))}
+                        )}
                     </List>
                 </Drawer>
                 <Main open={open}>
@@ -601,12 +572,11 @@ const DrawerHeaderRight = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-start',
 }));
 
-export const DrawersPersistentRight = ({ data, header }) => {
+export const DrawersPersistentRight = ({ data, header, drawernav, drawerlist, }) => {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -666,29 +636,25 @@ export const DrawersPersistentRight = ({ data, header }) => {
                     </DrawerHeaderRight>
                     <Divider />
                     <List>
-                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                            <ListItem key={text} disablePadding>
+                        {drawernav.map((drawernav, text, index) =>
+                            <ListItem key={drawernav.id} disablePadding>
                                 <ListItemButton>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
+                                    <ListItemIcon>{drawernav.icon}</ListItemIcon>
+                                    <ListItemText primary={drawernav.primary} />
                                 </ListItemButton>
                             </ListItem>
-                        ))}
+                        )}
                     </List>
                     <Divider />
                     <List>
-                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                            <ListItem key={text} disablePadding>
+                        {drawerlist.map((drawerlist, text, index) =>
+                            <ListItem key={drawerlist.id} disablePadding>
                                 <ListItemButton>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
+                                    <ListItemIcon>{drawerlist.icon}</ListItemIcon>
+                                    <ListItemText primary={drawerlist.primary} />
                                 </ListItemButton>
                             </ListItem>
-                        ))}
+                        )}
                     </List>
                 </Drawer>
             </Box>
@@ -753,7 +719,7 @@ const DrawerMin = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'ope
     }),
 );
 
-export const DrawersMini = ({ data, header }) => {
+export const DrawersMini = ({ data, header, drawernav, drawerlist }) => {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -796,8 +762,8 @@ export const DrawersMini = ({ data, header }) => {
                     </DrawerHeader>
                     <Divider />
                     <List>
-                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+                        {drawernav.map((drawernav, text, index) =>
+                            <ListItem key={drawernav.id} disablePadding sx={{ display: 'block' }}>
                                 <ListItemButton
                                     sx={{
                                         minHeight: 48,
@@ -812,17 +778,17 @@ export const DrawersMini = ({ data, header }) => {
                                             justifyContent: 'center',
                                         }}
                                     >
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                        {drawernav.icon}
                                     </ListItemIcon>
-                                    <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                                    <ListItemText primary={drawernav.primary} sx={{ opacity: open ? 1 : 0 }} />
                                 </ListItemButton>
                             </ListItem>
-                        ))}
+                        )}
                     </List>
                     <Divider />
                     <List>
-                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+                        {drawerlist.map((drawerlist, text, index) =>
+                            <ListItem key={drawerlist.id} disablePadding sx={{ display: 'block' }}>
                                 <ListItemButton
                                     sx={{
                                         minHeight: 48,
@@ -837,12 +803,12 @@ export const DrawersMini = ({ data, header }) => {
                                             justifyContent: 'center',
                                         }}
                                     >
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                        {drawerlist.icon}
                                     </ListItemIcon>
-                                    <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                                    <ListItemText primary={drawerlist.primary} sx={{ opacity: open ? 1 : 0 }} />
                                 </ListItemButton>
                             </ListItem>
-                        ))}
+                        )}
                     </List>
                 </DrawerMin>
                 <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
@@ -858,7 +824,7 @@ export const DrawersMini = ({ data, header }) => {
     );
 }
 
-export const DrawersPermanentLeft = ({ data, header }) => {
+export const DrawersPermanentLeft = ({ data, header, drawerlist, drawernav }) => {
     return (
         <ThemeProvider theme={muiTheme}>
             <Box sx={{ display: 'flex' }}>
@@ -888,29 +854,25 @@ export const DrawersPermanentLeft = ({ data, header }) => {
                     <Toolbar />
                     <Divider />
                     <List>
-                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                            <ListItem key={text} disablePadding>
+                        {drawernav.map((drawernav, text, index) =>
+                            <ListItem key={drawernav.id} disablePadding>
                                 <ListItemButton>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
+                                    <ListItemIcon>{drawernav.icon}</ListItemIcon>
+                                    <ListItemText primary={drawernav.primary} />
                                 </ListItemButton>
                             </ListItem>
-                        ))}
+                        )}
                     </List>
                     <Divider />
                     <List>
-                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                            <ListItem key={text} disablePadding>
+                        {drawerlist.map((drawerlist, text, index) =>
+                            <ListItem key={drawerlist.id} disablePadding>
                                 <ListItemButton>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
+                                    <ListItemIcon>{drawerlist.icon}</ListItemIcon>
+                                    <ListItemText primary={drawerlist.primary} />
                                 </ListItemButton>
                             </ListItem>
-                        ))}
+                        )}
                     </List>
                 </Drawer>
                 <Box
@@ -928,7 +890,7 @@ export const DrawersPermanentLeft = ({ data, header }) => {
         </ThemeProvider>
     );
 }
-export const DrawersPermanentRight = ({ data, header }) => {
+export const DrawersPermanentRight = ({ data, header, drawerlist, drawernav }) => {
     return (
         <ThemeProvider theme={muiTheme}>
             <Box sx={{ display: 'flex' }}>
@@ -969,29 +931,25 @@ export const DrawersPermanentRight = ({ data, header }) => {
                     <Toolbar />
                     <Divider />
                     <List>
-                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                            <ListItem key={text} disablePadding>
+                        {drawernav.map((drawernav, text, index) =>
+                            <ListItem key={drawernav.id} disablePadding>
                                 <ListItemButton>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
+                                    <ListItemIcon>{drawernav.icon}</ListItemIcon>
+                                    <ListItemText primary={drawernav.primary} />
                                 </ListItemButton>
                             </ListItem>
-                        ))}
+                        )}
                     </List>
                     <Divider />
                     <List>
-                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                            <ListItem key={text} disablePadding>
+                        {drawerlist.map((drawerlist, text, index) =>
+                            <ListItem key={drawerlist.id} disablePadding>
                                 <ListItemButton>
-                                    <ListItemIcon>
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
+                                    <ListItemIcon>{drawerlist.icon}</ListItemIcon>
+                                    <ListItemText primary={drawerlist.primary} />
                                 </ListItemButton>
                             </ListItem>
-                        ))}
+                        )}
                     </List>
                 </Drawer>
             </Box>
@@ -999,7 +957,7 @@ export const DrawersPermanentRight = ({ data, header }) => {
     );
 }
 
-export const DrawersClipped = ({ data, header }) => {
+export const DrawersClipped = ({ data, header, drawerlist, drawernav }) => {
     return (
         <ThemeProvider theme={muiTheme}>
             <Box sx={{ display: 'flex' }}>
@@ -1022,29 +980,25 @@ export const DrawersClipped = ({ data, header }) => {
                     <Toolbar />
                     <Box sx={{ overflow: 'auto' }}>
                         <List>
-                            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                                <ListItem key={text} disablePadding>
+                            {drawernav.map((drawernav, text, index) =>
+                                <ListItem key={drawernav.id} disablePadding>
                                     <ListItemButton>
-                                        <ListItemIcon>
-                                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                        </ListItemIcon>
-                                        <ListItemText primary={text} />
+                                        <ListItemIcon>{drawernav.icon}</ListItemIcon>
+                                        <ListItemText primary={drawernav.primary} />
                                     </ListItemButton>
                                 </ListItem>
-                            ))}
+                            )}
                         </List>
                         <Divider />
                         <List>
-                            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                                <ListItem key={text} disablePadding>
+                            {drawerlist.map((drawerlist, text, index) =>
+                                <ListItem key={drawerlist.id} disablePadding>
                                     <ListItemButton>
-                                        <ListItemIcon>
-                                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                        </ListItemIcon>
-                                        <ListItemText primary={text} />
+                                        <ListItemIcon>{drawerlist.icon}</ListItemIcon>
+                                        <ListItemText primary={drawerlist.primary} />
                                     </ListItemButton>
                                 </ListItem>
-                            ))}
+                            )}
                         </List>
                     </Box>
                 </Drawer>
