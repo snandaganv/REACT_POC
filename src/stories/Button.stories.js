@@ -1,19 +1,19 @@
-import { Delete, Alarm, Menu, Home } from "@mui/icons-material";
+import { Alarm, Delete, Home, Menu } from "@mui/icons-material";
 import {
-  ButtonDefault as ButtonComponent,
+  Button,
   ButtonBasics,
-  ButtonHandlingClick,
   ButtonColors,
-  ButtonSizes,
+  ButtonHandlingClick,
   ButtonIconExamples,
   ButtonIconLabelButton,
   ButtonLoadings,
-  IconButtonDefault,
+  ButtonSizes,
+  IconButton,
 } from "../components/Button";
 
 export default {
   title: "Input/Button",
-  component: ButtonComponent,
+  component: Button,
   argTypes: {
     variant: {
       options: ["contained", "outlined", "text"],
@@ -49,9 +49,9 @@ export default {
 const ButtonDefaultTemplate = (args) => {
   const { icon, ...argsList } = args;
   return (
-    <ButtonComponent {...argsList} startIcon={icon}>
+    <Button {...argsList} startIcon={icon}>
       {args.children}
-    </ButtonComponent>
+    </Button>
   );
 };
 
@@ -76,7 +76,7 @@ export const ButtonSize = ButtonSizes.bind({});
 
 const ButtonIconTemplate = (args) => {
   const { icon, ...argList } = args;
-  return <IconButtonDefault {...argList}>{icon}</IconButtonDefault>;
+  return <IconButton {...argList}>{icon}</IconButton>;
 };
 
 export const ButtonIcons = ButtonIconTemplate.bind({});

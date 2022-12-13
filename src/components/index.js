@@ -21,9 +21,9 @@ export { default as TransferListComponent } from "./transfer-list-component";
 export { default as TreeViewComponent } from "./tree-view-component";
 
 export {
-  ButtonDefault,
-  IconButtonDefault,
-  LoadingButtonDefault,
+  Button,
+  IconButton,
+  LoadingButton,
   ButtonBasics as ButtonBasic,
   ButtonColors as ButtonColor,
   ButtonSizes as ButtonSize,
@@ -239,7 +239,7 @@ export {
 } from "./speeddial-component";
 
 export {
-  ButtonGroupDefault,
+  ButtonGroup,
   ButtonGroupSizesColors,
   ButtonGroupVariants,
   ButtonGroupVerticals,

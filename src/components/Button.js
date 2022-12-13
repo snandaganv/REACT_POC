@@ -1,43 +1,42 @@
-import React from "react";
-import { PropTypes } from "prop-types";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import FormGroup from "@mui/material/FormGroup";
-import Stack from "@mui/material/Stack";
-import Send from "@mui/icons-material/Send";
-import { Alarm } from "@mui/icons-material";
-import AddShoppingCart from "@mui/icons-material/AddShoppingCart";
-import Delete from "@mui/icons-material/Delete";
-import { LoadingButton } from "@mui/lab";
+import { AddShoppingCart, Alarm, Delete, Send } from "@mui/icons-material";
+import { LoadingButton as LoadingButtonMUI } from "@mui/lab";
+import {
+  Box,
+  Button as ButtonMUI,
+  FormGroup,
+  IconButton as IconButtonMUI,
+  Stack,
+} from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
+import { PropTypes } from "prop-types";
+import React from "react";
 import muiTheme from "../../.storybook/muiTheme";
 
-export const ButtonDefault = (props) => {
+export const Button = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
-      <Button {...props}>{props.children}</Button>
+      <ButtonMUI {...props}>{props.children}</ButtonMUI>
     </ThemeProvider>
   );
 };
 
-export const IconButtonDefault = (props) => {
+export const IconButton = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
-      <IconButton {...props}>{props.children}</IconButton>
+      <IconButtonMUI {...props}>{props.children}</IconButtonMUI>
     </ThemeProvider>
   );
 };
 
-export const LoadingButtonDefault = (props) => {
+export const LoadingButton = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
-      <LoadingButton {...props}>{props.children}</LoadingButton>
+      <LoadingButtonMUI {...props}>{props.children}</LoadingButtonMUI>
     </ThemeProvider>
   );
 };
 
-ButtonDefault.propTypes = {
+Button.propTypes = {
   children: PropTypes.any,
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
@@ -57,37 +56,37 @@ ButtonDefault.propTypes = {
     "column",
     "column-reverse",
   ]),
-  icon: PropTypes.any
+  icon: PropTypes.any,
 };
 
-IconButtonDefault.propTypes = { ...ButtonDefault.propTypes };
-LoadingButtonDefault.propTypes = {
+IconButton.propTypes = { ...Button.propTypes };
+LoadingButton.propTypes = {
   loading: PropTypes.bool,
-  ...ButtonDefault.propTypes,
+  ...Button.propTypes,
 };
 
 export const ButtonBasics = ({ direction }) => {
   return (
     <Stack spacing={2} direction="row">
-      <ButtonDefault variant="text" color="primary">
+      <Button variant="text" color="primary">
         Text
-      </ButtonDefault>
-      <ButtonDefault variant="contained" color="primary">
+      </Button>
+      <Button variant="contained" color="primary">
         Contained
-      </ButtonDefault>
-      <ButtonDefault variant="outlined" color="primary">
+      </Button>
+      <Button variant="outlined" color="primary">
         Outlined
-      </ButtonDefault>
-      <ButtonDefault variant="contained" color="primary" disabled>
+      </Button>
+      <Button variant="contained" color="primary" disabled>
         Disabled
-      </ButtonDefault>
-      <ButtonDefault
+      </Button>
+      <Button
         variant="contained"
         color="primary"
         href="#contained-buttons"
       >
         Link
-      </ButtonDefault>
+      </Button>
     </Stack>
   );
 };
@@ -95,24 +94,24 @@ export const ButtonBasics = ({ direction }) => {
 export const ButtonColors = ({ color }) => {
   return (
     <Stack direction="row" spacing={2}>
-      <ButtonDefault color="primary" variant="contained">
+      <Button color="primary" variant="contained">
         primary
-      </ButtonDefault>
-      <ButtonDefault color="secondary" variant="contained">
+      </Button>
+      <Button color="secondary" variant="contained">
         Secondary
-      </ButtonDefault>
-      <ButtonDefault variant="contained" color="success">
+      </Button>
+      <Button variant="contained" color="success">
         Success
-      </ButtonDefault>
-      <ButtonDefault variant="outlined" color="error">
+      </Button>
+      <Button variant="outlined" color="error">
         Error
-      </ButtonDefault>
-      <ButtonDefault variant="outlined" color="info">
+      </Button>
+      <Button variant="outlined" color="info">
         Info
-      </ButtonDefault>
-      <ButtonDefault variant="outlined" color="warning">
+      </Button>
+      <Button variant="outlined" color="warning">
         Warning
-      </ButtonDefault>
+      </Button>
     </Stack>
   );
 };
@@ -121,31 +120,31 @@ export const ButtonSizes = ({ size }) => {
   return (
     <Box sx={{ "& button": { m: 1 } }}>
       <div>
-        <ButtonDefault size="small">Small</ButtonDefault>
-        <ButtonDefault size="medium">Medium</ButtonDefault>
-        <ButtonDefault size="large">Large</ButtonDefault>
+        <Button size="small">Small</Button>
+        <Button size="medium">Medium</Button>
+        <Button size="large">Large</Button>
       </div>
       <div>
-        <ButtonDefault variant="outlined" size="small">
+        <Button variant="outlined" size="small">
           Small
-        </ButtonDefault>
-        <ButtonDefault variant="outlined" size="medium">
+        </Button>
+        <Button variant="outlined" size="medium">
           Medium
-        </ButtonDefault>
-        <ButtonDefault variant="outlined" size="large">
+        </Button>
+        <Button variant="outlined" size="large">
           Large
-        </ButtonDefault>
+        </Button>
       </div>
       <div>
-        <ButtonDefault variant="contained" size="small">
+        <Button variant="contained" size="small">
           Small
-        </ButtonDefault>
-        <ButtonDefault variant="contained" size="medium">
+        </Button>
+        <Button variant="contained" size="medium">
           Medium
-        </ButtonDefault>
-        <ButtonDefault variant="contained" size="large">
+        </Button>
+        <Button variant="contained" size="large">
           Large
-        </ButtonDefault>
+        </Button>
       </div>
     </Box>
   );
@@ -155,18 +154,18 @@ export const ButtonIconExamples = ({ disabled }) => {
   return (
     <ThemeProvider theme={muiTheme}>
       <Stack direction="row" spacing={1}>
-        <IconButtonDefault aria-label="delete">
+        <IconButton aria-label="delete">
           <Delete />
-        </IconButtonDefault>
-        <IconButtonDefault aria-label="delete" disabled color="primary">
+        </IconButton>
+        <IconButton aria-label="delete" disabled color="primary">
           <Delete />
-        </IconButtonDefault>
-        <IconButtonDefault color="secondary" aria-label="add an alarm">
+        </IconButton>
+        <IconButton color="secondary" aria-label="add an alarm">
           <Alarm />
-        </IconButtonDefault>
-        <IconButtonDefault color="primary" aria-label="add to shopping cart">
+        </IconButton>
+        <IconButton color="primary" aria-label="add to shopping cart">
           <AddShoppingCart />
-        </IconButtonDefault>
+        </IconButton>
       </Stack>
     </ThemeProvider>
   );
@@ -174,14 +173,14 @@ export const ButtonIconExamples = ({ disabled }) => {
 
 export const ButtonHandlingClick = ({ onClick }) => {
   return (
-    <ButtonDefault
+    <Button
       color="primary"
       onClick={() => {
         alert("clicked");
       }}
     >
       Click me
-    </ButtonDefault>
+    </Button>
   );
 };
 
@@ -189,16 +188,16 @@ export const ButtonIconLabelButton = ({ startIcon, endIcon }) => {
   return (
     <FormGroup>
       <Stack direction="row" spacing={2} mb="12px">
-        <ButtonDefault
+        <Button
           variant="outlined"
           color="primary"
           startIcon={<Delete />}
         >
           Delete
-        </ButtonDefault>
-        <ButtonDefault variant="contained" color="primary" endIcon={<Send />}>
+        </Button>
+        <Button variant="contained" color="primary" endIcon={<Send />}>
           Send
-        </ButtonDefault>
+        </Button>
       </Stack>
     </FormGroup>
   );
@@ -207,7 +206,7 @@ export const ButtonIconLabelButton = ({ startIcon, endIcon }) => {
 export const ButtonLoadings = (props) => {
   return (
     <Stack direction="row" spacing={2} mb="12px">
-      <LoadingButtonDefault {...props}>{props.children}</LoadingButtonDefault>
+      <LoadingButton {...props}>{props.children}</LoadingButton>
     </Stack>
   );
 };
