@@ -103,7 +103,7 @@ export const ToggleButtonSize = ({ size, color, onClick }) => {
   };
 
   return (
-    
+    <>
       <ThemeProvider theme={muiTheme}>
         <Box
           sx={{
@@ -125,7 +125,7 @@ export const ToggleButtonSize = ({ size, color, onClick }) => {
           </ToggleButtonGroup>
         </Box>
       </ThemeProvider>
-    
+    </>
   );
 };
 ToggleButtonSize.propTypes = {

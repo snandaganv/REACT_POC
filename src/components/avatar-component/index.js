@@ -39,39 +39,40 @@ const AvatarComponent = (props) => {
   }
 
   return (
-    <ThemeProvider theme={muiTheme}>
+    <>
     {
       type === 'text' && sizes === 'small'&& (
-        
+        <ThemeProvider theme={muiTheme}>
       <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '16px',width: '24px', height: '24px'}}></Avatar>
-      
+      </ThemeProvider>
       )
     }
     {
       type === 'text' && sizes === 'medium' && (
-        
+        <ThemeProvider theme={muiTheme}>
       <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '20px',width: '32px', height: '32px'}}></Avatar>
-      
+      </ThemeProvider>
       )
     }
     {
       type === 'text' && sizes === 'large' && (
-        
+        <ThemeProvider theme={muiTheme}>
       <Avatar {...stringAvatar(avatarText)} sx={{fontSize: '26px',width: '42px', height: '42px'}}></Avatar>
-      
+      </ThemeProvider>
       )
     }
-    {sizes === 'small' && type === 'image' && (
+    {sizes === 'small' && type === 'image' && (<ThemeProvider theme={muiTheme}>
       <Avatar src={src} sx={{ width: '24px', height: '24px' }} variant={variant}></Avatar>
-      )}
-      {sizes === 'medium' && type === 'image' && (
+      </ThemeProvider>)}
+      {sizes === 'medium' && type === 'image' && (<ThemeProvider theme={muiTheme}>
       <Avatar src={src} sx={{ width: '32px', height: '32px' }} variant={variant}></Avatar>
-      )}
-      {sizes === 'large' && type === 'image' && (
+      </ThemeProvider>)}
+      {sizes === 'large' && type === 'image' && (<ThemeProvider theme={muiTheme}>
       <Avatar src={src} sx={{ width: '40px', height: '40px' }} variant={variant}></Avatar>
-      )}
+      </ThemeProvider>)}
       
-      </ThemeProvider>
+    
+    </>
   );
 }
 

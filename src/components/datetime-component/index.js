@@ -20,7 +20,7 @@ const DateTimeComponent = (props) => {
   const [value,setValue]= useState(null);
   const [valueRange,setValueRange]= useState([null,null]);
   return (
-    
+    <>
      <ThemeProvider theme={muiTheme}>
      {
       variant === 'timeonly' && (
@@ -109,6 +109,8 @@ const DateTimeComponent = (props) => {
       )
     }
     </ThemeProvider>
+
+    </>
   );
 }
 

@@ -60,6 +60,38 @@ const ButtonGroupVariantsTemplate = (args) => (
   ButtonGroupVariants(args)
 );
 export const ButtonGroupVariant = ButtonGroupVariantsTemplate.bind({});
+ButtonGroupVariant.parameters = {
+  docs: {
+    source: {
+      code: `const buttons = [
+        <Button key="one">One</Button>,
+        <Button key="two">Two</Button>,
+        <Button key="three">Three</Button>,
+      ];
+      <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        "& > *": {
+          m: 1,
+        },
+      }}
+    >
+        <ButtonGroup variant="outlined" aria-label="outlined button group">
+          {buttons}
+        </ButtonGroup>
+        <ButtonGroup variant="text" aria-label="text button group">
+          {buttons}
+        </ButtonGroup>
+        <ButtonGroup variant="contained" aria-label="text button group">
+          {buttons}
+        </ButtonGroup>
+    </Box>`,
+      language: "html",
+    },
+  },
+};
 
 const ButtonGroupSizesColorsTemplate = (args) => ButtonGroupSizesColors(args);
 export const ButtonGroupSizesAndColors = ButtonGroupSizesColorsTemplate.bind(
@@ -67,7 +99,50 @@ export const ButtonGroupSizesAndColors = ButtonGroupSizesColorsTemplate.bind(
 );
 
 const ButtonGroupVerticalsTemplate = (args) => ButtonGroupVerticals(args);
+
 export const ButtonGroupVertical = ButtonGroupVerticalsTemplate.bind({});
+ButtonGroupVertical.parameters = {
+  docs: {
+    source: {
+      code: `const buttons = [
+        <Button key="one">One</Button>,
+        <Button key="two">Two</Button>,
+        <Button key="three">Three</Button>,
+      ];
+
+      <Box
+      sx={{
+        display: "flex",
+        "& > *": {
+          m: 1,
+        },
+      }}
+    >
+        <ButtonGroup
+          orientation="vertical"
+          aria-label="vertical outlined button group"
+        >
+          {buttons}
+        </ButtonGroup>
+        <ButtonGroup
+          orientation="vertical"
+          aria-label="vertical contained button group"
+          variant="contained"
+        >
+          {buttons}
+        </ButtonGroup>
+        <ButtonGroup
+          orientation="vertical"
+          aria-label="vertical contained button group"
+          variant="text"
+        >
+          {buttons}
+        </ButtonGroup>
+    </Box>`,
+      language: "html",
+    },
+  },
+};
 
 const SplitButtonsTemplate = (args) => SplitButton(args);
 
@@ -81,4 +156,71 @@ SplitButtons.args = {
   disabled: false,
   disableRipple: false,
   disableElevation: false,
+};
+SplitButtons.parameters = {
+  docs: {
+    source: {
+      code: `
+      const options = ["Create a merge commit", "Squash and merge", "Rebase and merge"]
+      <ButtonGroup
+      variant="contained"
+      size="medium"
+      color=primary
+      disabled=false
+      disableRipple=false
+      disableElevation=false
+      aria-label="split button"
+    >
+      <Button onClick={handleClick}>{options[selectedIndex]} </Button>
+      <Button
+        aria-controls={open ? "split-button-menu" : undefined}
+        aria-expanded={open ? "true" : undefined}
+        aria-label="select merge strategy"
+        aria-haspopup="menu"
+        onClick={handleToggle}
+      >
+        <ArrowDropDownIcon />
+      </Button>
+    </ButtonGroup>
+  </ThemeProvider>
+  <Popper
+    sx={{
+      zIndex: 1,
+    }}
+    open={open}
+    anchorEl={anchorRef.current}
+    role={undefined}
+    transition
+    disablePortal
+  >
+    {({ TransitionProps, placement }) => (
+      <Grow
+        {...TransitionProps}
+        style={{
+          transformOrigin:
+            placement === "bottom" ? "center top" : "center bottom",
+        }}
+      >
+        <Paper>
+          <ClickAwayListener onClickAway={handleClose}>
+            <MenuList id="split-button-menu" autoFocusItem>
+              {options.map((option, index) => (
+                <MenuItem
+                  key={option}
+                  disabled={index === disabledoption - 1}
+                  selected={index === selectedIndex}
+                  onClick={(event) => handleMenuItemClick(event, index)}
+                >
+                  {option}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </ClickAwayListener>
+        </Paper>
+      </Grow>
+    )}
+  </Popper>`,
+      language: "html",
+    },
+  },
 };

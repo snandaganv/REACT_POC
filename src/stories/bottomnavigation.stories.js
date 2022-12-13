@@ -1,13 +1,10 @@
-import BottomNavigation from "@mui/material";
-import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import ArchiveIcon from '@mui/icons-material/Archive';
 import FolderIcon from '@mui/icons-material/Folder';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import RestoreIcon from '@mui/icons-material/Restore';
+import BottomNavigation from "@mui/material";
 import {
-    SimpleBottomNavigations,
-    LabelBottomNavigations,
-    FixedBottomNavigations,
+    FixedBottomNavigations, LabelBottomNavigations, SimpleBottomNavigations
 } from "../components/bottomnavigation-component";
 
 

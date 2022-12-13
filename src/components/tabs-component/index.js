@@ -18,7 +18,7 @@ const TabsComponent = (props) => {
 
   
   return (
-    
+    <>
     <ThemeProvider theme={muiTheme}>
       <Tabs allowScrollButtonsMobile={allowScrollButtonsMobile} variant={variant} scrollButtons={scrollButtons} value={value} onChange={handleChange} indicatorColor={indicatorColor} aria-label={ariaLabel} orientation={orientation} textColor={textColor}>
           {tabsArray.map((item) => <Tab icon={<Icon fontSize="small">{item.icon}</Icon>} iconPosition={item.position} label={item.label} {...a11yProps(item.index)} style={{ textTransform: "none" }}/>)}
@@ -26,6 +26,7 @@ const TabsComponent = (props) => {
       {tabsArray.map((item) => <TabPanel value={value} index={item.index}>{item.label}</TabPanel>)}
       </ThemeProvider>
       
+    </>
   );
 }
 
