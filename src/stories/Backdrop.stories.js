@@ -1,14 +1,21 @@
 import React from "react";
-import { BackdropDefaults } from "../components/backdrop-component";
+import { BackdropBasics, BackdropButtons } from "../components/backdrop-component";
+import Backdrop from "@mui/material/Backdrop";
 export default {
   title: "Feedback/Backdrop",
-  component: BackdropDefaults,
+  component: Backdrop,
   argTypes: {},
 };
 
-const Template = (args) => <BackdropDefaults {...args}></BackdropDefaults>;
-export const BackdropDefault = Template.bind({});
-BackdropDefault.args = {
+const Template1 = (args) => <BackdropBasics {...args}></BackdropBasics>;
+export const BackdropBasic = Template1.bind({});
+BackdropBasic.args = {
+  invisible: false,
+  open: true,
+};
+const Template = (args) => <BackdropButtons {...args}></BackdropButtons>;
+export const BackdropButton = Template.bind({});
+BackdropButton.args = {
   label: "Show Backdrop",
   invisible: false,
 };
