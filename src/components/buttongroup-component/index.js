@@ -1,54 +1,21 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
-import ButtonGroup from "@mui/material/ButtonGroup";
-import Box from "@mui/material/Box";
+import { Button } from "../Button";
+import { ButtonGroup as ButtonGroupMUI } from "@mui/material";
+import { Box, Grow, Paper, Popper, MenuItem, MenuList } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
-import Grow from "@mui/material/Grow";
-import Paper from "@mui/material/Paper";
-import Popper from "@mui/material/Popper";
-import MenuItem from "@mui/material/MenuItem";
-import MenuList from "@mui/material/MenuList";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
 import { PropTypes } from "prop-types";
 
-export const ButtonGroupDefaults = (props) => {
-  const {
-    variant,
-    color,
-    size,
-    orientation,
-    disabled,
-    fullWidth,
-    disableRipple,
-    disableElevation,
-    numberOfButtons,
-    onClick,
-  } = props;
+export const ButtonGroup = (props) => {
   return (
     <ThemeProvider theme={muiTheme}>
-      <ButtonGroup
-        variant={variant}
-        size={size}
-        color={color}
-        orientation={orientation}
-        disabled={disabled}
-        fullWidth={fullWidth}
-        disableRipple={disableRipple}
-        disableElevation={disableElevation}
-      >
-        {numberOfButtons.map((label, index) => (
-          <Button onClick={onClick} key={label}>
-            {label}
-          </Button>
-        ))}
-      </ButtonGroup>
+      <ButtonGroupMUI {...props}>{props.children}</ButtonGroupMUI>
     </ThemeProvider>
   );
 };
-ButtonGroupDefaults.propTypes = {
-  label: PropTypes.string,
+ButtonGroup.propTypes = {
   size: PropTypes.oneOf(["small", "medium", "large"]),
   color: PropTypes.oneOf([
     "primary",
@@ -63,11 +30,9 @@ ButtonGroupDefaults.propTypes = {
   fullWidth: PropTypes.bool,
   disableRipple: PropTypes.bool,
   disableElevation: PropTypes.bool,
-  numberOfButtons: PropTypes.array,
   onClick: PropTypes.func,
 };
-ButtonGroupDefaults.defaultProps = {
-  numberOfButtons: [],
+ButtonGroup.defaultProps = {
   size: "medium",
   color: "primary",
   orientation: "horizontal",
@@ -94,17 +59,15 @@ export const ButtonGroupVariants = (props) => {
         },
       }}
     >
-      <ThemeProvider theme={muiTheme}>
-        <ButtonGroup variant="outlined" aria-label="outlined button group">
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup variant="text" aria-label="text button group">
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup variant="contained" aria-label="text button group">
-          {buttons}
-        </ButtonGroup>
-      </ThemeProvider>
+      <ButtonGroup variant="outlined" aria-label="outlined button group">
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup variant="text" aria-label="text button group">
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup variant="contained" aria-label="text button group">
+        {buttons}
+      </ButtonGroup>
     </Box>
   );
 };
@@ -121,24 +84,26 @@ export const ButtonGroupSizesColors = (props) => {
         },
       }}
     >
-      <ThemeProvider theme={muiTheme}>
-        <ButtonGroup
-          color="primary"
-          size="small"
-          aria-label="small button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          color="secondary"
-          aria-label="medium secondary button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup color="error" size="large" aria-label="large button group">
-          {buttons}
-        </ButtonGroup>
-      </ThemeProvider>
+      <ButtonGroup
+        color="primary"
+        size="small"
+        aria-label="small button group"
+      >
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup
+        color="secondary"
+        aria-label="medium secondary button group"
+      >
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup
+        color="error"
+        size="large"
+        aria-label="large button group"
+      >
+        {buttons}
+      </ButtonGroup>
     </Box>
   );
 };
@@ -153,28 +118,26 @@ export const ButtonGroupVerticals = (props) => {
         },
       }}
     >
-      <ThemeProvider theme={muiTheme}>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical outlined button group"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical contained button group"
-          variant="contained"
-        >
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup
-          orientation="vertical"
-          aria-label="vertical contained button group"
-          variant="text"
-        >
-          {buttons}
-        </ButtonGroup>
-      </ThemeProvider>
+      <ButtonGroup
+        orientation="vertical"
+        aria-label="vertical outlined button group"
+      >
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup
+        orientation="vertical"
+        aria-label="vertical contained button group"
+        variant="contained"
+      >
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup
+        orientation="vertical"
+        aria-label="vertical contained button group"
+        variant="text"
+      >
+        {buttons}
+      </ButtonGroup>
     </Box>
   );
 };
@@ -217,8 +180,7 @@ export const SplitButton = (props) => {
 
   return (
     <React.Fragment>
-      <ThemeProvider theme={muiTheme}>
-        <ButtonGroup
+      <ButtonGroup
           variant={variant}
           size={size}
           color={color}
@@ -239,7 +201,6 @@ export const SplitButton = (props) => {
             <ArrowDropDownIcon />
           </Button>
         </ButtonGroup>
-      </ThemeProvider>
       <Popper
         sx={{
           zIndex: 1,
@@ -280,6 +241,7 @@ export const SplitButton = (props) => {
     </React.Fragment>
   );
 };
+
 SplitButton.propTypes = {
   label: PropTypes.string,
   size: PropTypes.oneOf(["small", "medium", "large"]),
