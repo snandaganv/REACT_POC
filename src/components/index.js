@@ -15,9 +15,14 @@ export { default as DateTimeComponent } from "./datetime-component";
 export { default as SliderComponent } from "./slider-component";
 export { default as CardComponent } from "./card-component";
 export { default as RatingComponent } from "./rating-component";
-export { BackdropDefaults } from "./backdrop-component";
+//export { BackdropDefaults } from "./backdrop-component";
 export { default as TransferListComponent } from "./transfer-list-component";
 export { default as TreeViewComponent } from "./tree-view-component";
+
+export {
+  BackdropBasics as BackdropBasic,
+  BackdropButtons as BackdropButton
+} from "./backdrop-component";
 
 export {
   ButtonDefaults as ButtonDefault,
