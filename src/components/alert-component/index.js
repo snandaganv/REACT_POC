@@ -1,35 +1,21 @@
-import * as React from 'react';
-import { PropTypes } from "prop-types";
-import { Alert ,AlertTitle} from "@mui/material";
-import Button from '@mui/material/Button';
+import { Alert as AlertMUI, AlertTitle as AlertTitleMUI } from "@mui/material";
+import * as React from "react";
 
-import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../../.storybook/muiTheme';
+import { ThemeProvider } from "@mui/material/styles";
+import muiTheme from "../../../.storybook/muiTheme";
 
-
-const AlertComponent = (props) => {
-  const {titleText} = props;
+export const Alert = (props) => {
   return (
-    <>
-     <ThemeProvider theme={muiTheme}>
-      <Alert {...props}><AlertTitle>{titleText}</AlertTitle>{props.children}</Alert>
+    <ThemeProvider theme={muiTheme}>
+      <AlertMUI {...props}>{props.children}</AlertMUI>
     </ThemeProvider>
-    
-    </>
   );
-}
-
-AlertComponent.prototype = {
-    closeText:PropTypes.string,
-    children: PropTypes.node,
-    titleText: PropTypes.string,
 };
 
-AlertComponent.defaultProps = {
-    closeText:'',
-    children: [],
-    titleText:'',
+export const AlertTitle = (props) => {
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <AlertTitleMUI {...props}>{props.children}</AlertTitleMUI>
+    </ThemeProvider>
+  );
 };
-
-
-export default AlertComponent;

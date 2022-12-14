@@ -1,6 +1,6 @@
 import "../index.css";
 
-export { default as AlertComponent } from "./alert-component";
+export { Alert, AlertTitle } from "./alert-component";
 export { default as AvatarComponent } from "./avatar-component";
 export { default as BasicTable } from "./basic-table";
 export { default as BreadcrumbsComponent } from "./breadcrumbs-component";
@@ -196,6 +196,7 @@ export {
 } from "./stepper-component";
 
 export {
+  Snackbar,
   SnackbarBasic as SnackbarBasics,
   SnackbarAlert as SnackbarAlerts,
   SnackbarPositioned as SnackbarPositions,
