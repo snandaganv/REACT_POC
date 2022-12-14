@@ -29,8 +29,7 @@ ButtonGroup.propTypes = {
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
   disableRipple: PropTypes.bool,
-  disableElevation: PropTypes.bool,
-  onClick: PropTypes.func,
+  disableElevation: PropTypes.bool
 };
 ButtonGroup.defaultProps = {
   size: "medium",
@@ -47,7 +46,7 @@ const buttons = [
   <Button key="three">Three</Button>,
 ];
 
-export const ButtonGroupVariants = (props) => {
+export const ButtonGroupVariant = (props) => {
   return (
     <Box
       sx={{
@@ -141,24 +140,15 @@ export const ButtonGroupVerticals = (props) => {
     </Box>
   );
 };
+// const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'];
 
 export const SplitButton = (props) => {
-  const {
-    options,
-    disabledoption,
-    variant,
-    size,
-    color,
-    disableElevation,
-    disabled,
-    disableRipple,
-  } = props;
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
   const handleClick = () => {
-    console.info(`You clicked ${options[selectedIndex]}`);
+    console.info(`You clicked ${props.options[selectedIndex]}`);
   };
 
   const handleMenuItemClick = (event, index) => {
@@ -180,27 +170,19 @@ export const SplitButton = (props) => {
 
   return (
     <React.Fragment>
-      <ButtonGroup
-          variant={variant}
-          size={size}
-          color={color}
-          disabled={disabled}
-          disableRipple={disableRipple}
-          disableElevation={disableElevation}
-          ref={anchorRef}
-          aria-label="split button"
+      <ButtonGroup {...props} ref={anchorRef} aria-label="split button">
+        <Button onClick={handleClick}>{props.options[selectedIndex]}</Button>
+        <Button
+          {...props}
+          aria-controls={open ? 'split-button-menu' : undefined}
+          aria-expanded={open ? 'true' : undefined}
+          aria-label="select merge strategy"
+          aria-haspopup="menu"
+          onClick={handleToggle}
         >
-          <Button onClick={handleClick}>{options[selectedIndex]} </Button>
-          <Button
-            aria-controls={open ? "split-button-menu" : undefined}
-            aria-expanded={open ? "true" : undefined}
-            aria-label="select merge strategy"
-            aria-haspopup="menu"
-            onClick={handleToggle}
-          >
-            <ArrowDropDownIcon />
-          </Button>
-        </ButtonGroup>
+          <ArrowDropDownIcon />
+        </Button>
+      </ButtonGroup>
       <Popper
         sx={{
           zIndex: 1,
@@ -216,16 +198,16 @@ export const SplitButton = (props) => {
             {...TransitionProps}
             style={{
               transformOrigin:
-                placement === "bottom" ? "center top" : "center bottom",
+                placement === 'bottom' ? 'center top' : 'center bottom',
             }}
           >
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList id="split-button-menu" autoFocusItem>
-                  {options.map((option, index) => (
+                  {props.options.map((option, index) => (
                     <MenuItem
                       key={option}
-                      disabled={index === disabledoption - 1}
+                      disabled={index === 2}
                       selected={index === selectedIndex}
                       onClick={(event) => handleMenuItemClick(event, index)}
                     >
@@ -240,7 +222,7 @@ export const SplitButton = (props) => {
       </Popper>
     </React.Fragment>
   );
-};
+}
 
 SplitButton.propTypes = {
   label: PropTypes.string,

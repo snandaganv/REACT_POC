@@ -21,7 +21,6 @@ export { default as TreeViewComponent } from "./tree-view-component";
 
 export {
   Button,
-  IconButton,
   LoadingButton,
   ButtonBasics as ButtonBasic,
   ButtonColors as ButtonColor,
@@ -30,6 +29,10 @@ export {
   ButtonIconLabelButton as ButtonIconLabelButtons,
   ButtonLoadings as ButtonLoading
 } from "./Button";
+
+export {
+  IconButton
+} from "./IconButton"
 
 export {
   ChipsBasics as ChipsBasic,
@@ -240,7 +243,7 @@ export {
 export {
   ButtonGroup,
   ButtonGroupSizesColors,
-  ButtonGroupVariants,
+  ButtonGroupVariant,
   ButtonGroupVerticals,
   SplitButton
 } from "./buttongroup-component/";

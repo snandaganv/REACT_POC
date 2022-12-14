@@ -1,30 +1,14 @@
-import * as React from 'react';
-import { PropTypes } from "prop-types";
-import SearchIcon from '@mui/icons-material/Search';
-//import MenuBookIcon from '@mui/icons-material/MenuBook';
-import { ThemeProvider } from '@mui/material/styles';
-import muiTheme from '../../../.storybook/muiTheme';
+import * as React from "react";
+import { Search } from "@mui/icons-material";
+import { ThemeProvider } from "@mui/material/styles";
+import muiTheme from "../../../.storybook/muiTheme";
 
-const SearchIconsComponent = (props) => {
-
-   
+export const SearchIcon = (props) => {
   return (
-    <>
     <ThemeProvider theme={muiTheme}>
-      <SearchIcon {...props}></SearchIcon>
-      </ThemeProvider>
-
-    </>
+      <Search {...props}></Search>
+    </ThemeProvider>
   );
-}
-
-SearchIconsComponent.prototype = {
-    
 };
 
-SearchIconsComponent.defaultProps = {
-    
-};
-
-
-export default SearchIconsComponent;
+export default SearchIcon;
