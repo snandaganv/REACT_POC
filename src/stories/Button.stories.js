@@ -1,15 +1,48 @@
-import { Alarm, Delete, Home, Menu } from "@mui/icons-material";
+import {
+  Alarm,
+  Delete,
+  Save,
+  Refresh,
+  Home,
+  Menu,
+  Notifications,
+} from "@mui/icons-material";
 import {
   Button,
   ButtonBasics,
   ButtonColors,
   ButtonHandlingClick,
-  ButtonIconExamples,
   ButtonIconLabelButton,
   ButtonLoadings,
   ButtonSizes,
-  IconButton,
 } from "../components/Button";
+import 
+  SearchIcon
+from "../components/search-icons-component"
+
+const iconOptions = [
+  "none",
+  "delete",
+  "alarm",
+  "home",
+  "menu",
+  "save",
+  "search",
+  "refresh",
+  "notification",
+];
+
+const iconMapping = {
+  delete: <Delete></Delete>,
+  save: <Save></Save>,
+  refresh: <Refresh></Refresh>,
+  home: <Home></Home>,
+  menu: <Menu></Menu>,
+  alarm: <Alarm></Alarm>,
+  search: <SearchIcon></SearchIcon>,
+  notification: <Notifications></Notifications>,
+  none: null,
+};
 
 export default {
   title: "Input/Button",
@@ -31,241 +64,76 @@ export default {
       options: ["row", "row-reverse", "column", "column-reverse"],
       control: { type: "radio" },
     },
-    onClick: { action: "Clicked" },
-
-    icon: {
-      options: ["delete", "alarm", "home", "menu"],
-      control: { type: "radio" },
-      mapping: {
-        delete: <Delete></Delete>,
-        home: <Home></Home>,
-        menu: <Menu></Menu>,
-        alarm: <Alarm></Alarm>,
-      },
+    handleClick: { action: "Clicked" },
+    startIcon: {
+      options: iconOptions,
+      control: { type: "select" },
+      mapping: iconMapping,
+    },
+    endIcon: {
+      options: iconOptions,
+      control: { type: "select" },
+      mapping: iconMapping,
     },
   },
 };
 
 const ButtonDefaultTemplate = (args) => {
-  const { icon, ...argsList } = args;
-  return (
-    <Button {...argsList} startIcon={icon}>
-      {args.children}
-    </Button>
-  );
+  const { label, ...argsList } = args;
+  return <Button {...argsList}>{label}</Button>;
 };
 
-export const ButtonDef = ButtonDefaultTemplate.bind({});
-ButtonDef.args = {
-  children: "Button",
+export const ButtonPlayground = ButtonDefaultTemplate.bind({});
+ButtonPlayground.parameters = {
+  controls: { exclude: ["direction", "children", "handleClick"] },
+};
+ButtonPlayground.args = {
+  label: "Button",
   variant: "contained",
   color: "primary",
   size: "medium",
-  direction: "row",
-  disabled: false,
-  icon: "delete",
-};
-ButtonDefault.parameters = {
-  docs: {
-    source: {
-      code: `<Stack direction={direction} spacing={2}>
-      <Button
-        variant="contained"
-        color="primary"
-        size="medium"
-        disabled=false
-        startIcon=<Delete />
-      >
-        Button
-      </Button>
-    </Stack>`,
-      language: "html",
-    },
-  },
+  disabled: false
 };
 
-export const ButtonBasic = ButtonBasics.bind({});
-ButtonBasic.parameters = {
-  docs: {
-    source: {
-      code: ` <Stack spacing={2} direction="row">
-      <Button variant="text" color="primary">
-        Text
-      </Button>
-      <Button variant="contained" color="primary">
-        Contained
-      </Button>
-      <Button variant="outlined" color="primary">
-        Outlined
-      </Button>
-      <Button variant="contained" color="primary" disabled>
-        Disabled
-      </Button>
-      <Button variant="contained" color="primary" href="#contained-buttons">
-        Link
-      </Button>
-    </Stack>`,
-      language: "html",
-    },
-  },
+export const ButtonVariants = ButtonBasics.bind({});
+ButtonVariants.parameters = {
+  controls: { include: ["color", "size", "direction"] },
+};
+ButtonVariants.args = {
+  label: "Button",
+  color: "primary",
+  size: "medium",
+  direction: "row"
 };
 
 export const ButtonHandlingClicks = ButtonHandlingClick.bind({});
+ButtonHandlingClicks.parameters = {
+  controls: { include: ["label", "color", "size", "variant", "startIcon", "endIcon"] },
+};
+ButtonHandlingClicks.args = {
+  label: "Click me",
+  color: "primary",
+  size: "medium"
+};
 
 export const ButtonColor = ButtonColors.bind({});
 ButtonColor.parameters = {
-  docs: {
-    source: {
-      code: `<Stack direction="row" spacing={2}>
-      <Button color="primary" variant="contained">
-        primary
-      </Button>
-      <Button color="secondary" variant="contained">
-        Secondary
-      </Button>
-      <Button variant="contained" color="success">
-        Success
-      </Button>
-      <Button variant="outlined" color="error">
-        Error
-      </Button>
-      <Button variant="outlined" color="info">
-        Info
-      </Button>
-      <Button variant="outlined" color="warning">
-        Warning
-      </Button>
-    </Stack>`,
-      language: "html",
-    },
-  },
+  controls: { include: ["color", "size", "direction"] },
+};
+ButtonColor.args = {
+  children: "Button",
+  color: "primary",
+  size: "medium",
+  direction: "row"
 };
 
 export const ButtonSize = ButtonSizes.bind({});
-ButtonSize.parameters = {
-  docs: {
-    source: {
-      code: `<Box sx={{ "& button": { m: 1 } }}>
-      <div>
-        <Button size="small">Small</Button>
-        <Button size="medium">Medium</Button>
-        <Button size="large">Large</Button>
-      </div>
-      <div>
-        <Button variant="outlined" size="small">
-          Small
-        </Button>
-        <Button variant="outlined" size="medium">
-          Medium
-        </Button>
-        <Button variant="outlined" size="large">
-          Large
-        </Button>
-      </div>
-      <div>
-        <Button variant="contained" size="small">
-          Small
-        </Button>
-        <Button variant="contained" size="medium">
-          Medium
-        </Button>
-        <Button variant="contained" size="large">
-          Large
-        </Button>
-      </div>
-    </Box>`,
-      language: "html",
-    },
-  },
-};
-
-const ButtonIconTemplate = (args) => {
-  const { icon, ...argList } = args;
-  return <IconButton {...argList}>{icon}</IconButton>;
-};
-
-export const ButtonIcons = ButtonIconTemplate.bind({});
-ButtonIcons.args = {
-  color: "primary",
-  icon: "alarm",
-};
-ButtonIcons.parameters = {
-  docs: {
-    source: {
-      code: `<Stack direction="row" spacing={1}>
-      <IconButton
-        aria-label=""
-        size={size}
-        color="primary"
-      >
-      <Alarm />
-      </IconButton>
-    </Stack>`,
-      language: "html",
-    },
-  },
-};
-
-export const ButtonIconBasic = ButtonIconExamples.bind({});
-ButtonIconBasic.parameters = {
-  docs: {
-    source: {
-      code: `<Stack direction="row" spacing={1}>
-      <IconButton aria-label="delete">
-        <Delete />
-      </IconButton>
-      <IconButton aria-label="delete" disabled color="primary">
-        <Delete />
-      </IconButton>
-      <IconButton color="secondary" aria-label="add an alarm">
-        <Alarm />
-      </IconButton>
-      <IconButton color="primary" aria-label="add to shopping cart">
-        <AddShoppingCart />
-      </IconButton>
-    </Stack>`,
-      language: "html",
-    },
-  },
-};
 
 export const ButtonIconLabelButtons = ButtonIconLabelButton.bind({});
-ButtonIconLabelButtons.parameters = {
-  docs: {
-    source: {
-      code: ` <Stack direction="row" spacing={2} mb="12px">
-      <Button variant="outlined" color="primary" startIcon={<Delete />}>
-        Delete
-      </Button>
-      <Button variant="contained" color="primary" endIcon={<Send />}>
-        Send
-      </Button>
-    </Stack>`,
-      language: "html",
-    },
-  },
-};
 
 export const ButtonLoading = ButtonLoadings.bind({});
 ButtonLoading.args = {
   children: "Submit",
   variant: "outlined",
   loading: true,
-};
-ButtonLoading.parameters = {
-  docs: {
-    source: {
-      code: `      <FormGroup>
-      <Stack direction="row" spacing={2} mb="12px">
-        <LoadingButton
-          loading="true"
-          variant="outlined"
-        >
-          Submit
-        </LoadingButton>
-      </Stack>
-    </FormGroup>`,
-      language: "html",
-    },
-  },
 };
