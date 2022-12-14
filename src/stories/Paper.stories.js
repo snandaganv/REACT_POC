@@ -12,7 +12,7 @@ export default {
   },
 };
 
-const PapersBasicTemplate = (args) => <PapersBasic {...args}></PapersBasic>
+const PapersBasicTemplate = (args) => <PapersBasic {...args}></PapersBasic>;
 export const PaperBasic = PapersBasicTemplate.bind({});
 PaperBasic.args = {
   variant: "elevation",
@@ -26,7 +26,7 @@ PaperBasic.args = {
       width: 128,
       height: 128,
     },
-  }
+  },
 };
 
 const HowToConsumePaperComponent = (props) => (
@@ -39,7 +39,7 @@ const HowToConsumePaperComponent = (props) => (
     <br />
     <code>import {"{DefaultPaper}"} from "@arisglobal/agcp-ui" ;</code>
     <br />
-    <code>&lt;DefaultPapers&gt;&lt;/DefaultPapers&gt;</code>
+    <code>&lt;DefaultPaper&gt;&lt;/DefaultPaper&gt;</code>
   </div>
 );
 const TemplateDemo = (args) => (
@@ -47,5 +47,5 @@ const TemplateDemo = (args) => (
 );
 export const HowToConsumePaperComponents = TemplateDemo.bind({});
 
-const ElevationsTemplate = (args) => <Elevations {...args}></Elevations>
+const ElevationsTemplate = (args) => <Elevations {...args}></Elevations>;
 export const Elevation = ElevationsTemplate.bind({});
