@@ -81,23 +81,3 @@ AlertWithDescription.args = {
   boldAlertText: "Please enter a valid input."
 };
 
-const HowToConsumeAlertComponent = (props) => (
-  <div>
-    <code>
-      This is how to consume the AGCP-UI Alert component ,just pass in the props
-      when using the component .
-    </code>
-    <br />
-    <br />
-    <code>import {"{AlertComponent}"} from "@arisglobal/agcp-ui" ;</code>
-    <br />
-    <code>
-      &lt;AlertComponent {"{...props}"}
-      &gt; I am an alert &lt;/AlertComponent&gt;
-    </code>
-  </div>
-);
-const TemplateDemo = (args) => (
-  <HowToConsumeAlertComponent {...args}></HowToConsumeAlertComponent>
-);
-export const HowToConsumeAlertComponents = TemplateDemo.bind({});

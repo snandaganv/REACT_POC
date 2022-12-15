@@ -1,12 +1,13 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import Button from "@mui/material/Button";
-import Snackbar from "@mui/material/Snackbar";
+import { Button } from "./Button";
+import { IconButton } from "./IconButton";
+import { Alert } from "./alert-component";
+import { Snackbar as SnackbarMUI } from "@mui/material";
+
 import Stack from "@mui/material/Stack";
-import MuiAlert from "@mui/material/Alert";
-import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import SnackbarContent from "@mui/material/SnackbarContent";
+import { SnackbarContent as SnackbarContentMUI } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import Slide from "@mui/material/Slide";
 import Box from "@mui/material/Box";
@@ -15,7 +16,23 @@ import Grow from "@mui/material/Grow";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../.storybook/muiTheme";
 
-export const SnackbarBasic = ({
+export const Snackbar = (props) => {
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <SnackbarMUI {...props}>{props.children}</SnackbarMUI>
+    </ThemeProvider>
+  );
+};
+
+export const SnackbarContent = (props) => {
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <SnackbarContentMUI {...props}>{props.children}</SnackbarContentMUI>
+    </ThemeProvider>
+  );
+};
+
+export const SnackbarPlayground = ({
   autoHideDuration,
   textLabel,
   snackLabel,
@@ -52,7 +69,7 @@ export const SnackbarBasic = ({
     </React.Fragment>
   );
   return (
-    <ThemeProvider theme={muiTheme}>
+    <>
       <Button onClick={handleClick}>{textLabel}</Button>
       <Snackbar
         open={open}
@@ -62,11 +79,11 @@ export const SnackbarBasic = ({
         action={action}
         anchorOrigin={anchorOrigin}
       />
-    </ThemeProvider>
+    </>
   );
 };
 
-SnackbarBasic.propTypes = {
+SnackbarPlayground.propTypes = {
   children: PropTypes.element,
   action: PropTypes.node,
   autoHideDuration: PropTypes.number,
@@ -103,15 +120,15 @@ SnackbarBasic.propTypes = {
   ]),
 };
 
-export const SnackbarAlert = ({
+export function SnackbarAlert({
   alertMessage,
   severity,
   variant,
   buttonLabel,
   autoHideDuration,
-}) => {
-  const Alert = React.forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+}) {
+  const SnackAlert = React.forwardRef(function SnackAlert(props, ref) {
+    return <Alert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
   const [open, setOpen] = React.useState(false);
@@ -128,28 +145,26 @@ export const SnackbarAlert = ({
     setOpen(false);
   };
   return (
-    <ThemeProvider theme={muiTheme}>
-      <Stack spacing={2} sx={{ width: "100%" }}>
-        <Button variant={variant} onClick={handleClick}>
-          {buttonLabel}
-        </Button>
-        <Snackbar
-          open={open}
-          autoHideDuration={autoHideDuration}
+    <Stack spacing={2} sx={{ width: "100%" }}>
+      <Button variant={variant} onClick={handleClick}>
+        {buttonLabel}
+      </Button>
+      <Snackbar
+        open={open}
+        autoHideDuration={autoHideDuration}
+        onClose={handleClose}
+      >
+        <SnackAlert
           onClose={handleClose}
+          severity={severity}
+          sx={{ width: "100%" }}
         >
-          <Alert
-            onClose={handleClose}
-            severity={severity}
-            sx={{ width: "100%" }}
-          >
-            {alertMessage}
-          </Alert>
-        </Snackbar>
-      </Stack>
-    </ThemeProvider>
+          {alertMessage}
+        </SnackAlert>
+      </Snackbar>
+    </Stack>
   );
-};
+}
 
 SnackbarAlert.propTypes = {
   children: PropTypes.any,
@@ -230,7 +245,7 @@ export const SnackbarPositioned = ({ message, onClick }) => {
   );
 
   return (
-    <ThemeProvider theme={muiTheme}>
+    <>
       {buttons}
       <Snackbar
         anchorOrigin={{ vertical, horizontal }}
@@ -239,7 +254,7 @@ export const SnackbarPositioned = ({ message, onClick }) => {
         message="I love snacks"
         key={vertical + horizontal}
       />
-    </ThemeProvider>
+    </>
   );
 };
 
@@ -261,7 +276,7 @@ export const SnackbarMessageLength = ({
   );
 
   return (
-    <ThemeProvider theme={muiTheme}>
+    <>
       <Stack spacing={2} sx={{ maxWidth: 600 }}>
         <SnackbarContent message="I love snacks." action={action} />
         <SnackbarContent
@@ -282,21 +297,11 @@ export const SnackbarMessageLength = ({
           action={action}
         />
       </Stack>
-    </ThemeProvider>
+    </>
   );
 };
 
-export const SnackbarTransition = ({
-  children,
-  onClick,
-  variant,
-  color,
-  size,
-  direction,
-  disabled,
-  startIcon,
-  endIcon,
-}) => {
+export const SnackbarTransition = () => {
   function SlideTransition(props) {
     return <Slide {...props} direction="up" />;
   }
@@ -324,7 +329,7 @@ export const SnackbarTransition = ({
   };
 
   return (
-    <ThemeProvider theme={muiTheme}>
+    <>
       <Button onClick={handleClick(GrowTransition)}>Grow Transition</Button>
       <Button onClick={handleClick(Fade)}>Fade Transition</Button>
       <Button onClick={handleClick(SlideTransition)}>Slide Transition</Button>
@@ -335,7 +340,7 @@ export const SnackbarTransition = ({
         message="I love snacks"
         key={state.Transition.name}
       />
-    </ThemeProvider>
+    </>
   );
 };
 
@@ -385,7 +390,7 @@ export const SnackbarFloatingsActionButtons = (props) => {
   );
 
   return (
-    <ThemeProvider theme={muiTheme}>
+    <>
       <Box sx={{ "& > :not(style)": { m: 1 } }}>
         <Fab
           color={color}
@@ -408,7 +413,7 @@ export const SnackbarFloatingsActionButtons = (props) => {
           anchorOrigin={anchorOrigin}
         />
       </Box>
-    </ThemeProvider>
+    </>
   );
 };
 SnackbarFloatingsActionButtons.propTypes = {

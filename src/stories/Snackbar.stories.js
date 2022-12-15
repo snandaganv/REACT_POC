@@ -1,12 +1,12 @@
 import { Snackbar } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import {
-  SnackbarBasic,
   SnackbarAlert,
   SnackbarPositioned,
   SnackbarMessageLength,
   SnackbarTransition,
   SnackbarFloatingsActionButtons,
+  SnackbarPlayground,
 } from "../components/Snackbar";
 
 export default {
@@ -24,7 +24,7 @@ export default {
   },
 };
 
-const Template = (args) => <SnackbarBasic {...args}></SnackbarBasic>;
+const Template = (args) => SnackbarPlayground({...args});
 
 export const SnackbarBasics = Template.bind({});
 SnackbarBasics.args = {
@@ -35,25 +35,7 @@ SnackbarBasics.args = {
   anchorOrigin: { vertical: "bottom", horizontal: "left" },
 };
 
-const HowToConsumeSnackbarComponent = (props) => (
-  <div>
-    <code>
-      This is how to consume the AGCP-UI Circular Snackbar component ,just pass
-      in the props when using the component .
-    </code>
-    <br />
-    <br />
-    <code>import {"{SnackbarBasic}"} from "@arisglobal/agcp-ui" ;</code>
-    <br />
-    <code>&lt;SnackbarBasic {"{...props}"}&gt;&lt;/SnackbarBasic&gt;</code>
-  </div>
-);
-const TemplateDiscription = (args) => (
-  <HowToConsumeSnackbarComponent {...args}></HowToConsumeSnackbarComponent>
-);
-export const HowToConsumeSnackbarComponents = TemplateDiscription.bind({});
-
-const Template1 = (args) => <SnackbarAlert {...args}></SnackbarAlert>;
+const Template1 = (args) => SnackbarAlert({ ...args });
 
 export const SnackbarAlerts = Template1.bind({});
 SnackbarAlerts.args = {
@@ -63,17 +45,59 @@ SnackbarAlerts.args = {
   buttonLabel: "Open success snackbar",
   autoHideDuration: 6000,
 };
+SnackbarAlerts.parameters = {
+  docs: {
+    source: {
+      code: `const SnackAlert = React.forwardRef(function SnackAlert(props, ref) {
+  return <Alert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
-const Template2 = (args) => <SnackbarPositioned {...args}></SnackbarPositioned>;
+const [open, setOpen] = React.useState(false);
+
+const handleClick = () => {
+  setOpen(true);
+};
+
+const handleClose = (event, reason) => {
+  if (reason === "clickaway") {
+    return;
+  }
+
+  setOpen(false);
+};
+return (
+  <Stack spacing={2} sx={{ width: "100%" }}>
+    <Button variant={variant} onClick={handleClick}>
+      {buttonLabel}
+    </Button>
+    <Snackbar
+      open={open}
+      autoHideDuration={autoHideDuration}
+      onClose={handleClose}
+    >
+      <SnackAlert
+        onClose={handleClose}
+        severity={severity}
+        sx={{ width: "100%" }}
+      >
+        {alertMessage}
+      </SnackAlert>
+    </Snackbar>
+  </Stack>
+);`,
+      language: "jsx",
+      type: "auto",
+      format: true,
+    },
+  },
+};
+
+const Template2 = (args) => SnackbarPositioned({ ...args });
 
 export const SnackbarPositions = Template2.bind({});
-const Template3 = (args) => (
-  <SnackbarMessageLength {...args}></SnackbarMessageLength>
-);
-const Template4 = (args) => <SnackbarTransition {...args}></SnackbarTransition>;
-const Template5 = (args) => (
-  <SnackbarFloatingsActionButtons {...args}></SnackbarFloatingsActionButtons>
-);
+const Template3 = (args) => SnackbarMessageLength({ ...args });
+const Template4 = (args) => SnackbarTransition({ ...args });
+const Template5 = (args) => SnackbarFloatingsActionButtons({ ...args });
 export const SnackbarMessageLengths = Template3.bind({});
 export const SnackbarTransitions = Template4.bind({});
 export const SnackbarFloatingActionButton = Template5.bind({});

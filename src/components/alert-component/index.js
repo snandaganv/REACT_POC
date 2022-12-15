@@ -1,13 +1,16 @@
-import { Alert as AlertMUI, AlertTitle as AlertTitleMUI } from "@mui/material";
+import { AlertTitle as AlertTitleMUI } from "@mui/material";
+import MuiAlert from "@mui/material/Alert";
 import * as React from "react";
 
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
 
-export const Alert = (props) => {
+export const AlertRef = (props, ref) => {
   return (
     <ThemeProvider theme={muiTheme}>
-      <AlertMUI {...props}>{props.children}</AlertMUI>
+      <MuiAlert ref={ref} {...props}>
+        {props.children}
+      </MuiAlert>
     </ThemeProvider>
   );
 };
@@ -19,3 +22,5 @@ export const AlertTitle = (props) => {
     </ThemeProvider>
   );
 };
+
+export const Alert = React.forwardRef(AlertRef);

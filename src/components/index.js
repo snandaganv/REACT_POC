@@ -197,7 +197,7 @@ export {
 
 export {
   Snackbar,
-  SnackbarBasic as SnackbarBasics,
+  SnackbarPlayground,
   SnackbarAlert as SnackbarAlerts,
   SnackbarPositioned as SnackbarPositions,
   SnackbarMessageLength as SnackbarMessageLengths,
