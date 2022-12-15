@@ -21,7 +21,6 @@ export const SelectsDefault = ({
     required,
     selectlabel,
     selectoptions,
-    optnone
 }) => {
     const [age, setAge] = React.useState('');
     const handleChange = (event) => {
@@ -35,10 +34,10 @@ export const SelectsDefault = ({
                     <Select
                         variant={variant}
                         label="Select"
+                        value={age}
                         onChange={handleChange}
                     >
-
-                        {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
+                        {selectoptions.map(item => (<MenuItem key={item.value} value={item.value} selected={item.value === age}>{item.label}</MenuItem>))}
                     </Select>
                 </FormControl>
             </ThemeProvider>
@@ -48,7 +47,7 @@ export const SelectsDefault = ({
 
 SelectsDefault.propTypes = {
     selectlabel: PropTypes.array,
-    variant: PropTypes.oneOf(["standard", "filled"]),
+    variant: PropTypes.oneOf(["outlined", "standard", "filled"]),
 };
 
 export const SelectsBasic = ({ size, selectlabel, selectoptions }) => {
