@@ -5,7 +5,24 @@ import { PropTypes } from "prop-types";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "../../../.storybook/muiTheme";
 
-export const BackdropDefaults = (props) => {
+export const BackdropBasics = (props) => {
+  const [open, setOpen] = React.useState(false);
+  const { label, invisible } = props;
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
+  };
+  return (
+    <div>
+      <Backdrop {...props} onClick={handleClose}>{React.Children.map(props.children, child => child)}</Backdrop>
+    </div>
+  );
+};
+
+export const BackdropButtons = (props) => {
   const [open, setOpen] = React.useState(false);
   const { label, invisible } = props;
 
@@ -34,7 +51,7 @@ export const BackdropDefaults = (props) => {
   );
 };
 
-BackdropDefaults.propTypes = {
+BackdropButtons.propTypes = {
   label: PropTypes.string,
   invisible: PropTypes.bool,
 };

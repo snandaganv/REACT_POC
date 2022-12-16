@@ -143,10 +143,10 @@ export const DialogsAlert = ({ label, disableSpacing, labelledby, describedby, a
 
     return (
         <ThemeProvider theme={muiTheme}>
+            <Button onClick={handleClickOpen}>
+                {label}
+            </Button>
             <div>
-                <Button onClick={handleClickOpen}>
-                    {label}
-                </Button>
                 <Dialog
                     open={open}
                     onClose={handleClose}
@@ -173,15 +173,9 @@ export const DialogsAlert = ({ label, disableSpacing, labelledby, describedby, a
     );
 }
 
-const Transition = React.forwardRef(function Transition(
-    props: TransitionProps & {
-        children: React.ReactElement<any, any>;
-    },
-    ref: React.Ref<unknown>,
-) {
+const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
-
 export const DialogsSlideAlert = ({ label, labelledby, describedby, alerttextdisagree, alerttextagree }) => {
     const [open, setOpen] = React.useState(false);
 
@@ -195,10 +189,10 @@ export const DialogsSlideAlert = ({ label, labelledby, describedby, alerttextdis
 
     return (
         <ThemeProvider theme={muiTheme}>
+            <Button onClick={handleClickOpen}>
+                {label}
+            </Button>
             <div>
-                <Button onClick={handleClickOpen}>
-                    {label}
-                </Button>
                 <Dialog
                     open={open}
                     TransitionComponent={Transition}
@@ -214,8 +208,8 @@ export const DialogsSlideAlert = ({ label, labelledby, describedby, alerttextdis
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleClose}>Disagree</Button>
-                        <Button onClick={handleClose}>Agree</Button>
+                        <Button onClick={handleClose}>{alerttextdisagree}</Button>
+                        <Button onClick={handleClose}>{alerttextagree}</Button>
                     </DialogActions>
                 </Dialog>
             </div>
@@ -235,10 +229,10 @@ export const DialogsForm = ({ alerttextdisagree, alerttextagree, label, describe
 
     return (
         <ThemeProvider theme={muiTheme}>
+            <Button onClick={handleClickOpen}>
+                {label}
+            </Button>
             <div>
-                <Button onClick={handleClickOpen}>
-                    {label}
-                </Button>
                 <Dialog open={open} onClose={handleClose}>
                     <DialogTitle>Subscribe</DialogTitle>
                     <DialogContent>
@@ -265,7 +259,7 @@ export const DialogsForm = ({ alerttextdisagree, alerttextagree, label, describe
     );
 }
 
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+const DialogCustom = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
         padding: theme.spacing(2),
     },
@@ -280,7 +274,7 @@ export interface DialogTitleProps {
     onClose: () => void;
 }
 
-function BootstrapDialogTitle(props: DialogTitleProps) {
+function DialogTitleCustom(props: DialogTitleProps) {
     const { children, onClose, ...other } = props;
 
     return (
@@ -304,7 +298,9 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
     );
 }
 
-export const DialogsCustomized = ({ label, dialogtypo, dividers, submit }) => {
+
+
+export const DialogsCustomized = ({ label, dialogtypo, dividers, submit, dialogtitle, children }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -316,18 +312,18 @@ export const DialogsCustomized = ({ label, dialogtypo, dividers, submit }) => {
 
     return (
         <ThemeProvider theme={muiTheme}>
+            <Button onClick={handleClickOpen}>
+                {label}
+            </Button>
             <div>
-                <Button onClick={handleClickOpen}>
-                    {label}
-                </Button>
-                <BootstrapDialog
+                <DialogCustom
+                    open={open}
                     onClose={handleClose}
                     aria-labelledby="customized-dialog-title"
                     open={open}
                 >
-                    <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-                        Modal title
-                    </BootstrapDialogTitle>
+                    {dialogtitle && dialogtitle.map((item) => <DialogTitleCustom onClose={handleClose} key={item.variant} variant={item.variant}>{item.text} </DialogTitleCustom>)}
+
                     <DialogContent dividers={dividers}>
                         {dialogtypo.map((item) => (
                             <Typography gutterBottom>
@@ -340,14 +336,16 @@ export const DialogsCustomized = ({ label, dialogtypo, dividers, submit }) => {
                             {submit}
                         </Button>
                     </DialogActions>
-                </BootstrapDialog>
+                </DialogCustom>
             </div>
+
         </ThemeProvider>
+
     );
 }
 
 
-export const DialogsFullScreen = ({ label }) => {
+export const DialogsFullScreen = ({ label, dialogfulltitle, save, data, icon, dataList }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -360,10 +358,10 @@ export const DialogsFullScreen = ({ label }) => {
 
     return (
         <ThemeProvider theme={muiTheme}>
+            <Button onClick={handleClickOpen}>
+                {label}
+            </Button>
             <div>
-                <Button onClick={handleClickOpen}>
-                    {label}
-                </Button>
                 <Dialog
                     fullScreen
                     open={open}
@@ -372,41 +370,47 @@ export const DialogsFullScreen = ({ label }) => {
                 >
                     <AppBar sx={{ position: 'relative' }}>
                         <Toolbar>
-                            <IconButton
-                                edge="start"
-                                color="inherit"
-                                onClick={handleClose}
-                                aria-label="close"
-                            >
-                                <CloseIcon />
-                            </IconButton>
-                            <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                                Sound
-                            </Typography>
-                            <Button autoFocus color="inherit" onClick={handleClose}>
-                                save
-                            </Button>
+                            {data.map((item, index) => (
+                                <React.Fragment key={index}>
+                                    {item.icon && (
+                                        < IconButton
+                                            edge="start"
+                                            color="inherit"
+                                            onClick={handleClose}
+                                            aria-label={item.ariaLabel}>
+                                            {item.icon}
+                                        </IconButton>
+                                    )}
+                                    {item.text && (
+                                        <Typography sx={{ ml: 2, flex: 1 }} component="div" variant={item.variant}>{item.text}
+                                        </Typography>)}
+
+                                    {item.buttontxt && (
+                                        <Button autoFocus color="inherit" onClick={handleClose}>
+                                            {item.buttontxt}
+                                        </Button>
+                                    )}
+                                </React.Fragment>
+                            ))}
                         </Toolbar>
                     </AppBar>
                     <List>
-                        <ListItem button>
-                            <ListItemText primary="Phone ringtone" secondary="Titania" />
-                        </ListItem>
-                        <Divider />
-                        <ListItem button>
-                            <ListItemText
-                                primary="Default notification ringtone"
-                                secondary="Tethys"
-                            />
-                        </ListItem>
+                        {dataList.map((item, index) => (
+                            <React.Fragment key={index}>
+                                <ListItem button >
+                                    <ListItemText primary={item.primary} secondary={item.secondary} />
+                                </ListItem>
+                                {index < dataList.length - 1 && <Divider />}
+                            </React.Fragment>
+                        ))}
                     </List>
                 </Dialog>
-            </div>
-        </ThemeProvider>
+            </div >
+        </ThemeProvider >
     );
 }
 
-export const DialogsMaxWidth = ({ label, content, selectoptions }) => {
+export const DialogsMaxWidth = ({ label, content, switchlabel, selectoptions, dialogmaxtitle }) => {
     const [open, setOpen] = React.useState(false);
     const [fullWidth, setFullWidth] = React.useState(true);
     const [maxWidth, setMaxWidth] = React.useState('sm');
@@ -435,56 +439,57 @@ export const DialogsMaxWidth = ({ label, content, selectoptions }) => {
                 <Button onClick={handleClickOpen}>
                     {label}
                 </Button>
-                <Dialog
-                    fullWidth={fullWidth}
-                    maxWidth={maxWidth}
-                    open={open}
-                    onClose={handleClose}
-                >
-                    <DialogTitle>Optional sizes</DialogTitle>
-                    <DialogContent>
-                        <DialogContentText>
-                            {content}
-                        </DialogContentText>
-                        <Box
-                            noValidate
-                            component="form"
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                m: 'auto',
-                                width: 'fit-content',
-                            }}
-                        >
-                            <FormControl sx={{ mt: 2, minWidth: 120 }}>
-                                <InputLabel htmlFor="max-width">maxWidth</InputLabel>
-                                <Select
-                                    autoFocus
-                                    value={maxWidth}
-                                    onChange={handleMaxWidthChange}
-                                    label="maxWidth"
-                                    inputProps={{
-                                        name: 'max-width',
-                                        id: 'max-width',
-                                    }}
-                                >
-                                    <MenuItem value={false}>false</MenuItem>
-                                    {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
-                                </Select>
-                            </FormControl>
-                            <FormControlLabel
-                                sx={{ mt: 1 }}
-                                control={
-                                    <Switch checked={fullWidth} onChange={handleFullWidthChange} />
-                                }
-                                label="Full width"
-                            />
-                        </Box>
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClick={handleClose}>Close</Button>
-                    </DialogActions>
-                </Dialog>
+                <div>
+                    <Dialog
+                        fullWidth={fullWidth}
+                        maxWidth={maxWidth}
+                        open={open}
+                        onClose={handleClose}
+                    >
+                        {dialogmaxtitle.map((item) => <DialogTitle key={item.variant} variant={item.variant}>{item.text} </DialogTitle>)}
+                        <DialogContent>
+                            <DialogContentText>
+                                {content}
+                            </DialogContentText>
+                            <Box
+                                noValidate
+                                component="form"
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    m: 'auto',
+                                    width: 'fit-content',
+                                }}
+                            >
+                                <FormControl sx={{ mt: 2, minWidth: 120 }}>
+                                    <InputLabel htmlFor="max-width">maxWidth</InputLabel>
+                                    <Select
+                                        autoFocus
+                                        value={maxWidth}
+                                        onChange={handleMaxWidthChange}
+                                        label="maxWidth"
+                                        inputProps={{
+                                            name: 'max-width',
+                                            id: 'max-width',
+                                        }}
+                                    >
+                                        {selectoptions.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
+                                    </Select>
+                                </FormControl>
+                                <FormControlLabel
+                                    sx={{ mt: 1 }}
+                                    control={
+                                        <Switch checked={fullWidth} onChange={handleFullWidthChange} />
+                                    }
+                                    label={switchlabel}
+                                />
+                            </Box>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose}>Close</Button>
+                        </DialogActions>
+                    </Dialog>
+                </div>
             </ThemeProvider>
         </React.Fragment>
     );
@@ -509,6 +514,7 @@ const options = [
 
 function ConfirmationDialogRaw(props) {
     const { onClose, value: valueProp, open, ...other } = props;
+    const { okbtn, cancelbtn } = props
     const [value, setValue] = React.useState(valueProp);
     const radioGroupRef = React.useRef(null);
 
@@ -566,9 +572,9 @@ function ConfirmationDialogRaw(props) {
                 </DialogContent>
                 <DialogActions>
                     <Button autoFocus onClick={handleCancel}>
-                        Cancel
+                        {cancelbtn}
                     </Button>
-                    <Button onClick={handleOk}>Ok</Button>
+                    <Button onClick={handleOk}>{okbtn}</Button>
                 </DialogActions>
             </Dialog>
         </ThemeProvider>
