@@ -105,6 +105,8 @@ export {
 } from "./Accordion";
 
 export {
+  Select,
+  InputLabel,
   SelectsDefault as SelectDefault,
   SelectsBasic as SelectBasic,
   SelectsVariant as SelectVariant,

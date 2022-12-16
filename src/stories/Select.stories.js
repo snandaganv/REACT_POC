@@ -28,9 +28,7 @@ export default {
     },
   },
 };
-const SelectsDefaultTemplate = (args) => (
-  <SelectsDefault {...args}></SelectsDefault>
-);
+const SelectsDefaultTemplate = (args) => SelectsDefault({ ...args });
 export const SelectDefault = SelectsDefaultTemplate.bind({});
 SelectDefault.args = {
   selectlabel: [{ label: "Select" }],
@@ -46,7 +44,7 @@ SelectDefault.args = {
   ],
 };
 
-const SelectsBasicTemplate = (args) => <SelectsBasic {...args}></SelectsBasic>;
+const SelectsBasicTemplate = (args) => SelectsBasic({ ...args });
 export const SelectBasic = SelectsBasicTemplate.bind({});
 SelectBasic.args = {
   selectlabel: [{ label: "Name" }],
@@ -58,9 +56,7 @@ SelectBasic.args = {
     { value: 3, label: "Option 3" },
   ],
 };
-const SelectsVariantTemplate = (args) => (
-  <SelectsVariant {...args}></SelectsVariant>
-);
+const SelectsVariantTemplate = (args) => SelectsVariant({ ...args });
 export const SelectVariant = SelectsVariantTemplate.bind({});
 SelectVariant.args = {
   selectlabel: [{ label: "Select" }],
@@ -71,9 +67,7 @@ SelectVariant.args = {
     { value: 3, label: "Option 3" },
   ],
 };
-const SelectsAutoWidthTemplate = (args) => (
-  <SelectsAutoWidth {...args}></SelectsAutoWidth>
-);
+const SelectsAutoWidthTemplate = (args) => SelectsAutoWidth({ ...args });
 export const SelectAutoWidth = SelectsAutoWidthTemplate.bind({});
 SelectAutoWidth.args = {
   selectlabel: [{ label: "Sort" }],
@@ -84,7 +78,7 @@ SelectAutoWidth.args = {
     { value: 3, label: "Option Twenty" },
   ],
 };
-const SelectsSizeTemplate = (args) => <SelectsSize {...args}></SelectsSize>;
+const SelectsSizeTemplate = (args) => SelectsSize({ ...args });
 export const SelectSize = SelectsSizeTemplate.bind({});
 SelectSize.args = {
   selectlabel: [{ label: "Name" }],
@@ -95,7 +89,7 @@ SelectSize.args = {
     { value: 3, label: "Option 3" },
   ],
 };
-const SelectsLabelTemplate = (args) => <SelectsLabel {...args}></SelectsLabel>;
+const SelectsLabelTemplate = (args) => SelectsLabel({ ...args });
 export const SelectLabel = SelectsLabelTemplate.bind({});
 SelectLabel.args = {
   selectlabel: [{ label: "Select" }],
@@ -107,9 +101,7 @@ SelectLabel.args = {
   ],
 };
 
-const SelectsOtherPropsTemplate = (args) => (
-  <SelectsOtherProps {...args}></SelectsOtherProps>
-);
+const SelectsOtherPropsTemplate = (args) => SelectsOtherProps({ ...args });
 export const SelectOtherProp = SelectsOtherPropsTemplate.bind({});
 SelectOtherProp.args = {
   selectlabel: [{ label: "Select" }],
@@ -120,9 +112,7 @@ SelectOtherProp.args = {
     { value: 3, label: "Option 3" },
   ],
 };
-const SelectsMultipleTemplate = (args) => (
-  <SelectsMultiple {...args}></SelectsMultiple>
-);
+const SelectsMultipleTemplate = (args) => SelectsMultiple({ ...args });
 export const SelectMultiple = SelectsMultipleTemplate.bind({});
 SelectMultiple.args = {
   selectlabel: [{ label: "Select" }],
@@ -139,9 +129,8 @@ SelectMultiple.args = {
   ],
 };
 
-const SelectsMultipleCheckmarkTemplate = (args) => (
-  <SelectsMultipleCheckmark {...args}></SelectsMultipleCheckmark>
-);
+const SelectsMultipleCheckmarkTemplate = (args) =>
+  SelectsMultipleCheckmark({ ...args });
 export const SelectMultipleCheckmark = SelectsMultipleCheckmarkTemplate.bind(
   {}
 );
@@ -160,9 +149,7 @@ SelectMultipleCheckmark.args = {
   multilabel: [{ label: "Tag" }],
 };
 
-const SelectsMultipleChipTemplate = (args) => (
-  <SelectsMultipleChip {...args}></SelectsMultipleChip>
-);
+const SelectsMultipleChipTemplate = (args) => SelectsMultipleChip({ ...args });
 export const SelectMultipleChip = SelectsMultipleChipTemplate.bind({});
 SelectMultipleChip.args = {
   chiplabel: [{ label: "Select" }],
@@ -179,9 +166,8 @@ SelectMultipleChip.args = {
   ],
 };
 
-const SelectsMultiplePlaceholderTemplate = (args) => (
-  <SelectsMultiplePlaceholder {...args}></SelectsMultiplePlaceholder>
-);
+const SelectsMultiplePlaceholderTemplate = (args) =>
+  SelectsMultiplePlaceholder({ ...args });
 export const SelectMultiplePlaceholder =
   SelectsMultiplePlaceholderTemplate.bind({});
 SelectMultiplePlaceholder.args = {
@@ -198,7 +184,7 @@ SelectMultiplePlaceholder.args = {
   ],
 };
 
-const SelectsGroupTemplate = (args) => <SelectsGroup {...args}></SelectsGroup>;
+const SelectsGroupTemplate = (args) => SelectsGroup({ ...args });
 export const SelectGroup = SelectsGroupTemplate.bind({});
 SelectGroup.args = {
   grouplabel: [{ label: "Grouping" }],

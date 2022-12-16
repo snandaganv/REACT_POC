@@ -14,9 +14,9 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.5",
-    "@mui/icons-material": "^5.10.9",
+    "@mui/icons-material": "^5.11.0",
     "@mui/lab": "^5.0.0-alpha.104",
-    "@mui/material": "^5.10.12",
+    "@mui/material": "^5.11.0",
     "@mui/x-data-grid": "5.17.8",
     "@mui/x-date-pickers": "^5.0.3",
     "@mui/x-date-pickers-pro": "^5.0.6",
@@ -74,7 +74,6 @@
     ]
   },
   "devDependencies": {
-    "@mui/material": "^5.10.12",
     "@storybook/addon-a11y": "^6.5.13",
     "@storybook/addon-actions": "^6.5.14",
     "@storybook/addon-docs": "^6.5.14",
