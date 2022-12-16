@@ -7,7 +7,6 @@ export { default as BreadcrumbsComponent } from "./breadcrumbs-component";
 export { default as DataTable } from "./data-table";
 export { default as IconComponent } from "./icon-component";
 export { default as LinkComponent } from "./link-component";
-export { default as TabsComponent } from "./tabs-component";
 export { default as MenuIcon } from "./menu-icons-component";
 export { default as SearchIconsComponent } from "./search-icons-component";
 export { default as TextFieldComponent } from "./textfield-component";
@@ -27,12 +26,10 @@ export {
   ButtonSizes as ButtonSize,
   ButtonHandlingClick as ButtonHandlingClicks,
   ButtonIconLabelButton as ButtonIconLabelButtons,
-  ButtonLoadings as ButtonLoading
+  ButtonLoadings as ButtonLoading,
 } from "./Button";
 
-export {
-  IconButton
-} from "./IconButton"
+export { IconButton } from "./IconButton";
 
 export {
   ChipsBasics as ChipsBasic,
@@ -248,7 +245,7 @@ export {
   ButtonGroupSizesColors,
   ButtonGroupVariant,
   ButtonGroupVerticals,
-  SplitButton
+  SplitButton,
 } from "./buttongroup-component/";
 
 export {
@@ -287,3 +284,5 @@ export {
   VerticalDividerMiddles as VerticalDividerMiddle,
   VerticalDividerTexts as VerticalDividerText,
 } from "./divider-component";
+
+export { Tab, Tabs } from "./tabs-component";

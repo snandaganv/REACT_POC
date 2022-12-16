@@ -1,8 +1,8 @@
-import TabsComponent from "../components/tabs-component";
+import { Tabs, TabsComponent } from "../components/tabs-component";
 
 export default {
   title: "Feedback/Tabs",
-  component: TabsComponent,
+  component: Tabs,
   argTypes: {
     children: [],
     indicatorColor: {
@@ -25,7 +25,7 @@ export default {
   },
 };
 
-const Template = (args) => <TabsComponent {...args}></TabsComponent>;
+const Template = (args) => TabsComponent({...args});
 
 export const Default = Template.bind({});
 
@@ -50,20 +50,67 @@ Default.args = {
   variant: "scrollable",
 };
 
-const HowToConsumeTabComponent = (props) => (
-  <div>
-    <code>
-      This is how to consume the AGCP-UI Circular Tab component ,just pass in
-      the props when using the component .
-    </code>
-    <br />
-    <br />
-    <code>import {"{TabsComponent}"} from "@arisglobal/agcp-ui" ;</code>
-    <br />
-    <code>&lt;TabsComponent {"{...props}"}&gt;&lt;/TabsComponent&gt;</code>
-  </div>
-);
-const TemplateDiscription = (args) => (
-  <HowToConsumeTabComponent {...args}></HowToConsumeTabComponent>
-);
-export const HowToConsumeTabComponents = TemplateDiscription.bind({});
+Default.parameters = {
+  docs: {
+    source: {
+      code: `
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={\`simple-tabpanel-\${index}\`}
+      aria-labelledby={\`simple-tab-\${index}\`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+return (
+  <>
+    <Tabs
+      allowScrollButtonsMobile={allowScrollButtonsMobile}
+      variant={variant}
+      scrollButtons={scrollButtons}
+      value={value}
+      onChange={handleChange}
+      indicatorColor={indicatorColor}
+      aria-label={ariaLabel}
+      orientation={orientation}
+      textColor={textColor}
+    >
+      {tabsArray.map((item) => (
+        <Tab
+          icon={<Icon fontSize="small">{item.icon}</Icon>}
+          iconPosition={item.position}
+          label={item.label}
+          {...a11yProps(item.index)}
+          style={{ textTransform: "none" }}
+        />
+      ))}
+    </Tabs>
+    {tabsArray.map((item) => (
+      <TabPanel value={value} index={item.index}>
+        {item.label}
+      </TabPanel>
+    ))}
+  </>
+);`
+    }
+  }
+}
+
