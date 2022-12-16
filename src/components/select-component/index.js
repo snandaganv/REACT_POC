@@ -81,23 +81,18 @@ export const SelectsBasic = ({ size, selectlabel, selectoptions }) => {
 
   return (
     <div>
-      <ThemeProvider theme={muiTheme}>
-        <FormControl sx={{ m: 1, width: 300 }} size={size}>
-          <InputLabel>
-            {selectlabel.map((item) => {
-              return item.label;
-            })}
-          </InputLabel>
-          <Select
-            onChange={handleChange}
-            input={<OutlinedInput label="Name" />}
-          >
-            {selectoptions.map((item) => (
-              <MenuItem value={item.value}>{item.label}</MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </ThemeProvider>
+      <FormControl sx={{ m: 1, width: 300 }} size={size}>
+        <InputLabel>
+          {selectlabel.map((item) => {
+            return item.label;
+          })}
+        </InputLabel>
+        <Select onChange={handleChange} input={<OutlinedInput label="Name" />}>
+          {selectoptions.map((item) => (
+            <MenuItem value={item.value}>{item.label}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
     </div>
   );
 };
@@ -116,42 +111,42 @@ export const SelectsVariant = ({ selectlabel, selectoptions }) => {
 
   return (
     <div>
-        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel>
-            {selectlabel.map((item) => {
-              return item.label;
-            })}
-          </InputLabel>
-          <Select onChange={handleChange} label="Select">
-            {selectoptions.map((item) => (
-              <MenuItem value={item.value}>{item.label}</MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-        <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel>
-            {selectlabel.map((item) => {
-              return item.label;
-            })}
-          </InputLabel>
-          <Select label="Select" onChange={handleChange}>
-            {selectoptions.map((item) => (
-              <MenuItem value={item.value}>{item.label}</MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-        <FormControl variant="outlined" sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel>
-            {selectlabel.map((item) => {
-              return item.label;
-            })}
-          </InputLabel>
-          <Select label="Select" onChange={handleChange}>
-            {selectoptions.map((item) => (
-              <MenuItem value={item.value}>{item.label}</MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+      <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel>
+          {selectlabel.map((item) => {
+            return item.label;
+          })}
+        </InputLabel>
+        <Select onChange={handleChange} label="Select">
+          {selectoptions.map((item) => (
+            <MenuItem value={item.value}>{item.label}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel>
+          {selectlabel.map((item) => {
+            return item.label;
+          })}
+        </InputLabel>
+        <Select label="Select" onChange={handleChange}>
+          {selectoptions.map((item) => (
+            <MenuItem value={item.value}>{item.label}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <FormControl variant="outlined" sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel>
+          {selectlabel.map((item) => {
+            return item.label;
+          })}
+        </InputLabel>
+        <Select label="Select" onChange={handleChange}>
+          {selectoptions.map((item) => (
+            <MenuItem value={item.value}>{item.label}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
     </div>
   );
 };
@@ -196,20 +191,18 @@ export const SelectsSize = ({ selectlabel, selectoptions }) => {
     setAge(event.target.value);
   };
   return (
-    <ThemeProvider theme={muiTheme}>
-      <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel>
-          {selectlabel.map((item) => {
-            return item.label;
-          })}
-        </InputLabel>
-        <Select label="Select" onChange={handleChange}>
-          {selectoptions.map((item) => (
-            <MenuItem value={item.value}>{item.label}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </ThemeProvider>
+    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel>
+        {selectlabel.map((item) => {
+          return item.label;
+        })}
+      </InputLabel>
+      <Select label="Select" onChange={handleChange}>
+        {selectoptions.map((item) => (
+          <MenuItem value={item.value}>{item.label}</MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 };
 SelectsSize.propTypes = {
@@ -565,48 +558,46 @@ export const SelectsGroup = (props) => {
   };
 
   return (
-    <ThemeProvider theme={muiTheme}>
-      <Box sx={{ width: "300px" }}>
-        <FormControl fullWidth>
-          <InputLabel
-            htmlFor="grouped-select"
-            sx={{ backgroundColor: "#ffffff" }}
-          >
-            {grouplabel.map((item) => {
-              return item.label;
-            })}
-          </InputLabel>
-          <Select
-            label="Grouping"
-            value={personName}
-            onChange={onTargetIdentityChange}
-          >
-            {Object.keys(splitedIdenties).map(
-              (identityTypeKey, identityTypeIndex) => {
-                let children = [];
+    <Box sx={{ width: "300px" }}>
+      <FormControl fullWidth>
+        <InputLabel
+          htmlFor="grouped-select"
+          sx={{ backgroundColor: "#ffffff" }}
+        >
+          {grouplabel.map((item) => {
+            return item.label;
+          })}
+        </InputLabel>
+        <Select
+          label="Grouping"
+          value={personName}
+          onChange={onTargetIdentityChange}
+        >
+          {Object.keys(splitedIdenties).map(
+            (identityTypeKey, identityTypeIndex) => {
+              let children = [];
+              children.push(
+                <MenuItem
+                  disabled
+                  key={identityTypeIndex}
+                  value={identityTypeKey}
+                >
+                  {identityTypeKey}
+                </MenuItem>
+              );
+              splitedIdenties[identityTypeKey].forEach((identity) => {
                 children.push(
-                  <MenuItem
-                    disabled
-                    key={identityTypeIndex}
-                    value={identityTypeKey}
-                  >
-                    {identityTypeKey}
+                  <MenuItem key={identity.id} value={identity.id}>
+                    {identity.age}
                   </MenuItem>
                 );
-                splitedIdenties[identityTypeKey].forEach((identity) => {
-                  children.push(
-                    <MenuItem key={identity.id} value={identity.id}>
-                      {identity.age}
-                    </MenuItem>
-                  );
-                });
+              });
 
-                return children;
-              }
-            )}
-          </Select>
-        </FormControl>
-      </Box>
-    </ThemeProvider>
+              return children;
+            }
+          )}
+        </Select>
+      </FormControl>
+    </Box>
   );
 };
